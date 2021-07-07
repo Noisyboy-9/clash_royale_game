@@ -6,7 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="client" />
+        <module name="server" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="clash_royal" target="16" />
+      <module name="client" target="16" />
+      <module name="server" target="16" />
+    </bytecodeTargetLevel>
   </component>
 </project>
