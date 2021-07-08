@@ -1158,168 +1158,168 @@
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="42" />
                   <ImageView fitHeight="22.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="19" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@../../../data/photos/side_river.png" />
+                        <Image url="@../../../resources/photos/side_river.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="44.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="35" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/wall1.png" />
+                        <Image url="@../../../resources/photos/wall1.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="22.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="20" GridPane.halignment="CENTER" GridPane.rowIndex="19" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@../../../data/photos/side_river.png" />
+                        <Image url="@../../../resources/photos/side_river.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="44.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="17" GridPane.halignment="CENTER" GridPane.rowIndex="35" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/wall2.png" />
+                        <Image url="@../../../resources/photos/wall2.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="22.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="16" GridPane.halignment="RIGHT" GridPane.rowIndex="19" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@../../../data/photos/middle_river.png" />
+                        <Image url="@../../../resources/photos/middle_river.png" />
                      </image>
                   </ImageView>
                   <ImageView cache="true" fitHeight="66.0" fitWidth="44.0" layoutX="131.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="17" GridPane.halignment="CENTER" GridPane.rowIndex="19" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@../../../data/photos/bridge.png" />
+                        <Image url="@../../../resources/photos/bridge.png" />
                      </image>
                   </ImageView>
                   <ImageView cache="true" fitHeight="66.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="19" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@../../../data/photos/bridge.png" />
+                        <Image url="@../../../resources/photos/bridge.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="35" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/stone1.png" />
+                        <Image url="@../../../resources/photos/stone1.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="66.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="33">
                      <image>
-                        <Image url="@../../../data/photos/tree1.png" />
+                        <Image url="@../../../resources/photos/tree1.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="110.0" fitWidth="44.0" layoutX="10.0" layoutY="638.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="25">
                      <image>
-                        <Image url="@../../../data/photos/tree2.png" />
+                        <Image url="@../../../resources/photos/tree2.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="110.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.rowIndex="29" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@../../../data/photos/tree2.png" />
+                        <Image url="@../../../resources/photos/tree2.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="66.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="20" GridPane.valignment="TOP">
                      <image>
-                        <Image url="@../../../data/photos/tree3.png" />
+                        <Image url="@../../../resources/photos/tree3.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="374.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.rowIndex="16" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/trees3.png" />
+                        <Image url="@../../../resources/photos/trees3.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="66.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.rowIndex="19" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/stone2.png" />
+                        <Image url="@../../../resources/photos/stone2.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="36.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="20" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/stone3.png" />
+                        <Image url="@../../../resources/photos/stone3.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="36.0" fitWidth="33.0" layoutX="56.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="18" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/stone3.png" />
+                        <Image url="@../../../resources/photos/stone3.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="66.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="23" GridPane.halignment="RIGHT" GridPane.rowIndex="20" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/stone4.png" />
+                        <Image url="@../../../resources/photos/stone4.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="66.0" fitWidth="44.0" layoutX="10.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="23" GridPane.halignment="RIGHT" GridPane.rowIndex="20" GridPane.valignment="TOP">
                      <image>
-                        <Image url="@../../../data/photos/tree3.png" />
+                        <Image url="@../../../resources/photos/tree3.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="36.0" fitWidth="33.0" layoutX="56.0" layoutY="488.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="21" GridPane.halignment="CENTER" GridPane.rowIndex="20" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/stone3.png" />
+                        <Image url="@../../../resources/photos/stone3.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="36.0" fitWidth="33.0" layoutX="56.0" layoutY="444.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="21" GridPane.halignment="CENTER" GridPane.rowIndex="18" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/stone3.png" />
+                        <Image url="@../../../resources/photos/stone3.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="110.0" fitWidth="44.0" layoutX="10.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="23" GridPane.halignment="RIGHT" GridPane.rowIndex="25">
                      <image>
-                        <Image url="@../../../data/photos/tree2.png" />
+                        <Image url="@../../../resources/photos/tree2.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="110.0" fitWidth="44.0" layoutX="10.0" layoutY="651.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="23" GridPane.halignment="RIGHT" GridPane.rowIndex="29">
                      <image>
-                        <Image url="@../../../data/photos/tree2.png" />
+                        <Image url="@../../../resources/photos/tree2.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="66.0" fitWidth="44.0" layoutX="10.0" layoutY="758.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="23" GridPane.halignment="RIGHT" GridPane.rowIndex="33">
                      <image>
-                        <Image url="@../../../data/photos/tree1.png" />
+                        <Image url="@../../../resources/photos/tree1.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="110.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="23" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
                      <image>
-                        <Image url="@../../../data/photos/trees5.png" />
+                        <Image url="@../../../resources/photos/trees5.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="44.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="17" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/wall4.png" />
+                        <Image url="@../../../resources/photos/wall4.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="44.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="3" />
                   <ImageView fitHeight="44.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/wall3.png" />
+                        <Image url="@../../../resources/photos/wall3.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="88.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="23" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/tree4.png" />
+                        <Image url="@../../../resources/photos/tree4.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="198.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="23" GridPane.halignment="RIGHT" GridPane.rowIndex="14" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/trees4.png" />
+                        <Image url="@../../../resources/photos/trees4.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="66.0" fitWidth="44.0" layoutX="494.0" layoutY="736.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="22" GridPane.rowIndex="17" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/tree1.png" />
+                        <Image url="@../../../resources/photos/tree1.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="22" GridPane.halignment="CENTER" GridPane.rowIndex="15" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@../../../data/photos/score_place1.png" />
+                        <Image url="@../../../resources/photos/score_place1.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="22" GridPane.halignment="CENTER" GridPane.rowIndex="22" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@../../../data/photos/score_place2.png" />
+                        <Image url="@../../../resources/photos/score_place2.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="176.0" fitWidth="264.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="23" GridPane.halignment="RIGHT" GridPane.rowIndex="42" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/trees1.png" />
+                        <Image url="@../../../resources/photos/trees1.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="176.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.rowIndex="42" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/trees2.png" />
+                        <Image url="@../../../resources/photos/trees2.png" />
                      </image>
                   </ImageView>
                   <Text fill="#64ccff" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="0" GridPane.columnIndex="22" GridPane.halignment="CENTER" GridPane.rowIndex="23" GridPane.valignment="CENTER">
@@ -1334,7 +1334,7 @@
                   </Text>
                   <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="54.0" layoutY="758.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/stone1.png" />
+                        <Image url="@../../../resources/photos/stone1.png" />
                      </image>
                   </ImageView>
                   <Text fill="#f535a0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Username" wrappingWidth="100.830078125" GridPane.columnIndex="1">
@@ -1344,7 +1344,7 @@
                   </Text>
                   <ImageView fitHeight="33.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
                      <image>
-                        <Image url="@../../../data/photos/cup_icon.png" />
+                        <Image url="@../../../resources/photos/cup_icon.png" />
                      </image>
                   </ImageView>
                   <Text fill="#fbfcc1" layoutX="494.0" layoutY="339.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="2221" wrappingWidth="40.46484375" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
@@ -1357,17 +1357,17 @@
                   </Text>
                   <ImageView fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="11" GridPane.halignment="LEFT" GridPane.valignment="TOP">
                      <image>
-                        <Image url="@../../../data/photos/level_place.png" />
+                        <Image url="@../../../resources/photos/level_place.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="110.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="LEFT" GridPane.rowIndex="34" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/tower_king_blue.png" />
+                        <Image url="@../../../resources/photos/tower_king_blue.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="252.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="11" GridPane.halignment="LEFT" GridPane.rowIndex="34" GridPane.valignment="TOP">
                      <image>
-                        <Image url="@../../../data/photos/level_place.png" />
+                        <Image url="@../../../resources/photos/level_place.png" />
                      </image>
                   </ImageView>
                   <Text fill="#fde731" stroke="#3c1a01" strokeType="OUTSIDE" text="1" textAlignment="CENTER" wrappingWidth="43.8017578125" GridPane.columnIndex="11" GridPane.rowIndex="1" GridPane.valignment="TOP">
@@ -1388,7 +1388,7 @@
                   </Text>
                   <ImageView fitHeight="80.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="23" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
                      <image>
-                        <Image url="@../../../data/photos/time_place.png" />
+                        <Image url="@../../../resources/photos/time_place.png" />
                      </image>
                      <GridPane.margin>
                         <Insets top="4.0" />
@@ -1412,27 +1412,27 @@
                   </Text>
                   <ImageView fitHeight="132.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
                      <image>
-                        <Image url="@../../../data/photos/tower_king_red.png" />
+                        <Image url="@../../../resources/photos/tower_king_red.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="16" GridPane.halignment="LEFT" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/tower_archer_blue.png" />
+                        <Image url="@../../../resources/photos/tower_archer_blue.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="604.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/tower_archer_blue.png" />
+                        <Image url="@../../../resources/photos/tower_archer_blue.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="16" GridPane.halignment="LEFT" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/tower_archer_red.png" />
+                        <Image url="@../../../resources/photos/tower_archer_red.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
                      <image>
-                        <Image url="@../../../data/photos/tower_archer_red.png" />
+                        <Image url="@../../../resources/photos/tower_archer_red.png" />
                      </image>
                   </ImageView>
                </children>
