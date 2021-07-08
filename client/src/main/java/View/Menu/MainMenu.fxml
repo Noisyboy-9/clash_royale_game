@@ -176,6 +176,46 @@
                   <Font name="Supercell-Magic Regular" size="26.0" />
                </font>
             </Text>
+            <ImageView fitHeight="264.0" fitWidth="264.0" layoutX="132.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/arena_logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="360.0" layoutX="14.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/main_menu_label.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="37.0" layoutY="296.0" stroke="BLACK" strokeType="OUTSIDE" text="1">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="14.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="200.0" fitWidth="287.0" layoutX="131.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/clash_royale_logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="112.0" layoutX="402.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/log_out.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="422.0" layoutY="295.0" stroke="#650101" strokeType="OUTSIDE" text="Log Out">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="13.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="83.0" layoutY="295.0" stroke="BLACK" strokeType="OUTSIDE" text="Username">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="295.0" layoutY="297.0" stroke="BLACK" strokeType="OUTSIDE" text="2000">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="14.0" />
+               </font>
+            </Text>
             </children>
         </AnchorPane>
     </children>
