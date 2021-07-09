@@ -114,7 +114,6 @@ public abstract class Troop extends Card implements AttackAble {
      */
     public void reduceHealthBy(int amount) {
         this.HP -= amount;
-
     }
 
     /**
@@ -124,5 +123,12 @@ public abstract class Troop extends Card implements AttackAble {
      */
     public boolean isAlive() {
         return this.getHP() < 0;
+    }
+
+    /**
+     * Attack the selected attack target.
+     */
+    public void attack() {
+        this.attackTarget.reduceHealth(this.damage);
     }
 }
