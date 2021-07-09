@@ -66,16 +66,6 @@
                     <children>
                         <ImageView GridPane.columnIndex="2">
                             <image>
-                                <Image url="@../../../resources/photos/selected_option_background.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView GridPane.columnIndex="3">
-                            <image>
-                                <Image url="@../../../resources/photos/not_selected_option_background.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView GridPane.columnIndex="4">
-                            <image>
                                 <Image url="@../../../resources/photos/not_selected_option_background.png" />
                             </image>
                         </ImageView>
@@ -87,11 +77,6 @@
                         <ImageView>
                             <image>
                                 <Image url="@../../../resources/photos/not_selected_option_background.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="88.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../resources/photos/battle_icon.png" />
                             </image>
                         </ImageView>
                         <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" text="Battle" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="2">
@@ -120,6 +105,11 @@
                                 <Image url="@../../../resources/photos/profile_icon.png" />
                             </image>
                         </ImageView>
+                        <ImageView GridPane.columnIndex="3">
+                            <image>
+                                <Image url="@../../../resources/photos/selected_option_background.png" />
+                            </image>
+                        </ImageView>
                         <Text fill="WHITE" layoutX="116.0" layoutY="89.0" stroke="BLACK" strokeType="OUTSIDE" text="Profile" textAlignment="CENTER" wrappingWidth="105.0">
                             <font>
                                 <Font name="Supercell-Magic Regular" size="12.0" />
@@ -128,11 +118,6 @@
                                 <Insets top="60.0" />
                             </GridPane.margin>
                         </Text>
-                        <ImageView fitHeight="88.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
-                            <image>
-                                <Image url="@../../../resources/photos/training_camp_icon.png" />
-                            </image>
-                        </ImageView>
                         <Text fill="WHITE" layoutX="222.0" layoutY="89.0" stroke="BLACK" strokeType="OUTSIDE" text="Camp" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="3">
                             <font>
                                 <Font name="Supercell-Magic Regular" size="12.0" />
@@ -141,9 +126,9 @@
                                 <Insets top="60.0" />
                             </GridPane.margin>
                         </Text>
-                        <ImageView fitHeight="88.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+                        <ImageView GridPane.columnIndex="4">
                             <image>
-                                <Image url="@../../../resources/photos/history_icon.png" />
+                                <Image url="@../../../resources/photos/not_selected_option_background.png" />
                             </image>
                         </ImageView>
                         <Text fill="WHITE" layoutX="328.0" layoutY="89.0" stroke="BLACK" strokeType="OUTSIDE" text="History" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="4">
@@ -154,41 +139,46 @@
                                 <Insets top="60.0" />
                             </GridPane.margin>
                         </Text>
+                        <ImageView fitHeight="88.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                            <image>
+                                <Image url="@../../../resources/photos/battle_icon.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="88.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                            <image>
+                                <Image url="@../../../resources/photos/training_camp_icon.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="88.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+                            <image>
+                                <Image url="@../../../resources/photos/history_icon.png" />
+                            </image>
+                        </ImageView>
                     </children>
                 </GridPane>
+            <ImageView fitHeight="264.0" fitWidth="264.0" layoutX="132.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/training_camp_logo.png" />
+               </image>
+            </ImageView>
             <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="100.0" layoutY="663.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../resources/photos/button_yellow.png" />
                </image>
             </ImageView>
+            <Text fill="WHITE" layoutX="120.0" layoutY="713.0" stroke="#754a00" strokeType="OUTSIDE" strokeWidth="2.0" text="Crazy Bot" textAlignment="CENTER">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="16.0" />
+               </font>
+            </Text>
             <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="274.0" layoutY="663.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../resources/photos/button_blue.png" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="321.0" layoutY="717.0" stroke="#004ba3" strokeType="OUTSIDE" strokeWidth="3.0" text="2v2" textAlignment="CENTER">
+            <Text fill="WHITE" layoutX="285.0" layoutY="713.0" stroke="#004ba3" strokeType="OUTSIDE" strokeWidth="2.0" text="Normal Bot" textAlignment="CENTER">
                <font>
-                  <Font name="Supercell-Magic Regular" size="26.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="115.0" layoutY="717.0" stroke="#754a00" strokeType="OUTSIDE" strokeWidth="3.0" text="Battle" textAlignment="CENTER">
-               <font>
-                  <Font name="Supercell-Magic Regular" size="26.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="264.0" fitWidth="264.0" layoutX="132.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../resources/photos/arena_logo.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="360.0" layoutX="14.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../resources/photos/main_menu_label.png" />
-               </image>
-            </ImageView>
-            <Text fill="WHITE" layoutX="37.0" layoutY="296.0" stroke="BLACK" strokeType="OUTSIDE" text="1">
-               <font>
-                  <Font name="Supercell-Magic Regular" size="14.0" />
+                  <Font name="Supercell-Magic Regular" size="16.0" />
                </font>
             </Text>
             <ImageView fitHeight="200.0" fitWidth="287.0" layoutX="121.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
@@ -196,24 +186,14 @@
                   <Image url="@../../../resources/photos/clash_royale_logo.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="112.0" layoutX="402.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="64.0" fitWidth="352.0" layoutX="88.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../resources/photos/log_out.png" />
+                  <Image url="@../../../resources/photos/text_field1.png" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="422.0" layoutY="295.0" stroke="#650101" strokeType="OUTSIDE" text="Log Out">
+            <Text fill="WHITE" layoutX="163.0" layoutY="297.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="3.0" text="Training Camp">
                <font>
-                  <Font name="Supercell-Magic Regular" size="13.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="83.0" layoutY="295.0" stroke="BLACK" strokeType="OUTSIDE" text="Username">
-               <font>
-                  <Font name="Supercell-Magic Regular" size="14.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="295.0" layoutY="297.0" stroke="BLACK" strokeType="OUTSIDE" text="2000">
-               <font>
-                  <Font name="Supercell-Magic Regular" size="14.0" />
+                  <Font name="Supercell-Magic Regular" size="20.0" />
                </font>
             </Text>
             </children>
