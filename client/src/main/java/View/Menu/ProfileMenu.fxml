@@ -216,8 +216,87 @@
                         <Image url="@../../../resources/photos/CannonCard.png" />
                      </image>
                   </ImageView>
+                  <Text fill="#a0d7ff" stroke="BLACK" strokeType="OUTSIDE" text="lvl.2" textAlignment="CENTER" wrappingWidth="85.755859375">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="62.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fill="#a0d7ff" layoutX="10.0" layoutY="101.0" stroke="BLACK" strokeType="OUTSIDE" text="lvl.1" textAlignment="CENTER" wrappingWidth="85.755859375" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="62.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fill="#a0d7ff" layoutX="96.0" layoutY="101.0" stroke="BLACK" strokeType="OUTSIDE" text="lvl.2" textAlignment="CENTER" wrappingWidth="85.755859375" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="62.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fill="#a0d7ff" layoutX="96.0" layoutY="101.0" stroke="BLACK" strokeType="OUTSIDE" text="lvl.1" textAlignment="CENTER" wrappingWidth="85.755859375" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="62.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fill="#ffcc66" layoutX="96.0" layoutY="101.0" stroke="BLACK" strokeType="OUTSIDE" text="lvl.1" textAlignment="CENTER" wrappingWidth="85.755859375" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="62.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fill="#ffcc66" layoutX="10.0" layoutY="210.0" stroke="BLACK" strokeType="OUTSIDE" text="lvl.1" textAlignment="CENTER" wrappingWidth="85.755859375" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="62.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fill="#ffcc66" layoutX="10.0" layoutY="210.0" stroke="BLACK" strokeType="OUTSIDE" text="lvl.2" textAlignment="CENTER" wrappingWidth="85.755859375" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="62.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fill="#ffcc66" layoutX="96.0" layoutY="210.0" stroke="BLACK" strokeType="OUTSIDE" text="lvl.1" textAlignment="CENTER" wrappingWidth="85.755859375" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="62.0" />
+                     </GridPane.margin>
+                  </Text>
                </children>
             </GridPane>
+            <Text fill="#ffff68" layoutX="166.0" layoutY="231.0" stroke="BLACK" strokeType="OUTSIDE" text="2000" textAlignment="CENTER">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="66.0" layoutY="231.0" stroke="BLACK" strokeType="OUTSIDE" text="1" textAlignment="CENTER">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="47.0" layoutY="177.0" stroke="BLACK" strokeType="OUTSIDE" text="Username" textAlignment="CENTER">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="20.0" />
+               </font>
+            </Text>
             </children>
         </AnchorPane>
     </children>
