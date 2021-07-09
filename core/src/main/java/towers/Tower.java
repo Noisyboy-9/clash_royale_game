@@ -3,8 +3,6 @@ package towers;
 import cards.utils.AttackAble;
 import user.UserLevelEnum;
 
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.UUID;
 
 /**
@@ -135,13 +133,6 @@ public abstract class Tower {
      * Shoot the target and reduce it's health
      */
     public void shoot() {
-        new Timer().schedule(
-                new TimerTask() {
-                    @Override
-                    public void run() {
-                        target.reduceHealth(damage);
-                    }
-                }, 1000
-        );
+        this.target.reduceHealth(this.damage);
     }
 }
