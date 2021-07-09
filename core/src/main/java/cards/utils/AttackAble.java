@@ -1,4 +1,4 @@
-package cards;
+package cards.interfaces;
 
 public interface AttackAble {
 

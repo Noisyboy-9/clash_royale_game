@@ -1,6 +1,6 @@
 package towers;
 
-import cards.AttackAble;
+import cards.utils.AttackAble;
 import user.UserLevelEnum;
 
 import java.util.Timer;
