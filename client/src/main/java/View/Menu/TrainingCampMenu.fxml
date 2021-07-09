@@ -156,7 +156,7 @@
                         </ImageView>
                     </children>
                 </GridPane>
-            <ImageView fitHeight="264.0" fitWidth="264.0" layoutX="132.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="264.0" fitWidth="264.0" layoutX="132.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../resources/photos/training_camp_logo.png" />
                </image>
@@ -176,9 +176,24 @@
                   <Image url="@../../../resources/photos/button_blue.png" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="285.0" layoutY="713.0" stroke="#004ba3" strokeType="OUTSIDE" strokeWidth="3.0" text="Normal Bot" textAlignment="CENTER">
+            <Text fill="WHITE" layoutX="285.0" layoutY="713.0" stroke="#004ba3" strokeType="OUTSIDE" strokeWidth="2.0" text="Normal Bot" textAlignment="CENTER">
                <font>
                   <Font name="Supercell-Magic Regular" size="16.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="200.0" fitWidth="287.0" layoutX="121.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/clash_royale_logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="352.0" layoutX="88.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/text_field1.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="163.0" layoutY="297.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="3.0" text="Training Camp">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="20.0" />
                </font>
             </Text>
             </children>
