@@ -191,7 +191,7 @@
                   <Font name="Supercell-Magic Regular" size="14.0" />
                </font>
             </Text>
-            <ImageView fitHeight="200.0" fitWidth="287.0" layoutX="131.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="200.0" fitWidth="287.0" layoutX="121.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../resources/photos/clash_royale_logo.png" />
                </image>
