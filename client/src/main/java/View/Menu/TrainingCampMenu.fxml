@@ -156,6 +156,31 @@
                         </ImageView>
                     </children>
                 </GridPane>
+            <ImageView fitHeight="264.0" fitWidth="264.0" layoutX="132.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/training_camp_logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="100.0" layoutY="663.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/button_yellow.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="120.0" layoutY="713.0" stroke="#754a00" strokeType="OUTSIDE" strokeWidth="2.0" text="Crazy Bot" textAlignment="CENTER">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="16.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="274.0" layoutY="663.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/button_blue.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="285.0" layoutY="713.0" stroke="#004ba3" strokeType="OUTSIDE" strokeWidth="3.0" text="Normal Bot" textAlignment="CENTER">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="16.0" />
+               </font>
+            </Text>
             </children>
         </AnchorPane>
     </children>
