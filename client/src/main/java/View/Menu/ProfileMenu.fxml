@@ -156,6 +156,11 @@
                         </ImageView>
                     </children>
                 </GridPane>
+            <ImageView fitHeight="770.0" fitWidth="498.0" layoutX="15.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/profile_template.png" />
+               </image>
+            </ImageView>
             </children>
         </AnchorPane>
     </children>
