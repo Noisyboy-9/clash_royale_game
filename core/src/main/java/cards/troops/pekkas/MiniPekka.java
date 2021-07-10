@@ -1,4 +1,4 @@
-package cards.troops.wizards;
+package cards.troops.pekkas;
 
 import cards.troops.Troop;
 import cards.utils.MovementSpeedEnum;
@@ -7,8 +7,7 @@ import user.User;
 
 import java.util.UUID;
 
-public class Wizard extends Troop {
-
+public class MiniPekka extends Troop {
     /**
      * Instantiates a new Card.
      *
@@ -18,7 +17,7 @@ public class Wizard extends Troop {
      * @param HP       the hp
      * @param damage   the damage
      */
-    public Wizard(UUID id, User owner, Position position, int HP, int damage) {
-        super(id, 5, owner, position, HP, damage, MovementSpeedEnum.MEDIUM, true, 5, 1.7);
+    public MiniPekka(UUID id, User owner, Position position, int HP, int damage) {
+        super(id, 4, owner, position, HP, damage, MovementSpeedEnum.FAST, false, 1, 1.8);
     }
 }
