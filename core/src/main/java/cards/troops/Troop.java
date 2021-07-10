@@ -30,7 +30,7 @@ public abstract class Troop extends Card implements AttackAble {
                  MovementSpeedEnum movementSpeed,
                  int areaSplash,
                  int range,
-                 int hitSpeed) {
+                 double hitSpeed) {
         this.HP = HP;
         this.damage = damage;
         this.movementSpeed = movementSpeed;
