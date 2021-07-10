@@ -3,7 +3,6 @@ package cards.troops;
 import cards.Card;
 import cards.utils.AttackAble;
 import cards.utils.MovementSpeedEnum;
-import cards.utils.TargetTypeEnum;
 
 /**
  * The abstract type Troop.
@@ -14,7 +13,6 @@ public abstract class Troop extends Card implements AttackAble {
     private final int areaSplash;
     private final int range;
     private final AttackAble attackTarget;
-    private final TargetTypeEnum targetType;
 
     private int HP;
 
@@ -27,21 +25,18 @@ public abstract class Troop extends Card implements AttackAble {
      * @param areaSplash    the area splash
      * @param range         the range
      * @param attackTarget  the attack target
-     * @param targetType    the target type
      */
     public Troop(int HP,
                  int damage,
                  MovementSpeedEnum movementSpeed,
                  int areaSplash, int range,
-                 AttackAble attackTarget,
-                 TargetTypeEnum targetType) {
+                 AttackAble attackTarget) {
         this.HP = HP;
         this.damage = damage;
         this.movementSpeed = movementSpeed;
         this.areaSplash = areaSplash;
         this.range = range;
         this.attackTarget = attackTarget;
-        this.targetType = targetType;
     }
 
     /**
@@ -103,9 +98,6 @@ public abstract class Troop extends Card implements AttackAble {
      *
      * @return the target type
      */
-    public TargetTypeEnum getTargetType() {
-        return targetType;
-    }
 
     /**
      * Reduce health by.
