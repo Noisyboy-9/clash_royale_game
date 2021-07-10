@@ -10,4 +10,11 @@ public interface AttackAble {
      * @param damage the damage
      */
     void reduceHealthBy(int damage);
+
+    /**
+     * get the type of the attacker itself.
+     *
+     * @return the self type
+     */
+    TroopTypeEnum getSelfType();
 }
