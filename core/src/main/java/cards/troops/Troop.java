@@ -19,13 +19,14 @@ public abstract class Troop extends Card implements AttackAble {
     /**
      * Instantiates a new Troop.
      *
+     * @param cost          the cost
      * @param HP            the hp
      * @param damage        the damage
      * @param movementSpeed the movement speed
      * @param areaSplash    the area splash
      * @param range         the range
      */
-    public Troop(int HP,
+    public Troop(int cost, int HP,
                  int damage,
                  MovementSpeedEnum movementSpeed,
                  int areaSplash,

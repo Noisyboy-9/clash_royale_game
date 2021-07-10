@@ -14,6 +14,6 @@ public class Archer extends Troop {
      * @param damage the damage
      */
     public Archer(int HP, int damage) {
-        super(HP, damage, MovementSpeedEnum.FAST, 1, 1, 1.2);
+        super(cost, HP, damage, MovementSpeedEnum.FAST, 1, 1, 1.2);
     }
 }

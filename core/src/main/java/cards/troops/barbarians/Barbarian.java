@@ -14,6 +14,6 @@ public class Barbarian extends Troop {
      * @param damage the damage
      */
     public Barbarian(int HP, int damage) {
-        super(HP, damage, MovementSpeedEnum.MEDIUM, 1, 1, 1.5);
+        super(cost, HP, damage, MovementSpeedEnum.MEDIUM, 1, 1, 1.5);
     }
 }
