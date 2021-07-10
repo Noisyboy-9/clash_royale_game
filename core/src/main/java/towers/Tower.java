@@ -133,6 +133,6 @@ public abstract class Tower {
      * Shoot the target and reduce it's health
      */
     public void shoot() {
-        this.target.reduceHealth(this.damage);
+        this.target.reduceHealthBy(this.damage);
     }
 }
