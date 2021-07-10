@@ -12,6 +12,7 @@ public abstract class Troop extends Card implements AttackAble {
     private final MovementSpeedEnum movementSpeed;
     private final int areaSplash;
     private final int range;
+    private final int hitSpeed;
     private AttackAble attackTarget;
     private int HP;
 
@@ -28,12 +29,23 @@ public abstract class Troop extends Card implements AttackAble {
                  int damage,
                  MovementSpeedEnum movementSpeed,
                  int areaSplash,
-                 int range) {
+                 int range,
+                 int hitSpeed) {
         this.HP = HP;
         this.damage = damage;
         this.movementSpeed = movementSpeed;
         this.areaSplash = areaSplash;
         this.range = range;
+        this.hitSpeed = hitSpeed;
+    }
+
+    /**
+     * Gets hit speed.
+     *
+     * @return the hit speed
+     */
+    public int getHitSpeed() {
+        return hitSpeed;
     }
 
     @Override
