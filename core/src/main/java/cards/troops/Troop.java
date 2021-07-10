@@ -12,7 +12,7 @@ public abstract class Troop extends Card implements AttackAble {
     private final MovementSpeedEnum movementSpeed;
     private final int areaSplash;
     private final int range;
-    private final int hitSpeed;
+    private final double hitSpeed;
     private AttackAble attackTarget;
     private int HP;
 
@@ -44,7 +44,7 @@ public abstract class Troop extends Card implements AttackAble {
      *
      * @return the hit speed
      */
-    public int getHitSpeed() {
+    public double getHitSpeed() {
         return hitSpeed;
     }
 
