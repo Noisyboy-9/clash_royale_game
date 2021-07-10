@@ -31,6 +31,7 @@ public class Wizard extends Troop {
                 5,
                 1.7,
                 TroopTypeEnum.GROUND,
-                TroopTypeEnum.GROUND);
+                TroopTypeEnum.AIR_GROUND
+        );
     }
 }
