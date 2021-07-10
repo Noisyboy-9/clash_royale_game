@@ -3,6 +3,7 @@ package cards.troops.wizards;
 import cards.troops.Troop;
 import cards.utils.MovementSpeedEnum;
 import cards.utils.Position;
+import cards.utils.TroopTypeEnum;
 import user.User;
 
 import java.util.UUID;
@@ -19,6 +20,17 @@ public class Wizard extends Troop {
      * @param damage   the damage
      */
     public Wizard(UUID id, User owner, Position position, int HP, int damage) {
-        super(id, 5, owner, position, HP, damage, MovementSpeedEnum.MEDIUM, true, 5, 1.7);
+        super(id,
+                5,
+                owner,
+                position,
+                HP,
+                damage,
+                MovementSpeedEnum.MEDIUM,
+                true,
+                5,
+                1.7,
+                TroopTypeEnum.GROUND,
+                TroopTypeEnum.GROUND);
     }
 }
