@@ -14,7 +14,7 @@ import java.util.UUID;
 public abstract class Troop extends Card implements AttackAble {
     private final int damage;
     private final MovementSpeedEnum movementSpeed;
-    private final int areaSplash;
+    private final boolean areaSplash;
     private final int range;
     private final double hitSpeed;
     private AttackAble attackTarget;
@@ -41,7 +41,7 @@ public abstract class Troop extends Card implements AttackAble {
                  int HP,
                  int damage,
                  MovementSpeedEnum speed,
-                 int areaSplash,
+                 boolean areaSplash,
                  int range,
                  double hitSpeed) {
         super(id, cost, owner, position);
@@ -99,7 +99,7 @@ public abstract class Troop extends Card implements AttackAble {
      *
      * @return the area splash
      */
-    public int getAreaSplash() {
+    public boolean isAreaSplash() {
         return areaSplash;
     }
 

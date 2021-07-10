@@ -1,4 +1,4 @@
-package cards.troops.barbarians;
+package cards.troops.dragons;
 
 import cards.troops.Troop;
 import cards.utils.MovementSpeedEnum;
@@ -7,12 +7,10 @@ import user.User;
 
 import java.util.UUID;
 
-/**
- * The type Barbarian.
- */
-public class Barbarian extends Troop {
+public class BabyDragon extends Troop {
+
     /**
-     * Instantiates a new Barbarian.
+     * Instantiates a new Card.
      *
      * @param id       the id
      * @param owner    the owner
@@ -20,7 +18,7 @@ public class Barbarian extends Troop {
      * @param HP       the hp
      * @param damage   the damage
      */
-    public Barbarian(UUID id, User owner, Position position, int HP, int damage) {
-        super(id, 5, owner, position, HP, damage, MovementSpeedEnum.MEDIUM, false, 1, 1.5);
+    public BabyDragon(UUID id, User owner, Position position, int HP, int damage) {
+        super(id, 4, owner, position, HP, damage, MovementSpeedEnum.FAST, true, 3, 1.8);
     }
 }
