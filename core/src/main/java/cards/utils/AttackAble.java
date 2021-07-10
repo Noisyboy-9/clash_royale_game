@@ -1,5 +1,13 @@
 package cards.utils;
 
+/**
+ * The interface Attack able.
+ */
 public interface AttackAble {
-    void reduceHealth(int damage);
+    /**
+     * Reduce health by.
+     *
+     * @param damage the damage
+     */
+    void reduceHealthBy(int damage);
 }

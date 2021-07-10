@@ -12,8 +12,7 @@ public abstract class Troop extends Card implements AttackAble {
     private final MovementSpeedEnum movementSpeed;
     private final int areaSplash;
     private final int range;
-    private final AttackAble attackTarget;
-
+    private AttackAble attackTarget;
     private int HP;
 
     /**
@@ -24,19 +23,22 @@ public abstract class Troop extends Card implements AttackAble {
      * @param movementSpeed the movement speed
      * @param areaSplash    the area splash
      * @param range         the range
-     * @param attackTarget  the attack target
      */
     public Troop(int HP,
                  int damage,
                  MovementSpeedEnum movementSpeed,
-                 int areaSplash, int range,
-                 AttackAble attackTarget) {
+                 int areaSplash,
+                 int range) {
         this.HP = HP;
         this.damage = damage;
         this.movementSpeed = movementSpeed;
         this.areaSplash = areaSplash;
         this.range = range;
-        this.attackTarget = attackTarget;
+    }
+
+    @Override
+    public void reduceHealthBy(int damage) {
+        this.HP -= damage;
     }
 
     /**
@@ -94,18 +96,12 @@ public abstract class Troop extends Card implements AttackAble {
     }
 
     /**
-     * Gets target type.
+     * Sets attack target.
      *
-     * @return the target type
+     * @param attackTarget the attack target
      */
-
-    /**
-     * Reduce health by.
-     *
-     * @param amount the amount
-     */
-    public void reduceHealthBy(int amount) {
-        this.HP -= amount;
+    public void setAttackTarget(AttackAble attackTarget) {
+        this.attackTarget = attackTarget;
     }
 
     /**
@@ -121,6 +117,6 @@ public abstract class Troop extends Card implements AttackAble {
      * Attack the selected attack target.
      */
     public void attack() {
-        this.attackTarget.reduceHealth(this.damage);
+        this.attackTarget.reduceHealthBy(this.damage);
     }
 }
