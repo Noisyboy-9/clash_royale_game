@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="Maven: org.openjfx:javafx-media:win:16">
+  <library name="Maven: org.openjfx:javafx-media:mac:16">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-media/16/javafx-media-16-win.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-media/16/javafx-media-16-mac.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-media/16/javafx-media-16-javadoc.jar!/" />

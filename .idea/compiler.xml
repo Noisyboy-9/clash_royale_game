@@ -8,11 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="client" />
         <module name="server" />
+        <module name="core" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="clash_royal" target="16" />
       <module name="client" target="16" />
+      <module name="core" target="16" />
       <module name="server" target="16" />
     </bytecodeTargetLevel>
   </component>
