@@ -21,18 +21,14 @@ public class FireBall extends Spell {
      * Instantiates a new Fire ball.
      *
      * @param id           the id
-     * @param cost         the cost
      * @param owner        the owner
      * @param position     the position
-     * @param radius       the radius
      * @param targetTowers the target towers
      * @param targetTroops the target troops
      */
     public FireBall(UUID id,
-                    int cost,
                     User owner,
                     Position position,
-                    int radius,
                     ArrayList<Tower> targetTowers,
                     ArrayList<Troop> targetTroops) {
         super(id, 4, owner, position, 2.5);
