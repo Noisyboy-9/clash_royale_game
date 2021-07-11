@@ -2,21 +2,24 @@ package towers;
 
 
 import cards.utils.AttackAble;
-import user.*;
+import cards.utils.TroopTypeEnum;
+import user.UserLevelEnum;
 
 import java.util.UUID;
 
 /**
  * The type Tower.
  */
-public abstract class Tower {
-    protected boolean active;
+public abstract class Tower implements AttackAble {
     private final UUID id;
-    private final int HP;
     private final int damage;
     private final UserLevelEnum ownerLevel;
     private final int demolitionBonusCount;
+    private final TroopTypeEnum selfType;
+    private final TroopTypeEnum attackType;
+    private boolean active;
     private AttackAble target;
+    private int HP;
 
     /**
      * Instantiates a new Tower.
@@ -43,6 +46,9 @@ public abstract class Tower {
         this.demolitionBonusCount = demolitionBonusCount;
         this.active = active;
         this.target = target;
+
+        this.selfType = TroopTypeEnum.GROUND;
+        this.attackType = TroopTypeEnum.AIR_GROUND;
     }
 
     /**
@@ -126,6 +132,9 @@ public abstract class Tower {
         this.active = true;
     }
 
+    /**
+     * De active.
+     */
     public void deActive() {
         this.active = false;
     }
@@ -135,5 +144,24 @@ public abstract class Tower {
      */
     public void shoot() {
         this.target.reduceHealthBy(this.damage);
+    }
+
+    @Override
+    public void reduceHealthBy(int damage) {
+        this.HP -= damage;
+    }
+
+    @Override
+    public TroopTypeEnum getSelfType() {
+        return this.selfType;
+    }
+
+    /**
+     * Gets attack type.
+     *
+     * @return the attack type
+     */
+    public TroopTypeEnum getAttackType() {
+        return attackType;
     }
 }
