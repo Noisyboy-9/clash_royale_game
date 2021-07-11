@@ -54,6 +54,15 @@ public abstract class Tower implements AttackAble {
     }
 
     /**
+     * Gets attack speed.
+     *
+     * @return the attack speed
+     */
+    public double getAttackSpeed() {
+        return attackSpeed;
+    }
+
+    /**
      * Sets attack speed.
      *
      * @param attackSpeed the attack speed
