@@ -17,6 +17,15 @@ public class Arrows extends Spell {
     private final ArrayList<Tower> targetTowers;
     private final ArrayList<Troop> targetTroops;
 
+    /**
+     * Instantiates a new Arrows.
+     *
+     * @param id           the id
+     * @param owner        the owner
+     * @param position     the position
+     * @param targetTowers the target towers
+     * @param targetTroops the target troops
+     */
     public Arrows(UUID id,
                   User owner,
                   Position position,

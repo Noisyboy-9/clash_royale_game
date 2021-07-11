@@ -8,6 +8,9 @@ import user.User;
 
 import java.util.UUID;
 
+/**
+ * The type Mini pekka.
+ */
 public class MiniPekka extends Troop {
     /**
      * Instantiates a new Card.

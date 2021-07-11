@@ -8,6 +8,9 @@ import user.User;
 
 import java.util.UUID;
 
+/**
+ * The type Baby dragon.
+ */
 public class BabyDragon extends Troop {
 
     /**

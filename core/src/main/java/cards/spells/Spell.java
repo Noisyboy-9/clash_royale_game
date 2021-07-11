@@ -14,7 +14,8 @@ public abstract class Spell extends Card {
 
     /**
      * Instantiates a new Card.
-     *  @param id       the id
+     *
+     * @param id       the id
      * @param cost     the cost
      * @param owner    the owner
      * @param position the position

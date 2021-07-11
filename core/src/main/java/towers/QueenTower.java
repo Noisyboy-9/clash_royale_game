@@ -5,16 +5,19 @@ import user.UserLevelEnum;
 
 import java.util.UUID;
 
+/**
+ * The type Queen tower.
+ */
 public class QueenTower extends Tower {
 
     /**
      * Instantiates a new Tower.
      *
-     * @param id                   the id
-     * @param HP                   the hp
-     * @param damage               the damage
-     * @param ownerLevel           the owner level
-     * @param target               the target
+     * @param id         the id
+     * @param HP         the hp
+     * @param damage     the damage
+     * @param ownerLevel the owner level
+     * @param target     the target
      */
     public QueenTower(UUID id,
                       int HP,

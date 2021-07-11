@@ -8,6 +8,9 @@ import user.User;
 
 import java.util.UUID;
 
+/**
+ * The type Wizard.
+ */
 public class Wizard extends Troop {
 
     /**

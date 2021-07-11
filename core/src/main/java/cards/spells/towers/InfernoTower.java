@@ -68,6 +68,11 @@ public class InfernoTower extends Spell implements AttackAble {
         this.targets.forEach(target -> target.reduceHealthBy(this.damage));
     }
 
+    /**
+     * Gets hp.
+     *
+     * @return the hp
+     */
     public int getHP() {
         return HP;
     }
