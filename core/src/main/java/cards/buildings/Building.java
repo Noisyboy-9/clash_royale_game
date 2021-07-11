@@ -170,4 +170,11 @@ public abstract class Building extends Card implements AttackAble {
      * Do main action that the building shoot do
      */
     public abstract void attack();
+
+    /**
+     * Add target to the list of targets.
+     *
+     * @param target the target
+     */
+    public abstract void addTarget(AttackAble target);
 }

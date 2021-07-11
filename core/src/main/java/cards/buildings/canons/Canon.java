@@ -43,11 +43,7 @@ public class Canon extends Building {
     }
 
 
-    /**
-     * Add target.
-     *
-     * @param target the target
-     */
+    @Override
     public void addTarget(AttackAble target) {
         if (!this.targets.contains(target)) {
             this.targets.add(target);
