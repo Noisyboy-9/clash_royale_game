@@ -14,10 +14,9 @@ import java.util.UUID;
 public abstract class Building extends Card implements AttackAble {
     private final TypeEnum selfType;
     private final TypeEnum attackType;
-    private final int radius;
+    private final double radius;
     private final double duration;
-    private final AttackAble target;
-
+    private AttackAble target;
     private int HP;
     private double damage;
     private double hitSpeed;
@@ -34,7 +33,6 @@ public abstract class Building extends Card implements AttackAble {
      * @param damage     the damage
      * @param hitSpeed   the hit speed
      * @param duration   the duration
-     * @param target     the target
      * @param selfType   the self type
      * @param attackType the attack type
      */
@@ -43,11 +41,10 @@ public abstract class Building extends Card implements AttackAble {
                     User owner,
                     Position position,
                     int HP,
-                    int radius,
+                    double radius,
                     double damage,
                     double hitSpeed,
                     double duration,
-                    AttackAble target,
                     TypeEnum selfType,
                     TypeEnum attackType) {
         super(id, cost, owner, position);
@@ -56,7 +53,6 @@ public abstract class Building extends Card implements AttackAble {
         this.damage = damage;
         this.hitSpeed = hitSpeed;
         this.duration = duration;
-        this.target = target;
         this.selfType = selfType;
         this.attackType = attackType;
     }
@@ -85,7 +81,7 @@ public abstract class Building extends Card implements AttackAble {
      *
      * @return the radius
      */
-    public int getRadius() {
+    public double getRadius() {
         return radius;
     }
 
@@ -126,6 +122,15 @@ public abstract class Building extends Card implements AttackAble {
     }
 
     /**
+     * Sets target.
+     *
+     * @param target the target
+     */
+    public void setTarget(AttackAble target) {
+        this.target = target;
+    }
+
+    /**
      * Gets damage.
      *
      * @return the damage
@@ -160,4 +165,9 @@ public abstract class Building extends Card implements AttackAble {
     public void setHP(int HP) {
         this.HP = HP;
     }
+
+    /**
+     * Do main action that the building shoot do
+     */
+    public abstract void attack();
 }

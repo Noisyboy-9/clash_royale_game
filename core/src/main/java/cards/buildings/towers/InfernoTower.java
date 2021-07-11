@@ -1,4 +1,4 @@
-package cards.spells.towers;
+package cards.buildings.towers;
 
 import cards.spells.Spell;
 import cards.utils.AttackAble;
