@@ -16,5 +16,5 @@ public interface AttackAble {
      *
      * @return the self type
      */
-    TroopTypeEnum getSelfType();
+    TypeEnum getSelfType();
 }

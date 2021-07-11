@@ -3,7 +3,7 @@ package cards.troops.dragons;
 import cards.troops.Troop;
 import cards.utils.MovementSpeedEnum;
 import cards.utils.Position;
-import cards.utils.TroopTypeEnum;
+import cards.utils.TypeEnum;
 import user.User;
 
 import java.util.UUID;
@@ -30,8 +30,8 @@ public class BabyDragon extends Troop {
                 true,
                 3,
                 1.8,
-                TroopTypeEnum.AIR,
-                TroopTypeEnum.AIR_GROUND
+                TypeEnum.AIR,
+                TypeEnum.AIR_GROUND
         );
     }
 }

@@ -4,7 +4,7 @@ import cards.Card;
 import cards.utils.AttackAble;
 import cards.utils.MovementSpeedEnum;
 import cards.utils.Position;
-import cards.utils.TroopTypeEnum;
+import cards.utils.TypeEnum;
 import exceptions.InvalidAttackTargetException;
 import user.User;
 
@@ -19,8 +19,8 @@ public abstract class Troop extends Card implements AttackAble {
     private final boolean areaSplash;
     private final int range;
     private final double hitSpeed;
-    private final TroopTypeEnum selfType;
-    private final TroopTypeEnum attackType;
+    private final TypeEnum selfType;
+    private final TypeEnum attackType;
     private AttackAble attackTarget;
     private int HP;
 
@@ -50,8 +50,8 @@ public abstract class Troop extends Card implements AttackAble {
                  boolean areaSplash,
                  int range,
                  double hitSpeed,
-                 TroopTypeEnum selfType,
-                 TroopTypeEnum attackType) {
+                 TypeEnum selfType,
+                 TypeEnum attackType) {
         super(id, cost, owner, position);
         this.HP = HP;
         this.damage = damage;
@@ -83,12 +83,12 @@ public abstract class Troop extends Card implements AttackAble {
      *
      * @return the attack type
      */
-    public TroopTypeEnum getAttackType() {
+    public TypeEnum getAttackType() {
         return this.attackType;
     }
 
     @Override
-    public TroopTypeEnum getSelfType() {
+    public TypeEnum getSelfType() {
         return this.selfType;
     }
 

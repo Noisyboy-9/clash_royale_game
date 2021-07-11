@@ -3,7 +3,7 @@ package cards.troops.wizards;
 import cards.troops.Troop;
 import cards.utils.MovementSpeedEnum;
 import cards.utils.Position;
-import cards.utils.TroopTypeEnum;
+import cards.utils.TypeEnum;
 import user.User;
 
 import java.util.UUID;
@@ -30,8 +30,8 @@ public class Wizard extends Troop {
                 true,
                 5,
                 1.7,
-                TroopTypeEnum.GROUND,
-                TroopTypeEnum.AIR_GROUND
+                TypeEnum.GROUND,
+                TypeEnum.AIR_GROUND
         );
     }
 }

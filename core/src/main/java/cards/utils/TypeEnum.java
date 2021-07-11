@@ -1,6 +1,6 @@
 package cards.utils;
 
-public enum TroopTypeEnum {
+public enum TypeEnum {
     AIR,
     GROUND,
     AIR_GROUND

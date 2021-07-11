@@ -3,7 +3,7 @@ package cards.troops.archers;
 import cards.troops.Troop;
 import cards.utils.MovementSpeedEnum;
 import cards.utils.Position;
-import cards.utils.TroopTypeEnum;
+import cards.utils.TypeEnum;
 import user.User;
 
 import java.util.UUID;
@@ -32,8 +32,8 @@ public class Archer extends Troop {
                 false,
                 5,
                 1.2,
-                TroopTypeEnum.GROUND,
-                TroopTypeEnum.AIR_GROUND
+                TypeEnum.GROUND,
+                TypeEnum.AIR_GROUND
         );
     }
 }
