@@ -15,6 +15,16 @@ import java.util.UUID;
 public class InfernoTower extends Building {
     private final ArrayList<AttackAble> targets;
 
+    /**
+     * Instantiates a new Inferno tower.
+     *
+     * @param id       the id
+     * @param cost     the cost
+     * @param owner    the owner
+     * @param position the position
+     * @param HP       the hp
+     * @param damage   the damage
+     */
     public InfernoTower(UUID id,
                         int cost,
                         User owner,
