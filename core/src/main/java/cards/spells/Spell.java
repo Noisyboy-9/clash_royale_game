@@ -39,4 +39,9 @@ public abstract class Spell extends Card {
      * let the spell do the thing that it must do.
      */
     public abstract void chant();
+
+    /**
+     * cancel the process that the spell has done.
+     */
+    public abstract void unChant();
 }

@@ -19,10 +19,10 @@ public abstract class Troop extends Card implements AttackAble {
     private final int range;
     private final TypeEnum selfType;
     private final TypeEnum attackType;
-    private int damage;
+    private double damage;
     private double hitSpeed;
     private AttackAble attackTarget;
-    private int HP;
+    private double HP;
 
     /**
      * Instantiates a new Card.
@@ -45,7 +45,7 @@ public abstract class Troop extends Card implements AttackAble {
                  User owner,
                  Position position,
                  int HP,
-                 int damage,
+                 double damage,
                  MovementSpeedEnum speed,
                  boolean areaSplash,
                  int range,
@@ -82,7 +82,7 @@ public abstract class Troop extends Card implements AttackAble {
     }
 
     @Override
-    public void reduceHealthBy(int damage) {
+    public void reduceHealthBy(double damage) {
         this.HP -= damage;
     }
 
@@ -105,7 +105,7 @@ public abstract class Troop extends Card implements AttackAble {
      *
      * @return the hp
      */
-    public int getHP() {
+    public double getHP() {
         return HP;
     }
 
@@ -114,7 +114,7 @@ public abstract class Troop extends Card implements AttackAble {
      *
      * @return the damage
      */
-    public int getDamage() {
+    public double getDamage() {
         return damage;
     }
 
@@ -123,7 +123,7 @@ public abstract class Troop extends Card implements AttackAble {
      *
      * @param damage the damage
      */
-    public void setDamage(int damage) {
+    public void setDamage(double damage) {
         this.damage = damage;
     }
 

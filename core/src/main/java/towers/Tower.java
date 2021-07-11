@@ -19,8 +19,8 @@ public abstract class Tower implements AttackAble {
     private int damage;
     private boolean active;
     private AttackAble target;
-    private int HP;
-    private double attackSpeed;
+    private double HP;
+    private double hitSpeed;
 
     /**
      * Instantiates a new Tower.
@@ -50,7 +50,7 @@ public abstract class Tower implements AttackAble {
 
         this.selfType = TypeEnum.GROUND;
         this.attackType = TypeEnum.AIR_GROUND;
-        this.attackSpeed = 1;
+        this.hitSpeed = 1;
     }
 
     /**
@@ -58,8 +58,8 @@ public abstract class Tower implements AttackAble {
      *
      * @return the attack speed
      */
-    public double getAttackSpeed() {
-        return attackSpeed;
+    public double getHitSpeed() {
+        return hitSpeed;
     }
 
     /**
@@ -67,8 +67,8 @@ public abstract class Tower implements AttackAble {
      *
      * @param attackSpeed the attack speed
      */
-    public void setAttackSpeed(double attackSpeed) {
-        this.attackSpeed = attackSpeed;
+    public void setHitSpeed(double attackSpeed) {
+        this.hitSpeed = attackSpeed;
     }
 
     /**
@@ -76,7 +76,7 @@ public abstract class Tower implements AttackAble {
      *
      * @return the hp
      */
-    public int getHP() {
+    public double getHP() {
         return HP;
     }
 
@@ -176,7 +176,7 @@ public abstract class Tower implements AttackAble {
     }
 
     @Override
-    public void reduceHealthBy(int damage) {
+    public void reduceHealthBy(double damage) {
         this.HP -= damage;
     }
 
