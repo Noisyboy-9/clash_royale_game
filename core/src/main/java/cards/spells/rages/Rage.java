@@ -51,7 +51,9 @@ public class Rage extends Spell {
         ));
     }
 
-    @Override
+    /**
+     * remove the effect of the spell
+     */
     public void unChant() {
         this.targetTowers.forEach(tower -> tower.setHitSpeed(
                 (5 * tower.getHitSpeed()) / 7 // change hit tower speed to normal value

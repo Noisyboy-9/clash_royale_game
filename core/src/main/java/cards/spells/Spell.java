@@ -10,18 +10,17 @@ import java.util.UUID;
  * The type Spell.
  */
 public abstract class Spell extends Card {
-    private final int radius;
+    private final double radius;
 
     /**
      * Instantiates a new Card.
-     *
-     * @param id       the id
+     *  @param id       the id
      * @param cost     the cost
      * @param owner    the owner
      * @param position the position
      * @param radius   the radius
      */
-    public Spell(UUID id, int cost, User owner, Position position, int radius) {
+    public Spell(UUID id, int cost, User owner, Position position, double radius) {
         super(id, cost, owner, position);
         this.radius = radius;
     }
@@ -31,7 +30,7 @@ public abstract class Spell extends Card {
      *
      * @return the radius
      */
-    public int getRadius() {
+    public double getRadius() {
         return radius;
     }
 
@@ -40,8 +39,4 @@ public abstract class Spell extends Card {
      */
     public abstract void chant();
 
-    /**
-     * cancel the process that the spell has done.
-     */
-    public abstract void unChant();
 }
