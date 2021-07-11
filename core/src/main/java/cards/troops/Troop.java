@@ -14,13 +14,13 @@ import java.util.UUID;
  * The abstract type Troop.
  */
 public abstract class Troop extends Card implements AttackAble {
-    private final int damage;
     private final MovementSpeedEnum movementSpeed;
     private final boolean areaSplash;
     private final int range;
-    private final double hitSpeed;
     private final TypeEnum selfType;
     private final TypeEnum attackType;
+    private int damage;
+    private double hitSpeed;
     private AttackAble attackTarget;
     private int HP;
 
@@ -72,11 +72,19 @@ public abstract class Troop extends Card implements AttackAble {
         return hitSpeed;
     }
 
+    /**
+     * Sets hit speed.
+     *
+     * @param hitSpeed the hit speed
+     */
+    public void setHitSpeed(double hitSpeed) {
+        this.hitSpeed = hitSpeed;
+    }
+
     @Override
     public void reduceHealthBy(int damage) {
         this.HP -= damage;
     }
-
 
     /**
      * Gets attack type.
@@ -108,6 +116,15 @@ public abstract class Troop extends Card implements AttackAble {
      */
     public int getDamage() {
         return damage;
+    }
+
+    /**
+     * Sets damage.
+     *
+     * @param damage the damage
+     */
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 
     /**
@@ -150,6 +167,7 @@ public abstract class Troop extends Card implements AttackAble {
      * Sets attack target.
      *
      * @param attackTarget the attack target
+     * @throws InvalidAttackTargetException the invalid attack target exception
      */
     public void setAttackTarget(AttackAble attackTarget) throws InvalidAttackTargetException {
         if (attackTarget.getSelfType() != this.getAttackType()) {
