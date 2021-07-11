@@ -12,14 +12,15 @@ import java.util.UUID;
  */
 public abstract class Tower implements AttackAble {
     private final UUID id;
-    private final int damage;
     private final UserLevelEnum ownerLevel;
     private final int demolitionBonusCount;
     private final TypeEnum selfType;
     private final TypeEnum attackType;
+    private int damage;
     private boolean active;
     private AttackAble target;
     private int HP;
+    private double attackSpeed;
 
     /**
      * Instantiates a new Tower.
@@ -49,6 +50,16 @@ public abstract class Tower implements AttackAble {
 
         this.selfType = TypeEnum.GROUND;
         this.attackType = TypeEnum.AIR_GROUND;
+        this.attackSpeed = 1;
+    }
+
+    /**
+     * Sets attack speed.
+     *
+     * @param attackSpeed the attack speed
+     */
+    public void setAttackSpeed(double attackSpeed) {
+        this.attackSpeed = attackSpeed;
     }
 
     /**
@@ -67,6 +78,15 @@ public abstract class Tower implements AttackAble {
      */
     public int getDamage() {
         return damage;
+    }
+
+    /**
+     * Sets damage.
+     *
+     * @param damage the damage
+     */
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 
     /**
