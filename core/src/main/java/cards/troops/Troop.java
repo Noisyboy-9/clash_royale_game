@@ -1,11 +1,11 @@
 package cards.troops;
 
 import cards.Card;
-import cards.exceptions.InvalidAttackTargetException;
 import cards.utils.AttackAble;
 import cards.utils.MovementSpeedEnum;
 import cards.utils.Position;
 import cards.utils.TroopTypeEnum;
+import exceptions.InvalidAttackTargetException;
 import user.User;
 
 import java.util.UUID;
