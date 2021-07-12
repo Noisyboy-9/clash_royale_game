@@ -221,6 +221,116 @@
                   <Image url="@../../../resources/photos/cup_field2.png" />
                </image>
             </ImageView>
+            <Text fill="WHITE" layoutX="228.0" layoutY="219.0" stroke="BLACK" strokeType="OUTSIDE" text="0">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="282.0" layoutY="219.0" stroke="BLACK" strokeType="OUTSIDE" text="3">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="230.0" layoutY="508.0" stroke="BLACK" strokeType="OUTSIDE" text="0">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="284.0" layoutY="508.0" stroke="BLACK" strokeType="OUTSIDE" text="3">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#137ce7" layoutX="45.0" layoutY="299.0" stroke="#137ce7" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="173.638671875">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#137ce7" layoutX="45.0" layoutY="358.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="173.638671875">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#df1d7e" layoutX="310.0" layoutY="299.0" stroke="#df1d7e" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" textAlignment="RIGHT" wrappingWidth="173.638671875">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#df1d7e" layoutX="311.0" layoutY="358.0" stroke="#df1d7e" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" textAlignment="RIGHT" wrappingWidth="173.638671875">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#137ce7" layoutX="44.0" layoutY="584.0" stroke="#137ce7" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="173.638671875">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#137ce7" layoutX="44.0" layoutY="643.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="173.638671875">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#df1d7e" layoutX="309.0" layoutY="584.0" stroke="#df1d7e" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" textAlignment="RIGHT" wrappingWidth="173.638671875">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#df1d7e" layoutX="310.0" layoutY="643.0" stroke="#df1d7e" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" textAlignment="RIGHT" wrappingWidth="173.638671875">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="94.0" layoutY="327.0" stroke="BLACK" strokeType="OUTSIDE" text="2000">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="9.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="404.0" layoutY="327.0" stroke="BLACK" strokeType="OUTSIDE" text="2000">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="9.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="94.0" layoutY="385.0" stroke="BLACK" strokeType="OUTSIDE" text="2000" wrappingWidth="33.2314453125">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="9.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="404.0" layoutY="385.0" stroke="BLACK" strokeType="OUTSIDE" text="2000">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="9.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="92.0" layoutY="612.0" stroke="BLACK" strokeType="OUTSIDE" text="2000">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="9.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="402.0" layoutY="612.0" stroke="BLACK" strokeType="OUTSIDE" text="2000">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="9.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="92.0" layoutY="670.0" stroke="BLACK" strokeType="OUTSIDE" text="2000" wrappingWidth="33.2314453125">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="9.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="402.0" layoutY="670.0" stroke="BLACK" strokeType="OUTSIDE" text="2000">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="9.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="45.0" layoutY="436.0" stroke="BLACK" strokeType="OUTSIDE" text="+30" wrappingWidth="56.9140625">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="42.0" layoutY="725.0" stroke="BLACK" strokeType="OUTSIDE" text="+30" wrappingWidth="56.9140625">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="16.0" />
+               </font>
+            </Text>
             </children>
         </AnchorPane>
     </children>
