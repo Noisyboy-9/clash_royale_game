@@ -1,4 +1,4 @@
-package commands.Authentication;
+package commands.authenicationCommands;
 
 /**
  * The type Authentication command.

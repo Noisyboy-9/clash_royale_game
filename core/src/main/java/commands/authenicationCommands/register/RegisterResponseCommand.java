@@ -1,4 +1,4 @@
-package commands.Authentication.register;
+package commands.authenicationCommands.register;
 
 /**
  * The type Register response command.

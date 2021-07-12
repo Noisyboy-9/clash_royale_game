@@ -1,6 +1,6 @@
-package commands.Authentication.register;
+package commands.authenicationCommands.register;
 
-import commands.Authentication.AuthenticationCommand;
+import commands.authenicationCommands.AuthenticationCommand;
 
 /**
  * The type Register command.

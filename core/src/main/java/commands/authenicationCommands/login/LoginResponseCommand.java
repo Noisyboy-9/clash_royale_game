@@ -1,4 +1,4 @@
-package commands.Authentication.login;
+package commands.authenicationCommands.login;
 
 /**
  * The type Login response command.

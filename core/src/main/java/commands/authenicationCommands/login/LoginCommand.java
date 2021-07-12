@@ -1,6 +1,6 @@
-package commands.Authentication.login;
+package commands.authenicationCommands.login;
 
-import commands.Authentication.AuthenticationCommand;
+import commands.authenicationCommands.AuthenticationCommand;
 
 /**
  * The type Login command.
