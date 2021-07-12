@@ -156,6 +156,71 @@
                         </ImageView>
                     </children>
                 </GridPane>
+            <ImageView fitHeight="770.0" fitWidth="498.0" layoutX="15.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/history_template.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="246.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/button_up.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="246.0" layoutY="756.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/button_down.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="101.0" layoutY="413.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/cup_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="101.0" layoutY="702.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/cup_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="63.0" layoutX="70.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/cup_field.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="63.0" layoutX="398.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/cup_field2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="63.0" layoutX="70.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/cup_field.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="63.0" layoutX="398.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/cup_field2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="63.0" layoutX="69.0" layoutY="597.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/cup_field.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="63.0" layoutX="397.0" layoutY="597.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/cup_field2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="63.0" layoutX="69.0" layoutY="654.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/cup_field.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="63.0" layoutX="397.0" layoutY="654.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/cup_field2.png" />
+               </image>
+            </ImageView>
             </children>
         </AnchorPane>
     </children>
