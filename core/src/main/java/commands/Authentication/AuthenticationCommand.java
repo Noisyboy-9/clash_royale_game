@@ -3,6 +3,6 @@ package commands.Authentication;
 /**
  * The type Authentication command.
  */
-public class AuthenticationCommand {
+public abstract class AuthenticationCommand {
 
 }
