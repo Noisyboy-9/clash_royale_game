@@ -1,4 +1,6 @@
 package commands.gameStateCommands.towerCommands;
 
-public abstract class TowerCommand {
+import commands.gameStateCommands.GameStateCommand;
+
+public abstract class TowerCommand extends GameStateCommand {
 }

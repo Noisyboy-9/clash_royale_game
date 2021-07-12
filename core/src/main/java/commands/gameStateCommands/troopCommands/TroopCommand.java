@@ -1,4 +1,6 @@
 package commands.gameStateCommands.troopCommands;
 
-public abstract class TroopCommand {
+import commands.gameStateCommands.GameStateCommand;
+
+public abstract class TroopCommand extends GameStateCommand {
 }

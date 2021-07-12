@@ -1,11 +1,12 @@
 package commands.gameStateCommands.gameTimeCommands;
 
+import commands.gameStateCommands.GameStateCommand;
 import commands.gameStateCommands.enums.GameTypeEnum;
 
 /**
  * The type Game time command.
  */
-public abstract class GameTimeCommand {
+public abstract class GameTimeCommand extends GameStateCommand {
     private final GameTypeEnum gameType;
 
     /**
