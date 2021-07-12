@@ -10,11 +10,11 @@ public class LoginResponseCommand extends LoginCommand {
     /**
      * Instantiates a new Login response command.
      *
-     * @param email    the email
+     * @param username the username
      * @param password the password
      */
-    public LoginResponseCommand(String email, String password) {
-        super(email, password);
+    public LoginResponseCommand(String username, String password) {
+        super(username, password);
     }
 
     /**

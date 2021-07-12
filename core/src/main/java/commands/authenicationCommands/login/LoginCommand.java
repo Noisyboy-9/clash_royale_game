@@ -6,17 +6,17 @@ import commands.authenicationCommands.AuthenticationCommand;
  * The type Login command.
  */
 public class LoginCommand extends AuthenticationCommand {
-    private final String email;
+    private final String username;
     private final String password;
 
     /**
      * Instantiates a new Login command.
      *
-     * @param email    the email
+     * @param username the email
      * @param password the password
      */
-    public LoginCommand(String email, String password) {
-        this.email = email;
+    public LoginCommand(String username, String password) {
+        this.username = username;
         this.password = password;
     }
 
@@ -25,8 +25,8 @@ public class LoginCommand extends AuthenticationCommand {
      *
      * @return the email
      */
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
     /**

@@ -6,17 +6,17 @@ import commands.authenicationCommands.AuthenticationCommand;
  * The type Register command.
  */
 public class RegisterCommand extends AuthenticationCommand {
-    private final String email;
+    private final String username;
     private final String password;
 
     /**
      * Instantiates a new Register command.
      *
-     * @param email    the email
+     * @param username the email
      * @param password the password
      */
-    public RegisterCommand(String email, String password) {
-        this.email = email;
+    public RegisterCommand(String username, String password) {
+        this.username = username;
         this.password = password;
     }
 
@@ -25,8 +25,8 @@ public class RegisterCommand extends AuthenticationCommand {
      *
      * @return the email
      */
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
     /**

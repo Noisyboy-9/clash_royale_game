@@ -10,11 +10,11 @@ public class RegisterResponseCommand extends RegisterCommand {
     /**
      * Instantiates a new Register response command.
      *
-     * @param email    the email
+     * @param username the username
      * @param password the password
      */
-    public RegisterResponseCommand(String email, String password) {
-        super(email, password);
+    public RegisterResponseCommand(String username, String password) {
+        super(username, password);
     }
 
     /**
