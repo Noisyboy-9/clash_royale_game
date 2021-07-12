@@ -1,21 +1,21 @@
-package commands.Authentication.login;
+package commands.Authentication.register;
 
 import commands.Authentication.AuthenticationCommand;
 
 /**
- * The type Login command.
+ * The type Register command.
  */
-public class LoginCommand extends AuthenticationCommand {
+public class RegisterCommand extends AuthenticationCommand {
     private final String email;
     private final String password;
 
     /**
-     * Instantiates a new Login command.
+     * Instantiates a new Register command.
      *
      * @param email    the email
      * @param password the password
      */
-    public LoginCommand(String email, String password) {
+    public RegisterCommand(String email, String password) {
         this.email = email;
         this.password = password;
     }
