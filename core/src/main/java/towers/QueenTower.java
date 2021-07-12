@@ -24,6 +24,6 @@ public class QueenTower extends Tower {
                       int damage,
                       UserLevelEnum ownerLevel,
                       AttackAble target) {
-        super(id, HP, damage, ownerLevel, 1, true, target);
+        super(id, HP, damage, ownerLevel, 1, true, target, 8);
     }
 }

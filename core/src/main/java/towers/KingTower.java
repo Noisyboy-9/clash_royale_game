@@ -24,6 +24,6 @@ public class KingTower extends Tower {
                      int damage,
                      UserLevelEnum ownerLevel,
                      AttackAble target) {
-        super(id, HP, damage, ownerLevel, 3, false, target);
+        super(id, HP, damage, ownerLevel, 3, false, target, 7);
     }
 }

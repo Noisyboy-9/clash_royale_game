@@ -16,6 +16,7 @@ public abstract class Tower implements AttackAble {
     private final int demolitionBonusCount;
     private final TypeEnum selfType;
     private final TypeEnum attackType;
+    private final int range;
     private int damage;
     private boolean active;
     private AttackAble target;
@@ -32,6 +33,7 @@ public abstract class Tower implements AttackAble {
      * @param demolitionBonusCount the demolition bonus count
      * @param active               the active
      * @param target               the target
+     * @param range                the range
      */
     public Tower(UUID id,
                  int HP,
@@ -39,7 +41,8 @@ public abstract class Tower implements AttackAble {
                  UserLevelEnum ownerLevel,
                  int demolitionBonusCount,
                  boolean active,
-                 AttackAble target) {
+                 AttackAble target,
+                 int range) {
         this.id = id;
         this.HP = HP;
         this.damage = damage;
@@ -47,10 +50,20 @@ public abstract class Tower implements AttackAble {
         this.demolitionBonusCount = demolitionBonusCount;
         this.active = active;
         this.target = target;
+        this.range = range;
 
         this.selfType = TypeEnum.GROUND;
         this.attackType = TypeEnum.AIR_GROUND;
         this.hitSpeed = 1;
+    }
+
+    /**
+     * Gets tower range.
+     *
+     * @return the range
+     */
+    public int getRange() {
+        return range;
     }
 
     /**
