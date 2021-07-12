@@ -6,8 +6,6 @@ import java.util.Objects;
  * The User model.
  */
 public class User {
-    private final String firstname;
-    private final String lastname;
     private final String email;
     private final String password;
 
@@ -31,14 +29,10 @@ public class User {
      * Instantiates a new User and sets currentXp to zero
      * and level to level_1
      *
-     * @param firstname the firstname
-     * @param lastname  the lastname
-     * @param email     the email
-     * @param password  the password
+     * @param email    the email
+     * @param password the password
      */
-    public User(String firstname, String lastname, String email, String password) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public User(String email, String password) {
         this.email = email;
         this.password = password;
 
@@ -47,23 +41,6 @@ public class User {
         this.level = UserLevelEnum.LEVEL_1;
     }
 
-    /**
-     * Gets firstname.
-     *
-     * @return the firstname
-     */
-    public String getFirstname() {
-        return firstname;
-    }
-
-    /**
-     * Gets lastname.
-     *
-     * @return the lastname
-     */
-    public String getLastname() {
-        return lastname;
-    }
 
     /**
      * Gets email.
