@@ -32,10 +32,13 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <VBox prefHeight="946.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
   <children>
@@ -46,6 +49,56 @@
                   <Image url="@../../../resources/photos/login_refister_page_background.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="264.0" layoutY="721.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/button_red.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="110.0" layoutY="721.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/button_yellow.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="114.0" layoutY="772.0" stroke="#572700" strokeType="OUTSIDE" strokeWidth="2.0" text="Register" textAlignment="CENTER" wrappingWidth="145.662109375">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="315.0" layoutY="772.0" stroke="#570500" strokeType="OUTSIDE" strokeWidth="2.0" text="Exit">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="18.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="71.0" fitWidth="272.0" layoutX="128.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/text_field2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="71.0" fitWidth="272.0" layoutX="128.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/text_field2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="187.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/photos/button_blue.png" />
+               </image>
+            </ImageView>
+            <TextField blendMode="MULTIPLY" depthTest="DISABLE" layoutX="152.0" layoutY="96.0" prefHeight="42.0" prefWidth="225.0" promptText="Username">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="15.0" />
+               </font>
+            </TextField>
+            <TextField blendMode="MULTIPLY" depthTest="DISABLE" layoutX="152.0" layoutY="180.0" pickOnBounds="false" prefHeight="42.0" prefWidth="225.0" promptText="Password">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="15.0" />
+               </font>
+            </TextField>
+            <Text fill="WHITE" layoutX="191.0" layoutY="334.0" stroke="#043e8a" strokeType="OUTSIDE" strokeWidth="2.0" text="Login" textAlignment="CENTER" wrappingWidth="145.662109375">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="18.0" />
+               </font>
+            </Text>
          </children>
     </AnchorPane>
   </children>
