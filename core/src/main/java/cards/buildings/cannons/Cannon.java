@@ -1,4 +1,4 @@
-package cards.buildings.canons;
+package cards.buildings.cannons;
 
 import cards.buildings.Building;
 import cards.utils.AttackAble;

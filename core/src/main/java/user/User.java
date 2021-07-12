@@ -1,30 +1,39 @@
 package user;
 
+import java.util.Objects;
+
 /**
  * The User model.
  */
 public class User {
-    private final String firstname;
-    private final String lastname;
-    private final String email;
+    private final String username;
     private final String password;
 
     private int currentXp;
     private UserLevelEnum level;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return username.equals(user.username);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username);
+    }
+
     /**
      * Instantiates a new User and sets currentXp to zero
      * and level to level_1
      *
-     * @param firstname the firstname
-     * @param lastname  the lastname
-     * @param email     the email
-     * @param password  the password
+     * @param username the email
+     * @param password the password
      */
-    public User(String firstname, String lastname, String email, String password) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
+    public User(String username, String password) {
+        this.username = username;
         this.password = password;
 
 //        when a user is created it's level is one and it's xp is 0
@@ -32,31 +41,14 @@ public class User {
         this.level = UserLevelEnum.LEVEL_1;
     }
 
-    /**
-     * Gets firstname.
-     *
-     * @return the firstname
-     */
-    public String getFirstname() {
-        return firstname;
-    }
-
-    /**
-     * Gets lastname.
-     *
-     * @return the lastname
-     */
-    public String getLastname() {
-        return lastname;
-    }
 
     /**
      * Gets email.
      *
      * @return the email
      */
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
     /**
