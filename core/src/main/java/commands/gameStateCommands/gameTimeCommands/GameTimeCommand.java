@@ -1,4 +1,4 @@
-package commands.gameStateCommands.gameTime;
+package commands.gameStateCommands.gameTimeCommands;
 
 import commands.gameStateCommands.enums.GameTypeEnum;
 
