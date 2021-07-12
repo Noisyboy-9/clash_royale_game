@@ -12,19 +12,6 @@ public class User {
     private int currentXp;
     private UserLevelEnum level;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return username.equals(user.username);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(username);
-    }
-
     /**
      * Instantiates a new User and sets currentXp to zero
      * and level to level_1
@@ -41,6 +28,18 @@ public class User {
         this.level = UserLevelEnum.LEVEL_1;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return username.equals(user.username);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username);
+    }
 
     /**
      * Gets email.

@@ -13,9 +13,9 @@ import java.util.UUID;
  * The type Arrows.
  */
 public class Arrows extends Spell {
-    private int damage;
     private final ArrayList<Tower> targetTowers;
     private final ArrayList<Troop> targetTroops;
+    private int damage;
 
     /**
      * Instantiates a new Arrows.
@@ -38,6 +38,12 @@ public class Arrows extends Spell {
         this.setDamage();
     }
 
+    @Override
+    public void chant() {
+        this.targetTowers.forEach(tower -> tower.reduceHealthBy(this.damage));
+        this.targetTroops.forEach(troop -> troop.reduceHealthBy(this.damage));
+    }
+
     private void setDamage() {
         this.damage = switch (this.getOwner().getLevel()) {
             case LEVEL_1 -> 144;
@@ -46,11 +52,5 @@ public class Arrows extends Spell {
             case LEVEL_4 -> 189;
             case LEVEL_5 -> 210;
         };
-    }
-
-    @Override
-    public void chant() {
-        this.targetTowers.forEach(tower -> tower.reduceHealthBy(this.damage));
-        this.targetTroops.forEach(troop -> troop.reduceHealthBy(this.damage));
     }
 }
