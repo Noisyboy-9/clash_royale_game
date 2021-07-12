@@ -12,7 +12,7 @@ import java.util.UUID;
 /**
  * The type Canon.
  */
-public class Canon extends Building {
+public class Cannon extends Building {
     private final ArrayList<AttackAble> targets;
 
     /**
@@ -25,7 +25,7 @@ public class Canon extends Building {
      * @param HP       the hp
      * @param damage   the damage
      */
-    public Canon(UUID id, int cost, User owner, Position position, int HP, double damage) {
+    public Cannon(UUID id, int cost, User owner, Position position, int HP, double damage) {
         super(id,
                 cost,
                 owner,
