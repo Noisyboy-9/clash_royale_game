@@ -6,7 +6,7 @@ import java.util.Objects;
  * The User model.
  */
 public class User {
-    private final String email;
+    private final String username;
     private final String password;
 
     private int currentXp;
@@ -17,23 +17,23 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return email.equals(user.email);
+        return username.equals(user.username);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(email);
+        return Objects.hash(username);
     }
 
     /**
      * Instantiates a new User and sets currentXp to zero
      * and level to level_1
      *
-     * @param email    the email
+     * @param username the email
      * @param password the password
      */
-    public User(String email, String password) {
-        this.email = email;
+    public User(String username, String password) {
+        this.username = username;
         this.password = password;
 
 //        when a user is created it's level is one and it's xp is 0
@@ -47,8 +47,8 @@ public class User {
      *
      * @return the email
      */
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
     /**
