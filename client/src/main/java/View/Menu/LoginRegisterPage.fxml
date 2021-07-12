@@ -99,6 +99,11 @@
                   <Font name="Supercell-Magic Regular" size="18.0" />
                </font>
             </Text>
+            <Text fill="WHITE" layoutX="44.0" layoutY="679.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="user not found!" textAlignment="CENTER" wrappingWidth="441.13671875">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="15.0" />
+               </font>
+            </Text>
          </children>
     </AnchorPane>
   </children>
