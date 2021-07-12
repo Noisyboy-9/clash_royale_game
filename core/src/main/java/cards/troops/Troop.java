@@ -1,11 +1,11 @@
 package cards.troops;
 
 import cards.Card;
-import cards.exceptions.InvalidAttackTargetException;
 import cards.utils.AttackAble;
 import cards.utils.MovementSpeedEnum;
 import cards.utils.Position;
-import cards.utils.TroopTypeEnum;
+import cards.utils.TypeEnum;
+import exceptions.InvalidAttackTargetException;
 import user.User;
 
 import java.util.UUID;
@@ -14,15 +14,15 @@ import java.util.UUID;
  * The abstract type Troop.
  */
 public abstract class Troop extends Card implements AttackAble {
-    private final int damage;
     private final MovementSpeedEnum movementSpeed;
     private final boolean areaSplash;
     private final int range;
-    private final double hitSpeed;
-    private final TroopTypeEnum selfType;
-    private final TroopTypeEnum attackType;
+    private final TypeEnum selfType;
+    private final TypeEnum attackType;
+    private double damage;
+    private double hitSpeed;
     private AttackAble attackTarget;
-    private int HP;
+    private double HP;
 
     /**
      * Instantiates a new Card.
@@ -45,13 +45,13 @@ public abstract class Troop extends Card implements AttackAble {
                  User owner,
                  Position position,
                  int HP,
-                 int damage,
+                 double damage,
                  MovementSpeedEnum speed,
                  boolean areaSplash,
                  int range,
                  double hitSpeed,
-                 TroopTypeEnum selfType,
-                 TroopTypeEnum attackType) {
+                 TypeEnum selfType,
+                 TypeEnum attackType) {
         super(id, cost, owner, position);
         this.HP = HP;
         this.damage = damage;
@@ -72,23 +72,31 @@ public abstract class Troop extends Card implements AttackAble {
         return hitSpeed;
     }
 
-    @Override
-    public void reduceHealthBy(int damage) {
-        this.HP -= damage;
+    /**
+     * Sets hit speed.
+     *
+     * @param hitSpeed the hit speed
+     */
+    public void setHitSpeed(double hitSpeed) {
+        this.hitSpeed = hitSpeed;
     }
 
+    @Override
+    public void reduceHealthBy(double damage) {
+        this.HP -= damage;
+    }
 
     /**
      * Gets attack type.
      *
      * @return the attack type
      */
-    public TroopTypeEnum getAttackType() {
+    public TypeEnum getAttackType() {
         return this.attackType;
     }
 
     @Override
-    public TroopTypeEnum getSelfType() {
+    public TypeEnum getSelfType() {
         return this.selfType;
     }
 
@@ -97,7 +105,7 @@ public abstract class Troop extends Card implements AttackAble {
      *
      * @return the hp
      */
-    public int getHP() {
+    public double getHP() {
         return HP;
     }
 
@@ -106,8 +114,17 @@ public abstract class Troop extends Card implements AttackAble {
      *
      * @return the damage
      */
-    public int getDamage() {
+    public double getDamage() {
         return damage;
+    }
+
+    /**
+     * Sets damage.
+     *
+     * @param damage the damage
+     */
+    public void setDamage(double damage) {
+        this.damage = damage;
     }
 
     /**
@@ -150,6 +167,7 @@ public abstract class Troop extends Card implements AttackAble {
      * Sets attack target.
      *
      * @param attackTarget the attack target
+     * @throws InvalidAttackTargetException the invalid attack target exception
      */
     public void setAttackTarget(AttackAble attackTarget) throws InvalidAttackTargetException {
         if (attackTarget.getSelfType() != this.getAttackType()) {

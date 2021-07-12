@@ -2,21 +2,26 @@ package towers;
 
 
 import cards.utils.AttackAble;
-import user.*;
+import cards.utils.TypeEnum;
+import user.UserLevelEnum;
 
 import java.util.UUID;
 
 /**
  * The type Tower.
  */
-public abstract class Tower {
-    protected boolean active;
+public abstract class Tower implements AttackAble {
     private final UUID id;
-    private final int HP;
-    private final int damage;
     private final UserLevelEnum ownerLevel;
     private final int demolitionBonusCount;
+    private final TypeEnum selfType;
+    private final TypeEnum attackType;
+    private final int range;
+    private int damage;
+    private boolean active;
     private AttackAble target;
+    private double HP;
+    private double hitSpeed;
 
     /**
      * Instantiates a new Tower.
@@ -28,6 +33,7 @@ public abstract class Tower {
      * @param demolitionBonusCount the demolition bonus count
      * @param active               the active
      * @param target               the target
+     * @param range                the range
      */
     public Tower(UUID id,
                  int HP,
@@ -35,7 +41,8 @@ public abstract class Tower {
                  UserLevelEnum ownerLevel,
                  int demolitionBonusCount,
                  boolean active,
-                 AttackAble target) {
+                 AttackAble target,
+                 int range) {
         this.id = id;
         this.HP = HP;
         this.damage = damage;
@@ -43,6 +50,38 @@ public abstract class Tower {
         this.demolitionBonusCount = demolitionBonusCount;
         this.active = active;
         this.target = target;
+        this.range = range;
+
+        this.selfType = TypeEnum.GROUND;
+        this.attackType = TypeEnum.AIR_GROUND;
+        this.hitSpeed = 1;
+    }
+
+    /**
+     * Gets tower range.
+     *
+     * @return the range
+     */
+    public int getRange() {
+        return range;
+    }
+
+    /**
+     * Gets attack speed.
+     *
+     * @return the attack speed
+     */
+    public double getHitSpeed() {
+        return hitSpeed;
+    }
+
+    /**
+     * Sets attack speed.
+     *
+     * @param attackSpeed the attack speed
+     */
+    public void setHitSpeed(double attackSpeed) {
+        this.hitSpeed = attackSpeed;
     }
 
     /**
@@ -50,7 +89,7 @@ public abstract class Tower {
      *
      * @return the hp
      */
-    public int getHP() {
+    public double getHP() {
         return HP;
     }
 
@@ -61,6 +100,15 @@ public abstract class Tower {
      */
     public int getDamage() {
         return damage;
+    }
+
+    /**
+     * Sets damage.
+     *
+     * @param damage the damage
+     */
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 
     /**
@@ -126,6 +174,9 @@ public abstract class Tower {
         this.active = true;
     }
 
+    /**
+     * De active.
+     */
     public void deActive() {
         this.active = false;
     }
@@ -135,5 +186,24 @@ public abstract class Tower {
      */
     public void shoot() {
         this.target.reduceHealthBy(this.damage);
+    }
+
+    @Override
+    public void reduceHealthBy(double damage) {
+        this.HP -= damage;
+    }
+
+    @Override
+    public TypeEnum getSelfType() {
+        return this.selfType;
+    }
+
+    /**
+     * Gets attack type.
+     *
+     * @return the attack type
+     */
+    public TypeEnum getAttackType() {
+        return attackType;
     }
 }

@@ -3,11 +3,14 @@ package cards.troops.valkyries;
 import cards.troops.Troop;
 import cards.utils.MovementSpeedEnum;
 import cards.utils.Position;
-import cards.utils.TroopTypeEnum;
+import cards.utils.TypeEnum;
 import user.User;
 
 import java.util.UUID;
 
+/**
+ * The type Valkyrie.
+ */
 public class valkyrie extends Troop {
 
     /**
@@ -30,8 +33,8 @@ public class valkyrie extends Troop {
                 true,
                 1,
                 1.5,
-                TroopTypeEnum.GROUND,
-                TroopTypeEnum.GROUND
+                TypeEnum.GROUND,
+                TypeEnum.GROUND
         );
     }
 }
