@@ -17,7 +17,7 @@ public class QueryBuilder {
     }
 
     /**
-     * check if user already exist in database.
+     * check if user already exist in database.     *
      *
      * @param username the username
      * @param password the password
