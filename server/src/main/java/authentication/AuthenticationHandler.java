@@ -10,7 +10,6 @@ public class AuthenticationHandler {
         try {
             ServerSocket serverSocket = new ServerSocket(port);
             new Thread(new AuthenticationRunnable(serverSocket.accept())).start();
-
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }

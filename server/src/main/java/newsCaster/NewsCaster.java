@@ -1,7 +1,7 @@
 package newsCaster;
 
-import exceptions.LowPlayerCountException;
-import exceptions.invalidPlayerArgumentException;
+import exceptions.DuplicateGameRequestException;
+import newsCaster.runnables.WatchForGameStartRequestRunnable;
 import workers.PlayerWorker;
 
 import java.util.ArrayList;
@@ -13,10 +13,68 @@ import java.util.Objects;
 public class NewsCaster {
     private static NewsCaster singletonInstance = null;
     private final ArrayList<PlayerWorker> onlinePlayers = new ArrayList<>();
-    private final ArrayList<PlayerWorker> readyPlayers = new ArrayList<>();
+    private final ArrayList<PlayerWorker> twoPlayerModeGameRequesters = new ArrayList<>();
+    private final ArrayList<PlayerWorker> fourPlayerModeGameRequesters = new ArrayList<>();
 
     private NewsCaster() {
 
+    }
+
+    /**
+     * Add player.
+     *
+     * @param player the player
+     */
+    public void addOnlinePlayer(PlayerWorker player) {
+        if (!this.onlinePlayers.contains(player)) {
+            this.onlinePlayers.add(player);
+        }
+
+        new Thread(new WatchForGameStartRequestRunnable(player)).start();
+    }
+
+    /**
+     * Add two player mode requester.
+     *
+     * @param worker the worker
+     * @throws DuplicateGameRequestException the duplicate game request exception
+     */
+    public void addTwoPlayerModeRequester(PlayerWorker worker) throws DuplicateGameRequestException {
+        if (!this.twoPlayerModeGameRequesters.contains(worker)) {
+            throw new DuplicateGameRequestException("player has already requested for an two player match, can't request again");
+        }
+
+        if (!this.fourPlayerModeGameRequesters.contains(worker)) {
+            throw new DuplicateGameRequestException("Player has already requested for an four player match, can't request for another match");
+        }
+
+        this.twoPlayerModeGameRequesters.add(worker);
+
+        if (this.twoPlayerModeGameRequesters.size() == 2) {
+            this.startTwoPlayerMode();
+        }
+    }
+
+    /**
+     * Add four player mode requester.
+     *
+     * @param worker the worker
+     * @throws DuplicateGameRequestException the duplicate game request exception
+     */
+    public void addFourPlayerModeRequester(PlayerWorker worker) throws DuplicateGameRequestException {
+        if (!this.twoPlayerModeGameRequesters.contains(worker)) {
+            throw new DuplicateGameRequestException("player has already requested for an two player match, can't request again");
+        }
+
+        if (!this.fourPlayerModeGameRequesters.contains(worker)) {
+            throw new DuplicateGameRequestException("Player has already requested for an four player match, can't request for another match");
+        }
+
+        this.fourPlayerModeGameRequesters.add(worker);
+
+        if (this.fourPlayerModeGameRequesters.size() == 4) {
+            this.startFourPlayerMode();
+        }
     }
 
     /**
@@ -30,58 +88,16 @@ public class NewsCaster {
     }
 
     /**
-     * Add player.
-     *
-     * @param player the player
-     */
-    public void addOnlinePlayer(PlayerWorker player) {
-        if (!this.onlinePlayers.contains(player)) {
-            this.onlinePlayers.add(player);
-        }
-    }
-
-    public void makePlayerReady(PlayerWorker player) throws invalidPlayerArgumentException {
-        if (!this.onlinePlayers.contains(player)) {
-            throw new invalidPlayerArgumentException("Player is not online, can't add it to ready players");
-        }
-
-        this.onlinePlayers.remove(player);
-        this.readyPlayers.add(player);
-    }
-
-    /**
      * Start two player mode.
-     *
-     * @throws LowPlayerCountException the low player count exception
      */
-    public void startTwoPlayerMode() throws LowPlayerCountException {
-        if (this.onlinePlayers.size() < 2) {
-            throw new LowPlayerCountException("Online players count are lower than 2, can't start a game");
-        }
-
-        ArrayList<PlayerWorker> gamePlayers = new ArrayList<>(); //players who will play in this round of game.
-        gamePlayers.add(this.onlinePlayers.get(0));
-        gamePlayers.add(this.onlinePlayers.get(1));
-
-        new NewsRedirector(gamePlayers).start();
+    private void startTwoPlayerMode() {
+        (new NewsRedirector(this.twoPlayerModeGameRequesters)).start();
     }
 
     /**
      * Start four player mode.
-     *
-     * @throws LowPlayerCountException the low player count exception
      */
-    public void startFourPlayerMode() throws LowPlayerCountException {
-        if (this.onlinePlayers.size() < 4) {
-            throw new LowPlayerCountException("Online players count are lower than 4, can't start a game");
-        }
-
-        ArrayList<PlayerWorker> gamePlayers = new ArrayList<>(); //players who will play in this round of game.
-        gamePlayers.add(this.onlinePlayers.get(0));
-        gamePlayers.add(this.onlinePlayers.get(1));
-        gamePlayers.add(this.onlinePlayers.get(2));
-        gamePlayers.add(this.onlinePlayers.get(3));
-
-        new NewsRedirector(gamePlayers).start();
+    private void startFourPlayerMode() {
+        (new NewsRedirector(this.fourPlayerModeGameRequesters)).start();
     }
 }

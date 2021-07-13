@@ -6,6 +6,7 @@ import commands.authenicationCommands.login.LoginResponseCommand;
 import commands.authenicationCommands.register.RegisterCommand;
 import commands.authenicationCommands.register.RegisterResponseCommand;
 import database.QueryBuilder;
+import exceptions.DuplicateGameRequestException;
 import exceptions.invalidPlayerArgumentException;
 import newsCaster.NewsCaster;
 import user.User;
@@ -39,12 +40,12 @@ public class AuthenticationRunnable implements Runnable {
             if (command instanceof LoginCommand) {
                 this.handleLogin((LoginCommand) command);
             }
-        } catch (IOException | ClassNotFoundException | invalidPlayerArgumentException ioException) {
+        } catch (IOException | ClassNotFoundException | invalidPlayerArgumentException | DuplicateGameRequestException ioException) {
             ioException.printStackTrace();
         }
     }
 
-    private void handleLogin(LoginCommand command) throws IOException, ClassNotFoundException, invalidPlayerArgumentException {
+    private void handleLogin(LoginCommand command) throws IOException, ClassNotFoundException, invalidPlayerArgumentException, DuplicateGameRequestException {
         String username = command.getUsername();
         String password = command.getPassword();
 
@@ -58,7 +59,6 @@ public class AuthenticationRunnable implements Runnable {
             );
 
             NewsCaster.getSingletonInstance().addOnlinePlayer(worker);
-            NewsCaster.getSingletonInstance().makePlayerReady(worker);
         } else {
             this.response.writeObject(new LoginResponseCommand(username, password, false, "Invalid credentials."));
         }
