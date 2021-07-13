@@ -8,6 +8,7 @@ public class SplashScreenController
     @FXML
     void moveToLoginPage(MouseEvent event)
     {
+        Controller.SCENE_CONTROLLER.loadAllMenuScenes();
         Controller.SCENE_CONTROLLER.showScene("Menu/LoginRegisterPage.fxml");
 
     }
