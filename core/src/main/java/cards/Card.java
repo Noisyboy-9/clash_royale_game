@@ -3,6 +3,7 @@ package cards;
 import cards.utils.Position;
 import user.User;
 
+import java.util.Objects;
 import java.util.UUID;
 
 /**
@@ -27,6 +28,19 @@ public abstract class Card {
         this.cost = cost;
         this.owner = owner;
         this.position = position;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Card card = (Card) o;
+        return id.equals(card.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     /**

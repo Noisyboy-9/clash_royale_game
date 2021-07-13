@@ -3,7 +3,7 @@ package cards.troops.barbarians;
 import cards.troops.Troop;
 import cards.utils.MovementSpeedEnum;
 import cards.utils.Position;
-import cards.utils.TroopTypeEnum;
+import cards.utils.TypeEnum;
 import user.User;
 
 import java.util.UUID;
@@ -32,8 +32,8 @@ public class Barbarian extends Troop {
                 false,
                 1,
                 1.5,
-                TroopTypeEnum.GROUND,
-                TroopTypeEnum.GROUND
+                TypeEnum.GROUND,
+                TypeEnum.GROUND
         );
     }
 }

@@ -3,11 +3,14 @@ package cards.troops.pekkas;
 import cards.troops.Troop;
 import cards.utils.MovementSpeedEnum;
 import cards.utils.Position;
-import cards.utils.TroopTypeEnum;
+import cards.utils.TypeEnum;
 import user.User;
 
 import java.util.UUID;
 
+/**
+ * The type Mini pekka.
+ */
 public class MiniPekka extends Troop {
     /**
      * Instantiates a new Card.
@@ -29,8 +32,8 @@ public class MiniPekka extends Troop {
                 false,
                 1,
                 1.8,
-                TroopTypeEnum.GROUND,
-                TroopTypeEnum.GROUND
+                TypeEnum.GROUND,
+                TypeEnum.GROUND
         );
     }
 }
