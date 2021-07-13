@@ -1,11 +1,12 @@
 package user;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * The User model.
  */
-public class User {
+public class User implements Serializable {
     private final String username;
     private final String password;
 
