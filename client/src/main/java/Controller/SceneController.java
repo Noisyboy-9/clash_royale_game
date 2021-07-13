@@ -16,7 +16,7 @@ public class SceneController
     {
         try
         {
-            URL url = new URL("file:" + Controller.PATH + sceneName);
+            URL url = new URL("file:/" + Controller.PATH + sceneName);
             root = FXMLLoader.load(url);
             scene = new Scene(root, 528, 946);
             Controller.STAGE.setTitle("Clash Royale");
