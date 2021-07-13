@@ -65,37 +65,37 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <ImageView onMouseClicked="#menusHandler" GridPane.columnIndex="2">
+                        <ImageView onMouseClicked="#changeMenuHandler" GridPane.columnIndex="2">
                             <image>
                                 <Image url="@../../../resources/photos/selected_option_background.png" />
                             </image>
                         </ImageView>
-                        <ImageView onMouseClicked="#menusHandler" GridPane.columnIndex="3">
+                        <ImageView onMouseClicked="#changeMenuHandler" GridPane.columnIndex="3">
                             <image>
                                 <Image url="@../../../resources/photos/not_selected_option_background.png" />
                             </image>
                         </ImageView>
-                        <ImageView onMouseClicked="#menusHandler" GridPane.columnIndex="4">
+                        <ImageView onMouseClicked="#changeMenuHandler" GridPane.columnIndex="4">
                             <image>
                                 <Image url="@../../../resources/photos/not_selected_option_background.png" />
                             </image>
                         </ImageView>
-                        <ImageView onMouseClicked="#menusHandler" GridPane.columnIndex="1">
+                        <ImageView onMouseClicked="#changeMenuHandler" GridPane.columnIndex="1">
                             <image>
                                 <Image url="@../../../resources/photos/not_selected_option_background.png" />
                             </image>
                         </ImageView>
-                        <ImageView onMouseClicked="#menusHandler">
+                        <ImageView onMouseClicked="#changeMenuHandler">
                             <image>
                                 <Image url="@../../../resources/photos/not_selected_option_background.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#menusHandler" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#changeMenuHandler" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../resources/photos/battle_icon.png" />
                             </image>
                         </ImageView>
-                        <Text fill="WHITE" onMouseClicked="#menusHandler" stroke="BLACK" strokeType="OUTSIDE" text="Battle" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="2">
+                        <Text fill="WHITE" onMouseClicked="#changeMenuHandler" stroke="BLACK" strokeType="OUTSIDE" text="Battle" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="2">
                             <font>
                                 <Font name="Supercell-Magic Regular" size="12.0" />
                             </font>
@@ -103,12 +103,12 @@
                                 <Insets top="60.0" />
                             </GridPane.margin>
                         </Text>
-                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#menusHandler" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#changeMenuHandler" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                             <image>
                                 <Image url="@../../../resources/photos/cards_icon.png" />
                             </image>
                         </ImageView>
-                        <Text fill="WHITE" layoutX="222.0" layoutY="89.0" onMouseClicked="#menusHandler" stroke="BLACK" strokeType="OUTSIDE" text="Cards" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="1">
+                        <Text fill="WHITE" layoutX="222.0" layoutY="89.0" onMouseClicked="#changeMenuHandler" stroke="BLACK" strokeType="OUTSIDE" text="Cards" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="1">
                             <font>
                                 <Font name="Supercell-Magic Regular" size="12.0" />
                             </font>
@@ -116,12 +116,12 @@
                                 <Insets top="60.0" />
                             </GridPane.margin>
                         </Text>
-                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#menusHandler" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#changeMenuHandler" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../resources/photos/profile_icon.png" />
                             </image>
                         </ImageView>
-                        <Text fill="WHITE" layoutX="116.0" layoutY="89.0" onMouseClicked="#menusHandler" stroke="BLACK" strokeType="OUTSIDE" text="Profile" textAlignment="CENTER" wrappingWidth="105.0">
+                        <Text fill="WHITE" layoutX="116.0" layoutY="89.0" onMouseClicked="#changeMenuHandler" stroke="BLACK" strokeType="OUTSIDE" text="Profile" textAlignment="CENTER" wrappingWidth="105.0">
                             <font>
                                 <Font name="Supercell-Magic Regular" size="12.0" />
                             </font>
@@ -129,12 +129,12 @@
                                 <Insets top="60.0" />
                             </GridPane.margin>
                         </Text>
-                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#menusHandler" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#changeMenuHandler" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
                             <image>
                                 <Image url="@../../../resources/photos/training_camp_icon.png" />
                             </image>
                         </ImageView>
-                        <Text fill="WHITE" layoutX="222.0" layoutY="89.0" onMouseClicked="#menusHandler" stroke="BLACK" strokeType="OUTSIDE" text="Camp" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="3">
+                        <Text fill="WHITE" layoutX="222.0" layoutY="89.0" onMouseClicked="#changeMenuHandler" stroke="BLACK" strokeType="OUTSIDE" text="Camp" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="3">
                             <font>
                                 <Font name="Supercell-Magic Regular" size="12.0" />
                             </font>
@@ -142,12 +142,12 @@
                                 <Insets top="60.0" />
                             </GridPane.margin>
                         </Text>
-                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#menusHandler" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#changeMenuHandler" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
                             <image>
                                 <Image url="@../../../resources/photos/history_icon.png" />
                             </image>
                         </ImageView>
-                        <Text fill="WHITE" layoutX="328.0" layoutY="89.0" onMouseClicked="#menusHandler" stroke="BLACK" strokeType="OUTSIDE" text="History" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="4">
+                        <Text fill="WHITE" layoutX="328.0" layoutY="89.0" onMouseClicked="#changeMenuHandler" stroke="BLACK" strokeType="OUTSIDE" text="History" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="4">
                             <font>
                                 <Font name="Supercell-Magic Regular" size="12.0" />
                             </font>
@@ -212,7 +212,7 @@
                   <Image url="@../../../resources/photos/clash_royale_logo.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="112.0" layoutX="402.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="87.0" fitWidth="112.0" layoutX="402.0" layoutY="264.0" onMouseClicked="#logOutHandler" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../resources/photos/log_out.png" />
                </image>
@@ -220,7 +220,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <Text fill="WHITE" layoutX="422.0" layoutY="295.0" stroke="#650101" strokeType="OUTSIDE" text="Log Out">
+            <Text fill="WHITE" layoutX="422.0" layoutY="295.0" onMouseClicked="#logOutHandler" stroke="#650101" strokeType="OUTSIDE" text="Log Out">
                <font>
                   <Font name="Supercell-Magic Regular" size="13.0" />
                </font>

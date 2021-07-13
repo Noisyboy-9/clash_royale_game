@@ -30,7 +30,6 @@ public class SceneController
         {
             if (menus.containsKey(sceneName))
             {
-                System.out.println("here");
                 scene = menus.get(sceneName);
             }
             else
