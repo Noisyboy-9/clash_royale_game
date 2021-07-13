@@ -6,9 +6,10 @@ import commands.authenicationCommands.login.LoginResponseCommand;
 import commands.authenicationCommands.register.RegisterCommand;
 import commands.authenicationCommands.register.RegisterResponseCommand;
 import database.QueryBuilder;
+import exceptions.invalidPlayerArgumentException;
 import newsCaster.NewsCaster;
-import workers.PlayerWorker;
 import user.User;
+import workers.PlayerWorker;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -38,12 +39,12 @@ public class AuthenticationRunnable implements Runnable {
             if (command instanceof LoginCommand) {
                 this.handleLogin((LoginCommand) command);
             }
-        } catch (IOException | ClassNotFoundException ioException) {
+        } catch (IOException | ClassNotFoundException | invalidPlayerArgumentException ioException) {
             ioException.printStackTrace();
         }
     }
 
-    private void handleLogin(LoginCommand command) throws IOException, ClassNotFoundException {
+    private void handleLogin(LoginCommand command) throws IOException, ClassNotFoundException, invalidPlayerArgumentException {
         String username = command.getUsername();
         String password = command.getPassword();
 
@@ -56,7 +57,8 @@ public class AuthenticationRunnable implements Runnable {
                     new User(username, password)
             );
 
-            NewsCaster.getSingletonInstance().addPlayer(worker);
+            NewsCaster.getSingletonInstance().addOnlinePlayer(worker);
+            NewsCaster.getSingletonInstance().makePlayerReady(worker);
         } else {
             this.response.writeObject(new LoginResponseCommand(username, password, false, "Invalid credentials."));
         }
