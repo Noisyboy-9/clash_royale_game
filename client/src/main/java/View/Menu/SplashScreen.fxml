@@ -48,11 +48,6 @@
                   <Image url="@../../../resources/photos/splash_screen.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="49.0" fitWidth="528.0" layoutY="897.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../resources/gifs/splash_screen_time_line.gif" />
-               </image>
-            </ImageView>
             <Text fill="WHITE" layoutX="132.0" layoutY="817.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="AP Final Project(Spring 99-00)">
                <font>
                   <Font name="Supercell-Magic Regular" size="12.0" />
@@ -68,6 +63,7 @@
                   <Font name="Supercell-Magic Regular" size="12.0" />
                </font>
             </Text>
+            <ImageView fitHeight="49.0" fitWidth="528.0" layoutY="897.0" pickOnBounds="true" preserveRatio="true" />
          </children>
     </AnchorPane>
   </children>

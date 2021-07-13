@@ -47,7 +47,7 @@
          <children>
             <ImageView fitHeight="946.0" fitWidth="528.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../resources/photos/login_refister_page_background.png" />
+                  <Image url="@../../../resources/photos/login_register_page_background.png" />
                </image>
             </ImageView>
             <ImageView fx:id="exitButton" fitHeight="88.0" fitWidth="154.0" layoutX="264.0" layoutY="721.0" onMouseClicked="#exitHandler" pickOnBounds="true" preserveRatio="true">
@@ -100,12 +100,12 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <TextField fx:id="usernameField" blendMode="MULTIPLY" depthTest="DISABLE" layoutX="152.0" layoutY="96.0" prefHeight="42.0" prefWidth="225.0" promptText="Username">
+            <TextField fx:id="usernameField" blendMode="MULTIPLY" depthTest="DISABLE" layoutX="152.0" layoutY="96.0" prefHeight="42.0" prefWidth="225.0" promptText="Username" style="-fx-background-color: transparent">
                <font>
                   <Font name="Supercell-Magic Regular" size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="passwordField" blendMode="MULTIPLY" depthTest="DISABLE" layoutX="152.0" layoutY="180.0" pickOnBounds="false" prefHeight="42.0" prefWidth="225.0" promptText="Password">
+            <TextField fx:id="passwordField" blendMode="MULTIPLY" depthTest="DISABLE" layoutX="152.0" layoutY="180.0" pickOnBounds="false" prefHeight="42.0" prefWidth="225.0" promptText="Password" style="-fx-background-color: transparent">
                <font>
                   <Font name="Supercell-Magic Regular" size="15.0" />
                </font>
