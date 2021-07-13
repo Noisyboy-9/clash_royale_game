@@ -3,6 +3,7 @@ package players;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.Objects;
 
 /**
  * The type Player worker that gives client access to the server.
@@ -27,7 +28,19 @@ public class PlayerWorker {
         this.request = request;
         this.socket = socket;
         this.player = player;
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PlayerWorker that = (PlayerWorker) o;
+        return player.equals(that.player);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(player);
     }
 
     /**

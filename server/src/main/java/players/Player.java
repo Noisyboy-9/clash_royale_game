@@ -5,6 +5,7 @@ import towers.Tower;
 import user.User;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * The type player that can play a game.
@@ -52,5 +53,18 @@ public class Player {
      */
     public User getUserDate() {
         return userDate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Player player = (Player) o;
+        return userDate.equals(player.userDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userDate);
     }
 }
