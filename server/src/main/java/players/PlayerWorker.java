@@ -1,5 +1,7 @@
 package players;
 
+import user.User;
+
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -13,7 +15,7 @@ public class PlayerWorker {
     private final ObjectOutputStream response;
     private final ObjectInputStream request;
     private final Socket socket;
-    private final Player player;
+    private final User userData;
 
     /**
      * Instantiates a new Player worker.
@@ -21,13 +23,13 @@ public class PlayerWorker {
      * @param response the response
      * @param request  the request
      * @param socket   the socket
-     * @param player   the player
+     * @param user     the user
      */
-    public PlayerWorker(ObjectOutputStream response, ObjectInputStream request, Socket socket, Player player) {
+    public PlayerWorker(ObjectOutputStream response, ObjectInputStream request, Socket socket, User user) {
         this.response = response;
         this.request = request;
         this.socket = socket;
-        this.player = player;
+        this.userData = user;
     }
 
     @Override
@@ -35,12 +37,12 @@ public class PlayerWorker {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PlayerWorker that = (PlayerWorker) o;
-        return player.equals(that.player);
+        return userData.equals(that.userData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(player);
+        return Objects.hash(userData);
     }
 
     /**
@@ -75,7 +77,7 @@ public class PlayerWorker {
      *
      * @return the player
      */
-    public Player getPlayer() {
-        return player;
+    public User getUserData() {
+        return userData;
     }
 }
