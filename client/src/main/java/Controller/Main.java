@@ -8,7 +8,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage)
     {
-        Controller.SCENE_CONTROLLER.showScene("Menu/LoginRegisterPage.fxml");
+        Controller.SCENE_CONTROLLER.showScene("Menu/SplashScreen.fxml");
 
     }
 

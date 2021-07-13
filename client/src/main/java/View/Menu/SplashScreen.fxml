@@ -36,34 +36,20 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<VBox prefHeight="946.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="946.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SplashScreenController">
   <children>
     <AnchorPane maxHeight="946.0" maxWidth="528.0" prefHeight="946.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <ImageView fitHeight="946.0" fitWidth="528.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="946.0" fitWidth="528.0" onKeyPressed="#moveToLoginPage" onMouseClicked="#moveToLoginPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../resources/photos/splash_screen.png" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="132.0" layoutY="817.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="AP Final Project(Spring 99-00)">
-               <font>
-                  <Font name="Supercell-Magic Regular" size="12.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="58.0" layoutY="842.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Developed by Alireza Nejadipour and Sina Shariati">
-               <font>
-                  <Font name="Supercell-Magic Regular" size="12.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="105.0" layoutY="867.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Amir Kabir University of Technology">
-               <font>
-                  <Font name="Supercell-Magic Regular" size="12.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="49.0" fitWidth="528.0" layoutY="897.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="49.0" fitWidth="528.0" layoutY="897.0" onKeyPressed="#moveToLoginPage" onMouseClicked="#moveToLoginPage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/gifs/splash_screen_time_line.gif" />
+               </image></ImageView>
          </children>
     </AnchorPane>
   </children>

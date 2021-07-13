@@ -56,7 +56,7 @@ public class LoginRegisterController
     {
         System.out.println(usernameField.getText());
         System.out.println(passwordField.getText());
-        Controller.SCENE_CONTROLLER.showScene("Menu/BattleDeckMenu.fxml");
+        Controller.SCENE_CONTROLLER.showScene("Menu/MainMenu.fxml");
 
     }
 
