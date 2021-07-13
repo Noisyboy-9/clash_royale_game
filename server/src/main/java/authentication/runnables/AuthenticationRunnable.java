@@ -7,7 +7,7 @@ import commands.authenicationCommands.register.RegisterCommand;
 import commands.authenicationCommands.register.RegisterResponseCommand;
 import database.QueryBuilder;
 import newsCaster.NewsCaster;
-import players.PlayerWorker;
+import workers.PlayerWorker;
 import user.User;
 
 import java.io.IOException;

@@ -1,6 +1,6 @@
 package newsCaster;
 
-import players.PlayerWorker;
+import workers.PlayerWorker;
 
 import java.util.ArrayList;
 import java.util.Objects;

@@ -1,4 +1,4 @@
-package players;
+package workers;
 
 import user.User;
 
