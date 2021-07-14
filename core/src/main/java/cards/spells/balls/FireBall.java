@@ -13,9 +13,9 @@ import java.util.UUID;
  * The type Fire ball.
  */
 public class FireBall extends Spell {
-    private int damage;
     private final ArrayList<Tower> targetTowers;
     private final ArrayList<Troop> targetTroops;
+    private int damage;
 
     /**
      * Instantiates a new Fire ball.
@@ -38,6 +38,12 @@ public class FireBall extends Spell {
         this.setDamage();
     }
 
+    @Override
+    public void chant() {
+        this.targetTowers.forEach(tower -> tower.reduceHealthBy(this.damage));
+        this.targetTroops.forEach(troop -> troop.reduceHealthBy(this.damage));
+    }
+
     private void setDamage() {
         this.damage = switch (this.getOwner().getLevel()) {
             case LEVEL_1 -> 325;
@@ -46,11 +52,5 @@ public class FireBall extends Spell {
             case LEVEL_4 -> 432;
             case LEVEL_5 -> 474;
         };
-    }
-
-    @Override
-    public void chant() {
-        this.targetTowers.forEach(tower -> tower.reduceHealthBy(this.damage));
-        this.targetTroops.forEach(troop -> troop.reduceHealthBy(this.damage));
     }
 }

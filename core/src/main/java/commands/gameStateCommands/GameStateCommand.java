@@ -1,4 +1,6 @@
 package commands.gameStateCommands;
 
-public abstract class GameStateCommand {
+import commands.Command;
+
+public abstract class GameStateCommand extends Command {
 }
