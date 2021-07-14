@@ -33,6 +33,7 @@
 -->
 
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -105,11 +106,6 @@
                   <Font name="Supercell-Magic Regular" size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="passwordField" blendMode="MULTIPLY" depthTest="DISABLE" layoutX="152.0" layoutY="180.0" pickOnBounds="false" prefHeight="42.0" prefWidth="225.0" promptText="Password" style="-fx-background-color: transparent">
-               <font>
-                  <Font name="Supercell-Magic Regular" size="15.0" />
-               </font>
-            </TextField>
             <Text fx:id="mainButtonText" fill="WHITE" layoutX="191.0" layoutY="334.0" onMouseClicked="#mainButtonHandler" stroke="#043e8a" strokeType="OUTSIDE" strokeWidth="2.0" text="Login" textAlignment="CENTER" wrappingWidth="145.662109375">
                <font>
                   <Font name="Supercell-Magic Regular" size="18.0" />
@@ -123,6 +119,11 @@
                   <Font name="Supercell-Magic Regular" size="15.0" />
                </font>
             </Text>
+            <PasswordField fx:id="passwordField" blendMode="MULTIPLY" layoutX="152.0" layoutY="180.0" prefHeight="42.0" prefWidth="225.0" promptText="Password" style="-fx-background-color: transparent">
+               <font>
+                  <Font name="Supercell-Magic Regular" size="15.0" />
+               </font>
+            </PasswordField>
          </children>
     </AnchorPane>
   </children>
