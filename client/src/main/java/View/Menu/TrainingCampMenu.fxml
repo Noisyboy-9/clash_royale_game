@@ -33,6 +33,7 @@
 -->
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -64,95 +65,140 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <ImageView GridPane.columnIndex="2">
+                        <ImageView onMouseClicked="#changeMenuHandler" GridPane.columnIndex="2">
                             <image>
                                 <Image url="@../../../resources/photos/not_selected_option_background.png" />
                             </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </ImageView>
-                        <ImageView GridPane.columnIndex="1">
+                        <ImageView onMouseClicked="#changeMenuHandler" GridPane.columnIndex="1">
                             <image>
                                 <Image url="@../../../resources/photos/not_selected_option_background.png" />
                             </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </ImageView>
-                        <ImageView>
+                        <ImageView onMouseClicked="#changeMenuHandler">
                             <image>
                                 <Image url="@../../../resources/photos/not_selected_option_background.png" />
                             </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </ImageView>
-                        <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" text="Battle" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="2">
+                        <Text fill="WHITE" onMouseClicked="#changeMenuHandler" stroke="BLACK" strokeType="OUTSIDE" text="Battle" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="2">
                             <font>
                                 <Font name="Supercell-Magic Regular" size="12.0" />
                             </font>
                             <GridPane.margin>
                                 <Insets top="60.0" />
                             </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </Text>
-                        <ImageView fitHeight="88.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#changeMenuHandler" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                             <image>
                                 <Image url="@../../../resources/photos/cards_icon.png" />
                             </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </ImageView>
-                        <Text fill="WHITE" layoutX="222.0" layoutY="89.0" stroke="BLACK" strokeType="OUTSIDE" text="Cards" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="1">
+                        <Text fill="WHITE" layoutX="222.0" layoutY="89.0" onMouseClicked="#changeMenuHandler" stroke="BLACK" strokeType="OUTSIDE" text="Cards" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="1">
                             <font>
                                 <Font name="Supercell-Magic Regular" size="12.0" />
                             </font>
                             <GridPane.margin>
                                 <Insets top="60.0" />
                             </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </Text>
-                        <ImageView fitHeight="88.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#changeMenuHandler" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../resources/photos/profile_icon.png" />
                             </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </ImageView>
-                        <ImageView GridPane.columnIndex="3">
+                        <ImageView onMouseClicked="#changeMenuHandler" GridPane.columnIndex="3">
                             <image>
                                 <Image url="@../../../resources/photos/selected_option_background.png" />
                             </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </ImageView>
-                        <Text fill="WHITE" layoutX="116.0" layoutY="89.0" stroke="BLACK" strokeType="OUTSIDE" text="Profile" textAlignment="CENTER" wrappingWidth="105.0">
+                        <Text fill="WHITE" layoutX="116.0" layoutY="89.0" onMouseClicked="#changeMenuHandler" stroke="BLACK" strokeType="OUTSIDE" text="Profile" textAlignment="CENTER" wrappingWidth="105.0">
                             <font>
                                 <Font name="Supercell-Magic Regular" size="12.0" />
                             </font>
                             <GridPane.margin>
                                 <Insets top="60.0" />
                             </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </Text>
-                        <Text fill="WHITE" layoutX="222.0" layoutY="89.0" stroke="BLACK" strokeType="OUTSIDE" text="Camp" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="3">
+                        <Text fill="WHITE" layoutX="222.0" layoutY="89.0" onMouseClicked="#changeMenuHandler" stroke="BLACK" strokeType="OUTSIDE" text="Camp" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="3">
                             <font>
                                 <Font name="Supercell-Magic Regular" size="12.0" />
                             </font>
                             <GridPane.margin>
                                 <Insets top="60.0" />
                             </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </Text>
-                        <ImageView GridPane.columnIndex="4">
+                        <ImageView onMouseClicked="#changeMenuHandler" GridPane.columnIndex="4">
                             <image>
                                 <Image url="@../../../resources/photos/not_selected_option_background.png" />
                             </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </ImageView>
-                        <Text fill="WHITE" layoutX="328.0" layoutY="89.0" stroke="BLACK" strokeType="OUTSIDE" text="History" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="4">
+                        <Text fill="WHITE" layoutX="328.0" layoutY="89.0" onMouseClicked="#changeMenuHandler" stroke="BLACK" strokeType="OUTSIDE" text="History" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="4">
                             <font>
                                 <Font name="Supercell-Magic Regular" size="12.0" />
                             </font>
                             <GridPane.margin>
                                 <Insets top="60.0" />
                             </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </Text>
-                        <ImageView fitHeight="88.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#changeMenuHandler" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                             <image>
                                 <Image url="@../../../resources/photos/battle_icon.png" />
                             </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </ImageView>
-                        <ImageView fitHeight="88.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#changeMenuHandler" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
                             <image>
                                 <Image url="@../../../resources/photos/training_camp_icon.png" />
                             </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </ImageView>
-                        <ImageView fitHeight="88.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#changeMenuHandler" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
                             <image>
                                 <Image url="@../../../resources/photos/history_icon.png" />
                             </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </ImageView>
                     </children>
                 </GridPane>
@@ -161,25 +207,37 @@
                   <Image url="@../../../resources/photos/training_camp_logo.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="100.0" layoutY="663.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="100.0" layoutY="663.0" onMouseClicked="#crazyMode" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../resources/photos/button_yellow.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
-            <Text fill="WHITE" layoutX="120.0" layoutY="713.0" stroke="#754a00" strokeType="OUTSIDE" strokeWidth="2.0" text="Crazy Bot" textAlignment="CENTER">
+            <Text fill="WHITE" layoutX="120.0" layoutY="713.0" onMouseClicked="#crazyMode" stroke="#754a00" strokeType="OUTSIDE" strokeWidth="2.0" text="Crazy Bot" textAlignment="CENTER">
                <font>
                   <Font name="Supercell-Magic Regular" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Text>
-            <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="274.0" layoutY="663.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="274.0" layoutY="663.0" onMouseClicked="#normalMode" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../resources/photos/button_blue.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
-            <Text fill="WHITE" layoutX="285.0" layoutY="713.0" stroke="#004ba3" strokeType="OUTSIDE" strokeWidth="2.0" text="Normal Bot" textAlignment="CENTER">
+            <Text fill="WHITE" layoutX="285.0" layoutY="713.0" onMouseClicked="#normalMode" stroke="#004ba3" strokeType="OUTSIDE" strokeWidth="2.0" text="Normal Bot" textAlignment="CENTER">
                <font>
                   <Font name="Supercell-Magic Regular" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Text>
             <ImageView fitHeight="200.0" fitWidth="287.0" layoutX="121.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
