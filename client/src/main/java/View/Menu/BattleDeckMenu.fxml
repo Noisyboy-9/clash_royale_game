@@ -472,7 +472,7 @@
                   </Text>
                </children>
             </GridPane>
-            <GridPane layoutX="2.0" layoutY="694.0" prefHeight="149.0" prefWidth="520.0">
+            <GridPane fx:id="cardCollection" layoutX="2.0" layoutY="694.0" prefHeight="149.0" prefWidth="520.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
