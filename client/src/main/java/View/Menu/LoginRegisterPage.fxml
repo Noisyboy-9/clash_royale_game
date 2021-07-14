@@ -114,9 +114,9 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Text>
-            <Text fx:id="message" fill="WHITE" layoutX="44.0" layoutY="679.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="441.13671875">
+            <Text fx:id="message" fill="WHITE" layoutX="44.0" layoutY="650.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="441.13671875">
                <font>
-                  <Font name="Supercell-Magic Regular" size="15.0" />
+                  <Font name="Supercell-Magic Regular" size="13.0" />
                </font>
             </Text>
             <PasswordField fx:id="passwordField" blendMode="MULTIPLY" layoutX="152.0" layoutY="180.0" prefHeight="42.0" prefWidth="225.0" promptText="Password" style="-fx-background-color: transparent">

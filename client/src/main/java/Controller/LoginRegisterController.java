@@ -42,11 +42,21 @@ public class LoginRegisterController
     @FXML
     void mainButtonHandler(MouseEvent event)
     {
-        System.out.println(usernameField.getText());
-        System.out.println(passwordField.getText());
-        Controller.SCENE_CONTROLLER.showScene("Menu/MainMenu.fxml");
+        message.setText("");
+
+        if (usernameField.getText().equals("") || passwordField.getText().equals(""))
+        {
+            message.setText("Please enter your username and password.");
+
+        }
+        else
+        {
+            // send command to server... if response was successful change the scene
+            usernameField.setText("");
+            passwordField.setText("");
+            Controller.SCENE_CONTROLLER.showScene("Menu/MainMenu.fxml");
+        }
 
     }
-
 
 }
