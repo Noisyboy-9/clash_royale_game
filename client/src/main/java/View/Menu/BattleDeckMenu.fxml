@@ -202,7 +202,7 @@
                         </ImageView>
                     </children>
                 </GridPane>
-            <GridPane layoutX="2.0" layoutY="128.0" prefHeight="383.0" prefWidth="520.0">
+            <GridPane fx:id="battleCards" layoutX="2.0" layoutY="128.0" prefHeight="383.0" prefWidth="520.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -214,7 +214,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <ImageView fitHeight="149.0" fitWidth="117.0" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                  <ImageView fitHeight="149.0" fitWidth="117.0" onMouseClicked="#changeCard" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                      <image>
                         <Image url="@../../../resources/photos/ArchersCard.png" />
                      </image>
@@ -230,57 +230,17 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ImageView>
-                  <ImageView fitHeight="149.0" fitWidth="117.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" text="3" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="13.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="8.0" top="10.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <ImageView fitHeight="149.0" fitWidth="117.0" onMouseClicked="#changeCard" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                      <image>
                         <Image url="@../../../resources/photos/ArrowsCard.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <ImageView fitHeight="149.0" fitWidth="117.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-                     <image>
-                        <Image url="@../../../resources/photos/FireballCard.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <ImageView fitHeight="149.0" fitWidth="117.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-                     <image>
-                        <Image url="@../../../resources/photos/GiantCard.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <ImageView fitHeight="149.0" fitWidth="117.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                     <image>
-                        <Image url="@../../../resources/photos/MiniPEKKACard.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <ImageView fitHeight="149.0" fitWidth="117.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                     <image>
-                        <Image url="@../../../resources/photos/BabyDragonCard.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <ImageView fitHeight="149.0" fitWidth="117.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                     <image>
-                        <Image url="@../../../resources/photos/InfernoTowerCard.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <ImageView fitHeight="149.0" fitWidth="117.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                     <image>
-                        <Image url="@../../../resources/photos/ValkyrieCard.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -294,9 +254,41 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ImageView>
+                  <Text fill="WHITE" layoutX="18.0" layoutY="35.0" stroke="BLACK" strokeType="OUTSIDE" text="3" GridPane.columnIndex="1" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="13.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="8.0" top="10.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <ImageView fitHeight="149.0" fitWidth="117.0" onMouseClicked="#changeCard" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@../../../resources/photos/FireballCard.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
                   <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="140.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.valignment="TOP">
                      <image>
                         <Image url="@../../../resources/photos/card_exir.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="10.0" layoutY="111.0" stroke="BLACK" strokeType="OUTSIDE" text="4" GridPane.columnIndex="2" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="13.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="8.0" top="10.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <ImageView fitHeight="149.0" fitWidth="117.0" onMouseClicked="#changeCard" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@../../../resources/photos/GiantCard.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -310,9 +302,41 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ImageView>
+                  <Text fill="WHITE" layoutX="10.0" layoutY="111.0" stroke="BLACK" strokeType="OUTSIDE" text="5" GridPane.columnIndex="3" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="13.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="8.0" top="10.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <ImageView fitHeight="149.0" fitWidth="117.0" onMouseClicked="#changeCard" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@../../../resources/photos/MiniPEKKACard.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
                   <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" GridPane.valignment="TOP">
                      <image>
                         <Image url="@../../../resources/photos/card_exir.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="10.0" layoutY="111.0" stroke="BLACK" strokeType="OUTSIDE" text="4" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="13.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="8.0" top="10.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <ImageView fitHeight="149.0" fitWidth="117.0" onMouseClicked="#changeCard" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@../../../resources/photos/BabyDragonCard.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -326,9 +350,41 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ImageView>
+                  <Text fill="WHITE" layoutX="10.0" layoutY="111.0" stroke="BLACK" strokeType="OUTSIDE" text="4" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="13.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="8.0" top="10.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <ImageView fitHeight="149.0" fitWidth="117.0" onMouseClicked="#changeCard" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@../../../resources/photos/InfernoTowerCard.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
                   <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="140.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
                      <image>
                         <Image url="@../../../resources/photos/card_exir.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="10.0" layoutY="111.0" stroke="BLACK" strokeType="OUTSIDE" text="5" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="13.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="8.0" top="10.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <ImageView fitHeight="149.0" fitWidth="117.0" onMouseClicked="#changeCard" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@../../../resources/photos/ValkyrieCard.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -342,63 +398,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ImageView>
-                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" text="3" GridPane.valignment="TOP">
-                     <font>
-                        <Font name="Supercell-Magic Regular" size="13.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="8.0" top="10.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fill="WHITE" layoutX="18.0" layoutY="35.0" stroke="BLACK" strokeType="OUTSIDE" text="3" GridPane.columnIndex="1" GridPane.valignment="TOP">
-                     <font>
-                        <Font name="Supercell-Magic Regular" size="13.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="8.0" top="10.0" />
-                     </GridPane.margin>
-                  </Text>
                   <Text fill="WHITE" layoutX="10.0" layoutY="111.0" stroke="BLACK" strokeType="OUTSIDE" text="4" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                     <font>
-                        <Font name="Supercell-Magic Regular" size="13.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="8.0" top="10.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fill="WHITE" layoutX="10.0" layoutY="111.0" stroke="BLACK" strokeType="OUTSIDE" text="5" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                     <font>
-                        <Font name="Supercell-Magic Regular" size="13.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="8.0" top="10.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fill="WHITE" layoutX="10.0" layoutY="111.0" stroke="BLACK" strokeType="OUTSIDE" text="4" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                     <font>
-                        <Font name="Supercell-Magic Regular" size="13.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="8.0" top="10.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fill="WHITE" layoutX="10.0" layoutY="111.0" stroke="BLACK" strokeType="OUTSIDE" text="4" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                     <font>
-                        <Font name="Supercell-Magic Regular" size="13.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="8.0" top="10.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fill="WHITE" layoutX="10.0" layoutY="111.0" stroke="BLACK" strokeType="OUTSIDE" text="5" GridPane.columnIndex="3" GridPane.valignment="TOP">
-                     <font>
-                        <Font name="Supercell-Magic Regular" size="13.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="8.0" top="10.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fill="WHITE" layoutX="10.0" layoutY="111.0" stroke="BLACK" strokeType="OUTSIDE" text="4" GridPane.columnIndex="2" GridPane.valignment="TOP">
                      <font>
                         <Font name="Supercell-Magic Regular" size="13.0" />
                      </font>
@@ -483,45 +483,21 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <ImageView fitHeight="149.0" fitWidth="117.0" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                  <ImageView fitHeight="149.0" fitWidth="117.0" onMouseClicked="#changeCard" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                      <image>
                         <Image url="@../../../resources/photos/BarbariansCard.png" />
                      </image>
-                  </ImageView>
-                  <ImageView fitHeight="149.0" fitWidth="117.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-                     <image>
-                        <Image url="@../../../resources/photos/CannonCard.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="149.0" fitWidth="117.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-                     <image>
-                        <Image url="@../../../resources/photos/WizardCard.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="149.0" fitWidth="117.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-                     <image>
-                        <Image url="@../../../resources/photos/RageCard.png" />
-                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </ImageView>
                   <ImageView fitHeight="34.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" GridPane.valignment="TOP">
                      <image>
                         <Image url="@../../../resources/photos/card_exir.png" />
                      </image>
-                  </ImageView>
-                  <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="10.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.valignment="TOP">
-                     <image>
-                        <Image url="@../../../resources/photos/card_exir.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="140.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.valignment="TOP">
-                     <image>
-                        <Image url="@../../../resources/photos/card_exir.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="270.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.valignment="TOP">
-                     <image>
-                        <Image url="@../../../resources/photos/card_exir.png" />
-                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </ImageView>
                   <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" text="5" GridPane.valignment="TOP">
                      <font>
@@ -531,6 +507,22 @@
                         <Insets left="8.0" top="10.0" />
                      </GridPane.margin>
                   </Text>
+                  <ImageView fitHeight="149.0" fitWidth="117.0" onMouseClicked="#changeCard" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@../../../resources/photos/CannonCard.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="10.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@../../../resources/photos/card_exir.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
                   <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" text="3" GridPane.columnIndex="1" GridPane.valignment="TOP">
                      <font>
                         <Font name="Supercell-Magic Regular" size="13.0" />
@@ -539,6 +531,22 @@
                         <Insets left="8.0" top="10.0" />
                      </GridPane.margin>
                   </Text>
+                  <ImageView fitHeight="149.0" fitWidth="117.0" onMouseClicked="#changeCard" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@../../../resources/photos/WizardCard.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="140.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@../../../resources/photos/card_exir.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
                   <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" text="5" GridPane.columnIndex="2" GridPane.valignment="TOP">
                      <font>
                         <Font name="Supercell-Magic Regular" size="13.0" />
@@ -547,6 +555,22 @@
                         <Insets left="8.0" top="10.0" />
                      </GridPane.margin>
                   </Text>
+                  <ImageView fitHeight="149.0" fitWidth="117.0" onMouseClicked="#changeCard" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@../../../resources/photos/RageCard.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="270.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@../../../resources/photos/card_exir.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
                   <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" text="3" GridPane.columnIndex="3" GridPane.valignment="TOP">
                      <font>
                         <Font name="Supercell-Magic Regular" size="13.0" />
