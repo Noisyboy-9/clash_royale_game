@@ -10,5 +10,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="clash_royal" />
+    <orderEntry type="module" module-name="core" />
   </component>
 </module>
