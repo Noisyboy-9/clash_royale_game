@@ -207,7 +207,7 @@
                   <Image url="@../../../resources/photos/profile_template.png" />
                </image>
             </ImageView>
-            <GridPane layoutX="91.0" layoutY="523.0" prefHeight="217.0" prefWidth="347.0">
+            <GridPane fx:id="battleCards" layoutX="91.0" layoutY="523.0" prefHeight="217.0" prefWidth="347.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -262,7 +262,7 @@
                         <Image url="@../../../resources/photos/CannonCard.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#a0d7ff" stroke="BLACK" strokeType="OUTSIDE" text="lvl.2" textAlignment="CENTER" wrappingWidth="85.755859375">
+                  <Text fill="#a0d7ff" stroke="BLACK" strokeType="OUTSIDE" text="lvl.1" textAlignment="CENTER" wrappingWidth="85.755859375">
                      <font>
                         <Font name="Supercell-Magic Regular" size="14.0" />
                      </font>
@@ -278,7 +278,7 @@
                         <Insets top="62.0" />
                      </GridPane.margin>
                   </Text>
-                  <Text fill="#a0d7ff" layoutX="96.0" layoutY="101.0" stroke="BLACK" strokeType="OUTSIDE" text="lvl.2" textAlignment="CENTER" wrappingWidth="85.755859375" GridPane.columnIndex="2">
+                  <Text fill="#a0d7ff" layoutX="96.0" layoutY="101.0" stroke="BLACK" strokeType="OUTSIDE" text="lvl.1" textAlignment="CENTER" wrappingWidth="85.755859375" GridPane.columnIndex="2">
                      <font>
                         <Font name="Supercell-Magic Regular" size="14.0" />
                      </font>
@@ -310,7 +310,7 @@
                         <Insets top="62.0" />
                      </GridPane.margin>
                   </Text>
-                  <Text fill="#ffcc66" layoutX="10.0" layoutY="210.0" stroke="BLACK" strokeType="OUTSIDE" text="lvl.2" textAlignment="CENTER" wrappingWidth="85.755859375" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Text fill="#ffcc66" layoutX="10.0" layoutY="210.0" stroke="BLACK" strokeType="OUTSIDE" text="lvl.1" textAlignment="CENTER" wrappingWidth="85.755859375" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="Supercell-Magic Regular" size="14.0" />
                      </font>
@@ -333,12 +333,12 @@
                   <Font name="Supercell-Magic Regular" size="14.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="66.0" layoutY="231.0" stroke="BLACK" strokeType="OUTSIDE" text="1" textAlignment="CENTER">
+            <Text fx:id="levelFiled" fill="WHITE" layoutX="66.0" layoutY="231.0" stroke="BLACK" strokeType="OUTSIDE" text="1" textAlignment="CENTER">
                <font>
                   <Font name="Supercell-Magic Regular" size="14.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="47.0" layoutY="177.0" stroke="BLACK" strokeType="OUTSIDE" text="Username" textAlignment="CENTER">
+            <Text fx:id="usernameField" fill="WHITE" layoutX="47.0" layoutY="177.0" stroke="BLACK" strokeType="OUTSIDE" text="Username" textAlignment="CENTER">
                <font>
                   <Font name="Supercell-Magic Regular" size="20.0" />
                </font>

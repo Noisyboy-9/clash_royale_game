@@ -15,6 +15,7 @@ public class BattleDeckController extends MenuController
     private Image firstImage;
     private Text firstElixir;
 
+    // TODO: ۱۴/۰۷/۲۰۲۱ a method needed to load battle deck and update levels
     // TODO: ۱۴/۰۷/۲۰۲۱ send related command to the server to notify the changes in the player's battle deck
     // TODO: ۱۴/۰۷/۲۰۲۱ check if it is easy to save the changed battle deck the battle deck menu arrangement will not change if u change the menu (for example if u go to the main menu and come back to battle deck page, u have to arrange cards again)
 
