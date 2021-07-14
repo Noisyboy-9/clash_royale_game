@@ -14,7 +14,7 @@ public class MainMenuController extends MenuController
 
     // TODO: ۱۴/۰۷/۲۰۲۱ a method is needed to update level and username fields
 
-    
+
     @FXML
     void twoPlayerMode(MouseEvent event)
     {
