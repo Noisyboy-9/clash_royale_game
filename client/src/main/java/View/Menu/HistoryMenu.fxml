@@ -234,7 +234,7 @@
                   <Image url="@../../../resources/photos/cup_icon.png" />
                </image>
             </ImageView>
-            <Group fx:id="cupLable1TopBox" layoutX="70.0" layoutY="313.0">
+            <Group fx:id="cupLabel1TopBox" layoutX="70.0" layoutY="313.0" visible="false">
                <children>
                   <ImageView fitHeight="20.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -258,7 +258,7 @@
                   </Text>
                </children>
             </Group>
-            <Group fx:id="cupLable2TopBox" layoutX="70.0" layoutY="370.0">
+            <Group fx:id="cupLabel2TopBox" layoutX="70.0" layoutY="370.0" visible="false">
                <children>
                   <ImageView fitHeight="20.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -282,7 +282,7 @@
                   </Text>
                </children>
             </Group>
-            <Group fx:id="cupLable1BottomBox" layoutX="69.0" layoutY="597.0">
+            <Group fx:id="cupLabel1BottomBox" layoutX="69.0" layoutY="597.0" visible="false">
                <children>
                   <ImageView fitHeight="20.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -306,7 +306,7 @@
                   </Text>
                </children>
             </Group>
-            <Group fx:id="cupLable2BottomBox" layoutX="69.0" layoutY="654.0">
+            <Group fx:id="cupLabel2BottomBox" layoutX="69.0" layoutY="654.0" visible="false">
                <children>
                   <ImageView fitHeight="20.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -330,22 +330,22 @@
                   </Text>
                </children>
             </Group>
-            <Text fx:id="playerScoreTopBox" fill="WHITE" layoutX="228.0" layoutY="219.0" stroke="BLACK" strokeType="OUTSIDE" text="0">
+            <Text fx:id="playerScoreTopBox" fill="WHITE" layoutX="228.0" layoutY="219.0" stroke="BLACK" strokeType="OUTSIDE" text="0" visible="false">
                <font>
                   <Font name="Supercell-Magic Regular" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="opponentScoreTopBox" fill="WHITE" layoutX="282.0" layoutY="219.0" stroke="BLACK" strokeType="OUTSIDE" text="0">
+            <Text fx:id="opponentScoreTopBox" fill="WHITE" layoutX="282.0" layoutY="219.0" stroke="BLACK" strokeType="OUTSIDE" text="0" visible="false">
                <font>
                   <Font name="Supercell-Magic Regular" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="playerScoreBottomBox" fill="WHITE" layoutX="230.0" layoutY="508.0" stroke="BLACK" strokeType="OUTSIDE" text="0">
+            <Text fx:id="playerScoreBottomBox" fill="WHITE" layoutX="230.0" layoutY="508.0" stroke="BLACK" strokeType="OUTSIDE" text="0" visible="false">
                <font>
                   <Font name="Supercell-Magic Regular" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="opponentScoreBottomBox" fill="WHITE" layoutX="284.0" layoutY="508.0" stroke="BLACK" strokeType="OUTSIDE" text="0">
+            <Text fx:id="opponentScoreBottomBox" fill="WHITE" layoutX="284.0" layoutY="508.0" stroke="BLACK" strokeType="OUTSIDE" text="0" visible="false">
                <font>
                   <Font name="Supercell-Magic Regular" size="18.0" />
                </font>

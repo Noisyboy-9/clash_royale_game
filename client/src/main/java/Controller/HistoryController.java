@@ -1,11 +1,31 @@
 package Controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.Group;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
 public class HistoryController extends MenuController
 {
+    @FXML
+    public void initialize()
+    {
+
+    }
+
+
+    @FXML
+    private Group cupLabel1TopBox;
+
+    @FXML
+    private Group cupLabel2TopBox;
+
+    @FXML
+    private Group cupLabel1BottomBox;
+
+    @FXML
+    private Group cupLabel2BottomBox;
+
     @FXML
     private Text playerScoreTopBox;
 
