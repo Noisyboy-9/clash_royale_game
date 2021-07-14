@@ -2,26 +2,13 @@ package Controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
 public class LoginRegisterController
 {
     @FXML
-    private ImageView exitButton;
-
-    @FXML
-    private ImageView changeButton;
-
-    @FXML
     private Text changeButtonText;
-
-    @FXML
-    private Text exitButtonText;
-
-    @FXML
-    private ImageView mainButton;
 
     @FXML
     private TextField usernameField;

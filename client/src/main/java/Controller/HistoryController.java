@@ -8,13 +8,6 @@ import javafx.scene.text.Text;
 public class HistoryController extends MenuController
 {
     @FXML
-    public void initialize()
-    {
-
-    }
-
-
-    @FXML
     private Group cupLabel1TopBox;
 
     @FXML

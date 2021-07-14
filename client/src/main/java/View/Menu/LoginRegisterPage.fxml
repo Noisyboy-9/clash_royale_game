@@ -50,7 +50,7 @@
                   <Image url="@../../../resources/photos/login_register_page_background.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="exitButton" fitHeight="88.0" fitWidth="154.0" layoutX="264.0" layoutY="721.0" onMouseClicked="#exitHandler" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="264.0" layoutY="721.0" onMouseClicked="#exitHandler" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../resources/photos/button_red.png" />
                </image>
@@ -58,7 +58,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <ImageView fx:id="changeButton" fitHeight="88.0" fitWidth="154.0" layoutX="110.0" layoutY="721.0" onMouseClicked="#changeButtonHandler" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="110.0" layoutY="721.0" onMouseClicked="#changeButtonHandler" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../resources/photos/button_yellow.png" />
                </image>
@@ -74,7 +74,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Text>
-            <Text fx:id="exitButtonText" fill="WHITE" layoutX="315.0" layoutY="772.0" onMouseClicked="#exitHandler" stroke="#570500" strokeType="OUTSIDE" strokeWidth="2.0" text="Exit">
+            <Text fill="WHITE" layoutX="315.0" layoutY="772.0" onMouseClicked="#exitHandler" stroke="#570500" strokeType="OUTSIDE" strokeWidth="2.0" text="Exit">
                <font>
                   <Font name="Supercell-Magic Regular" size="18.0" />
                </font>
@@ -92,7 +92,7 @@
                   <Image url="@../../../resources/photos/text_field2.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="mainButton" accessibleRole="BUTTON" fitHeight="88.0" fitWidth="154.0" layoutX="187.0" layoutY="283.0" onMouseClicked="#mainButtonHandler" pickOnBounds="true" preserveRatio="true">
+            <ImageView accessibleRole="BUTTON" fitHeight="88.0" fitWidth="154.0" layoutX="187.0" layoutY="283.0" onMouseClicked="#mainButtonHandler" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../resources/photos/button_blue.png" />
                </image>
