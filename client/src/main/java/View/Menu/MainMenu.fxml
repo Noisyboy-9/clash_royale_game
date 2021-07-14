@@ -202,7 +202,7 @@
                   <Image url="@../../../resources/photos/main_menu_label.png" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="37.0" layoutY="296.0" stroke="BLACK" strokeType="OUTSIDE" text="1">
+            <Text fx:id="levelField" fill="WHITE" layoutX="37.0" layoutY="296.0" stroke="BLACK" strokeType="OUTSIDE" text="1">
                <font>
                   <Font name="Supercell-Magic Regular" size="14.0" />
                </font>
@@ -228,7 +228,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Text>
-            <Text fill="WHITE" layoutX="83.0" layoutY="295.0" stroke="BLACK" strokeType="OUTSIDE" text="Username">
+            <Text fx:id="usernameField" fill="WHITE" layoutX="83.0" layoutY="295.0" stroke="BLACK" strokeType="OUTSIDE" text="Username">
                <font>
                   <Font name="Supercell-Magic Regular" size="14.0" />
                </font>
