@@ -15,12 +15,15 @@ public class BattleDeckController extends MenuController
     private Image firstImage;
     private Text firstElixir;
 
+    // TODO: ۱۴/۰۷/۲۰۲۱ send related command to the server to notify the changes in the player's battle deck
+    // TODO: ۱۴/۰۷/۲۰۲۱ check if it is easy to save the changed battle deck the battle deck menu arrangement will not change if u change the menu (for example if u go to the main menu and come back to battle deck page, u have to arrange cards again)
 
     @FXML
     private GridPane battleCards;
 
     @FXML
     private GridPane cardCollection;
+
 
     @FXML
     void changeCard(MouseEvent event)
@@ -63,6 +66,7 @@ public class BattleDeckController extends MenuController
         }
 
     }
+
 
     public Text loadElixir(ImageView imgView, Integer columnCount, Integer rowCount)
     {
