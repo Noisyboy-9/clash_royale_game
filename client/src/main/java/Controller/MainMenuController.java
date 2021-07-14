@@ -19,6 +19,7 @@ public class MainMenuController extends MenuController
     void twoPlayerMode(MouseEvent event)
     {
         // TODO: ۱۴/۰۷/۲۰۲۱ show wait scene and send command to server
+        Controller.SCENE_CONTROLLER.showScene("Menu/WaitingPage.fxml");
 
     }
 
@@ -26,6 +27,7 @@ public class MainMenuController extends MenuController
     void fourPlayerMode(MouseEvent event)
     {
         // TODO: ۱۴/۰۷/۲۰۲۱ show wait scene and send command to server
+        Controller.SCENE_CONTROLLER.showScene("Menu/WaitingPage.fxml");
 
     }
 
