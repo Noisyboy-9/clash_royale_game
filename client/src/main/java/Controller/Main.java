@@ -8,7 +8,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         Controller.SCENE_CONTROLLER.showScene("Menu/SplashScreen.fxml");
-
     }
 
 
@@ -16,5 +15,4 @@ public class Main extends Application {
         setUserAgentStylesheet(STYLESHEET_MODENA);
         launch(args);
     }
-
 }

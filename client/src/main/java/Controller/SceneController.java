@@ -37,7 +37,8 @@ public class SceneController {
             Controller.STAGE.show();
 
         } catch (IOException e) {
-            System.err.println("there was a problem related to I/O");
+            e.printStackTrace();
+            System.exit(0);
         }
 
     }
@@ -54,7 +55,8 @@ public class SceneController {
             }
 
         } catch (IOException e) {
-            System.err.println("there was a problem related to I/O");
+            e.printStackTrace();
+            System.exit(0);
         }
 
     }
