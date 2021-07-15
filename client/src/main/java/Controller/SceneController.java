@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class SceneController {
     private final HashMap<String, Scene> menus;
@@ -46,8 +47,16 @@ public class SceneController {
     public void loadAllMenuScenes() {
         try {
             // get path of all files in the directory
-            DirectoryStream<Path> directoryStream = Files.newDirectoryStream(Paths.get("/" + Controller.PATH + "Menu/"));
+            DirectoryStream<Path> directoryStream = null;
+            if (System.getProperty("os.name").contains("Mac")) {
+//                create a directory stream on mac
+                directoryStream = Files.newDirectoryStream(Paths.get("/" + Controller.PATH + "Menu/"));
+            }
 
+            if (System.getProperty("os.name").contains("Windows")) {
+//                create a directory stream
+                directoryStream = Files.newDirectoryStream(Paths.get(Controller.PATH + "Menu"));
+            }
 
             for (Path path : directoryStream) {
 //                the url created from the path has to be different for mac and windows users
@@ -62,7 +71,7 @@ public class SceneController {
                     url = new URL("file:/" + path);
                 }
 
-                Parent menuRoot = FXMLLoader.load(url);
+                Parent menuRoot = FXMLLoader.load(Objects.requireNonNull(url));
                 menus.put("Menu/" + path.getFileName(), new Scene(menuRoot, 528, 946));
             }
         } catch (IOException e) {
