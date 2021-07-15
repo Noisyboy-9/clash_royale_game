@@ -33,6 +33,8 @@
 -->
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -44,7 +46,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="946.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" prefHeight="946.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MapController">
   <children>
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="ALWAYS">
       <children>
@@ -1437,6 +1439,58 @@
                   </ImageView>
                </children>
             </GridPane>
+            <Group fx:id="beforeGameState" onMouseClicked="#startGame">
+               <children>
+                  <ImageView fx:id="blackCover" fitHeight="946.0" fitWidth="528.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/photos/map_cover.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="opponentBackground1" fitHeight="78.0" fitWidth="363.0" layoutX="83.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/photos/text_field3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="playerBackground1" fitHeight="78.0" fitWidth="363.0" layoutX="83.0" layoutY="561.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/photos/text_field4.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="opponentBackground2" fitHeight="78.0" fitWidth="363.0" layoutX="83.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../resources/photos/text_field3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="playerBackground2" fitHeight="78.0" fitWidth="363.0" layoutX="83.0" layoutY="668.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../resources/photos/text_field4.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="opponentName1" fill="WHITE" layoutX="108.0" layoutY="358.767578125" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="313.0">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="playerName1" fill="WHITE" layoutX="108.0" layoutY="576.767578125" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="313.0">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="opponentName2" fill="WHITE" layoutX="108.0" layoutY="249.767578125" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="313.0" visible="false">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="playerName2" fill="WHITE" layoutX="108.0" layoutY="682.767578125" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="313.0" visible="false">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Group>
       </children>
     </AnchorPane>
   </children>
