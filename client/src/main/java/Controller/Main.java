@@ -10,7 +10,6 @@ public class Main extends Application {
         Controller.SCENE_CONTROLLER.showScene("Menu/SplashScreen.fxml");
     }
 
-
     public static void main(String[] args) {
         setUserAgentStylesheet(STYLESHEET_MODENA);
         launch(args);

@@ -30,7 +30,6 @@ public class SceneController {
                 URL url = new URL("file:/" + Controller.PATH + sceneName);
                 root = FXMLLoader.load(url);
                 scene = new Scene(root, 528, 946);
-
             }
             Controller.STAGE.setTitle("Clash Royale");
             Controller.STAGE.setScene(scene);
@@ -47,18 +46,29 @@ public class SceneController {
     public void loadAllMenuScenes() {
         try {
             // get path of all files in the directory
-            DirectoryStream<Path> directoryStream = Files.newDirectoryStream(Paths.get(Controller.PATH + "Menu"));
+            DirectoryStream<Path> directoryStream = Files.newDirectoryStream(Paths.get("/" + Controller.PATH + "Menu/"));
+
+
             for (Path path : directoryStream) {
-                Parent menuRoot = FXMLLoader.load(new URL("file:/" + path));
+//                the url created from the path has to be different for mac and windows users
+                URL url = null;
+                if (System.getProperty("os.name").contains("Mac")) {
+//                    create a url for mac users
+                    url = new URL("file://" + path);
+                }
+
+                if (System.getProperty("os.name").contains("Windows")) {
+//                    create a url for windows users
+                    url = new URL("file:/" + path);
+                }
+
+                Parent menuRoot = FXMLLoader.load(url);
                 menus.put("Menu/" + path.getFileName(), new Scene(menuRoot, 528, 946));
-
             }
-
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(0);
         }
-
     }
 
 }
