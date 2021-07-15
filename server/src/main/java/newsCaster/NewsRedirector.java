@@ -44,12 +44,6 @@ public class NewsRedirector {
 
     }
 
-    private void startGameLoop() {
-        for (PlayerWorker worker : this.players) {
-            new Thread(new PlayerCommandReceiverRunnable(worker, this)).start();
-        }
-    }
-
     public void broadcastCommand(Command command) throws IOException {
         for (PlayerWorker worker : this.players) {
             worker.getResponse().writeObject(command);
@@ -63,6 +57,12 @@ public class NewsRedirector {
                 continue;
             }
             worker.getResponse().writeObject(command);
+        }
+    }
+
+    private void startGameLoop() {
+        for (PlayerWorker worker : this.players) {
+            new Thread(new PlayerCommandReceiverRunnable(worker, this)).start();
         }
     }
 }

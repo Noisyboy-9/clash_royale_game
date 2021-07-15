@@ -5,8 +5,7 @@ import javafx.scene.Group;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
-public class HistoryController extends MenuController
-{
+public class HistoryController extends MenuController {
     @FXML
     private Group cupLabel1TopBox;
 
@@ -57,14 +56,12 @@ public class HistoryController extends MenuController
 
 
     @FXML
-    void moveDown(MouseEvent event)
-    {
+    void moveDown(MouseEvent event) {
 
     }
 
     @FXML
-    void moveUp(MouseEvent event)
-    {
+    void moveUp(MouseEvent event) {
 
     }
 

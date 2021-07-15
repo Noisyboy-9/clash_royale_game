@@ -4,8 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
-public class MainMenuController extends MenuController
-{
+public class MainMenuController extends MenuController {
     @FXML
     private Text levelField;
 
@@ -16,24 +15,21 @@ public class MainMenuController extends MenuController
 
 
     @FXML
-    void twoPlayerMode(MouseEvent event)
-    {
+    void twoPlayerMode(MouseEvent event) {
         // TODO: ۱۴/۰۷/۲۰۲۱ show wait scene and send command to server
         Controller.SCENE_CONTROLLER.showScene("Menu/WaitingPage.fxml");
 
     }
 
     @FXML
-    void fourPlayerMode(MouseEvent event)
-    {
+    void fourPlayerMode(MouseEvent event) {
         // TODO: ۱۴/۰۷/۲۰۲۱ show wait scene and send command to server
         Controller.SCENE_CONTROLLER.showScene("Menu/WaitingPage.fxml");
 
     }
 
     @FXML
-    void logOutHandler(MouseEvent event)
-    {
+    void logOutHandler(MouseEvent event) {
         Controller.SCENE_CONTROLLER.showScene("Menu/LoginRegisterPage.fxml");
 
     }

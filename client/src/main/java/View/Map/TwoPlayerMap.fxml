@@ -1476,14 +1476,277 @@
                         <Font name="Supercell-Magic Regular" size="20.0" />
                      </font>
                   </Text>
-                  <Text fx:id="opponentName2" fill="WHITE" layoutX="108.0" layoutY="249.767578125" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="313.0" visible="false">
+                  <Text fx:id="opponentName2" fill="WHITE" layoutX="108.0" layoutY="249.767578125" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" visible="false" wrappingWidth="313.0">
                      <font>
                         <Font name="Supercell-Magic Regular" size="20.0" />
                      </font>
                   </Text>
-                  <Text fx:id="playerName2" fill="WHITE" layoutX="108.0" layoutY="682.767578125" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="313.0" visible="false">
+                  <Text fx:id="playerName2" fill="WHITE" layoutX="108.0" layoutY="682.767578125" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" visible="false" wrappingWidth="313.0">
                      <font>
                         <Font name="Supercell-Magic Regular" size="20.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="110.0" fitWidth="264.0" layoutX="133.0" layoutY="836.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/photos/card_box.png" />
+                     </image>
+                  </ImageView>
+                  <GridPane layoutX="144.0" layoutY="846.0" prefHeight="73.0" prefWidth="242.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="73.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../resources/photos/BarbariansCard.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="73.0" fitWidth="59.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../resources/photos/BarbariansCard.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="73.0" fitWidth="59.0" layoutX="70.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../resources/photos/BarbariansCard.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="73.0" fitWidth="59.0" layoutX="130.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../resources/photos/BarbariansCard.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="24.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <image>
+                              <Image url="@../../../resources/photos/card_exir.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets bottom="-2.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" text="5" textAlignment="CENTER" wrappingWidth="15.6337890625" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <font>
+                              <Font name="Supercell-Magic Regular" size="10.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="24.0" fitWidth="18.0" layoutX="31.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <image>
+                              <Image url="@../../../resources/photos/card_exir.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets bottom="-2.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <Text fill="WHITE" layoutX="32.0" layoutY="80.0" stroke="BLACK" strokeType="OUTSIDE" text="5" textAlignment="CENTER" wrappingWidth="15.6337890625" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <font>
+                              <Font name="Supercell-Magic Regular" size="10.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="24.0" fitWidth="18.0" layoutX="70.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <image>
+                              <Image url="@../../../resources/photos/card_exir.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets bottom="-2.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <Text fill="WHITE" layoutX="70.0" layoutY="51.0" stroke="BLACK" strokeType="OUTSIDE" text="5" textAlignment="CENTER" wrappingWidth="15.6337890625" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <font>
+                              <Font name="Supercell-Magic Regular" size="10.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="24.0" fitWidth="18.0" layoutX="130.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <image>
+                              <Image url="@../../../resources/photos/card_exir.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets bottom="-2.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <Text fill="WHITE" layoutX="130.0" layoutY="51.0" stroke="BLACK" strokeType="OUTSIDE" text="5" textAlignment="CENTER" wrappingWidth="15.6337890625" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <font>
+                              <Font name="Supercell-Magic Regular" size="10.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="167.0" layoutY="924.0" prefHeight="16.0" prefWidth="220.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="191.0" layoutY="791.0" prefHeight="45.0" prefWidth="149.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="41.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../resources/photos/GiantCard.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="41.0" fitWidth="34.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                           <image>
+                              <Image url="@../../../resources/photos/GiantCard.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="41.0" fitWidth="34.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                           <image>
+                              <Image url="@../../../resources/photos/GiantCard.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="41.0" fitWidth="34.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                           <image>
+                              <Image url="@../../../resources/photos/GiantCard.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="17.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <image>
+                              <Image url="@../../../resources/photos/card_exir.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="17.0" fitWidth="13.0" layoutX="10.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <image>
+                              <Image url="@../../../resources/photos/card_exir.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="17.0" fitWidth="13.0" layoutX="10.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <image>
+                              <Image url="@../../../resources/photos/card_exir.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="17.0" fitWidth="13.0" layoutX="10.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <image>
+                              <Image url="@../../../resources/photos/card_exir.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" text="5" textAlignment="CENTER" wrappingWidth="15.6337890625" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <font>
+                              <Font name="Supercell-Magic Regular" size="9.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="21.0" layoutY="52.0" stroke="BLACK" strokeType="OUTSIDE" text="5" textAlignment="CENTER" wrappingWidth="15.6337890625" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <font>
+                              <Font name="Supercell-Magic Regular" size="9.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="10.0" layoutY="36.0" stroke="BLACK" strokeType="OUTSIDE" text="5" textAlignment="CENTER" wrappingWidth="15.6337890625" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <font>
+                              <Font name="Supercell-Magic Regular" size="9.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="10.0" layoutY="36.0" stroke="BLACK" strokeType="OUTSIDE" text="5" textAlignment="CENTER" wrappingWidth="15.6337890625" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <font>
+                              <Font name="Supercell-Magic Regular" size="9.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </GridPane>
+                  <Text fill="#e1dfc7" layoutX="35.0" layoutY="862.0" stroke="BLACK" strokeType="OUTSIDE" text="Next:">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#ff5efe" layoutX="170.0" layoutY="938.0" stroke="BLACK" strokeType="OUTSIDE" text="Max: 10">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="10.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="62.0" fitWidth="50.0" layoutX="38.0" layoutY="872.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/photos/ArchersCard.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="151.0" layoutY="936.0" stroke="BLACK" strokeType="OUTSIDE" text="10" textAlignment="CENTER" wrappingWidth="15.6337890625">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="10.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="20.0" fitWidth="15.0" layoutX="55.0" layoutY="916.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/photos/card_exir.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="55.0" layoutY="931.0" stroke="BLACK" strokeType="OUTSIDE" text="5" textAlignment="CENTER" wrappingWidth="15.6337890625">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="10.0" />
                      </font>
                   </Text>
                </children>

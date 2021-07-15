@@ -9,8 +9,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
-public class BattleDeckController extends MenuController
-{
+public class BattleDeckController extends MenuController {
     private ImageView firstImgView;
     private Image firstImage;
     private Text firstElixir;
@@ -23,10 +22,25 @@ public class BattleDeckController extends MenuController
     @FXML
     private GridPane cardCollection;
 
+    public Text loadElixir(ImageView imgView, Integer columnCount, Integer rowCount) {
+        if (columnCount == null)
+            columnCount = 0;
+
+        if (rowCount == null)
+            rowCount = 0;
+
+        if (battleCards.getChildren().contains(imgView)) {
+            return (Text) battleCards.getChildren().get(3 * columnCount + 12 * rowCount + 2);
+
+        } else {
+            return (Text) cardCollection.getChildren().get(3 * columnCount + 12 * rowCount + 2);
+
+        }
+
+    }
 
     @FXML
-    void changeCard(MouseEvent event)
-    {
+    void changeCard(MouseEvent event) {
         DropShadow ds = new DropShadow(20, Color.CYAN);
         ImageView imageView = (ImageView) event.getSource();
         imageView.setEffect(ds);
@@ -34,15 +48,12 @@ public class BattleDeckController extends MenuController
         Integer rowCount = GridPane.getRowIndex(imageView);
 
 
-        if (firstImage == null)
-        {
+        if (firstImage == null) {
             firstImgView = imageView;
             firstImage = imageView.getImage();
             firstElixir = loadElixir(imageView, columnCount, rowCount);
 
-        }
-        else
-        {
+        } else {
             Text secondElixir = loadElixir(imageView, columnCount, rowCount);
 
             // change the cards by image and elixir count
@@ -61,28 +72,6 @@ public class BattleDeckController extends MenuController
 
             // make first image field null
             firstImage = null;
-
-        }
-
-    }
-
-
-    public Text loadElixir(ImageView imgView, Integer columnCount, Integer rowCount)
-    {
-        if (columnCount == null)
-            columnCount = 0;
-
-        if (rowCount == null)
-            rowCount = 0;
-
-        if (battleCards.getChildren().contains(imgView))
-        {
-            return (Text) battleCards.getChildren().get(3 * columnCount + 12 * rowCount + 2);
-
-        }
-        else
-        {
-            return (Text) cardCollection.getChildren().get(3 * columnCount + 12 * rowCount + 2);
 
         }
 

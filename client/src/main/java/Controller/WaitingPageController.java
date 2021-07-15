@@ -3,11 +3,9 @@ package Controller;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 
-public class WaitingPageController
-{
+public class WaitingPageController {
     @FXML
-    void cancelHandler(MouseEvent event)
-    {
+    void cancelHandler(MouseEvent event) {
         Controller.SCENE_CONTROLLER.showScene("Menu/MainMenu.fxml");
 
     }
