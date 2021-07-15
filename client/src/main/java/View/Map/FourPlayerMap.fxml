@@ -1393,46 +1393,62 @@
                         <Image url="@../../../resources/photos/tower_king_red.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="16" GridPane.halignment="LEFT" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
-                     <image>
-                        <Image url="@../../../resources/photos/tower_archer_blue.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="604.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
-                     <image>
-                        <Image url="@../../../resources/photos/tower_archer_blue.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="110.0" fitWidth="88.0" layoutX="252.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="14" GridPane.halignment="CENTER" GridPane.rowIndex="32" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@../../../resources/photos/tower_king_blue.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="110.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="32" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@../../../resources/photos/tower_king_blue.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="44.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="17" GridPane.halignment="CENTER" GridPane.rowIndex="35" GridPane.valignment="BOTTOM">
-                     <image>
-                        <Image url="@../../../resources/photos/wall2.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="44.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="35" GridPane.valignment="BOTTOM">
-                     <image>
-                        <Image url="@../../../resources/photos/wall1.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="132.0" fitWidth="88.0" layoutX="208.0" layoutY="494.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
-                     <image>
-                        <Image url="@../../../resources/photos/tower_king_red.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="16" GridPane.halignment="LEFT" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
-                     <image>
-                        <Image url="@../../../resources/photos/tower_archer_red.png" />
-                     </image>
-                  </ImageView>
+                   <ImageView fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true"
+                              GridPane.columnIndex="16" GridPane.halignment="LEFT" GridPane.rowIndex="30"
+                              GridPane.valignment="BOTTOM">
+                       <image>
+                           <Image url="@../../../resources/photos/tower_archer_blue.png"/>
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="604.0" pickOnBounds="true"
+                              preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="LEFT"
+                              GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
+                       <image>
+                           <Image url="@../../../resources/photos/tower_archer_blue.png"/>
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="110.0" fitWidth="88.0" layoutX="252.0" layoutY="450.0" pickOnBounds="true"
+                              preserveRatio="true" GridPane.columnIndex="14" GridPane.halignment="CENTER"
+                              GridPane.rowIndex="32" GridPane.valignment="CENTER">
+                       <image>
+                           <Image url="@../../../resources/photos/tower_king_blue.png"/>
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="110.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true"
+                              GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="32"
+                              GridPane.valignment="CENTER">
+                       <image>
+                           <Image url="@../../../resources/photos/tower_king_blue.png"/>
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="44.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true"
+                              GridPane.columnIndex="17" GridPane.halignment="CENTER" GridPane.rowIndex="35"
+                              GridPane.valignment="BOTTOM">
+                       <image>
+                           <Image url="@../../../resources/photos/wall2.png"/>
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="44.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true"
+                              GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="35"
+                              GridPane.valignment="BOTTOM">
+                       <image>
+                           <Image url="@../../../resources/photos/wall1.png"/>
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="132.0" fitWidth="88.0" layoutX="208.0" layoutY="494.0" pickOnBounds="true"
+                              preserveRatio="true" GridPane.columnIndex="9" GridPane.halignment="CENTER"
+                              GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
+                       <image>
+                           <Image url="@../../../resources/photos/tower_king_red.png"/>
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true"
+                              GridPane.columnIndex="16" GridPane.halignment="LEFT" GridPane.rowIndex="10"
+                              GridPane.valignment="BOTTOM">
+                       <image>
+                           <Image url="@../../../resources/photos/tower_archer_red.png"/>
+                       </image>
+                   </ImageView>
                    <ImageView fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="164.0" pickOnBounds="true"
                               preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="LEFT"
                               GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
@@ -1473,22 +1489,22 @@
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints/>
-                        <ColumnConstraints/>
-                        <ColumnConstraints/>
-                    </columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            <ColumnConstraints/>
+                            <ColumnConstraints/>
+                            <ColumnConstraints/>
+                        </columnConstraints>
                     <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
@@ -4936,9 +4952,9 @@
                             </image>
                         </ImageView>
                     </children>
-                </GridPane>
-            </children>
-        </AnchorPane>
-    </children>
->>>>>>> a57d12e494caaee17352ea9e46cb773a5c4c9871:client/src/main/java/View/Map/MapSample.fxml
+                    </GridPane>
+                </children>
+            </AnchorPane>
+        </children>
+    </VBox>
 </VBox>
