@@ -33,6 +33,7 @@
 -->
 
 <<<<<<< HEAD:client/src/main/java/View/Map/FourPlayerMap.fxml
+<<<<<<< HEAD:client/src/main/java/View/Map/FourPlayerMap.fxml
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -1452,6 +1453,13 @@
     </AnchorPane>
   </children>
 =======
+=======
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+>>>>>>> 4983591f8ea7394092cae6cc09600ac7e8a7e5cb:client/src/main/java/View/Map/MapSample.fxml
 <VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="946.0" prefWidth="528.0"
       xmlns="http://javafx.com/javafx/16">
     <children>
