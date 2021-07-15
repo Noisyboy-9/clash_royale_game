@@ -12,28 +12,21 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 
-public class SceneController
-{
+public class SceneController {
+    private final HashMap<String, Scene> menus;
     private Scene scene;
     private Parent root;
-    private final HashMap<String, Scene> menus;
 
-    public SceneController()
-    {
+    public SceneController() {
         this.menus = new HashMap<>();
 
     }
 
-    public void showScene(String sceneName)
-    {
-        try
-        {
-            if (menus.containsKey(sceneName))
-            {
+    public void showScene(String sceneName) {
+        try {
+            if (menus.containsKey(sceneName)) {
                 scene = menus.get(sceneName);
-            }
-            else
-            {
+            } else {
                 URL url = new URL("file:/" + Controller.PATH + sceneName);
                 root = FXMLLoader.load(url);
                 scene = new Scene(root, 528, 946);
@@ -43,30 +36,24 @@ public class SceneController
             Controller.STAGE.setScene(scene);
             Controller.STAGE.show();
 
-        }catch (IOException e)
-        {
+        } catch (IOException e) {
             System.err.println("there was a problem related to I/O");
         }
 
     }
 
 
-    public void loadAllMenuScenes()
-    {
-        try
-        {
+    public void loadAllMenuScenes() {
+        try {
             // get path of all files in the directory
             DirectoryStream<Path> directoryStream = Files.newDirectoryStream(Paths.get(Controller.PATH + "Menu"));
-            for (Path path : directoryStream)
-            {
+            for (Path path : directoryStream) {
                 Parent menuRoot = FXMLLoader.load(new URL("file:/" + path));
                 menus.put("Menu/" + path.getFileName(), new Scene(menuRoot, 528, 946));
 
             }
 
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             System.err.println("there was a problem related to I/O");
         }
 
