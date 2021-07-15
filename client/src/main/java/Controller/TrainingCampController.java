@@ -3,17 +3,14 @@ package Controller;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 
-public class TrainingCampController extends MenuController
-{
+public class TrainingCampController extends MenuController {
     @FXML
-    void crazyMode(MouseEvent event)
-    {
+    void crazyMode(MouseEvent event) {
 
     }
 
     @FXML
-    void normalMode(MouseEvent event)
-    {
+    void normalMode(MouseEvent event) {
 
     }
 

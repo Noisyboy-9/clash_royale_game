@@ -6,8 +6,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
-public class LoginRegisterController
-{
+public class LoginRegisterController {
     @FXML
     private Text changeButtonText;
 
@@ -24,8 +23,7 @@ public class LoginRegisterController
     private Text message;
 
     @FXML
-    void changeButtonHandler(MouseEvent event)
-    {
+    void changeButtonHandler(MouseEvent event) {
         String temp = mainButtonText.getText();
         mainButtonText.setText(changeButtonText.getText());
         changeButtonText.setText(temp);
@@ -33,24 +31,19 @@ public class LoginRegisterController
     }
 
     @FXML
-    void exitHandler(MouseEvent event)
-    {
+    void exitHandler(MouseEvent event) {
         System.exit(0);
 
     }
 
     @FXML
-    void mainButtonHandler(MouseEvent event)
-    {
+    void mainButtonHandler(MouseEvent event) {
         message.setText("");
 
-        if (usernameField.getText().equals("") || passwordField.getText().equals(""))
-        {
+        if (usernameField.getText().equals("") || passwordField.getText().equals("")) {
             message.setText("Please enter your username and password.");
 
-        }
-        else
-        {
+        } else {
             // send command to server... if response was successful change the scene
             usernameField.setText("");
             passwordField.setText("");
