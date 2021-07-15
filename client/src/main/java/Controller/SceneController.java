@@ -46,31 +46,10 @@ public class SceneController {
 
     public void loadAllMenuScenes() {
         try {
-            // get path of all files in the directory
-            DirectoryStream<Path> directoryStream = null;
-            if (System.getProperty("os.name").contains("Mac")) {
-//                create a directory stream on mac
-                directoryStream = Files.newDirectoryStream(Paths.get("/" + Controller.PATH + "Menu/"));
-            }
-
-            if (System.getProperty("os.name").contains("Windows")) {
-//                create a directory stream
-                directoryStream = Files.newDirectoryStream(Paths.get(Controller.PATH + "Menu"));
-            }
-
+            DirectoryStream<Path> directoryStream = this.getDirectoryStreamBasedOnOs();
+            String protocol = this.getFileProtocol();
             for (Path path : directoryStream) {
-//                the url created from the path has to be different for mac and windows users
-                URL url = null;
-                if (System.getProperty("os.name").contains("Mac")) {
-//                    create a url for mac users
-                    url = new URL("file://" + path);
-                }
-
-                if (System.getProperty("os.name").contains("Windows")) {
-//                    create a url for windows users
-                    url = new URL("file:/" + path);
-                }
-
+                URL url = new URL(protocol + path);
                 Parent menuRoot = FXMLLoader.load(Objects.requireNonNull(url));
                 menus.put("Menu/" + path.getFileName(), new Scene(menuRoot, 528, 946));
             }
@@ -78,6 +57,27 @@ public class SceneController {
             e.printStackTrace();
             System.exit(0);
         }
+    }
+
+    private String getFileProtocol() {
+        if (!System.getProperty("os.name").contains("Windows")) {
+//            for mac and linux file system
+            return "file://";
+        }
+
+//        for windows file system
+        return "file:/";
+    }
+
+    private DirectoryStream<Path> getDirectoryStreamBasedOnOs() throws IOException {
+        DirectoryStream<Path> directoryStream = null;
+        if (!System.getProperty("os.name").contains("Windows")) {
+//                create a directory stream on mac or linux
+            return Files.newDirectoryStream(Paths.get("/" + Controller.PATH + "Menu/"));
+        }
+
+//                create a directory stream for windows
+        return Files.newDirectoryStream(Paths.get(Controller.PATH + "Menu"));
     }
 
 }
