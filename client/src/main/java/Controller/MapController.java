@@ -11,7 +11,28 @@ public class MapController
     @FXML
     public void initialize()
     {
-        
+        // these variables will be updated by server
+        int numberOfPlayers = 4;
+        String nameOfPlayer1 = "";
+        String nameOfOpponent1 = "";
+        String nameOfPlayer2 = "";
+        String nameOfOpponent2 = "";
+
+        playerName1.setText(nameOfPlayer1);
+        opponentName1.setText(nameOfOpponent1);
+
+        if (numberOfPlayers == 4)
+        {
+            playerName2.setText(nameOfPlayer2);
+            opponentName2.setText(nameOfOpponent2);
+
+            playerBackground2.setVisible(true);
+            opponentBackground2.setVisible(true);
+            playerName2.setVisible(true);
+            opponentName2.setVisible(true);
+
+        }
+
     }
 
     @FXML
@@ -47,7 +68,8 @@ public class MapController
     @FXML
     void startGame(MouseEvent event)
     {
-
+        beforeGameState.setVisible(false);
 
     }
+
 }
