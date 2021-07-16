@@ -1,6 +1,6 @@
 package Controller;
 
-import globals.UserData;
+import Globals.UserData;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;

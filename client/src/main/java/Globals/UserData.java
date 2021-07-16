@@ -1,4 +1,4 @@
-package globals;
+package Globals;
 
 import user.User;
 

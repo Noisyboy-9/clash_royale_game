@@ -5,7 +5,7 @@ import commands.authenicationCommands.login.LoginCommand;
 import commands.authenicationCommands.login.LoginResponseCommand;
 import commands.authenicationCommands.register.RegisterCommand;
 import commands.authenicationCommands.register.RegisterResponseCommand;
-import globals.UserData;
+import Globals.UserData;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
