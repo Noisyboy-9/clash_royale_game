@@ -1,7 +1,5 @@
 package commands.authenicationCommands.register;
 
-import user.User;
-
 /**
  * The type Register response command.
  */
@@ -12,12 +10,11 @@ public class RegisterResponseCommand extends RegisterCommand {
     /**
      * Instantiates a new Register response command.
      *
-     * @param user       the user
-     * @param successful the successful
-     * @param message    the message
+     * @param username the username
+     * @param password the password
      */
-    public RegisterResponseCommand(User user, boolean successful, String message) {
-        super(user);
+    public RegisterResponseCommand(String username, String password, boolean successful, String message) {
+        super(username, password);
         this.successful = successful;
         this.message = message;
     }
