@@ -6,11 +6,13 @@ import user.User;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 /**
  * The type History query builder.
  */
 public class HistoryQueryBuilder {
+    private static HistoryQueryBuilder instance = null;
     private final File historyDb;
 
     private HistoryQueryBuilder() {
@@ -64,5 +66,17 @@ public class HistoryQueryBuilder {
         }
 
         return results;
+    }
+
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
+    public static HistoryQueryBuilder getInstance() {
+        if (Objects.isNull(instance)) {
+            instance = new HistoryQueryBuilder();
+        }
+        return instance;
     }
 }
