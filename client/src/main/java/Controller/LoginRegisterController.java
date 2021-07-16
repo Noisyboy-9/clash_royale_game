@@ -1,5 +1,6 @@
 package Controller;
 
+import commands.authenicationCommands.register.RegisterCommand;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -39,16 +40,32 @@ public class LoginRegisterController {
     @FXML
     void mainButtonHandler(MouseEvent event) {
         message.setText("");
-        if (usernameField.getText().equals("") || passwordField.getText().equals("")) {
+        if (this.isInputValid()) {
             message.setText("Please enter your username and password.");
-
         } else {
+            if (this.mainButtonText.getText().equalsIgnoreCase("register")) {
+                this.handleRegister();
+            } else {
+                this.handleLogin();
+            }
             // send command to server... if response was successful change the scene
             usernameField.setText("");
             passwordField.setText("");
             Controller.SCENE_CONTROLLER.showScene("Menu/MainMenu.fxml");
         }
 
+    }
+
+    private void handleRegister() {
+
+    }
+
+    private void handleLogin() {
+
+    }
+
+    private boolean isInputValid() {
+        return usernameField.getText().equals("") || passwordField.getText().equals("");
     }
 
 }
