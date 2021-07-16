@@ -1,36 +1,22 @@
 package commands.authenicationCommands.login;
 
-import user.User;
-
 /**
  * The type Login response command.
  */
 public class LoginResponseCommand extends LoginCommand {
     private final boolean successful;
     private final String message;
-    private User user;
 
     /**
      * Instantiates a new Login response command.
      *
-     * @param user       the user
-     * @param successful the successful
-     * @param message    the message
+     * @param username the username
+     * @param password the password
      */
-    public LoginResponseCommand(User user, boolean successful, String message) {
-        super(user.getUsername(), user.getPassword());
+    public LoginResponseCommand(String username, String password, boolean successful, String message) {
+        super(username, password);
         this.successful = successful;
         this.message = message;
-        this.user = user;
-    }
-
-    /**
-     * Gets user.
-     *
-     * @return the user
-     */
-    public User getUser() {
-        return user;
     }
 
     /**
