@@ -52,6 +52,12 @@
             <artifactId>javafx-media</artifactId>
             <version>16</version>
         </dependency>
+        <dependency>
+            <groupId>org.clashRoyal</groupId>
+            <artifactId>core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 

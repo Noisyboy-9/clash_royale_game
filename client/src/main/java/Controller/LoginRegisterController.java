@@ -39,7 +39,6 @@ public class LoginRegisterController {
     @FXML
     void mainButtonHandler(MouseEvent event) {
         message.setText("");
-
         if (usernameField.getText().equals("") || passwordField.getText().equals("")) {
             message.setText("Please enter your username and password.");
 
