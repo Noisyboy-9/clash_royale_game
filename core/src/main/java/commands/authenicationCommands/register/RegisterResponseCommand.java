@@ -40,6 +40,15 @@ public class RegisterResponseCommand extends RegisterCommand {
     }
 
     /**
+     * Gets user.
+     *
+     * @return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
      * Is successful boolean.
      *
      * @return the boolean
