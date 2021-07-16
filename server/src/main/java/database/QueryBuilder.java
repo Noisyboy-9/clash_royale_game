@@ -1,5 +1,6 @@
 package database;
 
+import exceptions.EmptyDatabaseException;
 import user.User;
 
 import java.io.*;
@@ -52,6 +53,7 @@ public class QueryBuilder {
      * Insert user to database.
      *
      * @param user the user
+     * @throws IOException the io exception
      */
     public void insertUser(User user) throws IOException {
         ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(this.db));
@@ -69,5 +71,37 @@ public class QueryBuilder {
         }
 
         return singletonInstance;
+    }
+
+    /**
+     * Select user by username user.
+     *
+     * @param username the username
+     * @return the user
+     * @throws EmptyDatabaseException the empty database exception
+     * @throws IOException            the io exception
+     */
+    public User selectUserByUsername(String username) throws EmptyDatabaseException, IOException {
+        if (this.db.length() == 0) {
+            throw new EmptyDatabaseException("The database is empty, no such user");
+        }
+
+        ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(this.db));
+
+        while (true) {
+            try {
+                User user = (User) inputStream.readObject();
+
+                if (user.getUsername().equals(username)) {
+                    return user;
+                }
+            } catch (EOFException eofException) {
+                break;
+            } catch (IOException | ClassNotFoundException ioException) {
+                ioException.printStackTrace();
+            }
+        }
+
+        return null;
     }
 }
