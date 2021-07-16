@@ -1,9 +1,13 @@
 package Controller;
 
+import globals.UserData;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+
+import java.util.HashMap;
 
 public class MenuController {
     @FXML
@@ -20,9 +24,6 @@ public class MenuController {
             case 2 -> Controller.SCENE_CONTROLLER.showScene("Menu/MainMenu.fxml");
             case 3 -> Controller.SCENE_CONTROLLER.showScene("Menu/TrainingCampMenu.fxml");
             case 4 -> Controller.SCENE_CONTROLLER.showScene("Menu/HistoryMenu.fxml");
-
         }
-
     }
-
 }

@@ -3,5 +3,5 @@ package globals;
 import user.User;
 
 public class UserData {
-    public static User user;
+    public static User user = null;
 }

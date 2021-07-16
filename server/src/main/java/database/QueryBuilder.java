@@ -56,7 +56,7 @@ public class QueryBuilder {
      * @throws IOException the io exception
      */
     public void insertUser(User user) throws IOException {
-        ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(this.db));
+        ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(this.db, true));
         outputStream.writeObject(user);
     }
 
@@ -73,14 +73,6 @@ public class QueryBuilder {
         return singletonInstance;
     }
 
-    /**
-     * Select user by username user.
-     *
-     * @param username the username
-     * @return the user
-     * @throws EmptyDatabaseException the empty database exception
-     * @throws IOException            the io exception
-     */
     public User selectUserByUsername(String username) throws EmptyDatabaseException, IOException {
         if (this.db.length() == 0) {
             throw new EmptyDatabaseException("The database is empty, no such user");

@@ -85,6 +85,10 @@ public class LoginRegisterController {
             this.message.setText(response.getMessage());
         } else {
             UserData.user = response.getUser();
+
+            Controller.SCENE_CONTROLLER.removeScene("Menu/ProfileMenu.fxml");
+            Controller.SCENE_CONTROLLER.removeScene("Menu/MainMenu.fxml");
+
             Controller.SCENE_CONTROLLER.showScene("Menu/MainMenu.fxml");
         }
     }
@@ -104,6 +108,10 @@ public class LoginRegisterController {
             this.message.setText(response.getMessage());
         } else {
             UserData.user = response.getUser();
+
+            Controller.SCENE_CONTROLLER.removeScene("Menu/ProfileMenu.fxml");
+            Controller.SCENE_CONTROLLER.removeScene("Menu/MainMenu.fxml");
+
             Controller.SCENE_CONTROLLER.showScene("Menu/MainMenu.fxml");
         }
     }
@@ -111,5 +119,4 @@ public class LoginRegisterController {
     private boolean isInputValid() {
         return usernameField.getText().equals("") || passwordField.getText().equals("");
     }
-
 }
