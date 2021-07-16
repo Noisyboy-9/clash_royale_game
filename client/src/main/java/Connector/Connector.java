@@ -1,6 +1,6 @@
-package connector;
+package Connector;
 
-import errors.AlreadyConnectedToServerException;
+import Errors.AlreadyConnectedToServerException;
 
 import java.io.*;
 import java.net.Socket;

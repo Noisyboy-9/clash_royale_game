@@ -1,10 +1,11 @@
 package Controller;
 
+import Connector.Connector;
 import commands.authenicationCommands.login.LoginCommand;
 import commands.authenicationCommands.login.LoginResponseCommand;
 import commands.authenicationCommands.register.RegisterCommand;
 import commands.authenicationCommands.register.RegisterResponseCommand;
-import connector.Connector;
+import globals.UserData;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -83,6 +84,7 @@ public class LoginRegisterController {
         if (!response.isSuccessful()) {
             this.message.setText(response.getMessage());
         } else {
+            UserData.user = response.getUser();
             Controller.SCENE_CONTROLLER.showScene("Menu/MainMenu.fxml");
         }
     }
@@ -101,6 +103,7 @@ public class LoginRegisterController {
         if (!response.isSuccessful()) {
             this.message.setText(response.getMessage());
         } else {
+            UserData.user = response.getUser();
             Controller.SCENE_CONTROLLER.showScene("Menu/MainMenu.fxml");
         }
     }
