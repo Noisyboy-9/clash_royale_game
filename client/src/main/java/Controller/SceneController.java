@@ -1,7 +1,7 @@
 package Controller;
 
 import connector.Connector;
-import exceptions.AlreadyConnectedToServerException;
+import errors.AlreadyConnectedToServerException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

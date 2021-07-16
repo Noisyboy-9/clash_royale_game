@@ -72,7 +72,7 @@ public class AuthenticationRunnable implements Runnable {
             QueryBuilder.getSingletonInstance().insertUser(new User(username, password));
             this.response.writeObject(new RegisterResponseCommand(username, password, true, "Register successful"));
         } else {
-            this.response.writeObject(new LoginResponseCommand(username, password, false, "User with email already exist!"));
+            this.response.writeObject(new RegisterResponseCommand(username, password, false, "User with email already exist!"));
         }
     }
 }

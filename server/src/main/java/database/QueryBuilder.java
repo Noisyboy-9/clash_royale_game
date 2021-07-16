@@ -13,7 +13,7 @@ public class QueryBuilder {
     private final File db;
 
     private QueryBuilder() {
-        this.db = new File("../database/binaryFile");
+        this.db = new File("server/src/main/java/database/file/users.database.binary");
     }
 
     /**
@@ -26,6 +26,11 @@ public class QueryBuilder {
      * @throws ClassNotFoundException the class not found exception
      */
     public boolean userExist(String username, String password) throws IOException, ClassNotFoundException {
+        if (this.db.length() == 0) {
+//            if the file is empty, no user has been written to the database.
+            return false;
+        }
+
         ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(this.db));
 
         while (true) {

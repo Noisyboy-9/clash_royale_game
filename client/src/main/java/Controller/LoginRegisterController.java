@@ -1,12 +1,20 @@
 package Controller;
 
+import commands.authenicationCommands.login.LoginCommand;
+import commands.authenicationCommands.login.LoginResponseCommand;
 import commands.authenicationCommands.register.RegisterCommand;
+import commands.authenicationCommands.register.RegisterResponseCommand;
+import connector.Connector;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
+
+/**
+ * The type Login register controller.
+ */
 public class LoginRegisterController {
     @FXML
     private Text changeButtonText;
@@ -23,22 +31,32 @@ public class LoginRegisterController {
     @FXML
     private Text message;
 
+    /**
+     * Change button handler.
+     */
     @FXML
-    void changeButtonHandler(MouseEvent event) {
+    void changeButtonHandler() {
         String temp = mainButtonText.getText();
         mainButtonText.setText(changeButtonText.getText());
         changeButtonText.setText(temp);
-
     }
 
+    /**
+     * Exit handler.
+     */
     @FXML
-    void exitHandler(MouseEvent event) {
+    void exitHandler() {
         System.exit(0);
-
     }
 
+    /**
+     * Main button handler.
+     *
+     * @throws IOException            the io exception
+     * @throws ClassNotFoundException the class not found exception
+     */
     @FXML
-    void mainButtonHandler(MouseEvent event) {
+    void mainButtonHandler() throws IOException, ClassNotFoundException {
         message.setText("");
         if (this.isInputValid()) {
             message.setText("Please enter your username and password.");
@@ -48,20 +66,43 @@ public class LoginRegisterController {
             } else {
                 this.handleLogin();
             }
-            // send command to server... if response was successful change the scene
-            usernameField.setText("");
-            passwordField.setText("");
+        }
+    }
+
+    private void handleRegister() throws IOException, ClassNotFoundException {
+        RegisterCommand registerCommand = new RegisterCommand(
+                this.usernameField.getText().trim(),
+                this.passwordField.getText().trim()
+        );
+
+        Connector connector = Connector.getInstance();
+        connector.getRequest().writeObject(registerCommand);
+
+        RegisterResponseCommand response = (RegisterResponseCommand) connector.getResponse().readObject();
+
+        if (!response.isSuccessful()) {
+            this.message.setText(response.getMessage());
+        } else {
             Controller.SCENE_CONTROLLER.showScene("Menu/MainMenu.fxml");
         }
-
     }
 
-    private void handleRegister() {
+    private void handleLogin() throws IOException, ClassNotFoundException {
+        LoginCommand loginCommand = new LoginCommand(
+                this.usernameField.getText().trim(),
+                this.passwordField.getText().trim()
+        );
 
-    }
+        Connector connector = Connector.getInstance();
+        connector.getRequest().writeObject(loginCommand);
 
-    private void handleLogin() {
+        LoginResponseCommand response = (LoginResponseCommand) connector.getResponse().readObject();
 
+        if (!response.isSuccessful()) {
+            this.message.setText(response.getMessage());
+        } else {
+            Controller.SCENE_CONTROLLER.showScene("Menu/MainMenu.fxml");
+        }
     }
 
     private boolean isInputValid() {
