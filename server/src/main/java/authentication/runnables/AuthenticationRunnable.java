@@ -7,6 +7,7 @@ import commands.authenicationCommands.register.RegisterCommand;
 import commands.authenicationCommands.register.RegisterResponseCommand;
 import database.QueryBuilder;
 import exceptions.DuplicateGameRequestException;
+import exceptions.EmptyDatabaseException;
 import exceptions.invalidPlayerArgumentException;
 import newsCaster.NewsCaster;
 import user.User;
@@ -40,17 +41,18 @@ public class AuthenticationRunnable implements Runnable {
             if (command instanceof LoginCommand) {
                 this.handleLogin((LoginCommand) command);
             }
-        } catch (IOException | ClassNotFoundException | invalidPlayerArgumentException | DuplicateGameRequestException ioException) {
+        } catch (IOException | ClassNotFoundException | invalidPlayerArgumentException | DuplicateGameRequestException | EmptyDatabaseException ioException) {
             ioException.printStackTrace();
         }
     }
 
-    private void handleLogin(LoginCommand command) throws IOException, ClassNotFoundException, invalidPlayerArgumentException, DuplicateGameRequestException {
+    private void handleLogin(LoginCommand command) throws IOException, ClassNotFoundException, invalidPlayerArgumentException, DuplicateGameRequestException, EmptyDatabaseException {
         String username = command.getUsername();
         String password = command.getPassword();
 
         if (QueryBuilder.getSingletonInstance().userExist(username, password)) {
-            this.response.writeObject(new LoginResponseCommand(username, password, true, "Login Successful!"));
+            this.response.writeObject(new LoginResponseCommand(QueryBuilder.getSingletonInstance().selectUserByUsername(username), "Login Successful!"));
+
 
             PlayerWorker worker = new PlayerWorker(this.response,
                     this.request,
@@ -60,19 +62,19 @@ public class AuthenticationRunnable implements Runnable {
 
             NewsCaster.getSingletonInstance().addOnlinePlayer(worker);
         } else {
-            this.response.writeObject(new LoginResponseCommand(username, password, false, "Invalid credentials."));
+            this.response.writeObject(new LoginResponseCommand(username, password, "Invalid credentials."));
         }
     }
 
-    private void handleRegister(RegisterCommand command) throws IOException, ClassNotFoundException {
+    private void handleRegister(RegisterCommand command) throws IOException, ClassNotFoundException, EmptyDatabaseException {
         String username = command.getUsername();
         String password = command.getPassword();
 
         if (!QueryBuilder.getSingletonInstance().userExist(username, password)) {
             QueryBuilder.getSingletonInstance().insertUser(new User(username, password));
-            this.response.writeObject(new RegisterResponseCommand(username, password, true, "Register successful"));
+            this.response.writeObject(new RegisterResponseCommand(QueryBuilder.getSingletonInstance().selectUserByUsername(username), "Register successful"));
         } else {
-            this.response.writeObject(new LoginResponseCommand(username, password, false, "User with email already exist!"));
+            this.response.writeObject(new RegisterResponseCommand(username, password, "User with email already exist!"));
         }
     }
 }

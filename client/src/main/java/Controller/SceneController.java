@@ -1,13 +1,10 @@
 package Controller;
 
-import connector.Connector;
-import exceptions.AlreadyConnectedToServerException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 import java.io.IOException;
-import java.net.Socket;
 import java.net.URL;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
@@ -16,27 +13,36 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Objects;
 
+/**
+ * The type Scene controller.
+ */
 public class SceneController {
     private final HashMap<String, Scene> menus;
     private Scene scene;
     private Parent root;
 
+    /**
+     * Instantiates a new Scene controller.
+     */
     public SceneController() {
         this.menus = new HashMap<>();
-        try {
-            this.connectToServer();
-        } catch (IOException | AlreadyConnectedToServerException exception) {
-            exception.printStackTrace();
-        }
+
     }
 
-    private void connectToServer() throws IOException, AlreadyConnectedToServerException {
-        Socket socket = new Socket("localhost", 8080);
-
-//        create a instance of the connection, and then fetch with the getInstance() method.
-        Connector connector = Connector.connect(socket, socket.getInputStream(), socket.getOutputStream());
+    /**
+     * Remove scene.
+     *
+     * @param sceneName the scene name
+     */
+    public void removeScene(String sceneName) {
+        this.menus.remove(sceneName);
     }
 
+    /**
+     * Show scene.
+     *
+     * @param sceneName the scene name
+     */
     public void showScene(String sceneName) {
         try {
             if (menus.containsKey(sceneName)) {
@@ -45,19 +51,21 @@ public class SceneController {
                 URL url = new URL("file:/" + Controller.PATH + sceneName);
                 root = FXMLLoader.load(url);
                 scene = new Scene(root, 528, 946);
+                this.menus.put(sceneName, scene);
             }
+
             Controller.STAGE.setTitle("Clash Royale");
             Controller.STAGE.setScene(scene);
             Controller.STAGE.show();
-
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(0);
         }
-
     }
 
-
+    /**
+     * Load all menu scenes.
+     */
     public void loadAllMenuScenes() {
         try {
             DirectoryStream<Path> directoryStream = this.getDirectoryStreamBasedOnOs();
@@ -72,6 +80,7 @@ public class SceneController {
             System.exit(0);
         }
     }
+
 
     private String getFileProtocol() {
         if (!System.getProperty("os.name").contains("Windows")) {

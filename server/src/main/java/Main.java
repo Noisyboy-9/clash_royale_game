@@ -5,9 +5,10 @@ import newsCaster.NewsCaster;
 public class Main {
 
     public static void main(String[] args) {
-        int authenticationHandlerPort = 8080;
-        new AuthenticationHandler(authenticationHandlerPort);
+//        server bootstrap
         QueryBuilder queryBuilder = QueryBuilder.getSingletonInstance();
         NewsCaster newsCaster = NewsCaster.getSingletonInstance();
+
+        new AuthenticationHandler(8080);
     }
 }

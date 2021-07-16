@@ -1,8 +1,11 @@
 package Controller;
 
+import globals.UserData;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+
+import java.util.Objects;
 
 public class MainMenuController extends MenuController {
     @FXML
@@ -11,14 +14,18 @@ public class MainMenuController extends MenuController {
     @FXML
     private Text usernameField;
 
-    // TODO: ۱۴/۰۷/۲۰۲۱ a method is needed to update level and username fields
-
+    @FXML
+    public void initialize() {
+        if (!Objects.isNull(UserData.user)) {
+            this.usernameField.setText(UserData.user.getUsername());
+            this.levelField.setText(UserData.user.getLevel().toString());
+        }
+    }
 
     @FXML
     void twoPlayerMode(MouseEvent event) {
         // TODO: ۱۴/۰۷/۲۰۲۱ show wait scene and send command to server
         Controller.SCENE_CONTROLLER.showScene("Menu/WaitingPage.fxml");
-
     }
 
     @FXML
@@ -33,5 +40,4 @@ public class MainMenuController extends MenuController {
         Controller.SCENE_CONTROLLER.showScene("Menu/LoginRegisterPage.fxml");
 
     }
-
 }
