@@ -46,6 +46,7 @@ public class QueryBuilder {
             }
         }
 
+        inputStream.close();
         return false;
     }
 
@@ -58,6 +59,7 @@ public class QueryBuilder {
     public void insertUser(User user) throws IOException {
         ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(this.db, true));
         outputStream.writeObject(user);
+        outputStream.close();
     }
 
     /**
@@ -94,6 +96,7 @@ public class QueryBuilder {
             }
         }
 
+        inputStream.close();
         return null;
     }
 }

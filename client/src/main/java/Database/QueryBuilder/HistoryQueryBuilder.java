@@ -33,6 +33,7 @@ public class HistoryQueryBuilder {
         userToResultMap.put(user, result);
 
         outputStream.writeObject(userToResultMap);
+        outputStream.close();
     }
 
     /**
@@ -64,7 +65,7 @@ public class HistoryQueryBuilder {
         if (results.size() == 0) {
             return null;
         }
-
+        inputStream.close();
         return results;
     }
 
