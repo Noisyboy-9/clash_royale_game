@@ -14,9 +14,18 @@ import java.util.Objects;
 public class HistoryQueryBuilder {
     private static HistoryQueryBuilder instance = null;
     private final File historyDb;
+    private ObjectInputStream reader;
+    private ObjectOutputStream writer;
 
     private HistoryQueryBuilder() {
         this.historyDb = new File("client/src/main/java/Database/files/history.database.binary");
+        try {
+            this.reader = new ObjectInputStream(new FileInputStream(this.historyDb));
+            this.writer = new ObjectOutputStream(new FileOutputStream(this.historyDb));
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+
     }
 
     /**
@@ -27,12 +36,10 @@ public class HistoryQueryBuilder {
      * @throws IOException the io exception
      */
     public void insert(User user, GameResult result) throws IOException {
-        ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(this.historyDb, true));
-
         HashMap<User, GameResult> userToResultMap = new HashMap<>();
         userToResultMap.put(user, result);
 
-        outputStream.writeObject(userToResultMap);
+        this.writer.writeObject(userToResultMap);
     }
 
     /**
@@ -47,11 +54,10 @@ public class HistoryQueryBuilder {
             return null;
         }
 
-        ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(this.historyDb));
         ArrayList<GameResult> results = new ArrayList<>();
         while (true) {
             try {
-                HashMap<User, GameResult> userToResultMap = (HashMap<User, GameResult>) inputStream.readObject();
+                HashMap<User, GameResult> userToResultMap = (HashMap<User, GameResult>) this.reader.readObject();
                 for (User keyUser : userToResultMap.keySet()) {
                     if (user.equals(keyUser)) {
                         results.add(userToResultMap.get(keyUser));
