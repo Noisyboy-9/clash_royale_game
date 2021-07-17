@@ -41,7 +41,11 @@ public class AuthenticationRunnable implements Runnable {
             if (command instanceof LoginCommand) {
                 this.handleLogin((LoginCommand) command);
             }
-        } catch (IOException | ClassNotFoundException | invalidPlayerArgumentException | DuplicateGameRequestException | EmptyDatabaseException ioException) {
+        } catch (IOException |
+                ClassNotFoundException |
+                invalidPlayerArgumentException |
+                DuplicateGameRequestException |
+                EmptyDatabaseException ioException) {
             ioException.printStackTrace();
         }
     }
@@ -72,7 +76,11 @@ public class AuthenticationRunnable implements Runnable {
 
         if (!QueryBuilder.getSingletonInstance().userExist(username, password)) {
             QueryBuilder.getSingletonInstance().insertUser(new User(username, password));
-            this.response.writeObject(new RegisterResponseCommand(QueryBuilder.getSingletonInstance().selectUserByUsername(username), "Register successful"));
+
+            this.response.writeObject(new RegisterResponseCommand(
+                    QueryBuilder.getSingletonInstance().selectUserByUsername(username),
+                    "Register successful")
+            );
         } else {
             this.response.writeObject(new RegisterResponseCommand(username, password, "User with email already exist!"));
         }
