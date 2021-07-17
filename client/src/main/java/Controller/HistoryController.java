@@ -4,6 +4,7 @@ import Globals.UserData;
 import Models.GameResult;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -60,14 +61,18 @@ public class HistoryController extends MenuController
         if (topBoxIndex >= minValue && topBoxIndex <= maxValue)
         {
             GameResult topBoxGameResult = results.get(topBoxIndex);
-            updateBoxFields(topBoxGameResult, playersTeamTop, opponentTeamTop);
+            clearFields(playersTeamTop);
+            clearFields(opponentTeamTop);
+            updateBoxFields(topBoxGameResult, playersTeamTop, opponentTeamTop, playerScoreTopBox, opponentScoreTopBox);
 
         }
 
         if (bottomBoxIndex >= minValue && bottomBoxIndex <= maxValue)
         {
             GameResult bottomGameResult = results.get(bottomBoxIndex);
-            updateBoxFields(bottomGameResult, playerTeamBottom, opponentTeamBottom);
+            clearFields(playerTeamBottom);
+            clearFields(opponentTeamBottom);
+            updateBoxFields(bottomGameResult, playerTeamBottom, opponentTeamBottom, playerScoreBottomBox, opponentScoreBottomBox);
 
         }
 
@@ -75,6 +80,14 @@ public class HistoryController extends MenuController
 
     }
 
+    private void clearFields(Group group)
+    {
+        for (Node node : group.getChildren())
+        {
+            ((Text)node).setText("");
+        }
+
+    }
 
     private void handleButtonsColors()
     {
@@ -107,28 +120,32 @@ public class HistoryController extends MenuController
     }
 
 
-    private void updateBoxFields(GameResult gameResult, Group playersGroup, Group opponentsGroup)
+    private void updateBoxFields(GameResult gameResult, Group playersGroup, Group opponentsGroup, Text playerScoreText, Text opponentScoreText)
     {
+        int playerTeamScore;
+        int opponentTeamScore;
+
         if (gameResult.isWinner(UserData.user))
         {
-            playerScoreTopBox.setText(Integer.toString(gameResult.getWinnersCrownCount()));
-            opponentScoreTopBox.setText(Integer.toString(gameResult.getLosersCrownCount()));
+            playerTeamScore = gameResult.getWinnersCrownCount();
+            opponentTeamScore = gameResult.getLosersCrownCount();
             updateTextGroup(playersGroup, gameResult.getWinners());
             updateTextGroup(opponentsGroup, gameResult.getLosers());
 
         }
         else
         {
-            playerScoreTopBox.setText(Integer.toString(gameResult.getLosersCrownCount()));
-            opponentScoreTopBox.setText(Integer.toString(gameResult.getWinnersCrownCount()));
+            playerTeamScore = gameResult.getLosersCrownCount();
+            opponentTeamScore = gameResult.getWinnersCrownCount();
             updateTextGroup(playersGroup, gameResult.getLosers());
             updateTextGroup(opponentsGroup, gameResult.getWinners());
 
         }
 
+        playerScoreText.setText(Integer.toString(playerTeamScore));
+        opponentScoreText.setText(Integer.toString(opponentTeamScore));
+
     }
-
-
 
     private void updateTextGroup(Group group, ArrayList<User> users)
     {
@@ -168,18 +185,6 @@ public class HistoryController extends MenuController
     private ImageView downButton;
 
     @FXML
-    private Group cupLabel1TopBox;
-
-    @FXML
-    private Group cupLabel2TopBox;
-
-    @FXML
-    private Group cupLabel1BottomBox;
-
-    @FXML
-    private Group cupLabel2BottomBox;
-
-    @FXML
     private Text playerScoreTopBox;
 
     @FXML
@@ -209,21 +214,32 @@ public class HistoryController extends MenuController
     {
         bottomBoxIndex++;
 
-        if (bottomBoxIndex < results.size())
+        if (bottomBoxIndex <= maxValue)
         {
             topBoxIndex++;
+            handleUpdates();
         }
         else
         {
             bottomBoxIndex--;
         }
 
-        handleUpdates();
-
     }
 
     @FXML
-    void moveUp(MouseEvent event) {
+    void moveUp(MouseEvent event)
+    {
+        topBoxIndex--;
+
+        if (topBoxIndex >= minValue)
+        {
+            bottomBoxIndex--;
+            handleUpdates();
+        }
+        else
+        {
+            topBoxIndex++;
+        }
 
     }
 
