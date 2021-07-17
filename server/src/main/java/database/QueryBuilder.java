@@ -2,8 +2,10 @@ package database;
 
 import exceptions.EmptyDatabaseException;
 import user.User;
+import user.UserLevelEnum;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -65,6 +67,40 @@ public class QueryBuilder {
     }
 
     /**
+     * Level up user.
+     *
+     * @param user     the user
+     * @param newLevel the new level
+     */
+    public void levelUpUser(User user, UserLevelEnum newLevel) throws IOException {
+        ObjectInputStream reader = new ObjectInputStream(new FileInputStream(this.db));
+
+//        read all users and update the matching user.
+        ArrayList<User> allUsers = new ArrayList<>();
+        while (true) {
+            try {
+                User readUser = (User) reader.readObject();
+
+                if (user.equals(readUser)) {
+                    readUser.setLevel(newLevel);
+                }
+
+                allUsers.add(readUser);
+            } catch (IOException | ClassNotFoundException eofException) {
+                break;
+            }
+        }
+//        empty the database.
+        this.db.delete();
+        this.db.createNewFile();
+
+//        re write all of the users to the database
+        for (User writeUser : allUsers) {
+            this.insertUser(writeUser);
+        }
+    }
+
+    /**
      * Gets singleton instance.
      *
      * @return the singleton instance
@@ -77,6 +113,14 @@ public class QueryBuilder {
         return singletonInstance;
     }
 
+    /**
+     * Select user by username user.
+     *
+     * @param username the username
+     * @return the user
+     * @throws EmptyDatabaseException the empty database exception
+     * @throws IOException            the io exception
+     */
     public User selectUserByUsername(String username) throws EmptyDatabaseException, IOException {
         if (this.db.length() == 0) {
             throw new EmptyDatabaseException("The database is empty, no such user");

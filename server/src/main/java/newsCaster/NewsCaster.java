@@ -1,6 +1,7 @@
 package newsCaster;
 
 import exceptions.DuplicateGameRequestException;
+import newsCaster.runnables.PlayerLevelUpRunnable;
 import newsCaster.runnables.WatchForGameStartRequestRunnable;
 import workers.PlayerWorker;
 
@@ -31,6 +32,7 @@ public class NewsCaster {
         }
 
         new Thread(new WatchForGameStartRequestRunnable(player)).start();
+        new Thread(new PlayerLevelUpRunnable(player)).start();
     }
 
     /**

@@ -55,13 +55,14 @@ public class AuthenticationRunnable implements Runnable {
         String password = command.getPassword();
 
         if (QueryBuilder.getSingletonInstance().userExist(username, password)) {
-            this.response.writeObject(new LoginResponseCommand(QueryBuilder.getSingletonInstance().selectUserByUsername(username), "Login Successful!"));
+            User user = QueryBuilder.getSingletonInstance().selectUserByUsername(username);
+            this.response.writeObject(new LoginResponseCommand(user, "Login Successful!"));
 
 
             PlayerWorker worker = new PlayerWorker(this.response,
                     this.request,
                     this.socket,
-                    new User(username, password)
+                    user
             );
 
             NewsCaster.getSingletonInstance().addOnlinePlayer(worker);
@@ -77,10 +78,21 @@ public class AuthenticationRunnable implements Runnable {
         if (!QueryBuilder.getSingletonInstance().userExist(username, password)) {
             QueryBuilder.getSingletonInstance().insertUser(new User(username, password));
 
+
+            User user = QueryBuilder.getSingletonInstance().selectUserByUsername(username);
+
             this.response.writeObject(new RegisterResponseCommand(
-                    QueryBuilder.getSingletonInstance().selectUserByUsername(username),
+                    user,
                     "Register successful")
             );
+
+            PlayerWorker worker = new PlayerWorker(this.response,
+                    this.request,
+                    this.socket,
+                    user
+            );
+
+            NewsCaster.getSingletonInstance().addOnlinePlayer(worker);
         } else {
             this.response.writeObject(new RegisterResponseCommand(username, password, "User with email already exist!"));
         }
