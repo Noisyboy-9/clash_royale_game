@@ -3,6 +3,7 @@ package Controller;
 import Globals.UserData;
 import Models.GameResult;
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.effect.ColorAdjust;
@@ -43,6 +44,7 @@ public class HistoryController extends MenuController
                 this.bottomBoxIndex = 1;
                 this.minValue = 0;
                 this.maxValue = results.size() - 1;
+                handleUpdates();
 
             }
             else
@@ -145,6 +147,9 @@ public class HistoryController extends MenuController
         playerScoreText.setText(Integer.toString(playerTeamScore));
         opponentScoreText.setText(Integer.toString(opponentTeamScore));
 
+        playerScoreText.setVisible(true);
+        opponentScoreText.setVisible(true);
+
     }
 
     private void updateTextGroup(Group group, ArrayList<User> users)
@@ -164,9 +169,10 @@ public class HistoryController extends MenuController
     {
         ColorAdjust colorAdjust = new ColorAdjust();
         colorAdjust.setSaturation(-1);
-        colorAdjust.setBrightness(-0.5);
+        colorAdjust.setBrightness(-0.2);
 
         imageView.setEffect(colorAdjust);
+        imageView.setCursor(Cursor.DEFAULT);
 
     }
 
@@ -174,6 +180,7 @@ public class HistoryController extends MenuController
     private void convertToColorful(ImageView imageView)
     {
         imageView.setEffect(null);
+        imageView.setCursor(Cursor.HAND);
 
     }
 
