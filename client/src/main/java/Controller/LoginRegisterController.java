@@ -112,7 +112,7 @@ public class LoginRegisterController {
             Controller.SCENE_CONTROLLER.removeScene("Menu/ProfileMenu.fxml");
             Controller.SCENE_CONTROLLER.removeScene("Menu/MainMenu.fxml");
             Controller.SCENE_CONTROLLER.removeScene("Menu/BattleDeckMenu.fxml");
-
+            Controller.SCENE_CONTROLLER.removeScene("Menu/HistoryMenu.fxml");
             Controller.SCENE_CONTROLLER.showScene("Menu/MainMenu.fxml");
         }
     }
