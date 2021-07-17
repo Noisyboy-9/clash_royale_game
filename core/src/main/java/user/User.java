@@ -60,6 +60,10 @@ public class User implements Serializable {
         return level;
     }
 
+    public void setLevel(UserLevelEnum level) {
+        this.level = level;
+    }
+
     /**
      * Gets current xp.
      *

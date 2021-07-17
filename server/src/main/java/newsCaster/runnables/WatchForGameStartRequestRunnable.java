@@ -18,18 +18,20 @@ public class WatchForGameStartRequestRunnable implements Runnable {
 
     @Override
     public void run() {
-        try {
-            MatchRequestCommand command = (MatchRequestCommand) this.player.getRequest().readObject();
+        while (true) {
+            try {
+                MatchRequestCommand command = (MatchRequestCommand) this.player.getRequest().readObject();
 
-            if (command instanceof FourPlayerMatchRequesterCommand) {
-                NewsCaster.getSingletonInstance().addFourPlayerModeRequester(this.player);
-            }
+                if (command instanceof FourPlayerMatchRequesterCommand) {
+                    NewsCaster.getSingletonInstance().addFourPlayerModeRequester(this.player);
+                }
 
-            if (command instanceof TwoPlayerMatchRequestCommand) {
-                NewsCaster.getSingletonInstance().addTwoPlayerModeRequester(this.player);
+                if (command instanceof TwoPlayerMatchRequestCommand) {
+                    NewsCaster.getSingletonInstance().addTwoPlayerModeRequester(this.player);
+                }
+            } catch (IOException | ClassNotFoundException | DuplicateGameRequestException ioException) {
+                ioException.printStackTrace();
             }
-        } catch (IOException | ClassNotFoundException | DuplicateGameRequestException ioException) {
-            ioException.printStackTrace();
         }
     }
 }
