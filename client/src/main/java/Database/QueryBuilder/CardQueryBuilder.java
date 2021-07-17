@@ -23,7 +23,6 @@ public class CardQueryBuilder
 
     public void updatePlayerCards(User user, GridPane battleDeck)
     {
-
         try(
                 FileOutputStream fos = new FileOutputStream(this.cardsDb);
                 ObjectOutputStream outputStream = new ObjectOutputStream(fos))

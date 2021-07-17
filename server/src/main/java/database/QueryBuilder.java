@@ -12,9 +12,15 @@ import java.util.Objects;
 public class QueryBuilder {
     private static QueryBuilder singletonInstance = null;
     private final File db;
+    private ObjectOutputStream writer;
 
     private QueryBuilder() {
         this.db = new File("server/src/main/java/database/file/users.database.binary");
+        try {
+            this.writer = new ObjectOutputStream(new FileOutputStream(this.db, true));
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
     }
 
     /**
@@ -32,22 +38,20 @@ public class QueryBuilder {
             return false;
         }
 
-        ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(this.db));
+        try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream(this.db))) {
+            while (true) {
+                try {
+                    User user = (User) reader.readObject();
 
-        while (true) {
-            try {
-                User user = (User) inputStream.readObject();
-
-                if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-                    return true;
+                    if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                        return true;
+                    }
+                } catch (EOFException eofException) {
+                    break;
                 }
-            } catch (EOFException eofException) {
-                break;
             }
+            return false;
         }
-
-        inputStream.close();
-        return false;
     }
 
     /**
@@ -57,9 +61,7 @@ public class QueryBuilder {
      * @throws IOException the io exception
      */
     public void insertUser(User user) throws IOException {
-        ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(this.db, true));
-        outputStream.writeObject(user);
-        outputStream.close();
+        this.writer.writeObject(user);
     }
 
     /**
@@ -80,23 +82,21 @@ public class QueryBuilder {
             throw new EmptyDatabaseException("The database is empty, no such user");
         }
 
-        ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(this.db));
+        try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream(this.db))) {
+            while (true) {
+                try {
+                    User user = (User) reader.readObject();
 
-        while (true) {
-            try {
-                User user = (User) inputStream.readObject();
-
-                if (user.getUsername().equals(username)) {
-                    return user;
+                    if (user.getUsername().equals(username)) {
+                        return user;
+                    }
+                } catch (EOFException eofException) {
+                    break;
+                } catch (IOException | ClassNotFoundException ioException) {
+                    ioException.printStackTrace();
                 }
-            } catch (EOFException eofException) {
-                break;
-            } catch (IOException | ClassNotFoundException ioException) {
-                ioException.printStackTrace();
             }
+            return null;
         }
-
-        inputStream.close();
-        return null;
     }
 }

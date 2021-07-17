@@ -13,10 +13,15 @@ import java.util.Objects;
  */
 public class HistoryQueryBuilder {
     private static HistoryQueryBuilder instance = null;
-    private final File historyDb;
+    private final File historyDb = new File("client/src/main/java/Database/files/history.database.binary");
+    private ObjectOutputStream writer;
 
     private HistoryQueryBuilder() {
-        this.historyDb = new File("client/src/main/java/Database/files/history.database.binary");
+        try {
+            this.writer = new ObjectOutputStream(new FileOutputStream(this.historyDb));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -27,13 +32,10 @@ public class HistoryQueryBuilder {
      * @throws IOException the io exception
      */
     public void insert(User user, GameResult result) throws IOException {
-        ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(this.historyDb, true));
-
         HashMap<User, GameResult> userToResultMap = new HashMap<>();
         userToResultMap.put(user, result);
 
-        outputStream.writeObject(userToResultMap);
-        outputStream.close();
+        this.writer.writeObject(userToResultMap);
     }
 
     /**
@@ -62,9 +64,12 @@ public class HistoryQueryBuilder {
                 break;
             }
         }
+
         if (results.size() == 0) {
+            inputStream.close();
             return null;
         }
+
         inputStream.close();
         return results;
     }
