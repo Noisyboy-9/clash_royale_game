@@ -60,7 +60,7 @@ public class HistoryQueryBuilder {
                         results.add(userToResultMap.get(keyUser));
                     }
                 }
-            } catch (ClassNotFoundException e) {
+            } catch (ClassNotFoundException | EOFException e) {
                 break;
             }
         }
