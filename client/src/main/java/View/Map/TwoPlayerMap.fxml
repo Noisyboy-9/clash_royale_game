@@ -47,16 +47,11 @@
 <?import javafx.scene.text.Text?>
 
 <VBox alignment="CENTER" prefHeight="946.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MapController">
-  <children>
-      <ImageView fx:id="blackCover" fitHeight="946.0" fitWidth="528.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../resources/photos/map_cover.png" />
-         </image>
-      </ImageView>
-    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="ALWAYS">
-      <children>
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="ALWAYS">
+         <children>
             <GridPane prefHeight="946.0" prefWidth="528.0">
-              <columnConstraints>
+               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -81,11 +76,11 @@
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints />
-                <ColumnConstraints />
                   <ColumnConstraints />
-              </columnConstraints>
-              <rowConstraints>
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -124,12 +119,12 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
                <children>
                   <Rectangle fill="#98b646" height="22.0" layoutX="32.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="3" />
                   <Rectangle fill="#8dab3b" height="22.0" layoutX="76.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" />
@@ -1444,14 +1439,14 @@
                   </ImageView>
                </children>
             </GridPane>
-            <Group fx:id="cardsGroup" layoutX="35.0" layoutY="791.0">
+            <Group fx:id="cardsGroup" layoutX="35.0" layoutY="791.0" visible="false">
                <children>
                   <ImageView fitHeight="110.0" fitWidth="264.0" layoutX="98.6865234375" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../resources/photos/card_box.png" />
                      </image>
                   </ImageView>
-                  <GridPane fx:id="comigCards" layoutX="156.6865234375" prefHeight="45.0" prefWidth="149.0">
+                  <GridPane fx:id="comingCards" layoutX="156.6865234375" prefHeight="45.0" prefWidth="149.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -1524,18 +1519,18 @@
                         </Text>
                      </children>
                   </GridPane>
-                  <GridPane fx:id="battleCards" layoutX="109.6865234375" layoutY="55.0" onMouseClicked="#selectCard" prefHeight="73.0" prefWidth="242.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <GridPane fx:id="battleCards" layoutX="109.6865234375" layoutY="55.0" prefHeight="73.0" prefWidth="242.0">
+                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
                      <children>
-                        <ImageView fitHeight="73.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fitHeight="73.0" fitWidth="59.0" onMouseClicked="#selectCard" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../resources/photos/BarbariansCard.png" />
                            </image>
@@ -1553,7 +1548,7 @@
                               <Font name="Supercell-Magic Regular" size="10.0" />
                            </font>
                         </Text>
-                        <ImageView fitHeight="73.0" fitWidth="59.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fitHeight="73.0" fitWidth="59.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#selectCard" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../resources/photos/BarbariansCard.png" />
                            </image>
@@ -1571,7 +1566,7 @@
                               <Font name="Supercell-Magic Regular" size="10.0" />
                            </font>
                         </Text>
-                        <ImageView fitHeight="73.0" fitWidth="59.0" layoutX="70.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fitHeight="73.0" fitWidth="59.0" layoutX="70.0" layoutY="10.0" onMouseClicked="#selectCard" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../resources/photos/BarbariansCard.png" />
                            </image>
@@ -1589,7 +1584,7 @@
                               <Font name="Supercell-Magic Regular" size="10.0" />
                            </font>
                         </Text>
-                        <ImageView fitHeight="73.0" fitWidth="59.0" layoutX="130.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fitHeight="73.0" fitWidth="59.0" layoutX="130.0" layoutY="10.0" onMouseClicked="#selectCard" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../resources/photos/BarbariansCard.png" />
                            </image>
@@ -1613,9 +1608,7 @@
                      </cursor>
                   </GridPane>
                   <GridPane fx:id="elixirBox" layoutX="132.6865234375" layoutY="133.0" prefHeight="16.0" prefWidth="220.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -1624,11 +1617,13 @@
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                     </rowConstraints>
                      <children>
                         <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                            <image>
@@ -1716,6 +1711,11 @@
             </Group>
             <Group fx:id="beforeGameState" onMouseClicked="#startGame">
                <children>
+                  <ImageView fx:id="blackCover" fitHeight="946.0" fitWidth="528.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/photos/map_cover.png" />
+                     </image>
+                  </ImageView>
                   <ImageView fx:id="opponentBackground1" fitHeight="78.0" fitWidth="363.0" layoutX="83.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../resources/photos/text_field3.png" />
@@ -1726,7 +1726,7 @@
                         <Image url="@../../../resources/photos/text_field4.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="opponentBackground2" fitHeight="78.0" fitWidth="363.0" layoutX="83.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                  <ImageView fx:id="opponentBackground2" fitHeight="78.0" fitWidth="363.0" layoutX="83.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../../../resources/photos/text_field3.png" />
                      </image>
@@ -1736,22 +1736,22 @@
                         <Image url="@../../../resources/photos/text_field4.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="opponentName1" fill="WHITE" layoutX="108.0" layoutY="358.767578125" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="313.0">
+                  <Text fx:id="opponentName1" fill="WHITE" layoutX="108.0" layoutY="383.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="313.0">
                      <font>
                         <Font name="Supercell-Magic Regular" size="20.0" />
                      </font>
                   </Text>
-                  <Text fx:id="playerName1" fill="WHITE" layoutX="108.0" layoutY="576.767578125" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="313.0">
+                  <Text fx:id="playerName1" fill="WHITE" layoutX="108.0" layoutY="600.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="313.0">
                      <font>
                         <Font name="Supercell-Magic Regular" size="20.0" />
                      </font>
                   </Text>
-                  <Text fx:id="opponentName2" fill="WHITE" layoutX="108.0" layoutY="249.767578125" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" visible="false" wrappingWidth="313.0">
+                  <Text fx:id="opponentName2" fill="WHITE" layoutX="108.0" layoutY="189.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" visible="false" wrappingWidth="313.0">
                      <font>
                         <Font name="Supercell-Magic Regular" size="20.0" />
                      </font>
                   </Text>
-                  <Text fx:id="playerName2" fill="WHITE" layoutX="108.0" layoutY="682.767578125" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" visible="false" wrappingWidth="313.0">
+                  <Text fx:id="playerName2" fill="WHITE" layoutX="108.0" layoutY="707.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" visible="false" wrappingWidth="313.0">
                      <font>
                         <Font name="Supercell-Magic Regular" size="20.0" />
                      </font>
@@ -1761,64 +1761,86 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Group>
-            <Group fx:id="resultState" onMouseClicked="#startGame">
+            <Group fx:id="resultState" onMouseClicked="#startGame" visible="false">
                <children>
+                  <Text fx:id="opponentWinner" fill="#ffdcff" layoutX="221.0" layoutY="107.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Winner!">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Text>
+                  <Text fx:id="playerWinner" fill="#6fffff" layoutX="221.0" layoutY="790.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Winner!">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Text>
                   <ImageView fitHeight="54.0" fitWidth="310.0" layoutX="110.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../resources/photos/crown_place_red.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="opponentBackground11" fitHeight="78.0" fitWidth="363.0" layoutX="83.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="opponentCrown1" fitHeight="54.0" fitWidth="76.0" layoutX="122.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
-                        <Image url="@../../../resources/photos/text_field3.png" />
+                        <Image url="@../../../resources/photos/crown_small_red.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="54.0" fitWidth="310.0" layoutX="110.0" layoutY="507.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="opponentCrown2" fitHeight="72.0" fitWidth="102.0" layoutX="214.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../resources/photos/crown_big_red.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="opponentCrown3" fitHeight="54.0" fitWidth="76.0" layoutX="329.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../resources/photos/crown_small_red.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="54.0" fitWidth="310.0" layoutX="110.0" layoutY="510.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../resources/photos/crown_place_blue.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="playerBackground11" fitHeight="78.0" fitWidth="363.0" layoutX="83.0" layoutY="561.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playerCrown1" fitHeight="54.0" fitWidth="76.0" layoutX="122.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
-                        <Image url="@../../../resources/photos/text_field4.png" />
+                        <Image url="@../../../resources/photos/crown_small_blue.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="opponentBackground21" fitHeight="78.0" fitWidth="363.0" layoutX="83.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                  <ImageView fx:id="playerCrown2" fitHeight="72.0" fitWidth="102.0" layoutX="214.0" layoutY="465.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
-                        <Image url="@../../../resources/photos/text_field3.png" />
+                        <Image url="@../../../resources/photos/crown_big_blue.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="playerBackground21" fitHeight="78.0" fitWidth="363.0" layoutX="83.0" layoutY="668.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                  <ImageView fx:id="playerCrown3" fitHeight="54.0" fitWidth="76.0" layoutX="329.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
-                        <Image url="@../../../resources/photos/text_field4.png" />
+                        <Image url="@../../../resources/photos/crown_small_blue.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="opponentName11" fill="WHITE" layoutX="108.0" layoutY="358.767578125" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="313.0">
+                  <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="188.0" layoutY="820.0" onMouseClicked="#checkLevelUp" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/photos/button_blue.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="248.0" layoutY="871.0" onMouseClicked="#checkLevelUp" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="OK">
                      <font>
-                        <Font name="Supercell-Magic Regular" size="20.0" />
+                        <Font name="Supercell-Magic Regular" size="17.0" />
                      </font>
-                  </Text>
-                  <Text fx:id="playerName11" fill="WHITE" layoutX="108.0" layoutY="576.767578125" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="313.0">
-                     <font>
-                        <Font name="Supercell-Magic Regular" size="20.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="opponentName21" fill="WHITE" layoutX="108.0" layoutY="249.767578125" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" visible="false" wrappingWidth="313.0">
-                     <font>
-                        <Font name="Supercell-Magic Regular" size="20.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="playerName21" fill="WHITE" layoutX="108.0" layoutY="682.767578125" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" visible="false" wrappingWidth="313.0">
-                     <font>
-                        <Font name="Supercell-Magic Regular" size="20.0" />
-                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Text>
                </children>
                <cursor>
-                  <Cursor fx:constant="HAND" />
+                  <Cursor fx:constant="DEFAULT" />
                </cursor>
             </Group>
-      </children>
-    </AnchorPane>
-  </children>
+         </children>
+      </AnchorPane>
+   </children>
 </VBox>

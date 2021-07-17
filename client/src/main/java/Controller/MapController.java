@@ -1,13 +1,20 @@
 package Controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
 import javafx.scene.Group;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
+
+import java.util.ArrayList;
 
 public class MapController
 {
+    ImageView[] playerTeamCrowns;
+    ImageView[] opponentTeamCrowns;
+
     @FXML
     public void initialize()
     {
@@ -33,7 +40,28 @@ public class MapController
 
         }
 
+        this.playerTeamCrowns = new ImageView[] {playerCrown1, playerCrown2, playerCrown3};
+        this.opponentTeamCrowns = new ImageView[] {opponentCrown1, opponentCrown2, opponentCrown3};
+
     }
+
+    @FXML
+    private Group cardsGroup;
+
+    @FXML
+    private GridPane comingCards;
+
+    @FXML
+    private GridPane battleCards;
+
+    @FXML
+    private GridPane elixirBox;
+
+    @FXML
+    private ImageView nextCardImage;
+
+    @FXML
+    private Text nextCardText;
 
     @FXML
     private Group beforeGameState;
@@ -66,9 +94,88 @@ public class MapController
     private Text playerName2;
 
     @FXML
+    private Group resultState;
+
+    @FXML
+    private Text opponentWinner;
+
+    @FXML
+    private Text playerWinner;
+
+    @FXML
+    private ImageView opponentCrown1;
+
+    @FXML
+    private ImageView opponentCrown2;
+
+    @FXML
+    private ImageView opponentCrown3;
+
+    @FXML
+    private ImageView playerCrown1;
+
+    @FXML
+    private ImageView playerCrown2;
+
+    @FXML
+    private ImageView playerCrown3;
+
+
+    @FXML
     void startGame(MouseEvent event)
     {
         beforeGameState.setVisible(false);
+        cardsGroup.setVisible(true);
+
+    }
+
+    @FXML
+    void selectCard(MouseEvent event)
+    {
+        finishGame();
+
+    }
+
+    @FXML
+    void finishGame()
+    {
+        beforeGameState.setCursor(Cursor.DEFAULT);
+        beforeGameState.setVisible(true);
+        resultState.setVisible(true);
+
+        // these values will be updated by server or game logic or any other thing
+        int playerTeamCrownCount = 2;
+        int opponentTeamCrownCount = 3;
+
+        showCrowns(playerTeamCrownCount, playerTeamCrowns);
+        showCrowns(opponentTeamCrownCount, opponentTeamCrowns);
+
+        // this part will completely change in future
+        if (opponentTeamCrownCount > playerTeamCrownCount)
+        {
+            playerWinner.setVisible(false);
+
+        }
+
+    }
+
+
+    @FXML
+    void showCrowns(int numberOfCrowns, ImageView[] crownsList)
+    {
+        for (int number = 0 ; number < numberOfCrowns ; number++)
+        {
+            crownsList[number].setVisible(true);
+
+        }
+
+    }
+
+    @FXML
+    void checkLevelUp()
+    {
+        // after checking that player's level can upgrade or not
+        Controller.SCENE_CONTROLLER.showScene("Menu/LevelUpPage.fxml");
 
     }
 
