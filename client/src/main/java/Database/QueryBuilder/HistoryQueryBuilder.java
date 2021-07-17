@@ -13,19 +13,15 @@ import java.util.Objects;
  */
 public class HistoryQueryBuilder {
     private static HistoryQueryBuilder instance = null;
-    private final File historyDb;
-    private ObjectInputStream reader;
+    private final File historyDb = new File("client/src/main/java/Database/files/history.database.binary");
     private ObjectOutputStream writer;
 
     private HistoryQueryBuilder() {
-        this.historyDb = new File("client/src/main/java/Database/files/history.database.binary");
         try {
-            this.reader = new ObjectInputStream(new FileInputStream(this.historyDb));
             this.writer = new ObjectOutputStream(new FileOutputStream(this.historyDb));
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
     }
 
     /**
@@ -54,10 +50,11 @@ public class HistoryQueryBuilder {
             return null;
         }
 
+        ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(this.historyDb));
         ArrayList<GameResult> results = new ArrayList<>();
         while (true) {
             try {
-                HashMap<User, GameResult> userToResultMap = (HashMap<User, GameResult>) this.reader.readObject();
+                HashMap<User, GameResult> userToResultMap = (HashMap<User, GameResult>) inputStream.readObject();
                 for (User keyUser : userToResultMap.keySet()) {
                     if (user.equals(keyUser)) {
                         results.add(userToResultMap.get(keyUser));
@@ -67,10 +64,13 @@ public class HistoryQueryBuilder {
                 break;
             }
         }
+
         if (results.size() == 0) {
+            inputStream.close();
             return null;
         }
 
+        inputStream.close();
         return results;
     }
 

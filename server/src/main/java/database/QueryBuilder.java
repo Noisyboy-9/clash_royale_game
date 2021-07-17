@@ -12,14 +12,12 @@ import java.util.Objects;
 public class QueryBuilder {
     private static QueryBuilder singletonInstance = null;
     private final File db;
-    private ObjectInputStream reader;
     private ObjectOutputStream writer;
 
     private QueryBuilder() {
         this.db = new File("server/src/main/java/database/file/users.database.binary");
         try {
-            this.reader = new ObjectInputStream(new FileInputStream(this.db));
-            this.writer = new ObjectOutputStream(new FileOutputStream(this.db));
+            this.writer = new ObjectOutputStream(new FileOutputStream(this.db, true));
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
@@ -40,19 +38,20 @@ public class QueryBuilder {
             return false;
         }
 
-        while (true) {
-            try {
-                User user = (User) this.reader.readObject();
+        try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream(this.db))) {
+            while (true) {
+                try {
+                    User user = (User) reader.readObject();
 
-                if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-                    return true;
+                    if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                        return true;
+                    }
+                } catch (EOFException eofException) {
+                    break;
                 }
-            } catch (EOFException eofException) {
-                break;
             }
+            return false;
         }
-
-        return false;
     }
 
     /**
@@ -83,18 +82,21 @@ public class QueryBuilder {
             throw new EmptyDatabaseException("The database is empty, no such user");
         }
 
-        while (true) {
-            try {
-                User user = (User) this.reader.readObject();
-                if (user.getUsername().equals(username)) {
-                    return user;
+        try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream(this.db))) {
+            while (true) {
+                try {
+                    User user = (User) reader.readObject();
+
+                    if (user.getUsername().equals(username)) {
+                        return user;
+                    }
+                } catch (EOFException eofException) {
+                    break;
+                } catch (IOException | ClassNotFoundException ioException) {
+                    ioException.printStackTrace();
                 }
-            } catch (EOFException eofException) {
-                break;
-            } catch (IOException | ClassNotFoundException ioException) {
-                ioException.printStackTrace();
             }
+            return null;
         }
-        return null;
     }
 }
