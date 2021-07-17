@@ -1,6 +1,7 @@
 package Controller;
 
 import Database.QueryBuilder.CardQueryBuilder;
+import Database.QueryBuilder.HistoryQueryBuilder;
 import javafx.stage.Stage;
 
 public interface Controller {
@@ -9,5 +10,6 @@ public interface Controller {
     Stage STAGE = new Stage();
     SceneController SCENE_CONTROLLER = new SceneController();
     CardQueryBuilder CARD_QUERY_BUILDER = CardQueryBuilder.getSingletonInstance();
+    HistoryQueryBuilder HISTORY_QUERY_BUILDER = HistoryQueryBuilder.getInstance();
 
 }
