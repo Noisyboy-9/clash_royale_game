@@ -27,21 +27,14 @@ public abstract class Tower implements AttackAble {
      * Instantiates a new Tower.
      *
      * @param id                   the id
-     * @param HP                   the hp
-     * @param damage               the damage
      * @param owner                the owner level
      * @param demolitionBonusCount the demolition bonus count
      * @param active               the active
-     * @param target               the target
      * @param range                the range
+     * @param HP                   the hp
+     * @param damage               the damage
      */
-    public Tower(UUID id,
-                 int HP,
-                 int damage,
-                 User owner,
-                 int demolitionBonusCount,
-                 boolean active,
-                 int range) {
+    public Tower(UUID id, User owner, int demolitionBonusCount, boolean active, int range, int HP, int damage) {
         this.id = id;
         this.HP = HP;
         this.damage = damage;
@@ -206,5 +199,11 @@ public abstract class Tower implements AttackAble {
         return attackType;
     }
 
+    /**
+     * Create tower.
+     *
+     * @param owner the owner
+     * @return the tower
+     */
     public abstract Tower create(User owner);
 }

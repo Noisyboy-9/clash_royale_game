@@ -22,7 +22,7 @@ public class KingTower extends Tower {
                      int HP,
                      int damage) {
 
-        super(id, HP, damage, owner, 3, false, 7);
+        super(id, owner, 3, false, 7, HP, damage);
     }
 
     @Override

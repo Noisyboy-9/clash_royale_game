@@ -21,7 +21,7 @@ public class QueenTower extends Tower {
                       User owner,
                       int HP,
                       int damage) {
-        super(id, HP, damage, owner, 1, true, 8);
+        super(id, owner, 1, true, 8, HP, damage);
     }
 
     @Override
