@@ -1,9 +1,12 @@
 package cards.spells;
 
 import cards.Card;
+import cards.troops.Troop;
 import javafx.geometry.Point2D;
+import towers.Tower;
 import user.User;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 /**
@@ -39,5 +42,4 @@ public abstract class Spell extends Card {
      * let the spell do the thing that it must do.
      */
     public abstract void chant();
-
 }
