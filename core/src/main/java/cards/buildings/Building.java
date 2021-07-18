@@ -3,6 +3,7 @@ package cards.buildings;
 import cards.Card;
 import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
+import javafx.geometry.Point2D;
 import user.User;
 
 import java.util.UUID;
@@ -38,7 +39,7 @@ public abstract class Building extends Card implements AttackAble {
     public Building(UUID id,
                     int cost,
                     User owner,
-                    Position position,
+                    Point2D position,
                     int HP,
                     double radius,
                     double damage,

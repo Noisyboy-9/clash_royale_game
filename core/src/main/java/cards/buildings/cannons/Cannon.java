@@ -3,6 +3,7 @@ package cards.buildings.cannons;
 import cards.buildings.Building;
 import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
+import javafx.geometry.Point2D;
 import user.User;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class Cannon extends Building {
      * @param HP       the hp
      * @param damage   the damage
      */
-    public Cannon(UUID id, int cost, User owner, Position position, int HP, double damage) {
+    public Cannon(UUID id, int cost, User owner, Point2D position, int HP, double damage) {
         super(id,
                 cost,
                 owner,

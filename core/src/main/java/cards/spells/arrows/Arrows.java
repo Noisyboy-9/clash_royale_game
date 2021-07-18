@@ -2,6 +2,7 @@ package cards.spells.arrows;
 
 import cards.spells.Spell;
 import cards.troops.Troop;
+import javafx.geometry.Point2D;
 import towers.Tower;
 import user.User;
 
@@ -27,7 +28,7 @@ public class Arrows extends Spell {
      */
     public Arrows(UUID id,
                   User owner,
-                  Position position,
+                  Point2D position,
                   ArrayList<Tower> targetTowers,
                   ArrayList<Troop> targetTroops) {
         super(id, 3, owner, position, 4);

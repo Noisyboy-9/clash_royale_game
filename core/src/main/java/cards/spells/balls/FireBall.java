@@ -2,6 +2,7 @@ package cards.spells.balls;
 
 import cards.spells.Spell;
 import cards.troops.Troop;
+import javafx.geometry.Point2D;
 import towers.Tower;
 import user.User;
 
@@ -27,7 +28,7 @@ public class FireBall extends Spell {
      */
     public FireBall(UUID id,
                     User owner,
-                    Position position,
+                    Point2D position,
                     ArrayList<Tower> targetTowers,
                     ArrayList<Troop> targetTroops) {
         super(id, 4, owner, position, 2.5);

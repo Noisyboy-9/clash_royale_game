@@ -1,13 +1,14 @@
 package commands.gameStateCommands.spellCommands;
 
 import cards.spells.Spell;
+import javafx.geometry.Point2D;
 
 /**
  * The type Spell addition command.
  */
 public class SpellAdditionCommand extends SpellCommand {
     private final Spell spell;
-    private final Position position;
+    private final Point2D position;
 
     /**
      * Instantiates a new Spell addition command.
@@ -15,7 +16,7 @@ public class SpellAdditionCommand extends SpellCommand {
      * @param spell    the spell
      * @param position the position
      */
-    public SpellAdditionCommand(Spell spell, Position position) {
+    public SpellAdditionCommand(Spell spell, Point2D position) {
         this.spell = spell;
         this.position = position;
     }
@@ -34,7 +35,7 @@ public class SpellAdditionCommand extends SpellCommand {
      *
      * @return the position
      */
-    public Position getPosition() {
+    public Point2D getPosition() {
         return position;
     }
 }

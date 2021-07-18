@@ -3,6 +3,7 @@ package cards.buildings.towers;
 import cards.buildings.Building;
 import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
+import javafx.geometry.Point2D;
 import user.User;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class InfernoTower extends Building {
     public InfernoTower(UUID id,
                         int cost,
                         User owner,
-                        Position position,
+                        Point2D position,
                         int HP,
                         double damage) {
         super(id,

@@ -2,6 +2,7 @@ package cards.spells.rages;
 
 import cards.spells.Spell;
 import cards.troops.Troop;
+import javafx.geometry.Point2D;
 import towers.Tower;
 import user.User;
 
@@ -26,7 +27,7 @@ public class Rage extends Spell {
      */
     public Rage(UUID id,
                 User owner,
-                Position position,
+                Point2D position,
                 ArrayList<Tower> targetTowers,
                 ArrayList<Troop> targetTroops) {
         super(id, 3, owner, position, 5);
