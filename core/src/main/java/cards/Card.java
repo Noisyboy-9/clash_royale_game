@@ -2,6 +2,7 @@ package cards;
 
 import cards.utils.Position;
 import user.User;
+import user.UserLevelEnum;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -23,7 +24,7 @@ public abstract class Card {
      * @param owner    the owner
      * @param position the position
      */
-    public Card(UUID id, int cost, User owner, Position position) {
+    private Card(UUID id, int cost, User owner, Position position) {
         this.id = id;
         this.cost = cost;
         this.owner = owner;
@@ -78,4 +79,13 @@ public abstract class Card {
     public Position getPosition() {
         return position;
     }
+
+    /**
+     * create an instance of the card.
+     *
+     * @param level the level
+     * @return the card
+     */
+    public abstract Card create(UserLevelEnum level);
 }
+
