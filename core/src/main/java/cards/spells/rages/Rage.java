@@ -25,7 +25,7 @@ public class Rage extends Spell {
      * @param id       the id
      * @param owner    the owner
      * @param position the position
-     * @param duration
+     * @param duration the duration
      */
     public Rage(UUID id,
                 User owner,
@@ -37,6 +37,11 @@ public class Rage extends Spell {
         this.targetTroops = new ArrayList<>();
     }
 
+    /**
+     * Gets duration.
+     *
+     * @return the duration
+     */
     public double getDuration() {
         return duration;
     }

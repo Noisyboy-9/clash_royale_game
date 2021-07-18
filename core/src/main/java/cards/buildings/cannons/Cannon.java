@@ -1,6 +1,8 @@
 package cards.buildings.cannons;
 
+import cards.Card;
 import cards.buildings.Building;
+import cards.buildings.towers.InfernoTower;
 import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
 import javafx.geometry.Point2D;
@@ -19,15 +21,14 @@ public class Cannon extends Building {
      * Instantiates a new Card.
      *
      * @param id       the id
-     * @param cost     the cost
      * @param owner    the owner
      * @param position the position
      * @param HP       the hp
      * @param damage   the damage
      */
-    public Cannon(UUID id, int cost, User owner, Point2D position, int HP, double damage) {
+    public Cannon(UUID id, User owner, Point2D position, int HP, double damage) {
         super(id,
-                cost,
+                6,
                 owner,
                 position,
                 HP,
@@ -54,5 +55,17 @@ public class Cannon extends Building {
     @Override
     public void attack() {
         this.targets.forEach(target -> target.reduceHealthBy(this.getDamage()));
+    }
+
+    @Override
+    public Card create(User user, Point2D position) {
+        return switch (user.getLevel()) {
+            case LEVEL_1 -> new InfernoTower(UUID.randomUUID(), user, position, 380, 60);
+            case LEVEL_2 -> new InfernoTower(UUID.randomUUID(), user, position, 418, 66);
+            case LEVEL_3 -> new InfernoTower(UUID.randomUUID(), user, position, 459, 72);
+            case LEVEL_4 -> new InfernoTower(UUID.randomUUID(), user, position, 505, 79);
+            case LEVEL_5 -> new InfernoTower(UUID.randomUUID(), user, position, 554, 87);
+        };
+
     }
 }
