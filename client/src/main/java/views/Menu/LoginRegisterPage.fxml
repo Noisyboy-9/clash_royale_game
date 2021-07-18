@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="946.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/16"
+      fx:controller="controllers.authentication.LoginRegisterController">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <ImageView fitHeight="946.0" fitWidth="528.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../resources/photos/login_register_page_background.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="264.0" layoutY="721.0"
+                           onMouseClicked="#exitHandler" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../resources/photos/button_red.png"/>
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </ImageView>
+                <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="110.0" layoutY="721.0"
+                           onMouseClicked="#changeButtonHandler" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../resources/photos/button_yellow.png"/>
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </ImageView>
+                <Text fx:id="changeButtonText" fill="WHITE" layoutX="114.0" layoutY="772.0"
+                      onMouseClicked="#changeButtonHandler" stroke="#572700" strokeType="OUTSIDE" strokeWidth="2.0"
+                      text="Register" textAlignment="CENTER" wrappingWidth="145.662109375">
+                    <font>
+                        <Font name="Supercell-Magic Regular" size="18.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Text>
+                <Text fill="WHITE" layoutX="315.0" layoutY="772.0" onMouseClicked="#exitHandler" stroke="#570500"
+                      strokeType="OUTSIDE" strokeWidth="2.0" text="Exit">
+                    <font>
+                        <Font name="Supercell-Magic Regular" size="18.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Text>
+                <ImageView fitHeight="71.0" fitWidth="272.0" layoutX="128.0" layoutY="81.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../../resources/photos/text_field2.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="71.0" fitWidth="272.0" layoutX="128.0" layoutY="165.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../../resources/photos/text_field2.png"/>
+                    </image>
+                </ImageView>
+                <ImageView accessibleRole="BUTTON" fitHeight="88.0" fitWidth="154.0" layoutX="187.0" layoutY="283.0"
+                           onMouseClicked="#mainButtonHandler" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../resources/photos/button_blue.png"/>
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </ImageView>
+                <TextField fx:id="usernameField" blendMode="MULTIPLY" depthTest="DISABLE" layoutX="152.0" layoutY="96.0"
+                           prefHeight="42.0" prefWidth="225.0" promptText="Username"
+                           style="-fx-background-color: transparent">
+                    <font>
+                        <Font name="Supercell-Magic Regular" size="15.0"/>
+                    </font>
+                </TextField>
+                <Text fx:id="mainButtonText" fill="WHITE" layoutX="191.0" layoutY="334.0"
+                      onMouseClicked="#mainButtonHandler" stroke="#043e8a" strokeType="OUTSIDE" strokeWidth="2.0"
+                      text="Login" textAlignment="CENTER" wrappingWidth="145.662109375">
+                    <font>
+                        <Font name="Supercell-Magic Regular" size="18.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Text>
+                <Text fx:id="message" fill="WHITE" layoutX="44.0" layoutY="650.0" stroke="BLACK" strokeType="OUTSIDE"
+                      strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="441.13671875">
+                    <font>
+                        <Font name="Supercell-Magic Regular" size="13.0"/>
+                    </font>
+                </Text>
+                <PasswordField fx:id="passwordField" blendMode="MULTIPLY" layoutX="152.0" layoutY="180.0"
+                               prefHeight="42.0" prefWidth="225.0" promptText="Password"
+                               style="-fx-background-color: transparent">
+                    <font>
+                        <Font name="Supercell-Magic Regular" size="15.0"/>
+                    </font>
+                </PasswordField>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
