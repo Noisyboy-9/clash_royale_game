@@ -24,5 +24,6 @@
     <orderEntry type="library" name="Maven: org.openjfx:javafx-media:mac:16" level="project" />
     <orderEntry type="module" module-name="core" />
     <orderEntry type="module" module-name="clash_royal" />
+    <orderEntry type="module" module-name="server" />
   </component>
 </module>
