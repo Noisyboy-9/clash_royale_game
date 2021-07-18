@@ -1,7 +1,6 @@
 package towers;
 
-import cards.utils.AttackAble;
-import user.UserLevelEnum;
+import user.User;
 
 import java.util.UUID;
 
@@ -13,17 +12,26 @@ public class QueenTower extends Tower {
     /**
      * Instantiates a new Tower.
      *
-     * @param id         the id
-     * @param HP         the hp
-     * @param damage     the damage
-     * @param ownerLevel the owner level
-     * @param target     the target
+     * @param id     the id
+     * @param owner  the owner level
+     * @param HP     the hp
+     * @param damage the damage
      */
     public QueenTower(UUID id,
+                      User owner,
                       int HP,
-                      int damage,
-                      UserLevelEnum ownerLevel,
-                      AttackAble target) {
-        super(id, HP, damage, ownerLevel, 1, true, target, 8);
+                      int damage) {
+        super(id, HP, damage, owner, 1, true, 8);
+    }
+
+    @Override
+    public Tower create(User owner) {
+        return switch (owner.getLevel()) {
+            case LEVEL_1 -> new QueenTower(UUID.randomUUID(), owner, 1400, 50);
+            case LEVEL_2 -> new QueenTower(UUID.randomUUID(), owner, 1512, 54);
+            case LEVEL_3 -> new QueenTower(UUID.randomUUID(), owner, 1624, 58);
+            case LEVEL_4 -> new QueenTower(UUID.randomUUID(), owner, 1750, 62);
+            case LEVEL_5 -> new QueenTower(UUID.randomUUID(), owner, 1890, 69);
+        };
     }
 }
