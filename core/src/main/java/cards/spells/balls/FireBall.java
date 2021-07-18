@@ -27,10 +27,10 @@ public class FireBall extends Spell {
      * @param position the position
      * @param damage   the damage
      */
-    public FireBall(UUID id,
-                    User owner,
-                    Point2D position,
-                    int damage) {
+    private FireBall(UUID id,
+                     User owner,
+                     Point2D position,
+                     int damage) {
         super(id, 4, owner, position, 2.5);
 
         this.damage = damage;
@@ -73,8 +73,7 @@ public class FireBall extends Spell {
         this.targetTroops.forEach(troop -> troop.reduceHealthBy(this.damage));
     }
 
-    @Override
-    public Card create(User user, Point2D position) {
+    public static Card create(User user, Point2D position) {
         return switch (user.getLevel()) {
             case LEVEL_1 -> new FireBall(UUID.randomUUID(), user, position, 325);
             case LEVEL_2 -> new FireBall(UUID.randomUUID(), user, position, 357);

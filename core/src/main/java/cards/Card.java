@@ -79,14 +79,5 @@ public abstract class Card {
     public Point2D getPosition() {
         return position;
     }
-
-    /**
-     * create an instance of the card.
-     *
-     * @param user     the user
-     * @param position the position
-     * @return the card
-     */
-    public abstract Card create(User user, Point2D position);
 }
 

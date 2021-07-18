@@ -27,10 +27,10 @@ public class Rage extends Spell {
      * @param position the position
      * @param duration the duration
      */
-    public Rage(UUID id,
-                User owner,
-                Point2D position,
-                double duration) {
+    protected Rage(UUID id,
+                   User owner,
+                   Point2D position,
+                   double duration) {
         super(id, 3, owner, position, 5);
         this.duration = duration;
         this.targetTowers = new ArrayList<>();
@@ -107,8 +107,14 @@ public class Rage extends Spell {
         ));
     }
 
-    @Override
-    public Card create(User user, Point2D position) {
+    /**
+     * Create card.
+     *
+     * @param user     the user
+     * @param position the position
+     * @return the card
+     */
+    public static Card create(User user, Point2D position) {
         return switch (user.getLevel()) {
             case LEVEL_1 -> new Rage(UUID.randomUUID(), user, position, 6);
             case LEVEL_2 -> new Rage(UUID.randomUUID(), user, position, 6.5);

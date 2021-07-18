@@ -25,7 +25,7 @@ public class Cannon extends Building {
      * @param HP       the hp
      * @param damage   the damage
      */
-    public Cannon(UUID id, User owner, Point2D position, int HP, double damage) {
+    private Cannon(UUID id, User owner, Point2D position, int HP, double damage) {
         super(id,
                 6,
                 owner,
@@ -56,8 +56,14 @@ public class Cannon extends Building {
         this.targets.forEach(target -> target.reduceHealthBy(this.getDamage()));
     }
 
-    @Override
-    public Card create(User user, Point2D position) {
+    /**
+     * Create card.
+     *
+     * @param user     the user
+     * @param position the position
+     * @return the card
+     */
+    public static Card create(User user, Point2D position) {
         return switch (user.getLevel()) {
             case LEVEL_1 -> new Cannon(UUID.randomUUID(), user, position, 380, 60);
             case LEVEL_2 -> new Cannon(UUID.randomUUID(), user, position, 418, 66);

@@ -23,7 +23,7 @@ public class BabyDragon extends Troop {
      * @param HP       the hp
      * @param damage   the damage
      */
-    public BabyDragon(UUID id, User owner, Point2D position, int HP, int damage) {
+    private BabyDragon(UUID id, User owner, Point2D position, int HP, int damage) {
         super(id,
                 4,
                 owner,
@@ -39,8 +39,14 @@ public class BabyDragon extends Troop {
         );
     }
 
-    @Override
-    public Card create(User user, Point2D position) {
+    /**
+     * Create card.
+     *
+     * @param user     the user
+     * @param position the position
+     * @return the card
+     */
+    public static Card create(User user, Point2D position) {
         return switch (user.getLevel()) {
             case LEVEL_1 -> new BabyDragon(UUID.randomUUID(), user, position, 800, 100);
             case LEVEL_2 -> new BabyDragon(UUID.randomUUID(), user, position, 880, 110);

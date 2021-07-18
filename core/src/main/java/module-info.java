@@ -9,6 +9,8 @@ module core {
     exports cards.troops.valkyries;
     exports cards.troops.wizards;
 
+    exports cards.utils;
+
     exports commands;
     exports commands.authenicationCommands.login;
     exports commands.authenicationCommands.register;
