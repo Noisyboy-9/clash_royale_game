@@ -25,6 +25,7 @@ public class FireBall extends Spell {
      * @param id       the id
      * @param owner    the owner
      * @param position the position
+     * @param damage   the damage
      */
     public FireBall(UUID id,
                     User owner,

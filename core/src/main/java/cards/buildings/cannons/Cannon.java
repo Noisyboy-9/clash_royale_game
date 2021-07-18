@@ -2,7 +2,6 @@ package cards.buildings.cannons;
 
 import cards.Card;
 import cards.buildings.Building;
-import cards.buildings.towers.InfernoTower;
 import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
 import javafx.geometry.Point2D;
@@ -60,11 +59,11 @@ public class Cannon extends Building {
     @Override
     public Card create(User user, Point2D position) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new InfernoTower(UUID.randomUUID(), user, position, 380, 60);
-            case LEVEL_2 -> new InfernoTower(UUID.randomUUID(), user, position, 418, 66);
-            case LEVEL_3 -> new InfernoTower(UUID.randomUUID(), user, position, 459, 72);
-            case LEVEL_4 -> new InfernoTower(UUID.randomUUID(), user, position, 505, 79);
-            case LEVEL_5 -> new InfernoTower(UUID.randomUUID(), user, position, 554, 87);
+            case LEVEL_1 -> new Cannon(UUID.randomUUID(), user, position, 380, 60);
+            case LEVEL_2 -> new Cannon(UUID.randomUUID(), user, position, 418, 66);
+            case LEVEL_3 -> new Cannon(UUID.randomUUID(), user, position, 459, 72);
+            case LEVEL_4 -> new Cannon(UUID.randomUUID(), user, position, 505, 79);
+            case LEVEL_5 -> new Cannon(UUID.randomUUID(), user, position, 554, 87);
         };
 
     }

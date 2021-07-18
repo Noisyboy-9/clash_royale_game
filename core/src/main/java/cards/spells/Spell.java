@@ -1,12 +1,9 @@
 package cards.spells;
 
 import cards.Card;
-import cards.troops.Troop;
 import javafx.geometry.Point2D;
-import towers.Tower;
 import user.User;
 
-import java.util.ArrayList;
 import java.util.UUID;
 
 /**

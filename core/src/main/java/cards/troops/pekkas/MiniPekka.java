@@ -2,7 +2,6 @@ package cards.troops.pekkas;
 
 import cards.Card;
 import cards.troops.Troop;
-import cards.troops.wizards.Wizard;
 import cards.utils.MovementSpeedEnum;
 import cards.utils.TypeEnum;
 import javafx.geometry.Point2D;
