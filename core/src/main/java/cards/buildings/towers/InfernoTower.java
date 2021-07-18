@@ -56,8 +56,7 @@ public class InfernoTower extends Building {
         }
     }
 
-    @Override
-    public Card create(User user, Point2D position) {
+    public static Card create(User user, Point2D position) {
         return switch (user.getLevel()) {
             case LEVEL_1 -> new InfernoTower(UUID.randomUUID(), user, position, 800, 210);
             case LEVEL_2 -> new InfernoTower(UUID.randomUUID(), user, position, 880, 231);

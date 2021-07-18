@@ -73,8 +73,7 @@ public class FireBall extends Spell {
         this.targetTroops.forEach(troop -> troop.reduceHealthBy(this.damage));
     }
 
-    @Override
-    public Card create(User user, Point2D position) {
+    public static Card create(User user, Point2D position) {
         return switch (user.getLevel()) {
             case LEVEL_1 -> new FireBall(UUID.randomUUID(), user, position, 325);
             case LEVEL_2 -> new FireBall(UUID.randomUUID(), user, position, 357);
