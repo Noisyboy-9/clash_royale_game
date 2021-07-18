@@ -1,6 +1,7 @@
 module core {
     requires javafx.graphics;
     exports cards;
+    exports cards.troops;
     exports cards.troops.archers;
     exports cards.troops.barbarians;
     exports cards.troops.dragons;
@@ -23,6 +24,7 @@ module core {
     exports commands;
     exports commands.authenicationCommands.login;
     exports commands.authenicationCommands.register;
+    exports commands.gameStateCommands.troopCommands;
     exports commands.gameStateCommands.gameBonusCommands;
     exports commands.gameStateCommands.gameTimeCommands;
     exports commands.gameStateCommands.enums;
