@@ -1,7 +1,6 @@
 package commands.gameStateCommands.spellCommands;
 
 import cards.spells.Spell;
-import cards.utils.Position;
 
 /**
  * The type Spell addition command.

@@ -2,7 +2,6 @@ package cards.spells.arrows;
 
 import cards.spells.Spell;
 import cards.troops.Troop;
-import cards.utils.Position;
 import towers.Tower;
 import user.User;
 

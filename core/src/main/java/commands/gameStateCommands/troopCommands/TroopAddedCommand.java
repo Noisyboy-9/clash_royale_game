@@ -1,7 +1,6 @@
 package commands.gameStateCommands.troopCommands;
 
 import cards.troops.Troop;
-import cards.utils.Position;
 
 /**
  * The type Troop added command.

@@ -1,7 +1,6 @@
 package cards.spells;
 
 import cards.Card;
-import cards.utils.Position;
 import user.User;
 
 import java.util.UUID;

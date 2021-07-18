@@ -1,4 +1,5 @@
 module core {
+    requires javafx.graphics;
     exports cards;
     exports cards.troops.archers;
     exports cards.troops.barbarians;

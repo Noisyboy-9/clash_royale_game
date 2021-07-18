@@ -2,7 +2,6 @@ package cards.troops.pekkas;
 
 import cards.troops.Troop;
 import cards.utils.MovementSpeedEnum;
-import cards.utils.Position;
 import cards.utils.TypeEnum;
 import user.User;
 

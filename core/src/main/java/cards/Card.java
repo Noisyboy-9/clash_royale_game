@@ -1,8 +1,7 @@
 package cards;
 
-import cards.utils.Position;
+import javafx.geometry.Point2D;
 import user.User;
-import user.UserLevelEnum;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -14,7 +13,8 @@ public abstract class Card {
     private final UUID id;
     private final int cost;
     private final User owner;
-    private final Position position;
+    private final Point2D position;
+
 
     /**
      * Instantiates a new Card.
@@ -24,7 +24,7 @@ public abstract class Card {
      * @param owner    the owner
      * @param position the position
      */
-    private Card(UUID id, int cost, User owner, Position position) {
+    protected Card(UUID id, int cost, User owner, Point2D position) {
         this.id = id;
         this.cost = cost;
         this.owner = owner;
@@ -76,7 +76,7 @@ public abstract class Card {
      *
      * @return the position
      */
-    public Position getPosition() {
+    public Point2D getPosition() {
         return position;
     }
 
@@ -86,6 +86,6 @@ public abstract class Card {
      * @param user the user
      * @return the card
      */
-    public abstract Card create(User user);
+    public abstract Card create(User user, Point2D position);
 }
 

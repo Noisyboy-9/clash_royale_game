@@ -2,7 +2,6 @@ package cards.buildings;
 
 import cards.Card;
 import cards.utils.AttackAble;
-import cards.utils.Position;
 import cards.utils.TypeEnum;
 import user.User;
 
