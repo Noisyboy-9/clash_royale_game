@@ -23,7 +23,7 @@ public class Giant extends Troop {
      * @param HP       the hp
      * @param damage   the damage
      */
-    public Giant(UUID id, User owner, Point2D position, int HP, int damage) {
+    private Giant(UUID id, User owner, Point2D position, int HP, int damage) {
         super(id,
                 5,
                 owner,

@@ -23,7 +23,7 @@ public class Valkyrie extends Troop {
      * @param HP       the hp
      * @param damage   the damage
      */
-    public Valkyrie(UUID id, User owner, Point2D position, int HP, int damage) {
+    private Valkyrie(UUID id, User owner, Point2D position, int HP, int damage) {
         super(id,
                 4,
                 owner,
