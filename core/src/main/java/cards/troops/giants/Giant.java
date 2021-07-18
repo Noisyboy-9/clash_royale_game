@@ -1,9 +1,10 @@
 package cards.troops.giants;
 
+import cards.Card;
 import cards.troops.Troop;
 import cards.utils.MovementSpeedEnum;
-import cards.utils.Position;
 import cards.utils.TypeEnum;
+import javafx.geometry.Point2D;
 import user.User;
 
 import java.util.UUID;
@@ -22,7 +23,7 @@ public class Giant extends Troop {
      * @param HP       the hp
      * @param damage   the damage
      */
-    public Giant(UUID id, User owner, Position position, int HP, int damage) {
+    public Giant(UUID id, User owner, Point2D position, int HP, int damage) {
         super(id,
                 5,
                 owner,
@@ -36,5 +37,16 @@ public class Giant extends Troop {
                 TypeEnum.GROUND,
                 TypeEnum.GROUND
         );
+    }
+
+    @Override
+    public Card create(User user, Point2D position) {
+        return switch (user.getLevel()) {
+            case LEVEL_1 -> new Giant(UUID.randomUUID(), user, position, 2000, 126);
+            case LEVEL_2 -> new Giant(UUID.randomUUID(), user, position, 2200, 138);
+            case LEVEL_3 -> new Giant(UUID.randomUUID(), user, position, 2420, 152);
+            case LEVEL_4 -> new Giant(UUID.randomUUID(), user, position, 2660, 167);
+            case LEVEL_5 -> new Giant(UUID.randomUUID(), user, position, 2920, 183);
+        };
     }
 }

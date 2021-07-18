@@ -11,5 +11,17 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="clash_royal" />
     <orderEntry type="module" module-name="core" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:16" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:mac:16" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:16" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:mac:16" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:16" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:mac:16" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:16" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:mac:16" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:16" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:mac:16" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-media:16" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-media:mac:16" level="project" />
   </component>
 </module>

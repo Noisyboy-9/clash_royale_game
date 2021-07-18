@@ -1,7 +1,7 @@
 package cards.spells;
 
 import cards.Card;
-import cards.utils.Position;
+import javafx.geometry.Point2D;
 import user.User;
 
 import java.util.UUID;
@@ -21,7 +21,7 @@ public abstract class Spell extends Card {
      * @param position the position
      * @param radius   the radius
      */
-    public Spell(UUID id, int cost, User owner, Position position, double radius) {
+    public Spell(UUID id, int cost, User owner, Point2D position, double radius) {
         super(id, cost, owner, position);
         this.radius = radius;
     }
@@ -39,5 +39,4 @@ public abstract class Spell extends Card {
      * let the spell do the thing that it must do.
      */
     public abstract void chant();
-
 }
