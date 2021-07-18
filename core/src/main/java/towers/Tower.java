@@ -198,12 +198,4 @@ public abstract class Tower implements AttackAble {
     public TypeEnum getAttackType() {
         return attackType;
     }
-
-    /**
-     * Create tower.
-     *
-     * @param owner the owner
-     * @return the tower
-     */
-    public abstract Tower create(User owner);
 }

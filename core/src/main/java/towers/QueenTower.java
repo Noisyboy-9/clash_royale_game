@@ -24,8 +24,7 @@ public class QueenTower extends Tower {
         super(id, owner, 1, true, 8, HP, damage);
     }
 
-    @Override
-    public Tower create(User owner) {
+    public static Tower create(User owner) {
         return switch (owner.getLevel()) {
             case LEVEL_1 -> new QueenTower(UUID.randomUUID(), owner, 1400, 50);
             case LEVEL_2 -> new QueenTower(UUID.randomUUID(), owner, 1512, 54);
