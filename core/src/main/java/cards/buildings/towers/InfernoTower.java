@@ -1,9 +1,10 @@
 package cards.buildings.towers;
 
+import cards.Card;
 import cards.buildings.Building;
 import cards.utils.AttackAble;
-import cards.utils.Position;
 import cards.utils.TypeEnum;
+import javafx.geometry.Point2D;
 import user.User;
 
 import java.util.ArrayList;
@@ -19,20 +20,18 @@ public class InfernoTower extends Building {
      * Instantiates a new Inferno tower.
      *
      * @param id       the id
-     * @param cost     the cost
      * @param owner    the owner
      * @param position the position
      * @param HP       the hp
      * @param damage   the damage
      */
-    public InfernoTower(UUID id,
-                        int cost,
-                        User owner,
-                        Position position,
-                        int HP,
-                        double damage) {
+    private InfernoTower(UUID id,
+                         User owner,
+                         Point2D position,
+                         int HP,
+                         double damage) {
         super(id,
-                cost,
+                3,
                 owner,
                 position,
                 HP,
@@ -55,5 +54,22 @@ public class InfernoTower extends Building {
         if (!this.targets.contains(target)) {
             this.targets.add(target);
         }
+    }
+
+    /**
+     * Create card.
+     *
+     * @param user     the user
+     * @param position the position
+     * @return the card
+     */
+    public static Card create(User user, Point2D position) {
+        return switch (user.getLevel()) {
+            case LEVEL_1 -> new InfernoTower(UUID.randomUUID(), user, position, 800, 210);
+            case LEVEL_2 -> new InfernoTower(UUID.randomUUID(), user, position, 880, 231);
+            case LEVEL_3 -> new InfernoTower(UUID.randomUUID(), user, position, 968, 254);
+            case LEVEL_4 -> new InfernoTower(UUID.randomUUID(), user, position, 1064, 279);
+            case LEVEL_5 -> new InfernoTower(UUID.randomUUID(), user, position, 1168, 307);
+        };
     }
 }

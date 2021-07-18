@@ -2,8 +2,8 @@ package cards.buildings;
 
 import cards.Card;
 import cards.utils.AttackAble;
-import cards.utils.Position;
 import cards.utils.TypeEnum;
+import javafx.geometry.Point2D;
 import user.User;
 
 import java.util.UUID;
@@ -36,17 +36,17 @@ public abstract class Building extends Card implements AttackAble {
      * @param selfType   the self type
      * @param attackType the attack type
      */
-    public Building(UUID id,
-                    int cost,
-                    User owner,
-                    Position position,
-                    int HP,
-                    double radius,
-                    double damage,
-                    double hitSpeed,
-                    double duration,
-                    TypeEnum selfType,
-                    TypeEnum attackType) {
+    protected Building(UUID id,
+                       int cost,
+                       User owner,
+                       Point2D position,
+                       int HP,
+                       double radius,
+                       double damage,
+                       double hitSpeed,
+                       double duration,
+                       TypeEnum selfType,
+                       TypeEnum attackType) {
         super(id, cost, owner, position);
         this.HP = HP;
         this.radius = radius;

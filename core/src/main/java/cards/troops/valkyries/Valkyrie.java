@@ -1,4 +1,4 @@
-package cards.troops.giants;
+package cards.troops.valkyries;
 
 import cards.Card;
 import cards.troops.Troop;
@@ -10,12 +10,12 @@ import user.User;
 import java.util.UUID;
 
 /**
- * The type Giant.
+ * The type Valkyrie.
  */
-public class Giant extends Troop {
+public class Valkyrie extends Troop {
 
     /**
-     * Instantiates a new Giant.
+     * Instantiates a new Card.
      *
      * @param id       the id
      * @param owner    the owner
@@ -23,15 +23,15 @@ public class Giant extends Troop {
      * @param HP       the hp
      * @param damage   the damage
      */
-    private Giant(UUID id, User owner, Point2D position, int HP, int damage) {
+    private Valkyrie(UUID id, User owner, Point2D position, int HP, int damage) {
         super(id,
-                5,
+                4,
                 owner,
                 position,
                 HP,
                 damage,
-                MovementSpeedEnum.SLOW,
-                false,
+                MovementSpeedEnum.MEDIUM,
+                true,
                 1,
                 1.5,
                 TypeEnum.GROUND,
@@ -48,11 +48,11 @@ public class Giant extends Troop {
      */
     public static Card create(User user, Point2D position) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Giant(UUID.randomUUID(), user, position, 2000, 126);
-            case LEVEL_2 -> new Giant(UUID.randomUUID(), user, position, 2200, 138);
-            case LEVEL_3 -> new Giant(UUID.randomUUID(), user, position, 2420, 152);
-            case LEVEL_4 -> new Giant(UUID.randomUUID(), user, position, 2660, 167);
-            case LEVEL_5 -> new Giant(UUID.randomUUID(), user, position, 2920, 183);
+            case LEVEL_1 -> new Valkyrie(UUID.randomUUID(), user, position, 880, 120);
+            case LEVEL_2 -> new Valkyrie(UUID.randomUUID(), user, position, 968, 132);
+            case LEVEL_3 -> new Valkyrie(UUID.randomUUID(), user, position, 1064, 145);
+            case LEVEL_4 -> new Valkyrie(UUID.randomUUID(), user, position, 1170, 159);
+            case LEVEL_5 -> new Valkyrie(UUID.randomUUID(), user, position, 1284, 175);
         };
     }
 }

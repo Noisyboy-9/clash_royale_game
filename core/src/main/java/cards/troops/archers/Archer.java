@@ -1,9 +1,10 @@
 package cards.troops.archers;
 
+import cards.Card;
 import cards.troops.Troop;
 import cards.utils.MovementSpeedEnum;
-import cards.utils.Position;
 import cards.utils.TypeEnum;
+import javafx.geometry.Point2D;
 import user.User;
 
 import java.util.UUID;
@@ -21,7 +22,7 @@ public class Archer extends Troop {
      * @param HP       the hp
      * @param damage   the damage
      */
-    public Archer(UUID id, User owner, Position position, int HP, int damage) {
+    private Archer(UUID id, User owner, Point2D position, int HP, int damage) {
         super(id,
                 3,
                 owner,
@@ -35,5 +36,22 @@ public class Archer extends Troop {
                 TypeEnum.GROUND,
                 TypeEnum.AIR_GROUND
         );
+    }
+
+    /**
+     * Create card.
+     *
+     * @param user     the user
+     * @param position the position
+     * @return the card
+     */
+    public static Card create(User user, Point2D position) {
+        return switch (user.getLevel()) {
+            case LEVEL_1 -> new Archer(UUID.randomUUID(), user, position, 125, 33);
+            case LEVEL_2 -> new Archer(UUID.randomUUID(), user, position, 127, 44);
+            case LEVEL_3 -> new Archer(UUID.randomUUID(), user, position, 151, 48);
+            case LEVEL_4 -> new Archer(UUID.randomUUID(), user, position, 166, 53);
+            case LEVEL_5 -> new Archer(UUID.randomUUID(), user, position, 182, 58);
+        };
     }
 }

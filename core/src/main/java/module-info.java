@@ -1,4 +1,5 @@
 module core {
+    requires javafx.graphics;
     exports cards;
     exports cards.troops.archers;
     exports cards.troops.barbarians;
@@ -7,6 +8,8 @@ module core {
     exports cards.troops.pekkas;
     exports cards.troops.valkyries;
     exports cards.troops.wizards;
+
+    exports cards.utils;
 
     exports commands;
     exports commands.authenicationCommands.login;

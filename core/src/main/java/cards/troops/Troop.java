@@ -3,9 +3,9 @@ package cards.troops;
 import cards.Card;
 import cards.utils.AttackAble;
 import cards.utils.MovementSpeedEnum;
-import cards.utils.Position;
 import cards.utils.TypeEnum;
 import exceptions.InvalidAttackTargetException;
+import javafx.geometry.Point2D;
 import user.User;
 
 import java.util.UUID;
@@ -40,18 +40,18 @@ public abstract class Troop extends Card implements AttackAble {
      * @param selfType   the self type
      * @param attackType the attack type
      */
-    public Troop(UUID id,
-                 int cost,
-                 User owner,
-                 Position position,
-                 int HP,
-                 double damage,
-                 MovementSpeedEnum speed,
-                 boolean areaSplash,
-                 int range,
-                 double hitSpeed,
-                 TypeEnum selfType,
-                 TypeEnum attackType) {
+    protected Troop(UUID id,
+                    int cost,
+                    User owner,
+                    Point2D position,
+                    int HP,
+                    double damage,
+                    MovementSpeedEnum speed,
+                    boolean areaSplash,
+                    int range,
+                    double hitSpeed,
+                    TypeEnum selfType,
+                    TypeEnum attackType) {
         super(id, cost, owner, position);
         this.HP = HP;
         this.damage = damage;
