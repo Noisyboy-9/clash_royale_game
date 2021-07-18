@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="946.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/16"
+      fx:controller="controllers.menus.TrainingCampController">
+    <children>
+        <AnchorPane VBox.vgrow="ALWAYS">
+            <children>
+                <ImageView fitHeight="858.0" fitWidth="528.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../resources/photos/main_menu_background.png"/>
+                    </image>
+                </ImageView>
+                <GridPane alignment="CENTER" layoutY="858.0" prefHeight="88.0" prefWidth="528.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <ImageView onMouseClicked="#changeMenuHandler" GridPane.columnIndex="2">
+                            <image>
+                                <Image url="@../../../resources/photos/not_selected_option_background.png"/>
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                        <ImageView onMouseClicked="#changeMenuHandler" GridPane.columnIndex="1">
+                            <image>
+                                <Image url="@../../../resources/photos/not_selected_option_background.png"/>
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                        <ImageView onMouseClicked="#changeMenuHandler">
+                            <image>
+                                <Image url="@../../../resources/photos/not_selected_option_background.png"/>
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                        <Text fill="WHITE" onMouseClicked="#changeMenuHandler" stroke="BLACK" strokeType="OUTSIDE"
+                              text="Battle" textAlignment="CENTER" wrappingWidth="105.0" GridPane.columnIndex="2">
+                            <font>
+                                <Font name="Supercell-Magic Regular" size="12.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets top="60.0"/>
+                            </GridPane.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Text>
+                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#changeMenuHandler"
+                                   pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                            <image>
+                                <Image url="@../../../resources/photos/cards_icon.png"/>
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                        <Text fill="WHITE" layoutX="222.0" layoutY="89.0" onMouseClicked="#changeMenuHandler"
+                              stroke="BLACK" strokeType="OUTSIDE" text="Cards" textAlignment="CENTER"
+                              wrappingWidth="105.0" GridPane.columnIndex="1">
+                            <font>
+                                <Font name="Supercell-Magic Regular" size="12.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets top="60.0"/>
+                            </GridPane.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Text>
+                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#changeMenuHandler"
+                                   pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../resources/photos/profile_icon.png"/>
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                        <ImageView onMouseClicked="#changeMenuHandler" GridPane.columnIndex="3">
+                            <image>
+                                <Image url="@../../../resources/photos/selected_option_background.png"/>
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                        <Text fill="WHITE" layoutX="116.0" layoutY="89.0" onMouseClicked="#changeMenuHandler"
+                              stroke="BLACK" strokeType="OUTSIDE" text="Profile" textAlignment="CENTER"
+                              wrappingWidth="105.0">
+                            <font>
+                                <Font name="Supercell-Magic Regular" size="12.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets top="60.0"/>
+                            </GridPane.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Text>
+                        <Text fill="WHITE" layoutX="222.0" layoutY="89.0" onMouseClicked="#changeMenuHandler"
+                              stroke="BLACK" strokeType="OUTSIDE" text="Camp" textAlignment="CENTER"
+                              wrappingWidth="105.0" GridPane.columnIndex="3">
+                            <font>
+                                <Font name="Supercell-Magic Regular" size="12.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets top="60.0"/>
+                            </GridPane.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Text>
+                        <ImageView onMouseClicked="#changeMenuHandler" GridPane.columnIndex="4">
+                            <image>
+                                <Image url="@../../../resources/photos/not_selected_option_background.png"/>
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                        <Text fill="WHITE" layoutX="328.0" layoutY="89.0" onMouseClicked="#changeMenuHandler"
+                              stroke="BLACK" strokeType="OUTSIDE" text="History" textAlignment="CENTER"
+                              wrappingWidth="105.0" GridPane.columnIndex="4">
+                            <font>
+                                <Font name="Supercell-Magic Regular" size="12.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets top="60.0"/>
+                            </GridPane.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Text>
+                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#changeMenuHandler"
+                                   pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                            <image>
+                                <Image url="@../../../resources/photos/battle_icon.png"/>
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#changeMenuHandler"
+                                   pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                            <image>
+                                <Image url="@../../../resources/photos/training_camp_icon.png"/>
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                        <ImageView fitHeight="88.0" fitWidth="105.0" onMouseClicked="#changeMenuHandler"
+                                   pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+                            <image>
+                                <Image url="@../../../resources/photos/history_icon.png"/>
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                    </children>
+                </GridPane>
+                <ImageView fitHeight="264.0" fitWidth="264.0" layoutX="132.0" layoutY="360.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../../resources/photos/training_camp_logo.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="100.0" layoutY="663.0" onMouseClicked="#crazyMode"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../resources/photos/button_yellow.png"/>
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </ImageView>
+                <Text fill="WHITE" layoutX="120.0" layoutY="713.0" onMouseClicked="#crazyMode" stroke="#754a00"
+                      strokeType="OUTSIDE" strokeWidth="2.0" text="Crazy Bot" textAlignment="CENTER">
+                    <font>
+                        <Font name="Supercell-Magic Regular" size="16.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Text>
+                <ImageView fitHeight="88.0" fitWidth="154.0" layoutX="274.0" layoutY="663.0"
+                           onMouseClicked="#normalMode" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../resources/photos/button_blue.png"/>
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </ImageView>
+                <Text fill="WHITE" layoutX="285.0" layoutY="713.0" onMouseClicked="#normalMode" stroke="#004ba3"
+                      strokeType="OUTSIDE" strokeWidth="2.0" text="Normal Bot" textAlignment="CENTER">
+                    <font>
+                        <Font name="Supercell-Magic Regular" size="16.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Text>
+                <ImageView fitHeight="200.0" fitWidth="287.0" layoutX="121.0" layoutY="31.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../../resources/photos/clash_royale_logo.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="64.0" fitWidth="352.0" layoutX="88.0" layoutY="257.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../../resources/photos/text_field1.png"/>
+                    </image>
+                </ImageView>
+                <Text fill="WHITE" layoutX="163.0" layoutY="297.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="3.0"
+                      text="Training Camp">
+                    <font>
+                        <Font name="Supercell-Magic Regular" size="20.0"/>
+                    </font>
+                </Text>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

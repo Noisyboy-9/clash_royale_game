@@ -3,5 +3,8 @@ module client {
     requires javafx.controls;
     requires core;
     
-    opens Controller;
+    opens controllers;
+    opens controllers.menus;
+    opens controllers.games;
+    opens controllers.authentication;
 }
