@@ -27,10 +27,10 @@ public class Rage extends Spell {
      * @param position the position
      * @param duration the duration
      */
-    public Rage(UUID id,
-                User owner,
-                Point2D position,
-                double duration) {
+    protected Rage(UUID id,
+                   User owner,
+                   Point2D position,
+                   double duration) {
         super(id, 3, owner, position, 5);
         this.duration = duration;
         this.targetTowers = new ArrayList<>();

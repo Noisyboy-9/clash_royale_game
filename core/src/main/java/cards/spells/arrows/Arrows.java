@@ -27,10 +27,10 @@ public class Arrows extends Spell {
      * @param position the position
      * @param damage   the damage
      */
-    public Arrows(UUID id,
-                  User owner,
-                  Point2D position,
-                  int damage) {
+    protected Arrows(UUID id,
+                     User owner,
+                     Point2D position,
+                     int damage) {
         super(id, 3, owner, position, 4);
         this.targetTowers = new ArrayList<>();
         this.targetTroops = new ArrayList<>();

@@ -21,7 +21,7 @@ public abstract class Spell extends Card {
      * @param position the position
      * @param radius   the radius
      */
-    public Spell(UUID id, int cost, User owner, Point2D position, double radius) {
+    protected Spell(UUID id, int cost, User owner, Point2D position, double radius) {
         super(id, cost, owner, position);
         this.radius = radius;
     }
