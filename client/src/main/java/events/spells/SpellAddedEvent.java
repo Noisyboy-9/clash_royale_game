@@ -1,6 +1,8 @@
 package events.spells;
 
 import cards.spells.Spell;
+import commands.Command;
+import commands.gameStateCommands.spellCommands.SpellAddedCommand;
 import javafx.event.Event;
 import javafx.event.EventTarget;
 import javafx.event.EventType;
@@ -57,5 +59,10 @@ public class SpellAddedEvent extends SpellEvent {
      */
     public Point2D getPosition() {
         return position;
+    }
+
+    @Override
+    public Command toCommand() {
+        return new SpellAddedCommand(this.spell, this.position);
     }
 }

@@ -1,5 +1,6 @@
 package events.spells;
 
+import events.CustomEvent;
 import javafx.event.Event;
 import javafx.event.EventTarget;
 import javafx.event.EventType;
@@ -7,7 +8,7 @@ import javafx.event.EventType;
 /**
  * The type Spell event.
  */
-public abstract class SpellEvent extends Event {
+public abstract class SpellEvent extends CustomEvent {
     /**
      * Instantiates a new Spell event.
      *
