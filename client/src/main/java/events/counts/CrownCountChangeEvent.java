@@ -1,5 +1,8 @@
 package events.counts;
 
+import commands.Command;
+import commands.gameStateCommands.gameBonusCommands.CrownCountChangeCommand;
+import events.CustomEvent;
 import javafx.event.Event;
 import javafx.event.EventTarget;
 import javafx.event.EventType;
@@ -10,7 +13,7 @@ import java.util.ArrayList;
 /**
  * The type Crown count change event.
  */
-public class CrownCountChangeEvent extends Event {
+public class CrownCountChangeEvent extends CustomEvent {
     private final ArrayList<User> targetTeam;
     private final int newCrownCount;
 
@@ -64,5 +67,10 @@ public class CrownCountChangeEvent extends Event {
      */
     public int getNewCrownCount() {
         return newCrownCount;
+    }
+
+    @Override
+    public Command toCommand() {
+        return new CrownCountChangeCommand(this.targetTeam, this.newCrownCount);
     }
 }
