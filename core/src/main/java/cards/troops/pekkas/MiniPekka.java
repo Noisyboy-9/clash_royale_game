@@ -38,8 +38,14 @@ public class MiniPekka extends Troop {
         );
     }
 
-    @Override
-    public Card create(User user, Point2D position) {
+    /**
+     * Create card.
+     *
+     * @param user     the user
+     * @param position the position
+     * @return the card
+     */
+    public static Card create(User user, Point2D position) {
         return switch (user.getLevel()) {
             case LEVEL_1 -> new MiniPekka(UUID.randomUUID(), user, position, 600, 325);
             case LEVEL_2 -> new MiniPekka(UUID.randomUUID(), user, position, 660, 357);

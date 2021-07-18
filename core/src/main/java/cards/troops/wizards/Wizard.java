@@ -39,8 +39,14 @@ public class Wizard extends Troop {
         );
     }
 
-    @Override
-    public Card create(User user, Point2D position) {
+    /**
+     * Create card.
+     *
+     * @param user     the user
+     * @param position the position
+     * @return the card
+     */
+    public static Card create(User user, Point2D position) {
         return switch (user.getLevel()) {
             case LEVEL_1 -> new Wizard(UUID.randomUUID(), user, position, 340, 130);
             case LEVEL_2 -> new Wizard(UUID.randomUUID(), user, position, 374, 143);
