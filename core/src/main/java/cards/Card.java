@@ -83,9 +83,9 @@ public abstract class Card {
     /**
      * create an instance of the card.
      *
-     * @param level the level
+     * @param user the user
      * @return the card
      */
-    public abstract Card create(UserLevelEnum level);
+    public abstract Card create(User user);
 }
 
