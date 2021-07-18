@@ -34,7 +34,7 @@ public abstract class Tower implements AttackAble {
      * @param HP                   the hp
      * @param damage               the damage
      */
-    public Tower(UUID id, User owner, int demolitionBonusCount, boolean active, int range, int HP, int damage) {
+    protected Tower(UUID id, User owner, int demolitionBonusCount, boolean active, int range, int HP, int damage) {
         this.id = id;
         this.HP = HP;
         this.damage = damage;

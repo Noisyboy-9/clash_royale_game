@@ -17,10 +17,10 @@ public class QueenTower extends Tower {
      * @param HP     the hp
      * @param damage the damage
      */
-    public QueenTower(UUID id,
-                      User owner,
-                      int HP,
-                      int damage) {
+    private QueenTower(UUID id,
+                       User owner,
+                       int HP,
+                       int damage) {
         super(id, owner, 1, true, 8, HP, damage);
     }
 

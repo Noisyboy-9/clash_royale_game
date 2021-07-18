@@ -27,10 +27,10 @@ public class FireBall extends Spell {
      * @param position the position
      * @param damage   the damage
      */
-    protected FireBall(UUID id,
-                       User owner,
-                       Point2D position,
-                       int damage) {
+    private FireBall(UUID id,
+                     User owner,
+                     Point2D position,
+                     int damage) {
         super(id, 4, owner, position, 2.5);
 
         this.damage = damage;
