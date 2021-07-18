@@ -9,7 +9,16 @@ module core {
     exports cards.troops.valkyries;
     exports cards.troops.wizards;
 
+    exports cards.spells;
+    exports cards.spells.arrows;
+    exports cards.spells.balls;
+    exports cards.spells.rages;
+
+    exports cards.buildings.towers;
+    exports cards.buildings.cannons;
+
     exports cards.utils;
+
 
     exports commands;
     exports commands.authenicationCommands.login;
