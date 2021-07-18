@@ -3,7 +3,7 @@ package cards.spells.arrows;
 import cards.Card;
 import cards.spells.Spell;
 import cards.troops.Troop;
-import cards.troops.valkyries.Valkyrie;
+import exceptions.TargetAlreadyExistException;
 import javafx.geometry.Point2D;
 import towers.Tower;
 import user.User;
@@ -17,27 +17,63 @@ import java.util.UUID;
 public class Arrows extends Spell {
     private final ArrayList<Tower> targetTowers;
     private final ArrayList<Troop> targetTroops;
-    private int damage;
+    private final int damage;
 
     /**
      * Instantiates a new Arrows.
      *
-     * @param id           the id
-     * @param owner        the owner
-     * @param position     the position
-     * @param targetTowers the target towers
-     * @param targetTroops the target troops
+     * @param id       the id
+     * @param owner    the owner
+     * @param position the position
+     * @param damage   the damage
      */
     public Arrows(UUID id,
                   User owner,
                   Point2D position,
-                  ArrayList<Tower> targetTowers,
-                  ArrayList<Troop> targetTroops) {
+                  int damage) {
         super(id, 3, owner, position, 4);
-        this.targetTowers = targetTowers;
-        this.targetTroops = targetTroops;
+        this.targetTowers = new ArrayList<>();
+        this.targetTroops = new ArrayList<>();
+        this.damage = damage;
 
-        this.setDamage();
+    }
+
+    /**
+     * Add tower target.
+     *
+     * @param tower the tower
+     * @throws TargetAlreadyExistException the target already exist exception
+     */
+    public void addTowerTarget(Tower tower) throws TargetAlreadyExistException {
+        if (this.targetTowers.contains(tower)) {
+            throw new TargetAlreadyExistException("tower with id: " + tower.getId().toString() + "exist");
+        }
+
+        this.targetTowers.add(tower);
+    }
+
+
+    /**
+     * Add troop target.
+     *
+     * @param troop the troop
+     * @throws TargetAlreadyExistException the target already exist exception
+     */
+    public void addTroopTarget(Troop troop) throws TargetAlreadyExistException {
+        if (this.targetTroops.contains(troop)) {
+            throw new TargetAlreadyExistException("tower with id: " + troop.getId().toString() + "exist");
+        }
+
+        this.targetTroops.add(troop);
+    }
+
+    /**
+     * Gets damage.
+     *
+     * @return the damage
+     */
+    public int getDamage() {
+        return damage;
     }
 
     @Override
@@ -49,21 +85,11 @@ public class Arrows extends Spell {
     @Override
     public Card create(User user, Point2D position) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Arrows(UUID.randomUUID(), user, position, 2000, 126);
-            case LEVEL_2 -> new Arrows(UUID.randomUUID(), user, position, 2200, 138);
-            case LEVEL_3 -> new Arrows(UUID.randomUUID(), user, position, 2420, 152);
-            case LEVEL_4 -> new Arrows(UUID.randomUUID(), user, position, 2660, 167);
-            case LEVEL_5 -> new Arrows(UUID.randomUUID(), user, position, 2920, 183);
-        };
-    }
-
-    private void setDamage() {
-        this.damage = switch (this.getOwner().getLevel()) {
-            case LEVEL_1 -> 144;
-            case LEVEL_2 -> 156;
-            case LEVEL_3 -> 174;
-            case LEVEL_4 -> 189;
-            case LEVEL_5 -> 210;
+            case LEVEL_1 -> new Arrows(UUID.randomUUID(), user, position, 144);
+            case LEVEL_2 -> new Arrows(UUID.randomUUID(), user, position, 156);
+            case LEVEL_3 -> new Arrows(UUID.randomUUID(), user, position, 174);
+            case LEVEL_4 -> new Arrows(UUID.randomUUID(), user, position, 189);
+            case LEVEL_5 -> new Arrows(UUID.randomUUID(), user, position, 210);
         };
     }
 }
