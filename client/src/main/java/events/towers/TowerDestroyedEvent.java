@@ -1,5 +1,7 @@
 package events.towers;
 
+import commands.Command;
+import commands.gameStateCommands.towerCommands.TowerDestroyedCommand;
 import javafx.event.Event;
 import javafx.event.EventTarget;
 import javafx.event.EventType;
@@ -35,4 +37,8 @@ public class TowerDestroyedEvent extends TowerEvent {
         this.tower = tower;
     }
 
+    @Override
+    public Command toCommand() {
+        return new TowerDestroyedCommand(this.tower);
+    }
 }

@@ -7,17 +7,14 @@ import towers.Tower;
  */
 public class TowerDestroyedCommand extends TowerCommand {
     private final Tower tower;
-    private final int destructionCrownBonusCount;
 
     /**
      * Instantiates a new Tower destroyed command.
      *
-     * @param tower                      the tower
-     * @param towerDestructionCrownBonus the tower destruction crown bonus
+     * @param tower the tower
      */
-    public TowerDestroyedCommand(Tower tower, int towerDestructionCrownBonus) {
+    public TowerDestroyedCommand(Tower tower) {
         this.tower = tower;
-        this.destructionCrownBonusCount = towerDestructionCrownBonus;
     }
 
     /**
@@ -27,14 +24,5 @@ public class TowerDestroyedCommand extends TowerCommand {
      */
     public Tower getTower() {
         return tower;
-    }
-
-    /**
-     * Gets tower destruction crown bonus.
-     *
-     * @return the tower destruction crown bonus
-     */
-    public int getDestructionCrownBonusCount() {
-        return destructionCrownBonusCount;
     }
 }
