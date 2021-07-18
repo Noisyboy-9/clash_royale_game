@@ -25,7 +25,7 @@ public class Cannon extends Building {
      * @param HP       the hp
      * @param damage   the damage
      */
-    public Cannon(UUID id, User owner, Point2D position, int HP, double damage) {
+    private Cannon(UUID id, User owner, Point2D position, int HP, double damage) {
         super(id,
                 6,
                 owner,

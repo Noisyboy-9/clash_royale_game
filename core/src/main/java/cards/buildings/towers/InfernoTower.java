@@ -25,11 +25,11 @@ public class InfernoTower extends Building {
      * @param HP       the hp
      * @param damage   the damage
      */
-    public InfernoTower(UUID id,
-                        User owner,
-                        Point2D position,
-                        int HP,
-                        double damage) {
+    private InfernoTower(UUID id,
+                         User owner,
+                         Point2D position,
+                         int HP,
+                         double damage) {
         super(id,
                 3,
                 owner,
