@@ -3,7 +3,7 @@ package towers;
 
 import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
-import user.UserLevelEnum;
+import user.User;
 
 import java.util.UUID;
 
@@ -12,7 +12,7 @@ import java.util.UUID;
  */
 public abstract class Tower implements AttackAble {
     private final UUID id;
-    private final UserLevelEnum ownerLevel;
+    private final User owner;
     private final int demolitionBonusCount;
     private final TypeEnum selfType;
     private final TypeEnum attackType;
@@ -29,7 +29,7 @@ public abstract class Tower implements AttackAble {
      * @param id                   the id
      * @param HP                   the hp
      * @param damage               the damage
-     * @param ownerLevel           the owner level
+     * @param owner                the owner level
      * @param demolitionBonusCount the demolition bonus count
      * @param active               the active
      * @param target               the target
@@ -38,20 +38,19 @@ public abstract class Tower implements AttackAble {
     public Tower(UUID id,
                  int HP,
                  int damage,
-                 UserLevelEnum ownerLevel,
+                 User owner,
                  int demolitionBonusCount,
                  boolean active,
-                 AttackAble target,
                  int range) {
         this.id = id;
         this.HP = HP;
         this.damage = damage;
-        this.ownerLevel = ownerLevel;
+        this.owner = owner;
         this.demolitionBonusCount = demolitionBonusCount;
         this.active = active;
-        this.target = target;
         this.range = range;
 
+        this.target = null;
         this.selfType = TypeEnum.GROUND;
         this.attackType = TypeEnum.AIR_GROUND;
         this.hitSpeed = 1;
@@ -116,8 +115,8 @@ public abstract class Tower implements AttackAble {
      *
      * @return the owner level
      */
-    public UserLevelEnum getOwnerLevel() {
-        return ownerLevel;
+    public User getOwner() {
+        return owner;
     }
 
     /**
@@ -206,4 +205,6 @@ public abstract class Tower implements AttackAble {
     public TypeEnum getAttackType() {
         return attackType;
     }
+
+    public abstract Tower create(User owner);
 }
