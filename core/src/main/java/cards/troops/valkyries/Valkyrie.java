@@ -42,11 +42,11 @@ public class Valkyrie extends Troop {
     @Override
     public Card create(User user, Point2D position) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Valkyrie(UUID.randomUUID(), user, position, 2000, 126);
-            case LEVEL_2 -> new Valkyrie(UUID.randomUUID(), user, position, 2200, 138);
-            case LEVEL_3 -> new Valkyrie(UUID.randomUUID(), user, position, 2420, 152);
-            case LEVEL_4 -> new Valkyrie(UUID.randomUUID(), user, position, 2660, 167);
-            case LEVEL_5 -> new Valkyrie(UUID.randomUUID(), user, position, 2920, 183);
+            case LEVEL_1 -> new Valkyrie(UUID.randomUUID(), user, position, 880, 120);
+            case LEVEL_2 -> new Valkyrie(UUID.randomUUID(), user, position, 968, 132);
+            case LEVEL_3 -> new Valkyrie(UUID.randomUUID(), user, position, 1064, 145);
+            case LEVEL_4 -> new Valkyrie(UUID.randomUUID(), user, position, 1170, 159);
+            case LEVEL_5 -> new Valkyrie(UUID.randomUUID(), user, position, 1284, 175);
         };
     }
 }

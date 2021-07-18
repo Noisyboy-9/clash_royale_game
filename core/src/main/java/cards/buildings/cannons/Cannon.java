@@ -65,6 +65,5 @@ public class Cannon extends Building {
             case LEVEL_4 -> new Cannon(UUID.randomUUID(), user, position, 505, 79);
             case LEVEL_5 -> new Cannon(UUID.randomUUID(), user, position, 554, 87);
         };
-
     }
 }
