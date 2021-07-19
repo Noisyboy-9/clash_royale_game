@@ -8,6 +8,9 @@ import javafx.event.Event;
 import javafx.event.EventTarget;
 import javafx.event.EventType;
 import towers.Tower;
+import user.User;
+
+import java.util.ArrayList;
 
 /**
  * The type Tower active event.
@@ -23,8 +26,8 @@ public class TowerActiveEvent extends TowerEvent {
      * @param tower     the tower
      * @param target    the target
      */
-    public TowerActiveEvent(EventType<? extends Event> eventType, Tower tower, AttackAble target) {
-        super(eventType);
+    public TowerActiveEvent(EventType<? extends Event> eventType, Tower tower, AttackAble target, ArrayList<User> targetPlayers) {
+        super(eventType, targetPlayers);
         this.tower = tower;
         this.target = target;
     }
@@ -38,8 +41,13 @@ public class TowerActiveEvent extends TowerEvent {
      * @param tower     the tower
      * @param target1   the target 1
      */
-    public TowerActiveEvent(Object source, EventTarget target, EventType<? extends Event> eventType, Tower tower, AttackAble target1) {
-        super(source, target, eventType);
+    public TowerActiveEvent(Object source,
+                            EventTarget target,
+                            EventType<? extends Event> eventType,
+                            Tower tower,
+                            AttackAble target1,
+                            ArrayList<User> targetPlayers) {
+        super(source, target, eventType, targetPlayers);
         this.tower = tower;
         this.target = target1;
     }

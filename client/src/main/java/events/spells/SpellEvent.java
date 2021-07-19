@@ -4,6 +4,9 @@ import events.CustomEvent;
 import javafx.event.Event;
 import javafx.event.EventTarget;
 import javafx.event.EventType;
+import user.User;
+
+import java.util.ArrayList;
 
 /**
  * The type Spell event.
@@ -14,8 +17,8 @@ public abstract class SpellEvent extends CustomEvent {
      *
      * @param eventType the event type
      */
-    public SpellEvent(EventType<? extends Event> eventType) {
-        super(eventType);
+    public SpellEvent(EventType<? extends Event> eventType, ArrayList<User> eventTargets) {
+        super(eventType, eventTargets);
     }
 
     /**
@@ -25,7 +28,7 @@ public abstract class SpellEvent extends CustomEvent {
      * @param target    the target
      * @param eventType the event type
      */
-    public SpellEvent(Object source, EventTarget target, EventType<? extends Event> eventType) {
-        super(source, target, eventType);
+    public SpellEvent(Object source, EventTarget target, EventType<? extends Event> eventType, ArrayList<User> eventTargets) {
+        super(source, target, eventType, eventTargets);
     }
 }

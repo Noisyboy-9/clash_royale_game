@@ -16,24 +16,16 @@ public class TroopAddedEvent extends TroopEvent {
     private final Troop troop;
     private final Point2D position;
 
-    public ArrayList<User> getTargets() {
-        return targets;
-    }
-
-    private ArrayList<User> targets;
-
-    public TroopAddedEvent(EventType<? extends Event> eventType, Troop troop, Point2D position, ArrayList<User> targets) {
-        super(eventType);
+    public TroopAddedEvent(EventType<? extends Event> eventType, Troop troop, Point2D position, ArrayList<User> targetPlayers) {
+        super(eventType, targetPlayers);
         this.troop = troop;
         this.position = position;
-        this.targets = targets;
     }
 
-    public TroopAddedEvent(Object source, EventTarget target, EventType<? extends Event> eventType, Troop troop, Point2D position, ArrayList<User> targets) {
-        super(source, target, eventType);
+    public TroopAddedEvent(Object source, EventTarget target, EventType<? extends Event> eventType, Troop troop, Point2D position, ArrayList<User> targetPlayers) {
+        super(source, target, eventType, targetPlayers);
         this.troop = troop;
         this.position = position;
-        this.targets = targets;
     }
 
     public Troop getTroop() {
