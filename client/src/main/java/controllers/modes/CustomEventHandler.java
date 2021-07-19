@@ -1,6 +1,8 @@
 package controllers.modes;
 
 import events.CustomEvent;
+import events.buildings.BuildingAddedEvent;
+import events.buildings.BuildingDurationFinishedEvent;
 import events.counts.CrownCountChangeEvent;
 import events.spells.SpellAddedEvent;
 import events.spells.SpellDurationFinishedEvent;
@@ -27,4 +29,8 @@ public interface CustomEventHandler extends EventHandler<CustomEvent> {
     void spellDurationFinishedEventHandler(SpellDurationFinishedEvent event);
 
     void crownCountChangeHandler(CrownCountChangeEvent event);
+
+    void buildingAddedEventHandler(BuildingAddedEvent event);
+
+    void buildingDurationFinishedHandler(BuildingDurationFinishedEvent event);
 }
