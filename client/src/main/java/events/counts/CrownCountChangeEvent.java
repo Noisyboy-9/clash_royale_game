@@ -2,6 +2,7 @@ package events.counts;
 
 import commands.Command;
 import commands.gameStateCommands.gameBonusCommands.CrownCountChangeCommand;
+import controllers.modes.CustomEventHandler;
 import events.CustomEvent;
 import javafx.event.Event;
 import javafx.event.EventTarget;
@@ -72,5 +73,10 @@ public class CrownCountChangeEvent extends CustomEvent {
     @Override
     public Command toCommand() {
         return new CrownCountChangeCommand(this.targetTeam, this.newCrownCount);
+    }
+
+    @Override
+    public void invokeHandler(CustomEventHandler handler) {
+        handler.crownCountChangeHandler(this);
     }
 }

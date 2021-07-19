@@ -3,6 +3,7 @@ package events.spells;
 import cards.spells.Spell;
 import commands.Command;
 import commands.gameStateCommands.spellCommands.SpellAddedCommand;
+import controllers.modes.CustomEventHandler;
 import javafx.event.Event;
 import javafx.event.EventTarget;
 import javafx.event.EventType;
@@ -64,5 +65,10 @@ public class SpellAddedEvent extends SpellEvent {
     @Override
     public Command toCommand() {
         return new SpellAddedCommand(this.spell, this.position);
+    }
+
+    @Override
+    public void invokeHandler(CustomEventHandler handler) {
+        handler.spellAddedEventHandler(this);
     }
 }
