@@ -1,6 +1,6 @@
 package events.spells;
 
-import cards.spells.Spell;
+import cards.spells.SpellTrait;
 import commands.Command;
 import commands.gameStateCommands.spellCommands.SpellAddedCommand;
 import controllers.modes.CustomEventHandler;
@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * The type Spell added event.
  */
 public class SpellAddedEvent extends SpellEvent {
-    private final Spell spell;
+    private final SpellTrait spell;
     private final Point2D position;
 
     /**
@@ -26,7 +26,7 @@ public class SpellAddedEvent extends SpellEvent {
      * @param spell     the spell
      * @param position  the position
      */
-    public SpellAddedEvent(EventType<? extends Event> eventType, Spell spell, Point2D position, ArrayList<User> targetPlayers) {
+    public SpellAddedEvent(EventType<? extends Event> eventType, SpellTrait spell, Point2D position, ArrayList<User> targetPlayers) {
         super(eventType, targetPlayers);
         this.spell = spell;
         this.position = position;
@@ -44,7 +44,7 @@ public class SpellAddedEvent extends SpellEvent {
     public SpellAddedEvent(Object source,
                            EventTarget target,
                            EventType<? extends Event> eventType,
-                           Spell spell,
+                           SpellTrait spell,
                            Point2D position,
                            ArrayList<User> targetPlayers) {
         super(source, target, eventType, targetPlayers);
@@ -57,7 +57,7 @@ public class SpellAddedEvent extends SpellEvent {
      *
      * @return the spell
      */
-    public Spell getSpell() {
+    public SpellTrait getSpell() {
         return spell;
     }
 

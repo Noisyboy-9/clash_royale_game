@@ -3,11 +3,11 @@ package controllers.modes;
 import cards.Card;
 import cards.buildings.cannons.Cannon;
 import cards.buildings.towers.InfernoTower;
-import cards.spells.Spell;
+import cards.spells.SpellTrait;
 import cards.spells.arrows.Arrows;
 import cards.spells.balls.FireBall;
 import cards.spells.rages.Rage;
-import cards.troops.Troop;
+import cards.troops.TroopTrait;
 import cards.troops.archers.Archer;
 import cards.troops.barbarians.Barbarian;
 import cards.troops.dragons.BabyDragon;
@@ -84,7 +84,7 @@ public class CrazyBotModeController extends MapController implements CustomEvent
 
     @Override
     public void troopAddedEventHandler(TroopAddedEvent event) {
-        Troop addedTroop = event.getTroop();
+        TroopTrait addedTroop = event.getTroop();
         Point2D position = event.getPosition();
         addedTroop.setPosition(position);
 
@@ -130,7 +130,7 @@ public class CrazyBotModeController extends MapController implements CustomEvent
 
     @Override
     public void troopKilledEventHandler(TroopKilledEvent event) {
-        Troop killedTroop = event.getTroop();
+        TroopTrait killedTroop = event.getTroop();
         User owner = event.getTargetPlayers().get(0);
 
         try {
@@ -177,7 +177,7 @@ public class CrazyBotModeController extends MapController implements CustomEvent
 
     @Override
     public void spellAddedEventHandler(SpellAddedEvent event) {
-        Spell addedSpell = event.getSpell();
+        SpellTrait addedSpell = event.getSpell();
         Point2D position = event.getPosition();
         addedSpell.setPosition(position);
 
@@ -223,57 +223,56 @@ public class CrazyBotModeController extends MapController implements CustomEvent
     }
 
     private Card createNewCardWithSameType(Card card, User owner) {
-
-        if (card instanceof Barbarian) {
-            return Barbarian.create(owner, null);
+        if (card.isBarbarian()) {
+            return Barbarian.create(owner);
         }
 
-        if (card instanceof Archer) {
-            return Archer.create(owner, null);
+        if (card.isArcher()) {
+            return Archer.create(owner);
         }
 
-        if (card instanceof BabyDragon) {
-            return BabyDragon.create(owner, null);
+        if (card.isBabyDragon()) {
+            return BabyDragon.create(owner);
         }
 
-        if (card instanceof Wizard) {
-            return Wizard.create(owner, null);
+        if (card.isWizard()) {
+            return Wizard.create(owner);
         }
 
-        if (card instanceof MiniPekka) {
-            return MiniPekka.create(owner, null);
+        if (card.isMiniPeka()) {
+            return MiniPekka.create(owner);
         }
 
-        if (card instanceof Giant) {
-            return Giant.create(owner, null);
+        if (card.isGiant()) {
+            return Giant.create(owner);
         }
 
-        if (card instanceof Valkyrie) {
-            return Valkyrie.create(owner, null);
+        if (card.isValkyrie()) {
+            return Valkyrie.create(owner);
         }
 
-        if (card instanceof Rage) {
-            return Rage.create(owner, null);
+        if (card.isRage()) {
+            return Rage.create(owner);
         }
 
-        if (card instanceof FireBall) {
-            return FireBall.create(owner, null);
+        if (card.isFireBall()) {
+            return FireBall.create(owner);
         }
 
-        if (card instanceof Arrows) {
-            return Arrows.create(owner, null);
+        if (card.isArrows()) {
+            return Arrows.create(owner);
         }
 
-        if (card instanceof Cannon) {
-            return Cannon.create(owner, null);
+        if (card.isCannon()) {
+            return Cannon.create(owner);
         }
 
-        return InfernoTower.create(owner, null);
+        return InfernoTower.create(owner);
     }
 
     @Override
     public void spellDurationFinishedEventHandler(SpellDurationFinishedEvent event) {
-        Spell expiredSpell = event.getSpell();
+        SpellTrait expiredSpell = event.getSpell();
         User owner = event.getTargetPlayers().get(0);
 
         try {
