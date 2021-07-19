@@ -126,30 +126,30 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="76.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="54.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#98b646" height="22.0" layoutX="76.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="98.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="0"/>
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="76.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="54.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="76.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="98.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="0" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="0" />
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="0" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="0" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="0" />
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="0" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="0" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="0" />
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="0" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="0" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="0" />
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="0" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="0" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="0" />
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="0" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="0" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="0" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="32.0" layoutY="76.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="54.0" layoutY="76.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Rectangle fill="#8dab3b" height="22.0" layoutX="76.0" layoutY="76.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
@@ -1324,12 +1324,12 @@
                         <Image url="@../../../resources/photos/trees2.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#64ccff" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="0" GridPane.columnIndex="22" GridPane.halignment="CENTER" GridPane.rowIndex="23" GridPane.valignment="CENTER">
+                  <Text fx:id="playerCrownsCount" fill="#64ccff" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="0" GridPane.columnIndex="22" GridPane.halignment="CENTER" GridPane.rowIndex="23" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Supercell-Magic Regular" size="24.0" />
                      </font>
                   </Text>
-                  <Text fill="#f04043" layoutX="493.0" layoutY="559.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="0" GridPane.columnIndex="22" GridPane.rowIndex="14">
+                  <Text fx:id="opponentCrownsCount" fill="#f04043" layoutX="493.0" layoutY="559.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="0" GridPane.columnIndex="22" GridPane.rowIndex="14">
                      <font>
                         <Font name="Supercell-Magic Regular" size="24.0" />
                      </font>
@@ -1339,7 +1339,7 @@
                         <Image url="@../../../resources/photos/stone1.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#f535a0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Username" wrappingWidth="100.830078125" GridPane.columnIndex="1">
+                  <Text fx:id="opponentUsername" fill="#f535a0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" wrappingWidth="153.830078125" GridPane.columnIndex="1">
                      <font>
                         <Font name="Supercell-Magic Regular" size="14.0" />
                      </font>
@@ -1349,12 +1349,12 @@
                         <Image url="@../../../resources/photos/cup_icon.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#fbfcc1" layoutX="494.0" layoutY="339.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="2221" wrappingWidth="40.46484375" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Text fill="#fbfcc1" layoutX="600.0" layoutY="339.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="2000" wrappingWidth="74.46484375" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font name="Supercell-Magic Regular" size="14.0" />
                      </font>
                      <GridPane.margin>
-                        <Insets top="6.0" />
+                        <Insets right="10.0" top="5.0" />
                      </GridPane.margin>
                   </Text>
                   <ImageView fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="11" GridPane.halignment="LEFT" GridPane.valignment="TOP">
@@ -1372,7 +1372,7 @@
                         <Image url="@../../../resources/photos/level_place.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#fde731" stroke="#3c1a01" strokeType="OUTSIDE" text="1" textAlignment="CENTER" wrappingWidth="43.8017578125" GridPane.columnIndex="11" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                  <Text fx:id="opponentLevelField" fill="#fde731" stroke="#3c1a01" strokeType="OUTSIDE" text="1" textAlignment="CENTER" wrappingWidth="43.8017578125" GridPane.columnIndex="11" GridPane.rowIndex="1" GridPane.valignment="TOP">
                      <font>
                         <Font name="Supercell-Magic Regular" size="14.0" />
                      </font>
@@ -1380,7 +1380,7 @@
                         <Insets top="-7.0" />
                      </GridPane.margin>
                   </Text>
-                  <Text fill="#fde731" layoutX="252.0" layoutY="63.0" stroke="#3c1a01" strokeType="OUTSIDE" text="1" textAlignment="CENTER" wrappingWidth="43.8017578125" GridPane.columnIndex="11" GridPane.rowIndex="35" GridPane.valignment="TOP">
+                  <Text fx:id="playerLevelField" fill="#fde731" layoutX="252.0" layoutY="63.0" stroke="#3c1a01" strokeType="OUTSIDE" text="1" textAlignment="CENTER" wrappingWidth="43.8017578125" GridPane.columnIndex="11" GridPane.rowIndex="35" GridPane.valignment="TOP">
                      <font>
                         <Font name="Supercell-Magic Regular" size="14.0" />
                      </font>
@@ -1396,7 +1396,7 @@
                         <Insets top="4.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <Text fill="#fbfdfd" layoutX="493.0" layoutY="537.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="3:00" GridPane.columnIndex="21" GridPane.rowIndex="1">
+                  <Text fx:id="timeField" fill="#fbfdfd" layoutX="493.0" layoutY="537.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="3:00" GridPane.columnIndex="21" GridPane.rowIndex="1">
                      <font>
                         <Font name="Supercell-Magic Regular" size="20.0" />
                      </font>
