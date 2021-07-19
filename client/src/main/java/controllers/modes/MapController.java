@@ -13,11 +13,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import models.BotModeModel;
 
-public class Controller {
+public class MapController {
     protected BotModeModel model;
     ImageView[] playerTeamCrowns;
 
-    public Controller(BotModeModel model) {
+    public MapController(BotModeModel model) {
         this.model = model;
     }
 

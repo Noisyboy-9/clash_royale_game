@@ -39,7 +39,7 @@ import java.util.TimerTask;
 /**
  * The type Crazy bot mode controller.
  */
-public class CrazyBotModeController extends Controller implements CustomEventHandler {
+public class CrazyBotModeMapController extends MapController implements CustomEventHandler {
     private final long eachFrameDuration;
     private long frameRemainingCount;
 
@@ -48,7 +48,7 @@ public class CrazyBotModeController extends Controller implements CustomEventHan
      *
      * @param model the model
      */
-    public CrazyBotModeController(BotModeModel model) {
+    public CrazyBotModeMapController(BotModeModel model) {
         super(model);
 
         int FRAME_PER_SECOND = 30;
