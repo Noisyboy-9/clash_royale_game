@@ -5,9 +5,17 @@ import cards.troops.Troop;
 import errors.DuplicateCardException;
 import errors.InvalidCardException;
 import events.CustomEvent;
+import events.counts.CrownCountChangeEvent;
+import events.spells.SpellAddedEvent;
+import events.spells.SpellDurationFinishedEvent;
+import events.towers.TowerActiveEvent;
+import events.towers.TowerDestroyedEvent;
 import events.troops.TroopAddedEvent;
+import events.troops.TroopKilledEvent;
 import globals.GlobalData;
+import javafx.geometry.Point2D;
 import models.BotModeModel;
+import towers.Tower;
 import user.User;
 
 import java.util.Timer;
@@ -62,7 +70,10 @@ public class CrazyBotModeController extends MapController implements CustomEvent
     @Override
     public void troopAddedEventHandler(TroopAddedEvent event) {
         Troop addedTroop = event.getTroop();
-        User target = event.getTargets().get(0);
+        Point2D position = event.getPosition();
+        addedTroop.setPosition(position);
+
+        User target = event.getTargetPlayers().get(0);
 
         try {
             if (target.equals(GlobalData.bot)) {
@@ -100,6 +111,49 @@ public class CrazyBotModeController extends MapController implements CustomEvent
 
 
         event.consume();
+    }
+
+    @Override
+    public void troopKilledEventHandler(TroopKilledEvent event) {
+        Troop killedTroop = event.getTroop();
+        User owner = event.getTargetPlayers().get(0);
+
+        try {
+            if (owner.equals(GlobalData.bot)) {
+//                one of bot troops is killed
+                this.model.removeCardFromInMapBotCards(killedTroop);
+            } else {
+//                one of player troops is killed
+                this.model.removeCardFromInMapBotCards(killedTroop);
+            }
+        } catch (InvalidCardException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void towerDestroyedEventHandler(TowerDestroyedEvent event) {
+        Tower destroyedTower = event.getTower();
+    }
+
+    @Override
+    public void towerActiveEventHandler(TowerActiveEvent event) {
+
+    }
+
+    @Override
+    public void spellAddedEventHandler(SpellAddedEvent event) {
+
+    }
+
+    @Override
+    public void spellDurationFinishedEventHandler(SpellDurationFinishedEvent event) {
+
+    }
+
+    @Override
+    public void crownCountChangeHandler(CrownCountChangeEvent event) {
+
     }
 
     /**

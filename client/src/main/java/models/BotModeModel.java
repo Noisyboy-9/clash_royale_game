@@ -32,6 +32,8 @@ public class BotModeModel {
     private final ArrayList<Card> playerComingCards;
     private int botElixirCount;
     private int playerElixirCount;
+    private int playerCrownCount;
+    private int botCrownCount;
 
     /**
      * Instantiates a new Bot mode model.
@@ -66,6 +68,42 @@ public class BotModeModel {
         this.botComingCards = botAllCards.stream()
                 .filter(card -> !botBattleCards.contains(card))
                 .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    /**
+     * Gets player crown count.
+     *
+     * @return the player crown count
+     */
+    public int getPlayerCrownCount() {
+        return playerCrownCount;
+    }
+
+    /**
+     * Sets player crown count.
+     *
+     * @param playerCrownCount the player crown count
+     */
+    public void setPlayerCrownCount(int playerCrownCount) {
+        this.playerCrownCount = playerCrownCount;
+    }
+
+    /**
+     * Gets bot crown count.
+     *
+     * @return the bot crown count
+     */
+    public int getBotCrownCount() {
+        return botCrownCount;
+    }
+
+    /**
+     * Sets bot crown count.
+     *
+     * @param botCrownCount the bot crown count
+     */
+    public void setBotCrownCount(int botCrownCount) {
+        this.botCrownCount = botCrownCount;
     }
 
     /**
