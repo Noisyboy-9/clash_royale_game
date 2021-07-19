@@ -1,7 +1,7 @@
 package cards.troops.valkyries;
 
 import cards.Card;
-import cards.troops.TroopTraitCard;
+import cards.troops.Troop;
 import cards.utils.MovementSpeedEnum;
 import cards.utils.TypeEnum;
 import javafx.geometry.Point2D;
@@ -12,7 +12,7 @@ import java.util.UUID;
 /**
  * The type Valkyrie.
  */
-public class Valkyrie extends TroopTraitCard {
+public class Valkyrie extends Troop {
 
     /**
      * Instantiates a new Card.

@@ -1,6 +1,6 @@
 package events.troops;
 
-import cards.troops.TroopTraitCard;
+import cards.troops.Troop;
 import commands.Command;
 import commands.gameStateCommands.troopCommands.TroopAddedCommand;
 import controllers.modes.CustomEventHandler;
@@ -13,22 +13,22 @@ import user.User;
 import java.util.ArrayList;
 
 public class TroopAddedEvent extends TroopEvent {
-    private final TroopTraitCard troop;
+    private final Troop troop;
     private final Point2D position;
 
-    public TroopAddedEvent(EventType<? extends Event> eventType, TroopTraitCard troop, Point2D position, ArrayList<User> targetPlayers) {
+    public TroopAddedEvent(EventType<? extends Event> eventType, Troop troop, Point2D position, ArrayList<User> targetPlayers) {
         super(eventType, targetPlayers);
         this.troop = troop;
         this.position = position;
     }
 
-    public TroopAddedEvent(Object source, EventTarget target, EventType<? extends Event> eventType, TroopTraitCard troop, Point2D position, ArrayList<User> targetPlayers) {
+    public TroopAddedEvent(Object source, EventTarget target, EventType<? extends Event> eventType, Troop troop, Point2D position, ArrayList<User> targetPlayers) {
         super(source, target, eventType, targetPlayers);
         this.troop = troop;
         this.position = position;
     }
 
-    public TroopTraitCard getTroop() {
+    public Troop getTroop() {
         return troop;
     }
 

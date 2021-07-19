@@ -1,8 +1,8 @@
 package cards.spells.rages;
 
 import cards.Card;
-import cards.spells.SpellTraitCard;
-import cards.troops.TroopTraitCard;
+import cards.spells.Spell;
+import cards.troops.Troop;
 import exceptions.TargetAlreadyExistException;
 import javafx.geometry.Point2D;
 import towers.Tower;
@@ -14,9 +14,9 @@ import java.util.UUID;
 /**
  * The type Rage.
  */
-public class Rage extends SpellTraitCard {
+public class Rage extends Spell {
     private final ArrayList<Tower> targetTowers;
-    private final ArrayList<TroopTraitCard> targetTroops;
+    private final ArrayList<Troop> targetTroops;
     private final double duration;
 
     /**
@@ -67,7 +67,7 @@ public class Rage extends SpellTraitCard {
      * @param troop the troop
      * @throws TargetAlreadyExistException the target already exist exception
      */
-    public void addTroopTarget(TroopTraitCard troop) throws TargetAlreadyExistException {
+    public void addTroopTarget(Troop troop) throws TargetAlreadyExistException {
         if (this.targetTroops.contains(troop)) {
             throw new TargetAlreadyExistException("tower with id: " + troop.getId().toString() + "exist");
         }

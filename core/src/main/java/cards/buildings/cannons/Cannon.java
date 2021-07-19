@@ -1,7 +1,7 @@
 package cards.buildings.cannons;
 
 import cards.Card;
-import cards.buildings.BuildingTraitCard;
+import cards.buildings.Building;
 import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
 import javafx.geometry.Point2D;
@@ -13,7 +13,7 @@ import java.util.UUID;
 /**
  * The type Canon.
  */
-public class Cannon extends BuildingTraitCard {
+public class Cannon extends Building {
     private final ArrayList<AttackAble> targets;
 
     /**

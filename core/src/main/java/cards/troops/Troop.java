@@ -13,7 +13,7 @@ import java.util.UUID;
 /**
  * The abstract type Troop.
  */
-public abstract class TroopTraitCard extends Card implements AttackAble {
+public abstract class Troop extends Card implements AttackAble {
     private final MovementSpeedEnum movementSpeed;
     private final boolean areaSplash;
     private final int range;
@@ -40,18 +40,18 @@ public abstract class TroopTraitCard extends Card implements AttackAble {
      * @param selfType   the self type
      * @param attackType the attack type
      */
-    protected TroopTraitCard(UUID id,
-                             int cost,
-                             User owner,
-                             Point2D position,
-                             int HP,
-                             double damage,
-                             MovementSpeedEnum speed,
-                             boolean areaSplash,
-                             int range,
-                             double hitSpeed,
-                             TypeEnum selfType,
-                             TypeEnum attackType) {
+    protected Troop(UUID id,
+                    int cost,
+                    User owner,
+                    Point2D position,
+                    int HP,
+                    double damage,
+                    MovementSpeedEnum speed,
+                    boolean areaSplash,
+                    int range,
+                    double hitSpeed,
+                    TypeEnum selfType,
+                    TypeEnum attackType) {
         super(id, cost, owner, position);
         this.HP = HP;
         this.damage = damage;

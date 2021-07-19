@@ -1,9 +1,9 @@
 package models;
 
 import cards.Card;
-import cards.buildings.BuildingTraitCard;
-import cards.spells.SpellTraitCard;
-import cards.troops.TroopTraitCard;
+import cards.buildings.Building;
+import cards.spells.Spell;
+import cards.troops.Troop;
 import errors.DuplicateCardException;
 import errors.InvalidCardException;
 import errors.InvalidTowerException;
@@ -433,11 +433,11 @@ public class BotModeModel {
      *
      * @return the player in map troops
      */
-    public ArrayList<TroopTraitCard> getPlayerInMapTroops() {
-        ArrayList<TroopTraitCard> troops = new ArrayList<>();
+    public ArrayList<Troop> getPlayerInMapTroops() {
+        ArrayList<Troop> troops = new ArrayList<>();
         for (Card card : this.playerInMapCards) {
-            if (card instanceof TroopTraitCard) {
-                troops.add((TroopTraitCard) card);
+            if (card.isTroop()) {
+                troops.add((Troop) card);
             }
         }
 
@@ -449,11 +449,11 @@ public class BotModeModel {
      *
      * @return the bot in map troops
      */
-    public ArrayList<TroopTraitCard> getBotInMapTroops() {
-        ArrayList<TroopTraitCard> troops = new ArrayList<>();
+    public ArrayList<Troop> getBotInMapTroops() {
+        ArrayList<Troop> troops = new ArrayList<>();
         for (Card card : this.botInMapCards) {
-            if (card instanceof TroopTraitCard) {
-                troops.add((TroopTraitCard) card);
+            if (card.isTroop()) {
+                troops.add((Troop) card);
             }
         }
 
@@ -465,11 +465,11 @@ public class BotModeModel {
      *
      * @return the player in map spells
      */
-    public ArrayList<SpellTraitCard> getPlayerInMapSpells() {
-        ArrayList<SpellTraitCard> troops = new ArrayList<>();
+    public ArrayList<Spell> getPlayerInMapSpells() {
+        ArrayList<Spell> troops = new ArrayList<>();
         for (Card card : this.playerInMapCards) {
-            if (card instanceof SpellTraitCard) {
-                troops.add((SpellTraitCard) card);
+            if (card.isSpell()) {
+                troops.add((Spell) card);
             }
         }
 
@@ -481,11 +481,11 @@ public class BotModeModel {
      *
      * @return the bot in map spells
      */
-    public ArrayList<SpellTraitCard> getBotInMapSpells() {
-        ArrayList<SpellTraitCard> troops = new ArrayList<>();
+    public ArrayList<Spell> getBotInMapSpells() {
+        ArrayList<Spell> troops = new ArrayList<>();
         for (Card card : this.botInMapCards) {
-            if (card instanceof SpellTraitCard) {
-                troops.add((SpellTraitCard) card);
+            if (card.isSpell()) {
+                troops.add((Spell) card);
             }
         }
 
@@ -497,11 +497,11 @@ public class BotModeModel {
      *
      * @return the player in map buildings
      */
-    public ArrayList<BuildingTraitCard> getPlayerInMapBuildings() {
-        ArrayList<BuildingTraitCard> troops = new ArrayList<>();
+    public ArrayList<Building> getPlayerInMapBuildings() {
+        ArrayList<Building> troops = new ArrayList<>();
         for (Card card : this.playerInMapCards) {
-            if (card instanceof BuildingTraitCard) {
-                troops.add((BuildingTraitCard) card);
+            if (card.isBuilding()) {
+                troops.add((Building) card);
             }
         }
 
@@ -513,11 +513,11 @@ public class BotModeModel {
      *
      * @return the bot in map buildings
      */
-    public ArrayList<BuildingTraitCard> getBotInMapBuildings() {
-        ArrayList<BuildingTraitCard> troops = new ArrayList<>();
+    public ArrayList<Building> getBotInMapBuildings() {
+        ArrayList<Building> troops = new ArrayList<>();
         for (Card card : this.botInMapCards) {
-            if (card instanceof BuildingTraitCard) {
-                troops.add((BuildingTraitCard) card);
+            if (card.isBuilding()) {
+                troops.add((Building) card);
             }
         }
 

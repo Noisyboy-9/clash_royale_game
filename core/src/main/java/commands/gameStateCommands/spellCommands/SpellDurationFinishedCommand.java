@@ -1,19 +1,19 @@
 package commands.gameStateCommands.spellCommands;
 
-import cards.spells.SpellTraitCard;
+import cards.spells.Spell;
 
 /**
  * The type Spell duration finished command.
  */
 public class SpellDurationFinishedCommand extends SpellCommand {
-    private final SpellTraitCard spell;
+    private final Spell spell;
 
     /**
      * Instantiates a new Spell duration finished command.
      *
      * @param spell the spell
      */
-    public SpellDurationFinishedCommand(SpellTraitCard spell) {
+    public SpellDurationFinishedCommand(Spell spell) {
         this.spell = spell;
     }
 
@@ -22,7 +22,7 @@ public class SpellDurationFinishedCommand extends SpellCommand {
      *
      * @return the spell
      */
-    public SpellTraitCard getSpell() {
+    public Spell getSpell() {
         return spell;
     }
 }

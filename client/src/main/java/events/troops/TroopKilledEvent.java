@@ -1,6 +1,6 @@
 package events.troops;
 
-import cards.troops.TroopTraitCard;
+import cards.troops.Troop;
 import commands.Command;
 import commands.gameStateCommands.troopCommands.TroopKilledCommand;
 import controllers.modes.CustomEventHandler;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * The type Troop killed event.
  */
 public class TroopKilledEvent extends TroopEvent {
-    private final TroopTraitCard troop;
+    private final Troop troop;
 
     /**
      * Instantiates a new Troop killed event.
@@ -23,7 +23,7 @@ public class TroopKilledEvent extends TroopEvent {
      * @param troop     the troop
      * @param targets
      */
-    public TroopKilledEvent(EventType<? extends Event> eventType, TroopTraitCard troop, ArrayList<User> targets) {
+    public TroopKilledEvent(EventType<? extends Event> eventType, Troop troop, ArrayList<User> targets) {
         super(eventType, targets);
         this.troop = troop;
     }
@@ -36,7 +36,7 @@ public class TroopKilledEvent extends TroopEvent {
      * @param troop     the troop
      * @param targets
      */
-    public TroopKilledEvent(Object source, EventTarget target, EventType<? extends Event> eventType, TroopTraitCard troop, ArrayList<User> targets) {
+    public TroopKilledEvent(Object source, EventTarget target, EventType<? extends Event> eventType, Troop troop, ArrayList<User> targets) {
         super(source, target, eventType, targets);
         this.troop = troop;
     }
@@ -56,7 +56,7 @@ public class TroopKilledEvent extends TroopEvent {
      *
      * @return the troop
      */
-    public TroopTraitCard getTroop() {
+    public Troop getTroop() {
         return troop;
     }
 }

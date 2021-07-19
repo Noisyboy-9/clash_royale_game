@@ -1,5 +1,6 @@
 package cards.traits;
 
+import cards.troops.Troop;
 import cards.troops.archers.Archer;
 import cards.troops.barbarians.Barbarian;
 import cards.troops.dragons.BabyDragon;
@@ -9,6 +10,10 @@ import cards.troops.valkyries.Valkyrie;
 import cards.troops.wizards.Wizard;
 
 public interface CanKnowItsExactTroopTypeTrait {
+    default boolean isTroop() {
+        return this instanceof Troop;
+    }
+
     default boolean isBarbarian() {
         return this instanceof Barbarian;
     }

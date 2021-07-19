@@ -3,11 +3,11 @@ package controllers.modes;
 import cards.Card;
 import cards.buildings.cannons.Cannon;
 import cards.buildings.towers.InfernoTower;
-import cards.spells.SpellTraitCard;
+import cards.spells.Spell;
 import cards.spells.arrows.Arrows;
 import cards.spells.balls.FireBall;
 import cards.spells.rages.Rage;
-import cards.troops.TroopTraitCard;
+import cards.troops.Troop;
 import cards.troops.archers.Archer;
 import cards.troops.barbarians.Barbarian;
 import cards.troops.dragons.BabyDragon;
@@ -39,8 +39,7 @@ import java.util.TimerTask;
 /**
  * The type Crazy bot mode controller.
  */
-public class CrazyBotModeController extends MapController implements CustomEventHandler {
-    private final BotModeModel model;
+public class CrazyBotModeController extends Controller implements CustomEventHandler {
     private final long eachFrameDuration;
     private long frameRemainingCount;
 
@@ -50,7 +49,7 @@ public class CrazyBotModeController extends MapController implements CustomEvent
      * @param model the model
      */
     public CrazyBotModeController(BotModeModel model) {
-        this.model = model;
+        super(model);
 
         int FRAME_PER_SECOND = 30;
         this.eachFrameDuration = Math.round((double) 1000 / FRAME_PER_SECOND);
@@ -84,7 +83,7 @@ public class CrazyBotModeController extends MapController implements CustomEvent
 
     @Override
     public void troopAddedEventHandler(TroopAddedEvent event) {
-        TroopTraitCard addedTroop = event.getTroop();
+        Troop addedTroop = event.getTroop();
         Point2D position = event.getPosition();
         addedTroop.setPosition(position);
 
@@ -130,7 +129,7 @@ public class CrazyBotModeController extends MapController implements CustomEvent
 
     @Override
     public void troopKilledEventHandler(TroopKilledEvent event) {
-        TroopTraitCard killedTroop = event.getTroop();
+        Troop killedTroop = event.getTroop();
         User owner = event.getTargetPlayers().get(0);
 
         try {
@@ -177,7 +176,7 @@ public class CrazyBotModeController extends MapController implements CustomEvent
 
     @Override
     public void spellAddedEventHandler(SpellAddedEvent event) {
-        SpellTraitCard addedSpell = event.getSpell();
+        Spell addedSpell = event.getSpell();
         Point2D position = event.getPosition();
         addedSpell.setPosition(position);
 
@@ -272,7 +271,7 @@ public class CrazyBotModeController extends MapController implements CustomEvent
 
     @Override
     public void spellDurationFinishedEventHandler(SpellDurationFinishedEvent event) {
-        SpellTraitCard expiredSpell = event.getSpell();
+        Spell expiredSpell = event.getSpell();
         User owner = event.getTargetPlayers().get(0);
 
         try {
@@ -309,6 +308,7 @@ public class CrazyBotModeController extends MapController implements CustomEvent
 //                handle troops thread.
 //                handle spells thread.
 //                handle buildings thread.
+//                handle exir count
 //                handle bot move.
 //                handle time thread.
 //                after all these threads are finished: render screen again.

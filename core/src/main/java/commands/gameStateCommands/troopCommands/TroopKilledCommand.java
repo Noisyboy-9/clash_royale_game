@@ -1,19 +1,19 @@
 package commands.gameStateCommands.troopCommands;
 
-import cards.troops.TroopTraitCard;
+import cards.troops.Troop;
 
 /**
  * The type Troop killed command.
  */
 public class TroopKilledCommand extends TroopCommand {
-    private final TroopTraitCard troop;
+    private final Troop troop;
 
     /**
      * Instantiates a new Troop killed command.
      *
      * @param troop the troop
      */
-    public TroopKilledCommand(TroopTraitCard troop) {
+    public TroopKilledCommand(Troop troop) {
         this.troop = troop;
     }
 
@@ -22,7 +22,7 @@ public class TroopKilledCommand extends TroopCommand {
      *
      * @return the troop
      */
-    public TroopTraitCard getTroop() {
+    public Troop getTroop() {
         return troop;
     }
 }
