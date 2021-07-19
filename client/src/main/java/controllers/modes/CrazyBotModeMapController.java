@@ -289,7 +289,16 @@ public class CrazyBotModeMapController extends MapController implements CustomEv
 
     @Override
     public void crownCountChangeHandler(CrownCountChangeEvent event) {
+        int crownCount = event.getNewCrownCount();
+        User target = event.getTargetPlayers().get(0);
 
+        if (target.equals(GlobalData.bot)) {
+//            crown count of bot changed
+            this.model.setBotCrownCount(crownCount);
+        } else {
+//            crown count of player changed
+            this.model.setPlayerCrownCount(crownCount);
+        }
     }
 
     /**
