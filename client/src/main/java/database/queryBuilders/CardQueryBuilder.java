@@ -1,4 +1,4 @@
-package database.QueryBuilder;
+package database.queryBuilders;
 
 import controllers.Controller;
 import javafx.scene.Node;
