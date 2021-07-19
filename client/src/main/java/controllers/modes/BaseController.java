@@ -1,12 +1,12 @@
 package controllers.modes;
 
+import controllers.Controller;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -55,6 +55,48 @@ public abstract class BaseController implements CustomEventHandler {
     }
 
     @FXML
+    private Text playerCrownsCount;
+
+    @FXML
+    private Text opponentCrownsCount;
+
+    @FXML
+    private Text opponentUsername;
+
+    @FXML
+    private Text opponentLevelField;
+
+    @FXML
+    private Text playerLevelField;
+
+    @FXML
+    private Text timeField;
+
+    @FXML
+    private ImageView playerQueenTower2;
+
+    @FXML
+    private ImageView playerQueenTower1;
+
+    @FXML
+    private ImageView opponentKingTower2;
+
+    @FXML
+    private ImageView opponentKingTower1;
+
+    @FXML
+    private ImageView opponentQueenTower1;
+
+    @FXML
+    private ImageView opponentQueenTower2;
+
+    @FXML
+    private ImageView playerKingTower1;
+
+    @FXML
+    private ImageView playerKingTower2;
+
+    @FXML
     private Group cardsGroup;
 
     @FXML
@@ -65,6 +107,9 @@ public abstract class BaseController implements CustomEventHandler {
 
     @FXML
     private GridPane elixirBox;
+
+    @FXML
+    private Text elixirCount;
 
     @FXML
     private ImageView nextCardImage;
@@ -128,6 +173,12 @@ public abstract class BaseController implements CustomEventHandler {
 
     @FXML
     private ImageView playerCrown3;
+
+    @FXML
+    void putCard(MouseEvent event) {
+
+    }
+
 
 
     @FXML
@@ -199,7 +250,31 @@ public abstract class BaseController implements CustomEventHandler {
     void checkLevelUp()
     {
         // after checking that player's level can upgrade or not
-        controllers.Controller.SCENE_CONTROLLER.showScene("Menu/LevelUpPage.fxml");
+        Controller.SCENE_CONTROLLER.showScene("Menu/LevelUpPage.fxml");
+
+    }
+
+
+    @FXML
+    void handleInvalidCards()
+    {
+        ObservableList<Node> children = battleCards.getChildren();
+        int currentElixir = Integer.parseInt(elixirCount.getText());
+
+        for (int index = 0 ; index < 4 ; index++)
+        {
+            int cardElixir = Integer.parseInt(((Text) children.get(index)).getText());
+
+            if (cardElixir > currentElixir)
+            {
+                ImageView cardImgView = (ImageView) children.get(index);
+                ImageView elixirBackground = (ImageView) children.get(index + 4);
+                // convertToBlackAndWhite(cardImgView, elixirBackground)
+
+
+            }
+
+        }
 
     }
 }
