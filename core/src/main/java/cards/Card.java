@@ -13,8 +13,7 @@ public abstract class Card {
     private final UUID id;
     private final int cost;
     private final User owner;
-    private final Point2D position;
-
+    private Point2D position;
 
     /**
      * Instantiates a new Card.
@@ -78,6 +77,15 @@ public abstract class Card {
      */
     public Point2D getPosition() {
         return position;
+    }
+
+    /**
+     * Sets position.
+     *
+     * @param position the position
+     */
+    public void setPosition(Point2D position) {
+        this.position = position;
     }
 }
 
