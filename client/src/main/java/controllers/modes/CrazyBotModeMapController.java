@@ -1,6 +1,7 @@
 package controllers.modes;
 
 import cards.Card;
+import cards.buildings.Building;
 import cards.buildings.cannons.Cannon;
 import cards.buildings.towers.InfernoTower;
 import cards.spells.Spell;
@@ -20,6 +21,8 @@ import errors.DuplicateCardException;
 import errors.InvalidCardException;
 import errors.InvalidTowerException;
 import events.CustomEvent;
+import events.buildings.BuildingAddedEvent;
+import events.buildings.BuildingDurationFinishedEvent;
 import events.counts.CrownCountChangeEvent;
 import events.spells.SpellAddedEvent;
 import events.spells.SpellDurationFinishedEvent;
@@ -299,6 +302,53 @@ public class CrazyBotModeMapController extends MapController implements CustomEv
 //            crown count of player changed
             this.model.setPlayerCrownCount(crownCount);
         }
+    }
+
+    @Override
+    public void buildingAddedEventHandler(BuildingAddedEvent event) {
+        Building addedBuilding = event.getBuilding();
+        Point2D position = event.getPosition();
+        addedBuilding.setPosition(position);
+
+        User owner = event.getTargetPlayers().get(0);
+
+        try {
+            if (owner.equals(GlobalData.bot)) {
+//                the bot has dropped a spell
+                this.model.addCardToInMapBotCards(addedBuilding);
+
+                this.model.removeCardFromBotBattleCards(addedBuilding);
+                this.model.addCardToBotComingCards(this.createNewCardWithSameType(addedBuilding, GlobalData.bot));
+
+                Card nextCard = this.model.getBotComingCards().get(0);
+                this.model.addCardToBotBattleCards(nextCard);
+                this.model.removeCardFromBotComingCards(nextCard);
+            } else {
+//                the player has dropped a spell.
+                this.model.addCardToInMapPlayerCards(addedBuilding);
+
+//                get the index of the added card and remove it from battle cards
+                int index = this.model.getPlayerBattleCards().indexOf(addedBuilding);
+                this.model.removeCardFromPlayerBattleCards(addedBuilding);
+
+//                add the card to coming cards list
+                this.model.addCardToPlayerComingCards(this.createNewCardWithSameType(addedBuilding, GlobalData.user));
+
+//                get the first element of the coming cards and put it in added card place.
+                Card nextCard = this.model.getPlayerInMapTroops().get(0);
+                this.model.getPlayerBattleCards().add(index, nextCard);
+
+//                remove the next card from coming cards list.
+                this.model.removeCardFromPlayerComingCards(nextCard);
+            }
+        } catch (DuplicateCardException | InvalidCardException exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    @Override
+    public void buildingDurationFinishedHandler(BuildingDurationFinishedEvent event) {
+
     }
 
     /**
