@@ -1,8 +1,8 @@
 package cards.spells.balls;
 
 import cards.Card;
-import cards.spells.SpellTrait;
-import cards.troops.TroopTrait;
+import cards.spells.SpellTraitCard;
+import cards.troops.TroopTraitCard;
 import exceptions.TargetAlreadyExistException;
 import javafx.geometry.Point2D;
 import towers.Tower;
@@ -14,9 +14,9 @@ import java.util.UUID;
 /**
  * The type Fire ball.
  */
-public class FireBall extends SpellTrait {
+public class FireBall extends SpellTraitCard {
     private final ArrayList<Tower> targetTowers;
-    private final ArrayList<TroopTrait> targetTroops;
+    private final ArrayList<TroopTraitCard> targetTroops;
     private final int damage;
 
     /**
@@ -59,7 +59,7 @@ public class FireBall extends SpellTrait {
      * @param troop the troop
      * @throws TargetAlreadyExistException the target already exist exception
      */
-    public void addTroopTarget(TroopTrait troop) throws TargetAlreadyExistException {
+    public void addTroopTarget(TroopTraitCard troop) throws TargetAlreadyExistException {
         if (this.targetTroops.contains(troop)) {
             throw new TargetAlreadyExistException("tower with id: " + troop.getId().toString() + "exist");
         }

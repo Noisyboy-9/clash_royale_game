@@ -11,7 +11,7 @@ import java.util.UUID;
 /**
  * The type Building.
  */
-public abstract class BuildingTrait extends Card implements AttackAble {
+public abstract class BuildingTraitCard extends Card implements AttackAble {
     private final TypeEnum selfType;
     private final TypeEnum attackType;
     private final double radius;
@@ -36,17 +36,17 @@ public abstract class BuildingTrait extends Card implements AttackAble {
      * @param selfType   the self type
      * @param attackType the attack type
      */
-    protected BuildingTrait(UUID id,
-                            int cost,
-                            User owner,
-                            Point2D position,
-                            int HP,
-                            double radius,
-                            double damage,
-                            double hitSpeed,
-                            double duration,
-                            TypeEnum selfType,
-                            TypeEnum attackType) {
+    protected BuildingTraitCard(UUID id,
+                                int cost,
+                                User owner,
+                                Point2D position,
+                                int HP,
+                                double radius,
+                                double damage,
+                                double hitSpeed,
+                                double duration,
+                                TypeEnum selfType,
+                                TypeEnum attackType) {
         super(id, cost, owner, position);
         this.HP = HP;
         this.radius = radius;

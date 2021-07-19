@@ -1,6 +1,6 @@
 package events.spells;
 
-import cards.spells.SpellTrait;
+import cards.spells.SpellTraitCard;
 import commands.Command;
 import commands.gameStateCommands.spellCommands.SpellDurationFinishedCommand;
 import controllers.modes.CustomEventHandler;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * The type Spell duration finished event.
  */
 public class SpellDurationFinishedEvent extends SpellEvent {
-    private final SpellTrait spell;
+    private final SpellTraitCard spell;
 
     /**
      * Instantiates a new Spell duration finished event.
@@ -23,7 +23,7 @@ public class SpellDurationFinishedEvent extends SpellEvent {
      * @param eventType the event type
      * @param spell     the spell
      */
-    public SpellDurationFinishedEvent(EventType<? extends Event> eventType, SpellTrait spell, ArrayList<User> targetPlayers) {
+    public SpellDurationFinishedEvent(EventType<? extends Event> eventType, SpellTraitCard spell, ArrayList<User> targetPlayers) {
         super(eventType, targetPlayers);
         this.spell = spell;
     }
@@ -36,7 +36,7 @@ public class SpellDurationFinishedEvent extends SpellEvent {
      * @param eventType the event type
      * @param spell     the spell
      */
-    public SpellDurationFinishedEvent(Object source, EventTarget target, EventType<? extends Event> eventType, SpellTrait spell, ArrayList<User> targetPlayers) {
+    public SpellDurationFinishedEvent(Object source, EventTarget target, EventType<? extends Event> eventType, SpellTraitCard spell, ArrayList<User> targetPlayers) {
         super(source, target, eventType, targetPlayers);
         this.spell = spell;
     }
@@ -46,7 +46,7 @@ public class SpellDurationFinishedEvent extends SpellEvent {
      *
      * @return the spell
      */
-    public SpellTrait getSpell() {
+    public SpellTraitCard getSpell() {
         return spell;
     }
 

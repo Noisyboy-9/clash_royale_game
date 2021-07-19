@@ -1,6 +1,6 @@
 package cards.traits;
 
-public interface CanKnowItsExactTypeTraitTraitTraitTrait extends CanKnowItsExactTroopTypeTrait,
+public interface CanKnowItsExactCardTypeTraitTraitTraitTrait extends CanKnowItsExactTroopTypeTrait,
         CanKnowItsExactSpellTypeTrait,
         CanKnowItsExactBuildingTypeTrait {
 }

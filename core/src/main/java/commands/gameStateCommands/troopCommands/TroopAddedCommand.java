@@ -1,13 +1,13 @@
 package commands.gameStateCommands.troopCommands;
 
-import cards.troops.TroopTrait;
+import cards.troops.TroopTraitCard;
 import javafx.geometry.Point2D;
 
 /**
  * The type Troop added command.
  */
 public class TroopAddedCommand extends TroopCommand {
-    private final TroopTrait troop;
+    private final TroopTraitCard troop;
     private final Point2D position;
 
     /**
@@ -16,7 +16,7 @@ public class TroopAddedCommand extends TroopCommand {
      * @param troop    the troop
      * @param position the position
      */
-    public TroopAddedCommand(TroopTrait troop, Point2D position) {
+    public TroopAddedCommand(TroopTraitCard troop, Point2D position) {
         this.troop = troop;
         this.position = position;
     }
@@ -26,7 +26,7 @@ public class TroopAddedCommand extends TroopCommand {
      *
      * @return the troop
      */
-    public TroopTrait getTroop() {
+    public TroopTraitCard getTroop() {
         return troop;
     }
 

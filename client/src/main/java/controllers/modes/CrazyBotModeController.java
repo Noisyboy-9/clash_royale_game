@@ -3,11 +3,11 @@ package controllers.modes;
 import cards.Card;
 import cards.buildings.cannons.Cannon;
 import cards.buildings.towers.InfernoTower;
-import cards.spells.SpellTrait;
+import cards.spells.SpellTraitCard;
 import cards.spells.arrows.Arrows;
 import cards.spells.balls.FireBall;
 import cards.spells.rages.Rage;
-import cards.troops.TroopTrait;
+import cards.troops.TroopTraitCard;
 import cards.troops.archers.Archer;
 import cards.troops.barbarians.Barbarian;
 import cards.troops.dragons.BabyDragon;
@@ -84,7 +84,7 @@ public class CrazyBotModeController extends MapController implements CustomEvent
 
     @Override
     public void troopAddedEventHandler(TroopAddedEvent event) {
-        TroopTrait addedTroop = event.getTroop();
+        TroopTraitCard addedTroop = event.getTroop();
         Point2D position = event.getPosition();
         addedTroop.setPosition(position);
 
@@ -130,7 +130,7 @@ public class CrazyBotModeController extends MapController implements CustomEvent
 
     @Override
     public void troopKilledEventHandler(TroopKilledEvent event) {
-        TroopTrait killedTroop = event.getTroop();
+        TroopTraitCard killedTroop = event.getTroop();
         User owner = event.getTargetPlayers().get(0);
 
         try {
@@ -177,7 +177,7 @@ public class CrazyBotModeController extends MapController implements CustomEvent
 
     @Override
     public void spellAddedEventHandler(SpellAddedEvent event) {
-        SpellTrait addedSpell = event.getSpell();
+        SpellTraitCard addedSpell = event.getSpell();
         Point2D position = event.getPosition();
         addedSpell.setPosition(position);
 
@@ -272,7 +272,7 @@ public class CrazyBotModeController extends MapController implements CustomEvent
 
     @Override
     public void spellDurationFinishedEventHandler(SpellDurationFinishedEvent event) {
-        SpellTrait expiredSpell = event.getSpell();
+        SpellTraitCard expiredSpell = event.getSpell();
         User owner = event.getTargetPlayers().get(0);
 
         try {

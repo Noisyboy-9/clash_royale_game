@@ -1,7 +1,7 @@
 package cards.buildings.towers;
 
 import cards.Card;
-import cards.buildings.BuildingTrait;
+import cards.buildings.BuildingTraitCard;
 import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
 import javafx.geometry.Point2D;
@@ -13,7 +13,7 @@ import java.util.UUID;
 /**
  * The type Inferno tower.
  */
-public class InfernoTower extends BuildingTrait {
+public class InfernoTower extends BuildingTraitCard {
     private final ArrayList<AttackAble> targets;
 
     /**

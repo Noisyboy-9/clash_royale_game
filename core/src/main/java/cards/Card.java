@@ -1,6 +1,6 @@
 package cards;
 
-import cards.traits.CanKnowItsExactTypeTraitTraitTraitTrait;
+import cards.traits.CanKnowItsExactCardTypeTraitTraitTraitTrait;
 import javafx.geometry.Point2D;
 import user.User;
 
@@ -10,7 +10,7 @@ import java.util.UUID;
 /**
  * The type Card.
  */
-public abstract class Card implements CanKnowItsExactTypeTraitTraitTraitTrait {
+public abstract class Card implements CanKnowItsExactCardTypeTraitTraitTraitTrait {
     private final UUID id;
     private final int cost;
     private final User owner;

@@ -9,7 +9,7 @@ import java.util.UUID;
 /**
  * The type Spell.
  */
-public abstract class SpellTrait extends Card {
+public abstract class SpellTraitCard extends Card {
     private final double radius;
 
     /**
@@ -21,7 +21,7 @@ public abstract class SpellTrait extends Card {
      * @param position the position
      * @param radius   the radius
      */
-    protected SpellTrait(UUID id, int cost, User owner, Point2D position, double radius) {
+    protected SpellTraitCard(UUID id, int cost, User owner, Point2D position, double radius) {
         super(id, cost, owner, position);
         this.radius = radius;
     }
