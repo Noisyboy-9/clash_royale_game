@@ -3,7 +3,7 @@ package globals;
 import cards.Card;
 import cards.buildings.cannons.Cannon;
 import cards.buildings.towers.InfernoTower;
-import cards.spells.arrows.Arrows;
+import cards.spells.Spell;
 import cards.spells.balls.FireBall;
 import cards.spells.rages.Rage;
 import cards.troops.archers.Archer;
@@ -65,7 +65,7 @@ public class GlobalData {
         switch (className)
         {
             case "Archers" -> {return Archer.create(cardOwner, null);}
-            case "Arrows" -> {return Arrows.create(cardOwner, null);}
+            case "Arrows" -> {return Spell.create(cardOwner, null);}
             case "BabyDragon" -> {return BabyDragon.create(cardOwner, null);}
             case "Barbarians" -> {return Barbarian.create(cardOwner, null);}
             case "Cannon" -> {return Cannon.create(cardOwner, null);}
