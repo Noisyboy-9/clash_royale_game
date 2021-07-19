@@ -348,7 +348,18 @@ public class CrazyBotModeMapController extends MapController implements CustomEv
 
     @Override
     public void buildingDurationFinishedHandler(BuildingDurationFinishedEvent event) {
+        Building expiredBuilding = event.getBuilding();
+        User owner = event.getTargetPlayers().get(0);
 
+        try {
+            if (owner.equals(GlobalData.bot)) {
+                this.model.removeCardFromInMapBotCards(expiredBuilding);
+            } else {
+                this.model.removeCardFromInMapPlayerCards(expiredBuilding);
+            }
+        } catch (InvalidCardException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
