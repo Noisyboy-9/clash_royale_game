@@ -16,7 +16,7 @@ import user.User;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-public class GameModel {
+public abstract class GameModel {
     protected final ArrayList<Tower> playerTowers;
     protected final ArrayList<Card> playerAllCards;
     protected final ArrayList<Card> playerInMapCards;
