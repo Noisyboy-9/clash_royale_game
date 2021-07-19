@@ -4,6 +4,7 @@ import controllers.Controller;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,6 +22,7 @@ import java.util.Objects;
 public class SceneController {
     private final HashMap<String, Scene> menus;
     private final ArrayList<String> cardsUrls;
+    private final HashMap<String, Image> gifs;
     private Scene scene;
     private Parent root;
 
@@ -30,6 +32,7 @@ public class SceneController {
     public SceneController() {
         this.menus = new HashMap<>();
         this.cardsUrls = new ArrayList<>();
+        this.gifs = new HashMap<>();
 
     }
 
@@ -104,6 +107,57 @@ public class SceneController {
             System.err.println("there was a problem related to IO");
         }
 
+    }
+
+
+    public void loadGifs()
+    {
+        try {
+            DirectoryStream<Path> directoryStream = this.getDirectoryStreamBasedOnOs(Controller.RESOURCE_PATH + "gifs");
+            String protocol = this.getFileProtocol();
+            for (Path path : directoryStream)
+            {
+                String name = path.getFileName().toString();
+                name = name.replace(".gif", "");
+
+                if (name.equals("splash_screen_time_line"))
+                    continue;
+
+                ArrayList<Integer> size = getSizeFromName(name);
+                String address = protocol + path;
+                Image gif = new Image(address, size.get(0), size.get(1), true, true);
+
+                String key = getKeyFromName(name);
+
+                this.gifs.put(key, gif);
+
+            }
+        } catch (IOException e) {
+            System.err.println("there was a problem related to IO");
+        }
+
+    }
+
+    private ArrayList<Integer> getSizeFromName(String name) {
+        ArrayList<Integer> size = new ArrayList<>();
+
+        String[] elements = name.split("_");
+        String sizePart = elements[3];
+        String[] widthHeight = sizePart.split("-");
+
+        int width = Integer.parseInt(widthHeight[0]);
+        int height = Integer.parseInt(widthHeight[1]);
+
+        size.add(width);
+        size.add(height);
+
+        return size;
+
+    }
+
+    private String getKeyFromName(String name) {
+        String[] elements = name.split("_");
+        return elements[0] + "_" + elements[1] + "_" + elements[2];
     }
 
 

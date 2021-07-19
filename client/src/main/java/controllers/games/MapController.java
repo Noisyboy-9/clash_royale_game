@@ -1,12 +1,16 @@
 package controllers.games;
 
 import controllers.Controller;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.Group;
+import javafx.scene.Node;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 public class MapController {
@@ -129,8 +133,23 @@ public class MapController {
     @FXML
     void selectCard(MouseEvent event)
     {
-        finishGame();
+        removeShadows();
+        DropShadow ds = new DropShadow(20, Color.AQUA);
+        ImageView imageView = (ImageView) event.getSource();
+        imageView.setEffect(ds);
+//        finishGame();
 
+    }
+
+    private void removeShadows() {
+        ObservableList<Node> children = battleCards.getChildren();
+
+        for (int index = 0 ; index < 4 ; index++)
+        {
+            ImageView imageView = (ImageView)children.get(index);
+            imageView.setEffect(null);
+
+        }
     }
 
     @FXML

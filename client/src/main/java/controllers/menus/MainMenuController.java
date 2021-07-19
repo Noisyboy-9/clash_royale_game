@@ -1,7 +1,7 @@
 package controllers.menus;
 
 import controllers.Controller;
-import globals.UserData;
+import globals.GlobalData;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
@@ -17,9 +17,9 @@ public class MainMenuController extends MenuController {
 
     @FXML
     public void initialize() {
-        if (!Objects.isNull(UserData.user)) {
-            this.usernameField.setText(UserData.user.getUsername());
-            this.levelField.setText(UserData.user.getLevel().toString());
+        if (!Objects.isNull(GlobalData.user)) {
+            this.usernameField.setText(GlobalData.user.getUsername());
+            this.levelField.setText(GlobalData.user.getLevel().toString());
         }
     }
 

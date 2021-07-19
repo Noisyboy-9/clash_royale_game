@@ -6,7 +6,7 @@ import commands.authenicationCommands.login.LoginCommand;
 import commands.authenicationCommands.login.LoginResponseCommand;
 import commands.authenicationCommands.register.RegisterCommand;
 import commands.authenicationCommands.register.RegisterResponseCommand;
-import globals.UserData;
+import globals.GlobalData;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -85,7 +85,7 @@ public class LoginRegisterController {
         if (!response.isSuccessful()) {
             this.message.setText(response.getMessage());
         } else {
-            UserData.user = response.getUser();
+            GlobalData.user = response.getUser();
 
             Controller.SCENE_CONTROLLER.removeScene("Menu/ProfileMenu.fxml");
             Controller.SCENE_CONTROLLER.removeScene("Menu/MainMenu.fxml");
@@ -108,7 +108,7 @@ public class LoginRegisterController {
         if (!response.isSuccessful()) {
             this.message.setText(response.getMessage());
         } else {
-            UserData.user = response.getUser();
+            GlobalData.user = response.getUser();
 
             Controller.SCENE_CONTROLLER.removeScene("Menu/ProfileMenu.fxml");
             Controller.SCENE_CONTROLLER.removeScene("Menu/MainMenu.fxml");

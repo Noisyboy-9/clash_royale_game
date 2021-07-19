@@ -1,7 +1,7 @@
 package controllers.menus;
 
 import controllers.Controller;
-import globals.UserData;
+import globals.GlobalData;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -25,7 +25,7 @@ public class BattleDeckController extends MenuController {
     @FXML
     void initialize()
     {
-        HashMap<Integer, String> cardsUrls = Controller.CARD_QUERY_BUILDER.loadCards(UserData.user);
+        HashMap<Integer, String> cardsUrls = Controller.CARD_QUERY_BUILDER.loadCards(GlobalData.user);
         if (cardsUrls != null)
         {
             updateBattleCards(cardsUrls);
@@ -186,7 +186,7 @@ public class BattleDeckController extends MenuController {
     @Override @FXML
     void changeMenuHandler(MouseEvent event)
     {
-        Controller.CARD_QUERY_BUILDER.updatePlayerCards(UserData.user, battleCards);
+        Controller.CARD_QUERY_BUILDER.updatePlayerCards(GlobalData.user, battleCards);
         super.changeMenuHandler(event);
 
     }

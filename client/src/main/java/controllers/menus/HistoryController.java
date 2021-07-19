@@ -1,7 +1,7 @@
 package controllers.menus;
 
 import controllers.Controller;
-import globals.UserData;
+import globals.GlobalData;
 import database.models.GameResult;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
@@ -109,7 +109,7 @@ public class HistoryController extends MenuController {
         int playerTeamScore;
         int opponentTeamScore;
 
-        if (gameResult.isWinner(UserData.user))
+        if (gameResult.isWinner(GlobalData.user))
         {
             playerTeamScore = gameResult.getWinnersCrownCount();
             opponentTeamScore = gameResult.getLosersCrownCount();
@@ -166,10 +166,10 @@ public class HistoryController extends MenuController {
 
     @FXML
     void initialize() {
-        if (UserData.user != null) {
+        if (GlobalData.user != null) {
             this.results = null;
             try {
-                results = Controller.HISTORY_QUERY_BUILDER.readAll(UserData.user);
+                results = Controller.HISTORY_QUERY_BUILDER.readAll(GlobalData.user);
                 Collections.reverse(results);
             } catch (IOException e) {
                 e.printStackTrace();
