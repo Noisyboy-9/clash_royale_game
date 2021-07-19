@@ -1,91 +1,282 @@
 package models;
 
 import cards.Card;
+import cards.buildings.Building;
+import cards.spells.Spell;
+import cards.troops.Troop;
+import errors.DuplicateCardException;
+import errors.InvalidCardException;
+import errors.InvalidTowerException;
 import globals.GlobalData;
-import towers.KingTower;
-import towers.QueenTower;
 import towers.Tower;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
-public class BotModeModel
-{
-    private ArrayList<Tower> botTowers;
-    private ArrayList<Card> botAllCards;
-    private ArrayList<Card> botInMapCards;
-    private ArrayList<Card> botBattleCards;
-    private ArrayList<Card> botComingCards;
+/**
+ * The type Bot mode model.
+ */
+public class BotModeModel extends GameModel {
+    private final ArrayList<Tower> botTowers;
+    private final ArrayList<Card> botAllCards;
+    private final ArrayList<Card> botInMapCards;
+    private final ArrayList<Card> botBattleCards;
+    private final ArrayList<Card> botComingCards;
     private int botElixirCount;
-    private ArrayList<Tower> playerTowers;
-    private ArrayList<Card> playerAllCards;
-    private ArrayList<Card> playerInMapCards;
-    private ArrayList<Card> playerBattleCards;
-    private ArrayList<Card> playerComingCards;
-    private int playerElixirCount;
+    private int botCrownCount;
 
-    public BotModeModel(ArrayList<Card> botAllCards, ArrayList<Card> botBattleCards, ArrayList<Card> botComingCards,
-                        ArrayList<Card> playerAllCards, ArrayList<Card> playerBattleCards, ArrayList<Card> playerComingCards) {
-        this.botTowers = new ArrayList<>();
+    /**
+     * Instantiates a new Bot mode model.
+     *
+     * @param botAllCards       the bot all cards
+     * @param botBattleCards    the bot battle cards
+     * @param playerAllCards    the player all cards
+     * @param playerBattleCards the player battle cards
+     */
+    public BotModeModel(ArrayList<Card> botAllCards,
+                        ArrayList<Card> botBattleCards,
+                        ArrayList<Card> playerAllCards,
+                        ArrayList<Card> playerBattleCards) {
+        super(playerAllCards, playerBattleCards);
+        this.botTowers = this.createTowers(GlobalData.bot);
         this.botAllCards = botAllCards;
         this.botInMapCards = new ArrayList<>();
         this.botBattleCards = botBattleCards;
-        this.botComingCards = botComingCards;
         this.botElixirCount = 4;
-        this.playerTowers = new ArrayList<>();
-        this.playerAllCards = playerAllCards;
-        this.playerInMapCards = new ArrayList<>();
-        this.playerBattleCards = playerBattleCards;
-        this.playerComingCards = playerComingCards;
-        this.playerElixirCount = 4;
 
-        this.botTowers.add(QueenTower.create(GlobalData.bot));
-        this.botTowers.add(KingTower.create(GlobalData.bot));
-        this.botTowers.add(QueenTower.create(GlobalData.bot));
+        //        player coming cards is: All player cards that are in playerAllCards but not in botBattleCards
 
-        this.playerTowers.add(QueenTower.create(GlobalData.user));
-        this.playerTowers.add(KingTower.create(GlobalData.user));
-        this.playerTowers.add(QueenTower.create(GlobalData.user));
-
+//        bot coming cards is : All cards that are in botAllCards but not in botBattleCards
+        this.botComingCards = botAllCards.stream()
+                .filter(card -> !botBattleCards.contains(card))
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
+    /**
+     * Gets bot crown count.
+     *
+     * @return the bot crown count
+     */
+    public int getBotCrownCount() {
+        return botCrownCount;
+    }
+
+    /**
+     * Sets bot crown count.
+     *
+     * @param botCrownCount the bot crown count
+     */
+    public void setBotCrownCount(int botCrownCount) {
+        this.botCrownCount = botCrownCount;
+    }
+
+    /**
+     * Gets bot elixir count.
+     *
+     * @return the bot elixir count
+     */
+    public int getBotElixirCount() {
+        return botElixirCount;
+    }
+
+    /**
+     * Sets bot elixir count.
+     *
+     * @param botElixirCount the bot elixir count
+     */
+    public void setBotElixirCount(int botElixirCount) {
+        this.botElixirCount = botElixirCount;
+    }
+
+    /**
+     * Gets bot towers.
+     *
+     * @return the bot towers
+     */
     public ArrayList<Tower> getBotTowers() {
         return botTowers;
     }
 
+    /**
+     * Gets bot all cards.
+     *
+     * @return the bot all cards
+     */
     public ArrayList<Card> getBotAllCards() {
         return botAllCards;
     }
 
+    /**
+     * Gets bot in map cards.
+     *
+     * @return the bot in map cards
+     */
     public ArrayList<Card> getBotInMapCards() {
         return botInMapCards;
     }
 
+    /**
+     * Gets bot battle cards.
+     *
+     * @return the bot battle cards
+     */
     public ArrayList<Card> getBotBattleCards() {
         return botBattleCards;
     }
 
+    /**
+     * Gets bot coming cards.
+     *
+     * @return the bot coming cards
+     */
     public ArrayList<Card> getBotComingCards() {
         return botComingCards;
     }
 
-    public ArrayList<Tower> getPlayerTowers() {
-        return playerTowers;
+    /**
+     * Delete bot tower.
+     *
+     * @param tower the tower
+     * @throws InvalidTowerException the invalid tower exception
+     */
+    public void deleteBotTower(Tower tower) throws InvalidTowerException {
+        if (!this.botTowers.contains(tower)) {
+            throw new InvalidTowerException("bot doesn't have any such tower.");
+        }
+
+        this.botTowers.remove(tower);
     }
 
-    public ArrayList<Card> getPlayerAllCards() {
-        return playerAllCards;
+    /**
+     * Add card to in map bot cards.
+     *
+     * @param card the card
+     * @throws DuplicateCardException the duplicate card exception
+     */
+    public void addCardToInMapBotCards(Card card) throws DuplicateCardException {
+        if (this.botInMapCards.contains(card)) {
+            throw new DuplicateCardException("The bot already have the card in map.");
+        }
+
+        this.botInMapCards.add(card);
     }
 
-    public ArrayList<Card> getPlayerInMapCards() {
-        return playerInMapCards;
+    /**
+     * Remove card from in map bot cards.
+     *
+     * @param card the card
+     * @throws InvalidCardException the invalid card exception
+     */
+    public void removeCardFromInMapBotCards(Card card) throws InvalidCardException {
+        if (!this.botInMapCards.contains(card)) {
+            throw new InvalidCardException("The bot doesn't have any such card in map.");
+        }
+
+        this.botInMapCards.remove(card);
     }
 
-    public ArrayList<Card> getPlayerBattleCards() {
-        return playerBattleCards;
+    /**
+     * Add card to bot in coming cards.
+     *
+     * @param card the card
+     * @throws DuplicateCardException the duplicate card exception
+     */
+    public void addCardToBotComingCards(Card card) throws DuplicateCardException {
+        if (this.botComingCards.contains(card)) {
+            throw new DuplicateCardException("The bot already have the card in coming card list");
+        }
+
+        this.botComingCards.add(card);
     }
 
-    public ArrayList<Card> getPlayerComingCards() {
-        return playerComingCards;
+    /**
+     * Remove card from bot in coming cards.
+     *
+     * @param card the card
+     * @throws InvalidCardException the invalid card exception
+     */
+    public void removeCardFromBotComingCards(Card card) throws InvalidCardException {
+        if (!this.botComingCards.contains(card)) {
+            throw new InvalidCardException("The bot doesn't have any such card in coming cards");
+        }
+
+        this.botComingCards.remove(card);
+    }
+
+    /**
+     * Add card to bot battle cards.
+     *
+     * @param card the card
+     * @throws DuplicateCardException the duplicate card exception
+     */
+    public void addCardToBotBattleCards(Card card) throws DuplicateCardException {
+        if (this.botBattleCards.contains(card)) {
+            throw new DuplicateCardException("The bot already have the card in battle card list");
+        }
+
+        this.botBattleCards.add(card);
+    }
+
+    /**
+     * Remove card from bot battle cards.
+     *
+     * @param card the card
+     * @throws InvalidCardException the invalid card exception
+     */
+    public void removeCardFromBotBattleCards(Card card) throws InvalidCardException {
+        if (!this.botBattleCards.contains(card)) {
+            throw new InvalidCardException("The bot doesn't have any such card in battle cards");
+        }
+
+        this.botBattleCards.remove(card);
+    }
+
+    /**
+     * Gets bot in map troops.
+     *
+     * @return the bot in map troops
+     */
+    public ArrayList<Troop> getBotInMapTroops() {
+        ArrayList<Troop> troops = new ArrayList<>();
+        for (Card card : this.botInMapCards) {
+            if (card.isTroop()) {
+                troops.add((Troop) card);
+            }
+        }
+
+        return troops;
+    }
+
+    /**
+     * Gets bot in map spells.
+     *
+     * @return the bot in map spells
+     */
+    public ArrayList<Spell> getBotInMapSpells() {
+        ArrayList<Spell> troops = new ArrayList<>();
+        for (Card card : this.botInMapCards) {
+            if (card.isSpell()) {
+                troops.add((Spell) card);
+            }
+        }
+
+        return troops;
+    }
+
+    /**
+     * Gets bot in map buildings.
+     *
+     * @return the bot in map buildings
+     */
+    public ArrayList<Building> getBotInMapBuildings() {
+        ArrayList<Building> troops = new ArrayList<>();
+        for (Card card : this.botInMapCards) {
+            if (card.isBuilding()) {
+                troops.add((Building) card);
+            }
+        }
+
+        return troops;
     }
 
 }

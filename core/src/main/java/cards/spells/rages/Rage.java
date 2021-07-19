@@ -110,17 +110,16 @@ public class Rage extends Spell {
     /**
      * Create card.
      *
-     * @param user     the user
-     * @param position the position
+     * @param user the user
      * @return the card
      */
-    public static Card create(User user, Point2D position) {
+    public static Card create(User user) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Rage(UUID.randomUUID(), user, position, 6);
-            case LEVEL_2 -> new Rage(UUID.randomUUID(), user, position, 6.5);
-            case LEVEL_3 -> new Rage(UUID.randomUUID(), user, position, 7);
-            case LEVEL_4 -> new Rage(UUID.randomUUID(), user, position, 7.5);
-            case LEVEL_5 -> new Rage(UUID.randomUUID(), user, position, 8);
+            case LEVEL_1 -> new Rage(UUID.randomUUID(), user, null, 6);
+            case LEVEL_2 -> new Rage(UUID.randomUUID(), user, null, 6.5);
+            case LEVEL_3 -> new Rage(UUID.randomUUID(), user, null, 7);
+            case LEVEL_4 -> new Rage(UUID.randomUUID(), user, null, 7.5);
+            case LEVEL_5 -> new Rage(UUID.randomUUID(), user, null, 8);
         };
     }
 }

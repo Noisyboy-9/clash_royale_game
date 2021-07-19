@@ -1,4 +1,6 @@
 package commands.matchRequestCommands;
 
-public abstract class MatchRequestCommand {
+import commands.Command;
+
+public abstract class MatchRequestCommand extends Command {
 }

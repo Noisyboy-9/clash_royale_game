@@ -3,10 +3,14 @@ package events.spells;
 import cards.spells.Spell;
 import commands.Command;
 import commands.gameStateCommands.spellCommands.SpellAddedCommand;
+import controllers.modes.CustomEventHandler;
 import javafx.event.Event;
 import javafx.event.EventTarget;
 import javafx.event.EventType;
 import javafx.geometry.Point2D;
+import user.User;
+
+import java.util.ArrayList;
 
 /**
  * The type Spell added event.
@@ -22,8 +26,8 @@ public class SpellAddedEvent extends SpellEvent {
      * @param spell     the spell
      * @param position  the position
      */
-    public SpellAddedEvent(EventType<? extends Event> eventType, Spell spell, Point2D position) {
-        super(eventType);
+    public SpellAddedEvent(EventType<? extends Event> eventType, Spell spell, Point2D position, ArrayList<User> targetPlayers) {
+        super(eventType, targetPlayers);
         this.spell = spell;
         this.position = position;
     }
@@ -37,8 +41,13 @@ public class SpellAddedEvent extends SpellEvent {
      * @param spell     the spell
      * @param position  the position
      */
-    public SpellAddedEvent(Object source, EventTarget target, EventType<? extends Event> eventType, Spell spell, Point2D position) {
-        super(source, target, eventType);
+    public SpellAddedEvent(Object source,
+                           EventTarget target,
+                           EventType<? extends Event> eventType,
+                           Spell spell,
+                           Point2D position,
+                           ArrayList<User> targetPlayers) {
+        super(source, target, eventType, targetPlayers);
         this.spell = spell;
         this.position = position;
     }
@@ -64,5 +73,10 @@ public class SpellAddedEvent extends SpellEvent {
     @Override
     public Command toCommand() {
         return new SpellAddedCommand(this.spell, this.position);
+    }
+
+    @Override
+    public void invokeHandler(CustomEventHandler handler) {
+        handler.spellAddedEventHandler(this);
     }
 }

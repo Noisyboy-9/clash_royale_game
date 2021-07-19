@@ -34,11 +34,11 @@ public class AuthenticationRunnable implements Runnable {
         try {
             AuthenticationCommand command = (AuthenticationCommand) this.request.readObject();
 
-            if (command instanceof RegisterCommand) {
+            if (command.isRegisterCommand()) {
                 this.handleRegister((RegisterCommand) command);
             }
 
-            if (command instanceof LoginCommand) {
+            if (command.isLoginCommand()) {
                 this.handleLogin((LoginCommand) command);
             }
         } catch (IOException |

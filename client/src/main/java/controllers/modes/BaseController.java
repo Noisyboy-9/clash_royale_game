@@ -1,6 +1,5 @@
-package controllers.games;
+package controllers.modes;
 
-import controllers.Controller;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
@@ -13,9 +12,17 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import models.BotModeModel;
+import models.GameModel;
 
-public class MapController {
+public abstract class BaseController implements CustomEventHandler {
+    private final GameModel model;
     ImageView[] playerTeamCrowns;
+
+    public BaseController(BotModeModel model) {
+        this.model = model;
+    }
+
     ImageView[] opponentTeamCrowns;
 
     @FXML
@@ -192,8 +199,7 @@ public class MapController {
     void checkLevelUp()
     {
         // after checking that player's level can upgrade or not
-        Controller.SCENE_CONTROLLER.showScene("Menu/LevelUpPage.fxml");
+        controllers.Controller.SCENE_CONTROLLER.showScene("Menu/LevelUpPage.fxml");
 
     }
-
 }

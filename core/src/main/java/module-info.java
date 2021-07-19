@@ -15,6 +15,7 @@ module core {
     exports cards.spells.balls;
     exports cards.spells.rages;
 
+    exports cards.buildings;
     exports cards.buildings.towers;
     exports cards.buildings.cannons;
 
@@ -32,6 +33,7 @@ module core {
     exports commands.gameStateCommands.towerCommands;
     exports commands.matchRequestCommands;
     exports commands.playerStateCommands;
+    exports commands.gameStateCommands.buildingsCommands;
 
 
     exports exceptions;

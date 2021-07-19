@@ -1,5 +1,6 @@
 package cards;
 
+import cards.traits.CanKnowItsExactCardTypeTraitTraitTraitTrait;
 import javafx.geometry.Point2D;
 import user.User;
 
@@ -9,12 +10,11 @@ import java.util.UUID;
 /**
  * The type Card.
  */
-public abstract class Card {
+public abstract class Card implements CanKnowItsExactCardTypeTraitTraitTraitTrait {
     private final UUID id;
     private final int cost;
     private final User owner;
-    private final Point2D position;
-
+    private Point2D position;
 
     /**
      * Instantiates a new Card.
@@ -78,6 +78,15 @@ public abstract class Card {
      */
     public Point2D getPosition() {
         return position;
+    }
+
+    /**
+     * Sets position.
+     *
+     * @param position the position
+     */
+    public void setPosition(Point2D position) {
+        this.position = position;
     }
 }
 

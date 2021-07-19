@@ -1,4 +1,4 @@
-package database.QueryBuilder;
+package database.queryBuilders;
 
 import controllers.Controller;
 import javafx.scene.Node;
@@ -11,35 +11,27 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Objects;
 
-public class CardQueryBuilder
-{
+public class CardQueryBuilder {
     private static CardQueryBuilder singletonInstance = null;
     private final File cardsDb;
 
-    private CardQueryBuilder()
-    {
+    private CardQueryBuilder() {
         this.cardsDb = new File("client/src/main/java/Database/files/cards.database.binary");
     }
 
-    public void updatePlayerCards(User user, GridPane battleDeck)
-    {
-        try(
+    public void updatePlayerCards(User user, GridPane battleDeck) {
+        try (
                 FileOutputStream fos = new FileOutputStream(this.cardsDb);
-                ObjectOutputStream outputStream = new ObjectOutputStream(fos))
-        {
+                ObjectOutputStream outputStream = new ObjectOutputStream(fos)) {
             HashMap<User, HashMap<Integer, String>> userToCardsMap = null;
 
-            if (cardsDb.length() != 0)
-            {
+            if (cardsDb.length() != 0) {
                 FileInputStream fis = new FileInputStream(this.cardsDb);
                 ObjectInputStream inputStream = new ObjectInputStream(fis);
 
-                try
-                {
+                try {
                     userToCardsMap = (HashMap<User, HashMap<Integer, String>>) inputStream.readObject();
-                }
-                catch (EOFException e)
-                {
+                } catch (EOFException e) {
                     userToCardsMap = null;
                 }
 
@@ -54,21 +46,16 @@ public class CardQueryBuilder
                 userToCardsMap = new HashMap<>();
             }
 
-            if (userToCardsMap.containsKey(user))
-            {
+            if (userToCardsMap.containsKey(user)) {
                 userToCardsMap.replace(user, getUrls(battleDeck));
 
-            }
-            else
-            {
+            } else {
                 userToCardsMap.put(user, getUrls(battleDeck));
             }
 
             outputStream.writeObject(userToCardsMap);
 
-        }
-        catch (IOException | ClassNotFoundException e)
-        {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
@@ -84,13 +71,11 @@ public class CardQueryBuilder
 
         for (Node node : battleDeck.getChildren())
         {
-            if (node instanceof ImageView)
-            {
+            if (node instanceof ImageView) {
                 String url = ((ImageView) node).getImage().getUrl();
-                if (!url.contains("card_exir"))
-                {
+                if (!url.contains("card_exir")) {
                     int index = battleDeck.getChildren().indexOf(node);
-                    String elixirCount = ((Text)battleDeck.getChildren().get(index + 16)).getText();
+                    String elixirCount = ((Text) battleDeck.getChildren().get(index + 16)).getText();
 
                     urls.put(index, url + "->" + elixirCount);
 

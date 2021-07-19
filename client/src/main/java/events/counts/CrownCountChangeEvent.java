@@ -2,6 +2,7 @@ package events.counts;
 
 import commands.Command;
 import commands.gameStateCommands.gameBonusCommands.CrownCountChangeCommand;
+import controllers.modes.CustomEventHandler;
 import events.CustomEvent;
 import javafx.event.Event;
 import javafx.event.EventTarget;
@@ -14,21 +15,19 @@ import java.util.ArrayList;
  * The type Crown count change event.
  */
 public class CrownCountChangeEvent extends CustomEvent {
-    private final ArrayList<User> targetTeam;
     private final int newCrownCount;
 
     /**
      * Instantiates a new Crown count change event.
      *
      * @param eventType     the event type
-     * @param targetTeam    the target team
+     * @param targetPlayers  the target team
      * @param newCrownCount the new crown count
      */
     public CrownCountChangeEvent(EventType<? extends Event> eventType,
-                                 ArrayList<User> targetTeam,
+                                 ArrayList<User> targetPlayers,
                                  int newCrownCount) {
-        super(eventType);
-        this.targetTeam = targetTeam;
+        super(eventType, targetPlayers);
         this.newCrownCount = newCrownCount;
     }
 
@@ -38,26 +37,16 @@ public class CrownCountChangeEvent extends CustomEvent {
      * @param source        the source
      * @param target        the target
      * @param eventType     the event type
-     * @param targetTeam    the target team
+     * @param eventTargets  the target team
      * @param newCrownCount the new crown count
      */
     public CrownCountChangeEvent(Object source,
                                  EventTarget target,
                                  EventType<? extends Event> eventType,
-                                 ArrayList<User> targetTeam,
+                                 ArrayList<User> eventTargets,
                                  int newCrownCount) {
-        super(source, target, eventType);
-        this.targetTeam = targetTeam;
+        super(source, target, eventType, eventTargets);
         this.newCrownCount = newCrownCount;
-    }
-
-    /**
-     * Gets target team.
-     *
-     * @return the target team
-     */
-    public ArrayList<User> getTargetTeam() {
-        return targetTeam;
     }
 
     /**
@@ -71,6 +60,11 @@ public class CrownCountChangeEvent extends CustomEvent {
 
     @Override
     public Command toCommand() {
-        return new CrownCountChangeCommand(this.targetTeam, this.newCrownCount);
+        return new CrownCountChangeCommand(this.getTargetPlayers(), this.newCrownCount);
+    }
+
+    @Override
+    public void invokeHandler(CustomEventHandler handler) {
+        handler.crownCountChangeHandler(this);
     }
 }

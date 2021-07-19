@@ -41,17 +41,16 @@ public class Barbarian extends Troop {
     /**
      * Create card.
      *
-     * @param user     the user
-     * @param position the position
+     * @param user the user
      * @return the card
      */
-    public static Card create(User user, Point2D position) {
+    public static Card create(User user) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Barbarian(UUID.randomUUID(), user, position, 300, 75);
-            case LEVEL_2 -> new Barbarian(UUID.randomUUID(), user, position, 330, 82);
-            case LEVEL_3 -> new Barbarian(UUID.randomUUID(), user, position, 363, 90);
-            case LEVEL_4 -> new Barbarian(UUID.randomUUID(), user, position, 438, 99);
-            case LEVEL_5 -> new Barbarian(UUID.randomUUID(), user, position, 480, 109);
+            case LEVEL_1 -> new Barbarian(UUID.randomUUID(), user, null, 300, 75);
+            case LEVEL_2 -> new Barbarian(UUID.randomUUID(), user, null, 330, 82);
+            case LEVEL_3 -> new Barbarian(UUID.randomUUID(), user, null, 363, 90);
+            case LEVEL_4 -> new Barbarian(UUID.randomUUID(), user, null, 438, 99);
+            case LEVEL_5 -> new Barbarian(UUID.randomUUID(), user, null, 480, 109);
         };
     }
 }

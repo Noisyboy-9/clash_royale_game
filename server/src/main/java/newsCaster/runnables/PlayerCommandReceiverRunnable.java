@@ -1,8 +1,6 @@
 package newsCaster.runnables;
 
 import commands.Command;
-import commands.gameStateCommands.gameTimeCommands.GameDurationFinished;
-import commands.gameStateCommands.gameTimeCommands.GameFinishedCommand;
 import commands.gameStateCommands.towerCommands.TowerDestroyedCommand;
 import newsCaster.NewsRedirector;
 import towers.KingTower;
@@ -39,8 +37,8 @@ public class PlayerCommandReceiverRunnable implements Runnable {
     }
 
     private boolean isGameFinished(Command command) {
-        return command instanceof GameFinishedCommand ||
-                command instanceof GameDurationFinished ||
-                (command instanceof TowerDestroyedCommand && ((TowerDestroyedCommand) command).getTower() instanceof KingTower);
+        return command.isGameFinishedCommand() ||
+                command.isGameDurationFinishedCommand() ||
+                (command.isTowerDestroyedCommand() && ((TowerDestroyedCommand) command).getTower() instanceof KingTower);
     }
 }

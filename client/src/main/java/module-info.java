@@ -5,6 +5,7 @@ module client {
     
     opens controllers;
     opens controllers.menus;
-    opens controllers.games;
+    opens controllers.modes;
     opens controllers.authentication;
+    opens controllers.modes.botControllers;
 }
