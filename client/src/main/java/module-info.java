@@ -8,4 +8,6 @@ module client {
     opens controllers.modes;
     opens controllers.authentication;
     opens controllers.modes.botControllers;
+    opens controllers.modes.onlineControllers;
+    opens controllers.modes.runnables;
 }
