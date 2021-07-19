@@ -15,6 +15,7 @@ module core {
     exports cards.spells.balls;
     exports cards.spells.rages;
 
+    exports cards.buildings;
     exports cards.buildings.towers;
     exports cards.buildings.cannons;
 

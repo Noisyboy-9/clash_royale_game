@@ -1,6 +1,11 @@
 package models;
 
 import cards.Card;
+import cards.buildings.Building;
+import cards.spells.Spell;
+import cards.troops.Troop;
+import errors.DuplicateCardException;
+import errors.InvalidCardException;
 import errors.InvalidTowerException;
 import globals.GlobalData;
 import towers.KingTower;
@@ -189,15 +194,12 @@ public class BotModeModel {
         return playerComingCards;
     }
 
-    private ArrayList<Tower> createTowers(User owner) {
-        ArrayList<Tower> towers = new ArrayList<>();
-        towers.add(QueenTower.create(owner));
-        towers.add(KingTower.create(owner));
-        towers.add(QueenTower.create(owner));
-        return towers;
-    }
-
-
+    /**
+     * Delete player tower.
+     *
+     * @param tower the tower
+     * @throws InvalidTowerException the invalid tower exception
+     */
     public void deletePlayerTower(Tower tower) throws InvalidTowerException {
         if (!this.playerTowers.contains(tower)) {
             throw new InvalidTowerException("Player doesn't have any such tower.");
@@ -206,12 +208,289 @@ public class BotModeModel {
         this.playerTowers.remove(tower);
     }
 
-
+    /**
+     * Delete bot tower.
+     *
+     * @param tower the tower
+     * @throws InvalidTowerException the invalid tower exception
+     */
     public void deleteBotTower(Tower tower) throws InvalidTowerException {
         if (!this.botTowers.contains(tower)) {
             throw new InvalidTowerException("bot doesn't have any such tower.");
         }
 
         this.botTowers.remove(tower);
+    }
+
+    /**
+     * Add card to in map player cards.
+     *
+     * @param card the card
+     * @throws DuplicateCardException the duplicate card exception
+     */
+    public void addCardToInMapPlayerCards(Card card) throws DuplicateCardException {
+        if (this.playerInMapCards.contains(card)) {
+            throw new DuplicateCardException("Player already have the specified card in map.");
+        }
+
+        this.playerInMapCards.add(card);
+    }
+
+    /**
+     * Remove card from in map player cards.
+     *
+     * @param card the card
+     * @throws InvalidCardException the invalid card exception
+     */
+    public void removeCardFromInMapPlayerCards(Card card) throws InvalidCardException {
+        if (!this.playerInMapCards.contains(card)) {
+            throw new InvalidCardException("The player doesn't have any such card in map.");
+        }
+
+        this.playerInMapCards.remove(card);
+    }
+
+    /**
+     * Add card to in map bot cards.
+     *
+     * @param card the card
+     * @throws DuplicateCardException the duplicate card exception
+     */
+    public void addCardToInMapBotCards(Card card) throws DuplicateCardException {
+        if (this.botInMapCards.contains(card)) {
+            throw new DuplicateCardException("The bot already have the card in map.");
+        }
+
+        this.botInMapCards.add(card);
+    }
+
+    /**
+     * Remove card from in map bot cards.
+     *
+     * @param card the card
+     * @throws InvalidCardException the invalid card exception
+     */
+    public void removeCardFromInMapBotCards(Card card) throws InvalidCardException {
+        if (!this.botInMapCards.contains(card)) {
+            throw new InvalidCardException("The bot doesn't have any such card in map.");
+        }
+
+        this.botInMapCards.remove(card);
+    }
+
+    /**
+     * Add card to player in coming cards.
+     *
+     * @param card the card
+     * @throws DuplicateCardException the duplicate card exception
+     */
+    public void addCardToPlayerComingCards(Card card) throws DuplicateCardException {
+        if (this.playerComingCards.contains(card)) {
+            throw new DuplicateCardException("player already have the card in coming cards list.");
+        }
+
+        this.playerComingCards.add(card);
+    }
+
+    /**
+     * Remove card from player coming cards.
+     *
+     * @param card the card
+     * @throws InvalidCardException the invalid card exception
+     */
+    public void removeCardFromPlayerComingCards(Card card) throws InvalidCardException {
+        if (!this.playerComingCards.contains(card)) {
+            throw new InvalidCardException("The player doesn't have any such card in coming cards.");
+        }
+
+        this.playerComingCards.remove(card);
+    }
+
+    /**
+     * Add card to bot in coming cards.
+     *
+     * @param card the card
+     * @throws DuplicateCardException the duplicate card exception
+     */
+    public void addCardToBotComingCards(Card card) throws DuplicateCardException {
+        if (this.botComingCards.contains(card)) {
+            throw new DuplicateCardException("The bot already have the card in coming card list");
+        }
+
+        this.botComingCards.add(card);
+    }
+
+    /**
+     * Remove card from bot in coming cards.
+     *
+     * @param card the card
+     * @throws InvalidCardException the invalid card exception
+     */
+    public void removeCardFromBotComingCards(Card card) throws InvalidCardException {
+        if (!this.botComingCards.contains(card)) {
+            throw new InvalidCardException("The bot doesn't have any such card in coming cards");
+        }
+
+        this.botComingCards.remove(card);
+    }
+
+    /**
+     * Add card to player battle cards.
+     *
+     * @param card the card
+     * @throws DuplicateCardException the duplicate card exception
+     */
+    public void addCardToPlayerBattleCards(Card card) throws DuplicateCardException {
+        if (this.playerBattleCards.contains(card)) {
+            throw new DuplicateCardException("The player already have the card in battle cards list.");
+        }
+
+        this.playerBattleCards.add(card);
+    }
+
+    /**
+     * Remove card from player battle cards.
+     *
+     * @param card the card
+     * @throws InvalidCardException the invalid card exception
+     */
+    public void removeCardFromPlayerBattleCards(Card card) throws InvalidCardException {
+        if (!this.playerBattleCards.contains(card)) {
+            throw new InvalidCardException("The player doesn't have any such card in battle cards.");
+        }
+
+        this.playerBattleCards.remove(card);
+    }
+
+    /**
+     * Add card to bot battle cards.
+     *
+     * @param card the card
+     * @throws DuplicateCardException the duplicate card exception
+     */
+    public void addCardToBotBattleCards(Card card) throws DuplicateCardException {
+        if (this.botBattleCards.contains(card)) {
+            throw new DuplicateCardException("The bot already have the card in battle card list");
+        }
+
+        this.botBattleCards.add(card);
+    }
+
+    /**
+     * Remove card from bot battle cards.
+     *
+     * @param card the card
+     * @throws InvalidCardException the invalid card exception
+     */
+    public void removeCardFromBotBattleCards(Card card) throws InvalidCardException {
+        if (!this.botBattleCards.contains(card)) {
+            throw new InvalidCardException("The bot doesn't have any such card in battle cards");
+        }
+
+        this.botBattleCards.remove(card);
+    }
+
+    /**
+     * Gets player in map troops.
+     *
+     * @return the player in map troops
+     */
+    public ArrayList<Troop> getPlayerInMapTroops() {
+        ArrayList<Troop> troops = new ArrayList<>();
+        for (Card card : this.playerInMapCards) {
+            if (card instanceof Troop) {
+                troops.add((Troop) card);
+            }
+        }
+
+        return troops;
+    }
+
+    /**
+     * Gets bot in map troops.
+     *
+     * @return the bot in map troops
+     */
+    public ArrayList<Troop> getBotInMapTroops() {
+        ArrayList<Troop> troops = new ArrayList<>();
+        for (Card card : this.botInMapCards) {
+            if (card instanceof Troop) {
+                troops.add((Troop) card);
+            }
+        }
+
+        return troops;
+    }
+
+    /**
+     * Gets player in map spells.
+     *
+     * @return the player in map spells
+     */
+    public ArrayList<Spell> getPlayerInMapSpells() {
+        ArrayList<Spell> troops = new ArrayList<>();
+        for (Card card : this.playerInMapCards) {
+            if (card instanceof Spell) {
+                troops.add((Spell) card);
+            }
+        }
+
+        return troops;
+    }
+
+    /**
+     * Gets bot in map spells.
+     *
+     * @return the bot in map spells
+     */
+    public ArrayList<Spell> getBotInMapSpells() {
+        ArrayList<Spell> troops = new ArrayList<>();
+        for (Card card : this.botInMapCards) {
+            if (card instanceof Spell) {
+                troops.add((Spell) card);
+            }
+        }
+
+        return troops;
+    }
+
+    /**
+     * Gets player in map buildings.
+     *
+     * @return the player in map buildings
+     */
+    public ArrayList<Building> getPlayerInMapBuildings() {
+        ArrayList<Building> troops = new ArrayList<>();
+        for (Card card : this.playerInMapCards) {
+            if (card instanceof Building) {
+                troops.add((Building) card);
+            }
+        }
+
+        return troops;
+    }
+
+    /**
+     * Gets bot in map buildings.
+     *
+     * @return the bot in map buildings
+     */
+    public ArrayList<Building> getBotInMapBuildings() {
+        ArrayList<Building> troops = new ArrayList<>();
+        for (Card card : this.botInMapCards) {
+            if (card instanceof Building) {
+                troops.add((Building) card);
+            }
+        }
+
+        return troops;
+    }
+
+    private ArrayList<Tower> createTowers(User owner) {
+        ArrayList<Tower> towers = new ArrayList<>();
+        towers.add(QueenTower.create(owner));
+        towers.add(KingTower.create(owner));
+        towers.add(QueenTower.create(owner));
+        return towers;
     }
 }
