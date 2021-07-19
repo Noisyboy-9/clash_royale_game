@@ -1,6 +1,7 @@
 package events;
 
 import commands.Command;
+import controllers.modes.CustomEventHandler;
 import javafx.event.Event;
 import javafx.event.EventTarget;
 import javafx.event.EventType;
@@ -15,4 +16,6 @@ public abstract class CustomEvent extends Event {
     }
 
     public abstract Command toCommand();
+
+    public abstract void invokeHandler(CustomEventHandler handler);
 }
