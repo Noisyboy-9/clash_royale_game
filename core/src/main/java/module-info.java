@@ -33,6 +33,7 @@ module core {
     exports commands.gameStateCommands.towerCommands;
     exports commands.matchRequestCommands;
     exports commands.playerStateCommands;
+    exports commands.gameStateCommands.buildingsCommands;
 
 
     exports exceptions;
