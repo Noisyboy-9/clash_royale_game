@@ -42,17 +42,16 @@ public class Giant extends Troop {
     /**
      * Create card.
      *
-     * @param user     the user
-     * @param position the position
+     * @param user the user
      * @return the card
      */
-    public static Card create(User user, Point2D position) {
+    public static Card create(User user) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Giant(UUID.randomUUID(), user, position, 2000, 126);
-            case LEVEL_2 -> new Giant(UUID.randomUUID(), user, position, 2200, 138);
-            case LEVEL_3 -> new Giant(UUID.randomUUID(), user, position, 2420, 152);
-            case LEVEL_4 -> new Giant(UUID.randomUUID(), user, position, 2660, 167);
-            case LEVEL_5 -> new Giant(UUID.randomUUID(), user, position, 2920, 183);
+            case LEVEL_1 -> new Giant(UUID.randomUUID(), user, null, 2000, 126);
+            case LEVEL_2 -> new Giant(UUID.randomUUID(), user, null, 2200, 138);
+            case LEVEL_3 -> new Giant(UUID.randomUUID(), user, null, 2420, 152);
+            case LEVEL_4 -> new Giant(UUID.randomUUID(), user, null, 2660, 167);
+            case LEVEL_5 -> new Giant(UUID.randomUUID(), user, null, 2920, 183);
         };
     }
 }

@@ -82,13 +82,13 @@ public class Arrows extends Spell {
         this.targetTroops.forEach(troop -> troop.reduceHealthBy(this.damage));
     }
 
-    public static Card create(User user, Point2D position) {
+    public static Card create(User user) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Arrows(UUID.randomUUID(), user, position, 144);
-            case LEVEL_2 -> new Arrows(UUID.randomUUID(), user, position, 156);
-            case LEVEL_3 -> new Arrows(UUID.randomUUID(), user, position, 174);
-            case LEVEL_4 -> new Arrows(UUID.randomUUID(), user, position, 189);
-            case LEVEL_5 -> new Arrows(UUID.randomUUID(), user, position, 210);
+            case LEVEL_1 -> new Arrows(UUID.randomUUID(), user, null, 144);
+            case LEVEL_2 -> new Arrows(UUID.randomUUID(), user, null, 156);
+            case LEVEL_3 -> new Arrows(UUID.randomUUID(), user, null, 174);
+            case LEVEL_4 -> new Arrows(UUID.randomUUID(), user, null, 189);
+            case LEVEL_5 -> new Arrows(UUID.randomUUID(), user, null, 210);
         };
     }
 }

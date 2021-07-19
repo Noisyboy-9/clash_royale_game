@@ -59,17 +59,16 @@ public class Cannon extends Building {
     /**
      * Create card.
      *
-     * @param user     the user
-     * @param position the position
+     * @param user the user
      * @return the card
      */
-    public static Card create(User user, Point2D position) {
+    public static Card create(User user) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Cannon(UUID.randomUUID(), user, position, 380, 60);
-            case LEVEL_2 -> new Cannon(UUID.randomUUID(), user, position, 418, 66);
-            case LEVEL_3 -> new Cannon(UUID.randomUUID(), user, position, 459, 72);
-            case LEVEL_4 -> new Cannon(UUID.randomUUID(), user, position, 505, 79);
-            case LEVEL_5 -> new Cannon(UUID.randomUUID(), user, position, 554, 87);
+            case LEVEL_1 -> new Cannon(UUID.randomUUID(), user, null, 380, 60);
+            case LEVEL_2 -> new Cannon(UUID.randomUUID(), user, null, 418, 66);
+            case LEVEL_3 -> new Cannon(UUID.randomUUID(), user, null, 459, 72);
+            case LEVEL_4 -> new Cannon(UUID.randomUUID(), user, null, 505, 79);
+            case LEVEL_5 -> new Cannon(UUID.randomUUID(), user, null, 554, 87);
         };
     }
 }

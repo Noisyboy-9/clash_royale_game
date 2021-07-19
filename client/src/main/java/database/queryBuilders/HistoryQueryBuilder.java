@@ -1,4 +1,4 @@
-package database.QueryBuilder;
+package database.queryBuilders;
 
 import database.models.GameResult;
 import user.User;

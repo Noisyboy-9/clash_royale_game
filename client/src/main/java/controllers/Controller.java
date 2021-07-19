@@ -1,8 +1,8 @@
 package controllers;
 
 import controllers.menus.SceneController;
-import database.QueryBuilder.CardQueryBuilder;
-import database.QueryBuilder.HistoryQueryBuilder;
+import database.queryBuilders.CardQueryBuilder;
+import database.queryBuilders.HistoryQueryBuilder;
 import javafx.stage.Stage;
 
 public interface Controller {

@@ -1,4 +1,4 @@
-package database.QueryBuilder;
+package database.queryBuilders;
 
 import controllers.Controller;
 import javafx.scene.Node;
@@ -84,13 +84,11 @@ public class CardQueryBuilder
 
         for (Node node : battleDeck.getChildren())
         {
-            if (node instanceof ImageView)
-            {
+            if (node instanceof ImageView) {
                 String url = ((ImageView) node).getImage().getUrl();
-                if (!url.contains("card_exir"))
-                {
+                if (!url.contains("card_exir")) {
                     int index = battleDeck.getChildren().indexOf(node);
-                    String elixirCount = ((Text)battleDeck.getChildren().get(index + 16)).getText();
+                    String elixirCount = ((Text) battleDeck.getChildren().get(index + 16)).getText();
 
                     urls.put(index, url + "->" + elixirCount);
 

@@ -2,10 +2,14 @@ package events.towers;
 
 import commands.Command;
 import commands.gameStateCommands.towerCommands.TowerDestroyedCommand;
+import controllers.modes.CustomEventHandler;
 import javafx.event.Event;
 import javafx.event.EventTarget;
 import javafx.event.EventType;
 import towers.Tower;
+import user.User;
+
+import java.util.ArrayList;
 
 /**
  * The type Tower destroyed event.
@@ -19,8 +23,8 @@ public class TowerDestroyedEvent extends TowerEvent {
      * @param eventType the event type
      * @param tower     the tower
      */
-    public TowerDestroyedEvent(EventType<? extends Event> eventType, Tower tower) {
-        super(eventType);
+    public TowerDestroyedEvent(EventType<? extends Event> eventType, Tower tower, ArrayList<User> targetPlayers) {
+        super(eventType, targetPlayers);
         this.tower = tower;
     }
 
@@ -32,13 +36,27 @@ public class TowerDestroyedEvent extends TowerEvent {
      * @param eventType the event type
      * @param tower     the tower
      */
-    public TowerDestroyedEvent(Object source, EventTarget target, EventType<? extends Event> eventType, Tower tower) {
-        super(source, target, eventType);
+    public TowerDestroyedEvent(Object source, EventTarget target, EventType<? extends Event> eventType, Tower tower, ArrayList<User> targetPlayers) {
+        super(source, target, eventType, targetPlayers);
         this.tower = tower;
     }
 
     @Override
     public Command toCommand() {
         return new TowerDestroyedCommand(this.tower);
+    }
+
+    @Override
+    public void invokeHandler(CustomEventHandler handler) {
+        handler.towerDestroyedEventHandler(this);
+    }
+
+    /**
+     * Gets tower.
+     *
+     * @return the tower
+     */
+    public Tower getTower() {
+        return tower;
     }
 }

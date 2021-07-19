@@ -1,8 +1,6 @@
 package newsCaster.runnables;
 
-import commands.matchRequestCommands.FourPlayerMatchRequesterCommand;
 import commands.matchRequestCommands.MatchRequestCommand;
-import commands.matchRequestCommands.TwoPlayerMatchRequestCommand;
 import exceptions.DuplicateGameRequestException;
 import newsCaster.NewsCaster;
 import workers.PlayerWorker;
@@ -22,11 +20,11 @@ public class WatchForGameStartRequestRunnable implements Runnable {
             try {
                 MatchRequestCommand command = (MatchRequestCommand) this.player.getRequest().readObject();
 
-                if (command instanceof FourPlayerMatchRequesterCommand) {
+                if (command.isFourPlayerMatchRequestCommand()) {
                     NewsCaster.getSingletonInstance().addFourPlayerModeRequester(this.player);
                 }
 
-                if (command instanceof TwoPlayerMatchRequestCommand) {
+                if (command.isTwoPlayerMatchRequestCommand()) {
                     NewsCaster.getSingletonInstance().addTwoPlayerModeRequester(this.player);
                 }
             } catch (IOException | ClassNotFoundException | DuplicateGameRequestException ioException) {

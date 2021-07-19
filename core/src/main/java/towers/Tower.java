@@ -5,6 +5,7 @@ import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
 import user.User;
 
+import java.util.Objects;
 import java.util.UUID;
 
 /**
@@ -47,6 +48,19 @@ public abstract class Tower implements AttackAble {
         this.selfType = TypeEnum.GROUND;
         this.attackType = TypeEnum.AIR_GROUND;
         this.hitSpeed = 1;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Tower tower = (Tower) o;
+        return id.equals(tower.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     /**
