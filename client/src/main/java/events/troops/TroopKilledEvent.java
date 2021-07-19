@@ -3,6 +3,7 @@ package events.troops;
 import cards.troops.Troop;
 import commands.Command;
 import commands.gameStateCommands.troopCommands.TroopKilledCommand;
+import controllers.modes.CustomEventHandler;
 import javafx.event.Event;
 import javafx.event.EventTarget;
 import javafx.event.EventType;
@@ -40,5 +41,10 @@ public class TroopKilledEvent extends TroopEvent {
     @Override
     public Command toCommand() {
         return new TroopKilledCommand(this.troop);
+    }
+
+    @Override
+    public void invokeHandler(CustomEventHandler handler) {
+        handler.troopKilledEventHandler(this);
     }
 }
