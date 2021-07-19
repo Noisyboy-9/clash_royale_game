@@ -6,7 +6,7 @@ import javafx.geometry.Point2D;
 /**
  * The type Spell addition command.
  */
-public class SpellAdditionCommand extends SpellCommand {
+public class SpellAddedCommand extends SpellCommand {
     private final Spell spell;
     private final Point2D position;
 
@@ -16,7 +16,7 @@ public class SpellAdditionCommand extends SpellCommand {
      * @param spell    the spell
      * @param position the position
      */
-    public SpellAdditionCommand(Spell spell, Point2D position) {
+    public SpellAddedCommand(Spell spell, Point2D position) {
         this.spell = spell;
         this.position = position;
     }

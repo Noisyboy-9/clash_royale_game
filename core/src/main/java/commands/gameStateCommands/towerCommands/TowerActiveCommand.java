@@ -13,10 +13,10 @@ public class TowerActiveCommand extends TowerCommand {
     /**
      * Instantiates a new Tower active command.
      *
-     * @param target the target
      * @param tower  the tower
+     * @param target the target
      */
-    public TowerActiveCommand(AttackAble target, Tower tower) {
+    public TowerActiveCommand(Tower tower, AttackAble target) {
         this.target = target;
         this.tower = tower;
     }
