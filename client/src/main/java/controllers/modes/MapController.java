@@ -1,4 +1,4 @@
-package controllers.games;
+package controllers.modes;
 
 import controllers.Controller;
 import javafx.collections.ObservableList;
