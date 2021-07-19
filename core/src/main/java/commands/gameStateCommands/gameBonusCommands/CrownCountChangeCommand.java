@@ -2,21 +2,23 @@ package commands.gameStateCommands.gameBonusCommands;
 
 import user.User;
 
+import java.util.ArrayList;
+
 /**
  * The type Crown count change command.
  */
 public class CrownCountChangeCommand extends GameBonusCommands {
-    private final User user;
+    private final ArrayList<User> targets;
     private final int crownCount;
 
     /**
      * Instantiates a new Crown count change command.
      *
-     * @param user       the user
+     * @param targets    the user
      * @param crownCount the crown count
      */
-    public CrownCountChangeCommand(User user, int crownCount) {
-        this.user = user;
+    public CrownCountChangeCommand(ArrayList<User> targets, int crownCount) {
+        this.targets = targets;
         this.crownCount = crownCount;
     }
 
@@ -25,8 +27,8 @@ public class CrownCountChangeCommand extends GameBonusCommands {
      *
      * @return the user
      */
-    public User getUser() {
-        return user;
+    public ArrayList<User> getTargets() {
+        return targets;
     }
 
     /**
