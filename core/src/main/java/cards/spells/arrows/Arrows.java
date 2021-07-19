@@ -1,8 +1,8 @@
 package cards.spells.arrows;
 
 import cards.Card;
-import cards.spells.Spell;
-import cards.troops.Troop;
+import cards.spells.SpellTrait;
+import cards.troops.TroopTrait;
 import exceptions.TargetAlreadyExistException;
 import javafx.geometry.Point2D;
 import towers.Tower;
@@ -14,9 +14,9 @@ import java.util.UUID;
 /**
  * The type Arrows.
  */
-public class Arrows extends Spell {
+public class Arrows extends SpellTrait {
     private final ArrayList<Tower> targetTowers;
-    private final ArrayList<Troop> targetTroops;
+    private final ArrayList<TroopTrait> targetTroops;
     private final int damage;
 
     /**
@@ -59,7 +59,7 @@ public class Arrows extends Spell {
      * @param troop the troop
      * @throws TargetAlreadyExistException the target already exist exception
      */
-    public void addTroopTarget(Troop troop) throws TargetAlreadyExistException {
+    public void addTroopTarget(TroopTrait troop) throws TargetAlreadyExistException {
         if (this.targetTroops.contains(troop)) {
             throw new TargetAlreadyExistException("tower with id: " + troop.getId().toString() + "exist");
         }
@@ -82,13 +82,13 @@ public class Arrows extends Spell {
         this.targetTroops.forEach(troop -> troop.reduceHealthBy(this.damage));
     }
 
-    public static Card create(User user, Point2D position) {
+    public static Card create(User user) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Arrows(UUID.randomUUID(), user, position, 144);
-            case LEVEL_2 -> new Arrows(UUID.randomUUID(), user, position, 156);
-            case LEVEL_3 -> new Arrows(UUID.randomUUID(), user, position, 174);
-            case LEVEL_4 -> new Arrows(UUID.randomUUID(), user, position, 189);
-            case LEVEL_5 -> new Arrows(UUID.randomUUID(), user, position, 210);
+            case LEVEL_1 -> new Arrows(UUID.randomUUID(), user, null, 144);
+            case LEVEL_2 -> new Arrows(UUID.randomUUID(), user, null, 156);
+            case LEVEL_3 -> new Arrows(UUID.randomUUID(), user, null, 174);
+            case LEVEL_4 -> new Arrows(UUID.randomUUID(), user, null, 189);
+            case LEVEL_5 -> new Arrows(UUID.randomUUID(), user, null, 210);
         };
     }
 }

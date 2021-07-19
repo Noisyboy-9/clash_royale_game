@@ -1,7 +1,7 @@
 package cards.troops.dragons;
 
 import cards.Card;
-import cards.troops.Troop;
+import cards.troops.TroopTrait;
 import cards.utils.MovementSpeedEnum;
 import cards.utils.TypeEnum;
 import javafx.geometry.Point2D;
@@ -12,7 +12,7 @@ import java.util.UUID;
 /**
  * The type Baby dragon.
  */
-public class BabyDragon extends Troop {
+public class BabyDragon extends TroopTrait {
 
     /**
      * Instantiates a new Card.
@@ -42,17 +42,16 @@ public class BabyDragon extends Troop {
     /**
      * Create card.
      *
-     * @param user     the user
-     * @param position the position
+     * @param user the user
      * @return the card
      */
-    public static Card create(User user, Point2D position) {
+    public static Card create(User user) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new BabyDragon(UUID.randomUUID(), user, position, 800, 100);
-            case LEVEL_2 -> new BabyDragon(UUID.randomUUID(), user, position, 880, 110);
-            case LEVEL_3 -> new BabyDragon(UUID.randomUUID(), user, position, 968, 121);
-            case LEVEL_4 -> new BabyDragon(UUID.randomUUID(), user, position, 1064, 133);
-            case LEVEL_5 -> new BabyDragon(UUID.randomUUID(), user, position, 1168, 146);
+            case LEVEL_1 -> new BabyDragon(UUID.randomUUID(), user, null, 800, 100);
+            case LEVEL_2 -> new BabyDragon(UUID.randomUUID(), user, null, 880, 110);
+            case LEVEL_3 -> new BabyDragon(UUID.randomUUID(), user, null, 968, 121);
+            case LEVEL_4 -> new BabyDragon(UUID.randomUUID(), user, null, 1064, 133);
+            case LEVEL_5 -> new BabyDragon(UUID.randomUUID(), user, null, 1168, 146);
         };
     }
 }

@@ -1,8 +1,8 @@
 package cards.spells.rages;
 
 import cards.Card;
-import cards.spells.Spell;
-import cards.troops.Troop;
+import cards.spells.SpellTrait;
+import cards.troops.TroopTrait;
 import exceptions.TargetAlreadyExistException;
 import javafx.geometry.Point2D;
 import towers.Tower;
@@ -14,9 +14,9 @@ import java.util.UUID;
 /**
  * The type Rage.
  */
-public class Rage extends Spell {
+public class Rage extends SpellTrait {
     private final ArrayList<Tower> targetTowers;
-    private final ArrayList<Troop> targetTroops;
+    private final ArrayList<TroopTrait> targetTroops;
     private final double duration;
 
     /**
@@ -67,7 +67,7 @@ public class Rage extends Spell {
      * @param troop the troop
      * @throws TargetAlreadyExistException the target already exist exception
      */
-    public void addTroopTarget(Troop troop) throws TargetAlreadyExistException {
+    public void addTroopTarget(TroopTrait troop) throws TargetAlreadyExistException {
         if (this.targetTroops.contains(troop)) {
             throw new TargetAlreadyExistException("tower with id: " + troop.getId().toString() + "exist");
         }
@@ -110,17 +110,16 @@ public class Rage extends Spell {
     /**
      * Create card.
      *
-     * @param user     the user
-     * @param position the position
+     * @param user the user
      * @return the card
      */
-    public static Card create(User user, Point2D position) {
+    public static Card create(User user) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Rage(UUID.randomUUID(), user, position, 6);
-            case LEVEL_2 -> new Rage(UUID.randomUUID(), user, position, 6.5);
-            case LEVEL_3 -> new Rage(UUID.randomUUID(), user, position, 7);
-            case LEVEL_4 -> new Rage(UUID.randomUUID(), user, position, 7.5);
-            case LEVEL_5 -> new Rage(UUID.randomUUID(), user, position, 8);
+            case LEVEL_1 -> new Rage(UUID.randomUUID(), user, null, 6);
+            case LEVEL_2 -> new Rage(UUID.randomUUID(), user, null, 6.5);
+            case LEVEL_3 -> new Rage(UUID.randomUUID(), user, null, 7);
+            case LEVEL_4 -> new Rage(UUID.randomUUID(), user, null, 7.5);
+            case LEVEL_5 -> new Rage(UUID.randomUUID(), user, null, 8);
         };
     }
 }

@@ -1,7 +1,7 @@
 package cards.troops.valkyries;
 
 import cards.Card;
-import cards.troops.Troop;
+import cards.troops.TroopTrait;
 import cards.utils.MovementSpeedEnum;
 import cards.utils.TypeEnum;
 import javafx.geometry.Point2D;
@@ -12,7 +12,7 @@ import java.util.UUID;
 /**
  * The type Valkyrie.
  */
-public class Valkyrie extends Troop {
+public class Valkyrie extends TroopTrait {
 
     /**
      * Instantiates a new Card.
@@ -42,17 +42,16 @@ public class Valkyrie extends Troop {
     /**
      * Create card.
      *
-     * @param user     the user
-     * @param position the position
+     * @param user the user
      * @return the card
      */
-    public static Card create(User user, Point2D position) {
+    public static Card create(User user) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Valkyrie(UUID.randomUUID(), user, position, 880, 120);
-            case LEVEL_2 -> new Valkyrie(UUID.randomUUID(), user, position, 968, 132);
-            case LEVEL_3 -> new Valkyrie(UUID.randomUUID(), user, position, 1064, 145);
-            case LEVEL_4 -> new Valkyrie(UUID.randomUUID(), user, position, 1170, 159);
-            case LEVEL_5 -> new Valkyrie(UUID.randomUUID(), user, position, 1284, 175);
+            case LEVEL_1 -> new Valkyrie(UUID.randomUUID(), user, null, 880, 120);
+            case LEVEL_2 -> new Valkyrie(UUID.randomUUID(), user, null, 968, 132);
+            case LEVEL_3 -> new Valkyrie(UUID.randomUUID(), user, null, 1064, 145);
+            case LEVEL_4 -> new Valkyrie(UUID.randomUUID(), user, null, 1170, 159);
+            case LEVEL_5 -> new Valkyrie(UUID.randomUUID(), user, null, 1284, 175);
         };
     }
 }

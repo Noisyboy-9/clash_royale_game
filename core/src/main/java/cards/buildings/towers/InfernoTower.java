@@ -1,7 +1,7 @@
 package cards.buildings.towers;
 
 import cards.Card;
-import cards.buildings.Building;
+import cards.buildings.BuildingTrait;
 import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
 import javafx.geometry.Point2D;
@@ -13,7 +13,7 @@ import java.util.UUID;
 /**
  * The type Inferno tower.
  */
-public class InfernoTower extends Building {
+public class InfernoTower extends BuildingTrait {
     private final ArrayList<AttackAble> targets;
 
     /**
@@ -59,17 +59,16 @@ public class InfernoTower extends Building {
     /**
      * Create card.
      *
-     * @param user     the user
-     * @param position the position
+     * @param user the user
      * @return the card
      */
-    public static Card create(User user, Point2D position) {
+    public static Card create(User user) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new InfernoTower(UUID.randomUUID(), user, position, 800, 210);
-            case LEVEL_2 -> new InfernoTower(UUID.randomUUID(), user, position, 880, 231);
-            case LEVEL_3 -> new InfernoTower(UUID.randomUUID(), user, position, 968, 254);
-            case LEVEL_4 -> new InfernoTower(UUID.randomUUID(), user, position, 1064, 279);
-            case LEVEL_5 -> new InfernoTower(UUID.randomUUID(), user, position, 1168, 307);
+            case LEVEL_1 -> new InfernoTower(UUID.randomUUID(), user, null, 800, 210);
+            case LEVEL_2 -> new InfernoTower(UUID.randomUUID(), user, null, 880, 231);
+            case LEVEL_3 -> new InfernoTower(UUID.randomUUID(), user, null, 968, 254);
+            case LEVEL_4 -> new InfernoTower(UUID.randomUUID(), user, null, 1064, 279);
+            case LEVEL_5 -> new InfernoTower(UUID.randomUUID(), user, null, 1168, 307);
         };
     }
 }

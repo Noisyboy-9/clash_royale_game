@@ -1,7 +1,7 @@
 package cards.troops.archers;
 
 import cards.Card;
-import cards.troops.Troop;
+import cards.troops.TroopTrait;
 import cards.utils.MovementSpeedEnum;
 import cards.utils.TypeEnum;
 import javafx.geometry.Point2D;
@@ -12,7 +12,7 @@ import java.util.UUID;
 /**
  * The type Archer.
  */
-public class Archer extends Troop {
+public class Archer extends TroopTrait {
     /**
      * Instantiates a new Card.
      *
@@ -41,17 +41,16 @@ public class Archer extends Troop {
     /**
      * Create card.
      *
-     * @param user     the user
-     * @param position the position
+     * @param user the user
      * @return the card
      */
-    public static Card create(User user, Point2D position) {
+    public static Card create(User user) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Archer(UUID.randomUUID(), user, position, 125, 33);
-            case LEVEL_2 -> new Archer(UUID.randomUUID(), user, position, 127, 44);
-            case LEVEL_3 -> new Archer(UUID.randomUUID(), user, position, 151, 48);
-            case LEVEL_4 -> new Archer(UUID.randomUUID(), user, position, 166, 53);
-            case LEVEL_5 -> new Archer(UUID.randomUUID(), user, position, 182, 58);
+            case LEVEL_1 -> new Archer(UUID.randomUUID(), user, null, 125, 33);
+            case LEVEL_2 -> new Archer(UUID.randomUUID(), user, null, 127, 44);
+            case LEVEL_3 -> new Archer(UUID.randomUUID(), user, null, 151, 48);
+            case LEVEL_4 -> new Archer(UUID.randomUUID(), user, null, 166, 53);
+            case LEVEL_5 -> new Archer(UUID.randomUUID(), user, null, 182, 58);
         };
     }
 }

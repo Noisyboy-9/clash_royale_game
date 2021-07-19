@@ -1,8 +1,8 @@
 package cards.spells.balls;
 
 import cards.Card;
-import cards.spells.Spell;
-import cards.troops.Troop;
+import cards.spells.SpellTrait;
+import cards.troops.TroopTrait;
 import exceptions.TargetAlreadyExistException;
 import javafx.geometry.Point2D;
 import towers.Tower;
@@ -14,9 +14,9 @@ import java.util.UUID;
 /**
  * The type Fire ball.
  */
-public class FireBall extends Spell {
+public class FireBall extends SpellTrait {
     private final ArrayList<Tower> targetTowers;
-    private final ArrayList<Troop> targetTroops;
+    private final ArrayList<TroopTrait> targetTroops;
     private final int damage;
 
     /**
@@ -59,7 +59,7 @@ public class FireBall extends Spell {
      * @param troop the troop
      * @throws TargetAlreadyExistException the target already exist exception
      */
-    public void addTroopTarget(Troop troop) throws TargetAlreadyExistException {
+    public void addTroopTarget(TroopTrait troop) throws TargetAlreadyExistException {
         if (this.targetTroops.contains(troop)) {
             throw new TargetAlreadyExistException("tower with id: " + troop.getId().toString() + "exist");
         }
@@ -73,13 +73,13 @@ public class FireBall extends Spell {
         this.targetTroops.forEach(troop -> troop.reduceHealthBy(this.damage));
     }
 
-    public static Card create(User user, Point2D position) {
+    public static Card create(User user) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new FireBall(UUID.randomUUID(), user, position, 325);
-            case LEVEL_2 -> new FireBall(UUID.randomUUID(), user, position, 357);
-            case LEVEL_3 -> new FireBall(UUID.randomUUID(), user, position, 393);
-            case LEVEL_4 -> new FireBall(UUID.randomUUID(), user, position, 432);
-            case LEVEL_5 -> new FireBall(UUID.randomUUID(), user, position, 474);
+            case LEVEL_1 -> new FireBall(UUID.randomUUID(), user, null, 325);
+            case LEVEL_2 -> new FireBall(UUID.randomUUID(), user, null, 357);
+            case LEVEL_3 -> new FireBall(UUID.randomUUID(), user, null, 393);
+            case LEVEL_4 -> new FireBall(UUID.randomUUID(), user, null, 432);
+            case LEVEL_5 -> new FireBall(UUID.randomUUID(), user, null, 474);
         };
     }
 }

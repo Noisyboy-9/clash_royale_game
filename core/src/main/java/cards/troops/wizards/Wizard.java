@@ -1,7 +1,7 @@
 package cards.troops.wizards;
 
 import cards.Card;
-import cards.troops.Troop;
+import cards.troops.TroopTrait;
 import cards.utils.MovementSpeedEnum;
 import cards.utils.TypeEnum;
 import javafx.geometry.Point2D;
@@ -12,7 +12,7 @@ import java.util.UUID;
 /**
  * The type Wizard.
  */
-public class Wizard extends Troop {
+public class Wizard extends TroopTrait {
 
     /**
      * Instantiates a new Card.
@@ -42,17 +42,16 @@ public class Wizard extends Troop {
     /**
      * Create card.
      *
-     * @param user     the user
-     * @param position the position
+     * @param user the user
      * @return the card
      */
-    public static Card create(User user, Point2D position) {
+    public static Card create(User user) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Wizard(UUID.randomUUID(), user, position, 340, 130);
-            case LEVEL_2 -> new Wizard(UUID.randomUUID(), user, position, 374, 143);
-            case LEVEL_3 -> new Wizard(UUID.randomUUID(), user, position, 411, 157);
-            case LEVEL_4 -> new Wizard(UUID.randomUUID(), user, position, 452, 172);
-            case LEVEL_5 -> new Wizard(UUID.randomUUID(), user, position, 496, 189);
+            case LEVEL_1 -> new Wizard(UUID.randomUUID(), user, null, 340, 130);
+            case LEVEL_2 -> new Wizard(UUID.randomUUID(), user, null, 374, 143);
+            case LEVEL_3 -> new Wizard(UUID.randomUUID(), user, null, 411, 157);
+            case LEVEL_4 -> new Wizard(UUID.randomUUID(), user, null, 452, 172);
+            case LEVEL_5 -> new Wizard(UUID.randomUUID(), user, null, 496, 189);
         };
 
     }
