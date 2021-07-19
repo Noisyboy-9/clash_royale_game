@@ -1,7 +1,7 @@
 package models;
 
 import cards.Card;
-import globals.UserData;
+import globals.GlobalData;
 import towers.KingTower;
 import towers.QueenTower;
 import towers.Tower;
@@ -38,13 +38,13 @@ public class BotModeModel
         this.playerComingCards = playerComingCards;
         this.playerElixirCount = 4;
 
-        this.botTowers.add(QueenTower.create(UserData.bot));
-        this.botTowers.add(KingTower.create(UserData.bot));
-        this.botTowers.add(QueenTower.create(UserData.bot));
+        this.botTowers.add(QueenTower.create(GlobalData.bot));
+        this.botTowers.add(KingTower.create(GlobalData.bot));
+        this.botTowers.add(QueenTower.create(GlobalData.bot));
 
-        this.playerTowers.add(QueenTower.create(UserData.user));
-        this.playerTowers.add(KingTower.create(UserData.user));
-        this.playerTowers.add(QueenTower.create(UserData.user));
+        this.playerTowers.add(QueenTower.create(GlobalData.user));
+        this.playerTowers.add(KingTower.create(GlobalData.user));
+        this.playerTowers.add(QueenTower.create(GlobalData.user));
 
     }
 

@@ -1,7 +1,7 @@
 package controllers.menus;
 
 import controllers.Controller;
-import globals.UserData;
+import globals.GlobalData;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -27,13 +27,13 @@ public class ProfileController extends MenuController {
 
     @FXML
     public void initialize() {
-        if (!Objects.isNull(UserData.user))
+        if (!Objects.isNull(GlobalData.user))
         {
-            this.usernameField.setText(UserData.user.getUsername());
-            this.levelFiled.setText(UserData.user.getLevel().toString());
+            this.usernameField.setText(GlobalData.user.getUsername());
+            this.levelFiled.setText(GlobalData.user.getLevel().toString());
         }
 
-        HashMap<Integer, String> cardsUrls = Controller.CARD_QUERY_BUILDER.loadCards(UserData.user);
+        HashMap<Integer, String> cardsUrls = Controller.CARD_QUERY_BUILDER.loadCards(GlobalData.user);
         if (cardsUrls != null)
         {
             updateBattleCards(cardsUrls);

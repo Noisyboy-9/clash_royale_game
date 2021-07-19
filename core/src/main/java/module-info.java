@@ -26,4 +26,9 @@ module core {
     exports exceptions;
     exports towers;
     exports user;
+    exports cards.spells.arrows;
+    exports cards.buildings.cannons;
+    exports cards.spells.balls;
+    exports cards.buildings.towers;
+    exports cards.spells.rages;
 }
