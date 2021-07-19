@@ -12,12 +12,13 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import models.BotModeModel;
+import models.GameModel;
 
-public class MapController {
-    protected BotModeModel model;
+public abstract class BaseController implements CustomEventHandler {
+    private final GameModel model;
     ImageView[] playerTeamCrowns;
 
-    public MapController(BotModeModel model) {
+    public BaseController(BotModeModel model) {
         this.model = model;
     }
 
@@ -200,5 +201,4 @@ public class MapController {
         controllers.Controller.SCENE_CONTROLLER.showScene("Menu/LevelUpPage.fxml");
 
     }
-
 }

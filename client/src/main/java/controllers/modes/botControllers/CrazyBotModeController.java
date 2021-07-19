@@ -1,4 +1,4 @@
-package controllers.modes;
+package controllers.modes.botControllers;
 
 import cards.Card;
 import cards.buildings.Building;
@@ -17,6 +17,7 @@ import cards.troops.pekkas.MiniPekka;
 import cards.troops.valkyries.Valkyrie;
 import cards.troops.wizards.Wizard;
 import cards.utils.AttackAble;
+import controllers.modes.CustomEventHandler;
 import errors.DuplicateCardException;
 import errors.InvalidCardException;
 import errors.InvalidTowerException;
@@ -42,7 +43,7 @@ import java.util.TimerTask;
 /**
  * The type Crazy bot mode controller.
  */
-public class CrazyBotModeMapController extends MapController implements CustomEventHandler {
+public class CrazyBotModeController extends BotController  {
     private final long eachFrameDuration;
     private long frameRemainingCount;
 
@@ -51,7 +52,7 @@ public class CrazyBotModeMapController extends MapController implements CustomEv
      *
      * @param model the model
      */
-    public CrazyBotModeMapController(BotModeModel model) {
+    public CrazyBotModeController(BotModeModel model) {
         super(model);
 
         int FRAME_PER_SECOND = 30;
