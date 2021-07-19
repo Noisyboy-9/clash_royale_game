@@ -3,6 +3,7 @@ package events.towers;
 import cards.utils.AttackAble;
 import commands.Command;
 import commands.gameStateCommands.towerCommands.TowerActiveCommand;
+import controllers.modes.CustomEventHandler;
 import javafx.event.Event;
 import javafx.event.EventTarget;
 import javafx.event.EventType;
@@ -46,5 +47,10 @@ public class TowerActiveEvent extends TowerEvent {
     @Override
     public Command toCommand() {
         return new TowerActiveCommand(this.tower, this.target);
+    }
+
+    @Override
+    public void invokeHandler(CustomEventHandler handler) {
+        handler.towerActiveEventHandler(this);
     }
 }
