@@ -59,7 +59,7 @@ public class BotModeModel {
 
 //        player coming cards is: All player cards that are in playerAllCards but not in botBattleCards
         this.playerComingCards = playerAllCards.stream()
-                .filter(card -> !playerAllCards.contains(card))
+                .filter(card -> !playerBattleCards.contains(card))
                 .collect(Collectors.toCollection(ArrayList::new));
 
 //        bot coming cards is : All cards that are in botAllCards but not in botBattleCards
