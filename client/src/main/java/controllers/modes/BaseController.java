@@ -35,7 +35,8 @@ public abstract class BaseController implements CustomEventHandler {
     private Image selectedImage;
     private ImageView selectedImgView;
 
-    ImageView[] playerTeamCrowns;
+    private ImageView[] playerTeamCrowns;
+    private ArrayList<ImageView> previousMapElements;
 
     public BaseController(BotModeModel model) {
         this.model = model;
@@ -43,6 +44,7 @@ public abstract class BaseController implements CustomEventHandler {
         this.FRAME_PER_SECOND = 30;
         this.eachFrameDuration = Math.round((double) 1000 / FRAME_PER_SECOND);
         this.frameRemainingCount = 3 * 60 * FRAME_PER_SECOND;
+        this.previousMapElements = new ArrayList<>();
 
     }
 
@@ -388,6 +390,14 @@ public abstract class BaseController implements CustomEventHandler {
 
 
     @FXML
+    void refreshMap() {
+        for (ImageView imgView : this.previousMapElements) {
+            imgView.setImage(null);
+        }
+    }
+
+
+    @FXML
     void handleInMapCards() {
         ObservableList<Node> mapChildren = mapCells.getChildren();
 
@@ -395,7 +405,9 @@ public abstract class BaseController implements CustomEventHandler {
             String key = getGifKey(card, "player");
             Image gif = Controller.SCENE_CONTROLLER.getGif(key);
             int index = getIndexInMap(card.getPosition());
-            mapChildren.set(index, new ImageView(gif));
+            ImageView imgView = new ImageView(gif);
+            mapChildren.set(index, imgView);
+            this.previousMapElements.add(imgView);
 
         }
 
@@ -412,7 +424,9 @@ public abstract class BaseController implements CustomEventHandler {
             String key = getGifKey(card, "opponent");
             Image gif = Controller.SCENE_CONTROLLER.getGif(key);
             int index = getIndexInMap(transferPosition(card.getPosition()));
-            mapChildren.set(index, new ImageView(gif));
+            ImageView imgView = new ImageView(gif);
+            mapChildren.set(index, imgView);
+            this.previousMapElements.add(imgView);
 
         }
 
@@ -494,6 +508,16 @@ public abstract class BaseController implements CustomEventHandler {
 
 
     @FXML
+    void handleCrowns() {
+        this.playerCrownsCount.setText(Integer.toString(this.model.getPlayerCrownCount()));
+
+        int opponentCrownCount;
+
+        // will be completed
+
+    }
+
+    @FXML
     void handleTime() {
         if (this.frameRemainingCount % this.FRAME_PER_SECOND == 0) {
             long seconds = this.frameRemainingCount / this.FRAME_PER_SECOND;
@@ -515,7 +539,7 @@ public abstract class BaseController implements CustomEventHandler {
     void render() {
         updateElixirBox();
         handleInvalidCards();
-        // erase previous cards in map
+        refreshMap();
         handleInMapCards();
         handleBattleCards();
         handleComingCards();
