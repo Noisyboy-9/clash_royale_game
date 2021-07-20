@@ -25,15 +25,13 @@ module core {
     exports commands;
     exports commands.authenicationCommands.login;
     exports commands.authenicationCommands.register;
-    exports commands.gameStateCommands.troopCommands;
     exports commands.gameStateCommands.gameBonusCommands;
     exports commands.gameStateCommands.gameTimeCommands;
+    exports commands.gameStateCommands.cardCommands;
     exports commands.gameStateCommands.enums;
-    exports commands.gameStateCommands.spellCommands;
     exports commands.gameStateCommands.towerCommands;
     exports commands.matchRequestCommands;
     exports commands.playerStateCommands;
-    exports commands.gameStateCommands.buildingsCommands;
 
 
     exports exceptions;
