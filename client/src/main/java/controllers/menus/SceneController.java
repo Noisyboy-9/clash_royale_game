@@ -137,8 +137,15 @@ public class SceneController {
     private String getClassName(String url) {
         String[] parts = url.split("/");
         int lastIndex = parts.length - 1;
+        String className = parts[lastIndex].replace("Card.png", "");
+        className = switch (className) {
+            case "Archers" -> "Archer";
+            case "Barbarians" -> "Barbarian";
+            case "MiniPEKKA" -> "MiniPekka";
+            default -> className;
+        };
 
-        return parts[lastIndex].replace("Card.png", "");
+        return className;
     }
 
 
