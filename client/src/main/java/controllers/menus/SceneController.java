@@ -210,4 +210,13 @@ public class SceneController {
         return cardsUrls;
     }
 
+
+    public Image getGif(String key) {
+        if (!gifs.containsKey(key)) {
+            key = key.replace("walk", "fight");
+        }
+        return gifs.get(key);
+
+    }
+
 }
