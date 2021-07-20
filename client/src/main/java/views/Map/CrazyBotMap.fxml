@@ -1243,15 +1243,15 @@
                      </cursor></Rectangle>
                   <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="28">
                      <cursor>
-                        <Cursor fx:constant="HAND" />
+                        <Cursor fx:constant="DEFAULT" />
                      </cursor></Rectangle>
                   <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="28">
                      <cursor>
-                        <Cursor fx:constant="HAND" />
+                        <Cursor fx:constant="DEFAULT" />
                      </cursor></Rectangle>
                   <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="28">
                      <cursor>
-                        <Cursor fx:constant="HAND" />
+                        <Cursor fx:constant="DEFAULT" />
                      </cursor></Rectangle>
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="28">
                      <cursor>
@@ -1287,15 +1287,15 @@
                      </cursor></Rectangle>
                   <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="28">
                      <cursor>
-                        <Cursor fx:constant="HAND" />
+                        <Cursor fx:constant="DEFAULT" />
                      </cursor></Rectangle>
                   <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="28">
                      <cursor>
-                        <Cursor fx:constant="HAND" />
+                        <Cursor fx:constant="DEFAULT" />
                      </cursor></Rectangle>
                   <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="28">
                      <cursor>
-                        <Cursor fx:constant="HAND" />
+                        <Cursor fx:constant="DEFAULT" />
                      </cursor></Rectangle>
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="28">
                      <cursor>
@@ -1319,9 +1319,18 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Rectangle>
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="29" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="29" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="29" />
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="29">
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -1354,9 +1363,18 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Rectangle>
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="29" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="29" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="29" />
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="29">
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -1379,9 +1397,18 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Rectangle>
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="30" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="30" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="30" />
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="30">
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -1402,9 +1429,18 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Rectangle>
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="30" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="30" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="30" />
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="30">
                      <cursor>
                         <Cursor fx:constant="HAND" />
