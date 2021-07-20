@@ -25,6 +25,9 @@ import user.User;
 import java.util.ArrayList;
 
 public abstract class BaseController implements CustomEventHandler {
+    protected final long eachFrameDuration;
+    protected long frameRemainingCount;
+
     private final GameModel model;
     private Image selectedImage;
     private ImageView selectedImgView;
@@ -36,6 +39,11 @@ public abstract class BaseController implements CustomEventHandler {
 
     public BaseController(BotModeModel model) {
         this.model = model;
+
+        int FRAME_PER_SECOND = 30;
+        this.eachFrameDuration = Math.round((double) 1000 / FRAME_PER_SECOND);
+        this.frameRemainingCount = 3 * 60 * FRAME_PER_SECOND;
+
     }
 
     ImageView[] opponentTeamCrowns;

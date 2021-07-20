@@ -16,15 +16,42 @@ import user.User;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
+/**
+ * The type Game model.
+ */
 public abstract class GameModel {
+    /**
+     * The Player towers.
+     */
     protected final ArrayList<Tower> playerTowers;
+    /**
+     * The Player all cards.
+     */
     protected final ArrayList<Card> playerAllCards;
+    /**
+     * The Player in map cards.
+     */
     protected final ArrayList<Card> playerInMapCards;
+    /**
+     * The Player battle cards.
+     */
     protected final ArrayList<Card> playerBattleCards;
+    /**
+     * The Player coming cards.
+     */
     protected final ArrayList<Card> playerComingCards;
+    /**
+     * The Player elixir count.
+     */
     protected int playerElixirCount;
     private int playerCrownCount;
 
+    /**
+     * Instantiates a new Game model.
+     *
+     * @param playerAllCards    the player all cards
+     * @param playerBattleCards the player battle cards
+     */
     public GameModel(ArrayList<Card> playerAllCards, ArrayList<Card> playerBattleCards) {
         this.playerTowers = createTowers(GlobalData.user);
         this.playerAllCards = playerAllCards;
@@ -66,10 +93,19 @@ public abstract class GameModel {
     /**
      * Sets player elixir count.
      *
-     * @param playerElixirCount the player elixir count
+     * @param amount the amount
      */
-    public void setPlayerElixirCount(int playerElixirCount) {
-        this.playerElixirCount = playerElixirCount;
+    public void reducePlayerElixirsCountBy(int amount) {
+        this.playerElixirCount -= amount;
+    }
+
+    /**
+     * Increase player elixirs count by.
+     *
+     * @param amount the amount
+     */
+    public void increasePlayerElixirsCountBy(int amount) {
+        this.playerElixirCount += amount;
     }
 
     /**
@@ -263,6 +299,12 @@ public abstract class GameModel {
         return troops;
     }
 
+    /**
+     * Create towers array list.
+     *
+     * @param owner the owner
+     * @return the array list
+     */
     protected ArrayList<Tower> createTowers(User owner) {
         ArrayList<Tower> towers = new ArrayList<>();
         towers.add(QueenTower.create(owner));
