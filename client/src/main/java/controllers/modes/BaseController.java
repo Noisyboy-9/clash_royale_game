@@ -444,6 +444,56 @@ public abstract class BaseController implements CustomEventHandler {
 
 
     @FXML
+    void handleBattleCards() {
+        ObservableList<Node> battleCardsChildren = this.battleCards.getChildren();
+        for (int index = 0 ; index < 4 ; index++) {
+            Card card = this.model.getPlayerBattleCards().get(index);
+            Image cardImage = Controller.SCENE_CONTROLLER.getBattleBoxImg(card.getClass().getSimpleName());
+            int elixir = card.getCost();
+
+            ImageView cardImgView = (ImageView) battleCardsChildren.get(index);
+            Text elixirField = (Text) battleCardsChildren.get(index + 8);
+
+            cardImgView.setImage(cardImage);
+            elixirField.setText(Integer.toString(elixir));
+
+        }
+
+    }
+
+
+    @FXML
+    void handleComingCards() {
+        ObservableList<Node> battleCardsChildren = this.comingCards.getChildren();
+        for (int index = 0 ; index < 4 ; index++) {
+            Card card = this.model.getPlayerComingCards().get(index);
+            Image cardImage = Controller.SCENE_CONTROLLER.getComingBoxImg(card.getClass().getSimpleName());
+            int elixir = card.getCost();
+
+            ImageView cardImgView = (ImageView) battleCardsChildren.get(index);
+            Text elixirField = (Text) battleCardsChildren.get(index + 8);
+
+            cardImgView.setImage(cardImage);
+            elixirField.setText(Integer.toString(elixir));
+
+        }
+
+    }
+
+
+    @FXML
+    void handleNextCard() {
+        Card nextCard = this.model.getPlayerComingCards().get(0);
+        Image image = Controller.SCENE_CONTROLLER.getNextCardImg(nextCard.getClass().getSimpleName());
+        String elixir = Integer.toString(nextCard.getCost());
+
+        this.nextCardImage.setImage(image);
+        this.nextCardText.setText(elixir);
+
+    }
+
+
+    @FXML
     void handleTime() {
         if (this.frameRemainingCount % this.FRAME_PER_SECOND == 0) {
             long seconds = this.frameRemainingCount / this.FRAME_PER_SECOND;
@@ -463,14 +513,13 @@ public abstract class BaseController implements CustomEventHandler {
 
     @FXML
     void render() {
-        timeField.setText("");
         updateElixirBox();
         handleInvalidCards();
         // erase previous cards in map
         handleInMapCards();
-        // update battle box
-        // update coming cards
-        // update next card
+        handleBattleCards();
+        handleComingCards();
+        handleNextCard();
         // update crowns count
         handleTime();
 
