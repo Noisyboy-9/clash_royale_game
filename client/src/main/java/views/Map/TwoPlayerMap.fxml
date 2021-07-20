@@ -46,17 +46,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="946.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-    <children>
-        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="ALWAYS">
-            <children>
-                <GridPane prefHeight="946.0" prefWidth="528.0">
-                    <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+<VBox alignment="CENTER" prefHeight="946.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.modes.onlineControllers.TwoPlayerModeController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="ALWAYS">
+         <children>
+            <GridPane fx:id="mapCells" prefHeight="946.0" prefWidth="528.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -126,30 +126,30 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="76.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="54.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#98b646" height="22.0" layoutX="76.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="98.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="0"/>
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="0"/>
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="76.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="54.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="76.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="98.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="0" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="0" />
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="0" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="0" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="0" />
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="0" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="0" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="0" />
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="0" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="0" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="0" />
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="0" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="0" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="0" />
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="0" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="0" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="0" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="32.0" layoutY="76.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="54.0" layoutY="76.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Rectangle fill="#8dab3b" height="22.0" layoutX="76.0" layoutY="76.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
@@ -609,360 +609,1110 @@
                   <Rectangle fill="#98b646" height="22.0" layoutX="516.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="20" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="20" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="20" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="54.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="20" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="20" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="20" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="54.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="20" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="20" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="20" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="54.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="20" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="20" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="20" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="20" />
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="20" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="20" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="20" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="20" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="20" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="20" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="20" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="20" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="54.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="54.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="54.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="20">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="20" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="20" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="20" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="21" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="21" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="54.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="21" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="21" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="21" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="21" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="21" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="21" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="21" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="21" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="21" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="21" />
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="21" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="21" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="21" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="21" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="21" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="21" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="21" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="21" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="21" />
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="21" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="21" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="21" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="32.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="22" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="54.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="22" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="22" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="22" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="22" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="22" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="22" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="22" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="22" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="22" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="22" />
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="22" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="22" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="22" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="22" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="22" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="22" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="22" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="22" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="22" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="22" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="22">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="22" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="22" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="22" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="54.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="23" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="23" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="23" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="23" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="23" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="23" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="23" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="23" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="23" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="23" />
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="23" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="23" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="23" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="23" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="23" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="23" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="23" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="23" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="23" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="23" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="23" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="23" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="23" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="23" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="24" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="24" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="24" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="24" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="32.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="24" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="24" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="24" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="24" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="24" />
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="24" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="24" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="24" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="24" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="24" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="24" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="24" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="24" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="24" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="24" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="24" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="24" />
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="32.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="24">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="24" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="24" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="24" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="25" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="54.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="25" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="25" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="25" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="54.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="25" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="25" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="25" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="25" />
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="25" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="25" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="25" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="25" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="25" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="25" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="25" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="25" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="25" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="25" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="25" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="25" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="25" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="54.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="25" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="25" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="25" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="54.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="26" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="26" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="26" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="26" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="26" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="26" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="26" />
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="26" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="26" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="26" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="26" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="26" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="26" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="26" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="26" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="26" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="26" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="26" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="26" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="26" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="26" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="26" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="26" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="26" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="27" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="27" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="27" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="27" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="32.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="27" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="27" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="27" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="27" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="27" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="27" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="27" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="27" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="27" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="27" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="27" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="27" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="27" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="27" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="27" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="27" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="27" />
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="32.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="27" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="27" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="27" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="98.0" layoutY="582.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="28" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="28" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="28" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="28" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="28" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="28" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="28" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="28" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="28" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="28" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="28" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="28" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="28" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="28" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="28" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="28" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="28" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="28" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="28" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="28" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="28" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="28">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="28" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="28" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="28" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="54.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="29" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="29" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="29" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="29" />
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="29" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="29" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="29" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="29" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="29" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="29" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="29" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="29" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="29" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="29" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="29" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="29" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="29" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="29" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="29" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="29" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="29" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="29">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="29" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="29" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="29" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="30" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="30" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="30" />
-                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="30" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="30" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="30" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="30" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="30" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="30" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="30" />
+                  <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="30" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="30" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="30" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="30" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="30" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="30" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="30" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="30" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="30" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="30" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="30" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="30">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="30" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="30" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="30" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="98.0" layoutY="640.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="31" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="31" />
                   <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="31" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="31" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="31" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="31" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="31" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="31" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="31" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="31" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="31">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="31">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="31">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="31">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="31">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="31">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="31">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="31" />
                   <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="31" />
                   <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="31" />
                   <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="31" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="31" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="31" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="31" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="31" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="31" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="31" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="31" />
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="31">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="31">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="31">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="31">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="31">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="31">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="31">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="31" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="31" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="31" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="54.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="32" />
                   <Rectangle fill="#8dab3b" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="32" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="32" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="32" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="32" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="32" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="32" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="32" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="32" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="32" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="32">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="32">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="32">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="32">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="32">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="32">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="32">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="32" />
                   <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="32" />
                   <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="32" />
                   <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="32" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="32" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="32" />
-                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="32" />
-                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="32" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="32" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="32" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="32" />
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="32">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="32">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="32">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="32">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="32">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="32">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="32">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="32" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="32" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="32" />
                   <Rectangle fill="#8dab3b" height="22.0" layoutX="76.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="33" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="33" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="33" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="33" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="33" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="33" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="33" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="33" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="33" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="33" />
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="33">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="33">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="33">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="33">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="33">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="33">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="33">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="33" />
                   <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="33" />
                   <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="33" />
                   <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="33" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="33" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="33" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="33" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="33" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="33" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="33" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="33" />
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="33">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="33">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="33">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="33">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="33">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="33">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="33">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="33" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="33" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="33" />
                   <Rectangle fill="#a4be43" height="22.0" layoutX="32.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="0" GridPane.rowIndex="34" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="1" GridPane.rowIndex="34" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="2" GridPane.rowIndex="34" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="34" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="34" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="34" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="34" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="34" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="34" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="34" />
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="3" GridPane.rowIndex="34">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="4" GridPane.rowIndex="34">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="5" GridPane.rowIndex="34">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="6" GridPane.rowIndex="34">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="7" GridPane.rowIndex="34">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="8" GridPane.rowIndex="34">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="9" GridPane.rowIndex="34">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="10" GridPane.rowIndex="34" />
                   <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="11" GridPane.rowIndex="34" />
                   <Rectangle fill="#c19f62" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="12" GridPane.rowIndex="34" />
                   <Rectangle fill="#bc9c61" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="13" GridPane.rowIndex="34" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="384.0" layoutY="724.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="34" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="32.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="34" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="34" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="34" />
-                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="34" />
-                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="34" />
-                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="34" />
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="384.0" layoutY="724.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="14" GridPane.rowIndex="34">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="32.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="15" GridPane.rowIndex="34">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="16" GridPane.rowIndex="34">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="17" GridPane.rowIndex="34">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="18" GridPane.rowIndex="34">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="19" GridPane.rowIndex="34">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#putCard" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="20" GridPane.rowIndex="34">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
                   <Rectangle fill="#a4be43" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="21" GridPane.rowIndex="34" />
                   <Rectangle fill="#98b646" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="22" GridPane.rowIndex="34" />
                   <Rectangle fill="#8bac3f" height="22.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" GridPane.columnIndex="23" GridPane.rowIndex="34" />
@@ -1324,12 +2074,12 @@
                         <Image url="@../../../resources/photos/trees2.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#64ccff" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="0" GridPane.columnIndex="22" GridPane.halignment="CENTER" GridPane.rowIndex="23" GridPane.valignment="CENTER">
+                  <Text fx:id="playerCrownsCount" fill="#64ccff" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="0" GridPane.columnIndex="22" GridPane.halignment="CENTER" GridPane.rowIndex="23" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Supercell-Magic Regular" size="24.0" />
                      </font>
                   </Text>
-                  <Text fill="#f04043" layoutX="493.0" layoutY="559.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="0" GridPane.columnIndex="22" GridPane.rowIndex="14">
+                  <Text fx:id="opponentCrownsCount" fill="#f04043" layoutX="493.0" layoutY="559.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="0" GridPane.columnIndex="22" GridPane.rowIndex="14">
                      <font>
                         <Font name="Supercell-Magic Regular" size="24.0" />
                      </font>
@@ -1339,7 +2089,7 @@
                         <Image url="@../../../resources/photos/stone1.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#f535a0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Username" wrappingWidth="100.830078125" GridPane.columnIndex="1">
+                  <Text fx:id="opponentUsername" fill="#f535a0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" wrappingWidth="153.830078125" GridPane.columnIndex="1">
                      <font>
                         <Font name="Supercell-Magic Regular" size="14.0" />
                      </font>
@@ -1349,12 +2099,12 @@
                         <Image url="@../../../resources/photos/cup_icon.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#fbfcc1" layoutX="494.0" layoutY="339.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="2221" wrappingWidth="40.46484375" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Text fill="#fbfcc1" layoutX="600.0" layoutY="339.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="2000" wrappingWidth="74.46484375" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font name="Supercell-Magic Regular" size="14.0" />
                      </font>
                      <GridPane.margin>
-                        <Insets top="6.0" />
+                        <Insets right="10.0" top="5.0" />
                      </GridPane.margin>
                   </Text>
                   <ImageView fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="11" GridPane.halignment="LEFT" GridPane.valignment="TOP">
@@ -1362,7 +2112,7 @@
                         <Image url="@../../../resources/photos/level_place.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="110.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="LEFT" GridPane.rowIndex="34" GridPane.valignment="BOTTOM">
+                  <ImageView fx:id="playerKingTower" fitHeight="110.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="LEFT" GridPane.rowIndex="34" GridPane.valignment="BOTTOM">
                      <image>
                         <Image url="@../../../resources/photos/tower_king_blue.png" />
                      </image>
@@ -1372,7 +2122,7 @@
                         <Image url="@../../../resources/photos/level_place.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#fde731" stroke="#3c1a01" strokeType="OUTSIDE" text="1" textAlignment="CENTER" wrappingWidth="43.8017578125" GridPane.columnIndex="11" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                  <Text fx:id="opponentLevelField" fill="#fde731" stroke="#3c1a01" strokeType="OUTSIDE" text="1" textAlignment="CENTER" wrappingWidth="43.8017578125" GridPane.columnIndex="11" GridPane.rowIndex="1" GridPane.valignment="TOP">
                      <font>
                         <Font name="Supercell-Magic Regular" size="14.0" />
                      </font>
@@ -1380,7 +2130,7 @@
                         <Insets top="-7.0" />
                      </GridPane.margin>
                   </Text>
-                  <Text fill="#fde731" layoutX="252.0" layoutY="63.0" stroke="#3c1a01" strokeType="OUTSIDE" text="1" textAlignment="CENTER" wrappingWidth="43.8017578125" GridPane.columnIndex="11" GridPane.rowIndex="35" GridPane.valignment="TOP">
+                  <Text fx:id="playerLevelField" fill="#fde731" layoutX="252.0" layoutY="63.0" stroke="#3c1a01" strokeType="OUTSIDE" text="1" textAlignment="CENTER" wrappingWidth="43.8017578125" GridPane.columnIndex="11" GridPane.rowIndex="35" GridPane.valignment="TOP">
                      <font>
                         <Font name="Supercell-Magic Regular" size="14.0" />
                      </font>
@@ -1396,7 +2146,7 @@
                         <Insets top="4.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <Text fill="#fbfdfd" layoutX="493.0" layoutY="537.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="3:00" GridPane.columnIndex="21" GridPane.rowIndex="1">
+                  <Text fx:id="timeField" fill="#fbfdfd" layoutX="493.0" layoutY="537.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="3:00" GridPane.columnIndex="21" GridPane.rowIndex="1">
                      <font>
                         <Font name="Supercell-Magic Regular" size="20.0" />
                      </font>
@@ -1412,34 +2162,34 @@
                         <Insets left="3.0" top="8.0" />
                      </GridPane.margin>
                   </Text>
-                  <ImageView fitHeight="132.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                  <ImageView fx:id="opponentKingTower" fitHeight="132.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
                      <image>
                         <Image url="@../../../resources/photos/tower_king_red.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="16" GridPane.halignment="LEFT" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
+                  <ImageView fx:id="playerQueenTower2" fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="16" GridPane.halignment="LEFT" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
                      <image>
                         <Image url="@../../../resources/photos/tower_archer_blue.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="604.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
+                  <ImageView fx:id="playerQueenTower1" fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="604.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
                      <image>
                         <Image url="@../../../resources/photos/tower_archer_blue.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="16" GridPane.halignment="LEFT" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                  <ImageView fx:id="opponentQueenTower1" fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="16" GridPane.halignment="LEFT" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
                      <image>
                         <Image url="@../../../resources/photos/tower_archer_red.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                  <ImageView fx:id="opponentQueenTower2" fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
                      <image>
                         <Image url="@../../../resources/photos/tower_archer_red.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <Group fx:id="cardsGroup" layoutX="35.0" layoutY="791.0" visible="false">
+            <Group fx:id="cardsGroup" layoutX="35.0" layoutY="791.0" visible="true">
                <children>
                   <ImageView fitHeight="110.0" fitWidth="264.0" layoutX="98.6865234375" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -1622,67 +2372,66 @@
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                        <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
                            <image>
                               <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
                            <image>
                               <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
                            <image>
                               <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="0">
                            <image>
                               <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="0">
                            <image>
                               <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="0">
                            <image>
                               <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                        <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="0">
                            <image>
                               <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                        <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="0">
                            <image>
                               <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                        <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="0">
                            <image>
                               <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="1">
+                        <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="0">
                            <image>
                               <Image url="@../../../resources/photos/exir_progress_bar_element.png" />
                            </image>
                         </ImageView>
                      </children>
                   </GridPane>
-                  <Text fill="WHITE" layoutX="116.6865234375" layoutY="133.3837890625" stroke="BLACK" strokeType="OUTSIDE" text="10" textAlignment="CENTER" wrappingWidth="15.6337890625">
+                  <Text fx:id="elixirCount" fill="WHITE" layoutX="116.6865234375" layoutY="145.0" stroke="BLACK" strokeType="OUTSIDE" text="10" textAlignment="CENTER" wrappingWidth="15.6337890625">
                      <font>
                         <Font name="Supercell-Magic Regular" size="10.0" />
                      </font>
                   </Text>
-                  <Text fill="#ff5efe" layoutX="135.6865234375" layoutY="135.3837890625" stroke="BLACK" strokeType="OUTSIDE" text="Max: 10">
+                  <Text fill="#ff5efe" layoutX="135.6865234375" layoutY="147.0" stroke="BLACK" strokeType="OUTSIDE" text="Max: 10">
                      <font>
                         <Font name="Supercell-Magic Regular" size="10.0" />
                      </font>
@@ -1702,7 +2451,7 @@
                         <Image url="@../../../resources/photos/card_exir.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="nextCardText" fill="WHITE" layoutX="20.6865234375" layoutY="128.3837890625" stroke="BLACK" strokeType="OUTSIDE" text="5" textAlignment="CENTER" wrappingWidth="15.6337890625">
+                  <Text fx:id="nextCardText" fill="WHITE" layoutX="20.6865234375" layoutY="140.0" stroke="BLACK" strokeType="OUTSIDE" text="5" textAlignment="CENTER" wrappingWidth="15.6337890625">
                      <font>
                         <Font name="Supercell-Magic Regular" size="10.0" />
                      </font>

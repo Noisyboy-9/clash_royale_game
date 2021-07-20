@@ -15,6 +15,7 @@ public abstract class Card implements CanKnowItsExactCardTypeTraitTraitTraitTrai
     private final int cost;
     private final User owner;
     private Point2D position;
+    private CardStatusEnum status;
 
     /**
      * Instantiates a new Card.
@@ -87,6 +88,15 @@ public abstract class Card implements CanKnowItsExactCardTypeTraitTraitTraitTrai
      */
     public void setPosition(Point2D position) {
         this.position = position;
+    }
+
+
+    public CardStatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(CardStatusEnum status) {
+        this.status = status;
     }
 }
 

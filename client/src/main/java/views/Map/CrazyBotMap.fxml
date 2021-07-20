@@ -46,17 +46,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="946.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.modes.onlineControllers.FourPlayerModeController">
-   <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="ALWAYS">
-         <children>
-            <GridPane fx:id="mapCells" prefHeight="946.0" prefWidth="528.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+<VBox alignment="CENTER" prefHeight="946.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.modes.botControllers.CrazyBotModeController">
+    <children>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="ALWAYS">
+            <children>
+                <GridPane fx:id="mapCells" prefHeight="946.0" prefWidth="528.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -2112,6 +2112,11 @@
                         <Image url="@../../../resources/photos/level_place.png" />
                      </image>
                   </ImageView>
+                  <ImageView fx:id="playerKingTower" fitHeight="110.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="LEFT" GridPane.rowIndex="34" GridPane.valignment="BOTTOM">
+                     <image>
+                        <Image url="@../../../resources/photos/tower_king_blue.png" />
+                     </image>
+                  </ImageView>
                   <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="252.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="11" GridPane.halignment="LEFT" GridPane.rowIndex="34" GridPane.valignment="TOP">
                      <image>
                         <Image url="@../../../resources/photos/level_place.png" />
@@ -2157,6 +2162,11 @@
                         <Insets left="3.0" top="8.0" />
                      </GridPane.margin>
                   </Text>
+                  <ImageView fx:id="opponentKingTower" fitHeight="132.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@../../../resources/photos/tower_king_red.png" />
+                     </image>
+                  </ImageView>
                   <ImageView fx:id="playerQueenTower2" fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="16" GridPane.halignment="LEFT" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
                      <image>
                         <Image url="@../../../resources/photos/tower_archer_blue.png" />
@@ -2167,16 +2177,6 @@
                         <Image url="@../../../resources/photos/tower_archer_blue.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="opponentKingTower2" fitHeight="132.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
-                     <image>
-                        <Image url="@../../../resources/photos/tower_king_red.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="opponentKingTower1" fitHeight="132.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="14" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
-                     <image>
-                        <Image url="@../../../resources/photos/tower_king_red.png" />
-                     </image>
-                  </ImageView>
                   <ImageView fx:id="opponentQueenTower1" fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="16" GridPane.halignment="LEFT" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
                      <image>
                         <Image url="@../../../resources/photos/tower_archer_red.png" />
@@ -2185,16 +2185,6 @@
                   <ImageView fx:id="opponentQueenTower2" fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
                      <image>
                         <Image url="@../../../resources/photos/tower_archer_red.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="playerKingTower1" fitHeight="110.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="32" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@../../../resources/photos/tower_king_blue.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="playerKingTower2" fitHeight="110.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="14" GridPane.halignment="CENTER" GridPane.rowIndex="32" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@../../../resources/photos/tower_king_blue.png" />
                      </image>
                   </ImageView>
                </children>
