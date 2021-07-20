@@ -2,9 +2,12 @@ package controllers.menus;
 
 import controllers.Controller;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 import java.net.URL;
@@ -180,6 +183,25 @@ public class SceneController {
 
 //                create a directory stream for windows
         return Files.newDirectoryStream(Paths.get(exclusivePath));
+    }
+
+
+    public void convertToBlackAndWhite(ImageView imageView)
+    {
+        ColorAdjust colorAdjust = new ColorAdjust();
+        colorAdjust.setSaturation(-1);
+        colorAdjust.setBrightness(-0.2);
+
+        imageView.setEffect(colorAdjust);
+        imageView.setCursor(Cursor.DEFAULT);
+
+    }
+
+    public void convertToColorful(ImageView imageView)
+    {
+        imageView.setEffect(null);
+        imageView.setCursor(Cursor.HAND);
+
     }
 
 
