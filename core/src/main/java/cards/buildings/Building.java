@@ -177,4 +177,14 @@ public abstract class Building extends Card implements AttackAble {
      * @param target the target
      */
     public abstract void addTarget(AttackAble target);
+
+    @Override
+    public Point2D getPosition() {
+        return super.getPosition();
+    }
+
+    @Override
+    public void setPosition(Point2D position) {
+        super.setPosition(position);
+    }
 }
