@@ -2,6 +2,7 @@ package controllers.modes;
 
 import cards.Card;
 import controllers.Controller;
+import events.cards.CardAddedEvent;
 import globals.GlobalData;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -202,21 +203,23 @@ public abstract class BaseController implements CustomEventHandler {
 
     @FXML
     void putCard(MouseEvent event) {
-        // the position is definitely correct... because only valid cells are addressed to this method in fxml file
         if (selectedImage != null) {
             Rectangle cell = (Rectangle) event.getSource();
-            int column = GridPane.getColumnIndex(cell);
-            int row = GridPane.getRowIndex(cell);
+            if (cell.getCursor().equals(Cursor.HAND)) {
+                int column = GridPane.getColumnIndex(cell);
+                int row = GridPane.getRowIndex(cell);
 
-            Point2D position = new Point2D(column, row);
-            Card selectedCard = getSelectedCard();
+                Point2D position = new Point2D(column, row);
+                Card selectedCard = getSelectedCard();
 
-            // fire event
+                CardAddedEvent cardAddedEvent = new CardAddedEvent(event.getEventType(), GlobalData.playerTeam, selectedCard, position);
+                cell.fireEvent(cardAddedEvent);
 
+                this.selectedImage = null;
+                this.selectedImgView.setEffect(null);
+                Controller.SCENE_CONTROLLER.convertToBlackAndWhite(selectedImgView);
 
-            this.selectedImage = null;
-            this.selectedImgView.setEffect(null);
-            Controller.SCENE_CONTROLLER.convertToBlackAndWhite(selectedImgView);
+            }
 
         }
 
@@ -248,11 +251,16 @@ public abstract class BaseController implements CustomEventHandler {
     @FXML
     void selectCard(MouseEvent event)
     {
-        removeShadows();
-        DropShadow ds = new DropShadow(20, Color.AQUA);
         ImageView imageView = (ImageView) event.getSource();
-        imageView.setEffect(ds);
-//        finishGame();
+        if (imageView.getCursor().equals(Cursor.HAND)) {
+            removeShadows();
+            handleInvalidCards();
+            DropShadow ds = new DropShadow(20, Color.AQUA);
+            imageView.setEffect(ds);
+            this.selectedImage = imageView.getImage();
+            this.selectedImgView = imageView;
+
+        }
 
     }
 
@@ -334,7 +342,6 @@ public abstract class BaseController implements CustomEventHandler {
     void handleInvalidCards()
     {
         ObservableList<Node> children = battleCards.getChildren();
-        int currentElixir = Integer.parseInt(elixirCount.getText());
 
         for (int index = 0 ; index < 4 ; index++)
         {
@@ -343,14 +350,16 @@ public abstract class BaseController implements CustomEventHandler {
 
             int cardElixir = Integer.parseInt(((Text) children.get(index)).getText());
 
-            if (cardElixir > currentElixir) {
+            if (cardElixir > model.getPlayerElixirCount()) {
                 Controller.SCENE_CONTROLLER.convertToBlackAndWhite(cardImgView);
                 Controller.SCENE_CONTROLLER.convertToBlackAndWhite(elixirBackground);
+                cardImgView.setCursor(Cursor.DEFAULT);
 
             }
             else {
                 Controller.SCENE_CONTROLLER.convertToColorful(cardImgView);
                 Controller.SCENE_CONTROLLER.convertToColorful(elixirBackground);
+                cardImgView.setCursor(Cursor.HAND);
             }
 
         }
