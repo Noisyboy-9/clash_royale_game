@@ -72,13 +72,7 @@ public abstract class BotController extends BaseController {
         Tower destroyedTower = event.getTower();
         User owner = event.getTargetPlayers().get(0);
         try {
-            if (owner.equals(GlobalData.bot)) {
-//                a tower of the bot has been destroyed
-                this.model.deleteBotTower(destroyedTower);
-            } else {
-//                a tower of the player has been destroyed
-                this.model.deletePlayerTower(destroyedTower);
-            }
+            this.removeItem(destroyedTower, owner);
         } catch (InvalidTowerException e) {
             e.printStackTrace();
         }
@@ -109,6 +103,8 @@ public abstract class BotController extends BaseController {
         } catch (DuplicateCardException | InvalidCardException exception) {
             exception.printStackTrace();
         }
+
+        event.consume();
     }
 
     @Override
@@ -117,16 +113,11 @@ public abstract class BotController extends BaseController {
         User owner = event.getTargetPlayers().get(0);
 
         try {
-            if (owner.equals(GlobalData.bot)) {
-//                one of bot cards is deleted
-                this.model.removeCardFromInMapBotCards(deletedCard);
-            } else {
-//                one of player cards is deleted
-                this.model.removeCardFromInMapPlayerCards(deletedCard);
-            }
+            this.removeItem(deletedCard, owner);
         } catch (InvalidCardException e) {
             e.printStackTrace();
         }
+        event.consume();
     }
 
     @Override
@@ -153,6 +144,26 @@ public abstract class BotController extends BaseController {
     @Override
     public void handle(CustomEvent event) {
         event.invokeHandler(this);
+    }
+
+    private void removeItem(Tower destroyedTower, User owner) throws InvalidTowerException {
+        if (owner.equals(GlobalData.bot)) {
+//                a tower of the bot has been destroyed
+            this.model.deleteBotTower(destroyedTower);
+        } else {
+//                a tower of the player has been destroyed
+            this.model.deletePlayerTower(destroyedTower);
+        }
+    }
+
+    private void removeItem(Card deletedCard, User owner) throws InvalidCardException {
+        if (owner.equals(GlobalData.bot)) {
+//                one of bot cards is deleted
+            this.model.removeCardFromInMapBotCards(deletedCard);
+        } else {
+//                one of player cards is deleted
+            this.model.removeCardFromInMapPlayerCards(deletedCard);
+        }
     }
 
     private void chargeElixir(Card addedCard, User cardOwner) {
