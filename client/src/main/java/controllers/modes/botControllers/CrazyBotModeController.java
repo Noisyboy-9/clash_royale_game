@@ -113,38 +113,55 @@ public class CrazyBotModeController extends BotController  {
         User owner = event.getTargetPlayers().get(0);
 
         try {
-            if (owner.equals(GlobalData.bot)) {
-//                a bot has added a card
-                this.model.reduceBotElixirsCountBy(addedCard.getCost());
-                this.model.addCardToBotBattleCards(addedCard);
-
-                int index = this.model.getBotBattleCards().indexOf(addedCard);
-                this.model.removeCardFromBotBattleCards(addedCard);
-
-                this.model.addCardToBotComingCards(this.createNewCardWithSameType(addedCard, owner));
-
-                Card nextCard = this.model.getBotComingCards().get(0);
-                this.model.getBotBattleCards().add(index, nextCard);
-
-                this.model.removeCardFromBotComingCards(nextCard);
-            } else {
-//                a player has added a card
-                this.model.reducePlayerElixirsCountBy(addedCard.getCost());
-                this.model.addCardToPlayerBattleCards(addedCard);
-
-                int index = this.model.getPlayerBattleCards().indexOf(addedCard);
-                this.model.removeCardFromPlayerBattleCards(addedCard);
-
-                this.model.addCardToPlayerComingCards(this.createNewCardWithSameType(addedCard, owner));
-
-                Card nextCard = this.model.getPlayerComingCards().get(0);
-                this.model.getPlayerBattleCards().add(index, nextCard);
-
-                this.model.removeCardFromPlayerComingCards(nextCard);
-            }
+            this.chargeElixir(addedCard, owner);
+            int newCardPlacementIndex = this.deployCard(addedCard, owner);
+            this.updateCardList(addedCard, owner, newCardPlacementIndex);
         } catch (DuplicateCardException | InvalidCardException exception) {
             exception.printStackTrace();
         }
+    }
+
+    private void chargeElixir(Card addedCard, User cardOwner) {
+        if (cardOwner.equals(GlobalData.user)) {
+            this.model.reducePlayerElixirsCountBy(addedCard.getCost());
+        }
+
+        if (cardOwner.equals(GlobalData.bot)) {
+            this.model.reduceBotElixirsCountBy(addedCard.getCost());
+        }
+    }
+
+    private void updateCardList(Card addedCard, User cardOwner, int newCardPlacementIndex) throws DuplicateCardException, InvalidCardException {
+        if (cardOwner.equals(GlobalData.bot)) {
+            this.model.addCardToBotComingCards(this.createNewCardWithSameType(addedCard, cardOwner));
+
+            Card nextCard = this.model.getBotComingCards().get(0);
+            this.model.getBotBattleCards().add(newCardPlacementIndex, nextCard);
+
+            this.model.removeCardFromBotComingCards(nextCard);
+        }
+
+        if (cardOwner.equals(GlobalData.user)) {
+            this.model.addCardToPlayerComingCards(this.createNewCardWithSameType(addedCard, cardOwner));
+
+            Card nextCard = this.model.getPlayerComingCards().get(0);
+            this.model.getPlayerBattleCards().add(newCardPlacementIndex, nextCard);
+
+            this.model.removeCardFromPlayerComingCards(nextCard);
+        }
+    }
+
+    private int deployCard(Card addedCard, User cardOwner) throws DuplicateCardException, InvalidCardException {
+        if (cardOwner.equals(GlobalData.bot)) {
+            this.model.addCardToBotBattleCards(addedCard);
+            this.model.removeCardFromBotBattleCards(addedCard);
+            return this.model.getBotBattleCards().indexOf(addedCard);
+        }
+
+//        the player has deployed the card
+        this.model.addCardToPlayerBattleCards(addedCard);
+        this.model.removeCardFromPlayerBattleCards(addedCard);
+        return this.model.getPlayerBattleCards().indexOf(addedCard);
     }
 
     @Override
