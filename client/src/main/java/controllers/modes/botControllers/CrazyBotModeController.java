@@ -1,14 +1,11 @@
 package controllers.modes.botControllers;
 
 import cards.Card;
-import cards.buildings.Building;
 import cards.buildings.cannons.Cannon;
 import cards.buildings.towers.InfernoTower;
-import cards.spells.Spell;
 import cards.spells.arrows.Arrows;
 import cards.spells.balls.FireBall;
 import cards.spells.rages.Rage;
-import cards.troops.Troop;
 import cards.troops.archers.Archer;
 import cards.troops.barbarians.Barbarian;
 import cards.troops.dragons.BabyDragon;
@@ -17,20 +14,15 @@ import cards.troops.pekkas.MiniPekka;
 import cards.troops.valkyries.Valkyrie;
 import cards.troops.wizards.Wizard;
 import cards.utils.AttackAble;
-import controllers.modes.CustomEventHandler;
 import errors.DuplicateCardException;
 import errors.InvalidCardException;
 import errors.InvalidTowerException;
 import events.CustomEvent;
-import events.buildings.BuildingAddedEvent;
-import events.buildings.BuildingDurationFinishedEvent;
+import events.cards.CardAddedEvent;
+import events.cards.CardDeletedEvent;
 import events.counts.CrownCountChangeEvent;
-import events.spells.SpellAddedEvent;
-import events.spells.SpellDurationFinishedEvent;
 import events.towers.TowerActiveEvent;
 import events.towers.TowerDestroyedEvent;
-import events.troops.TroopAddedEvent;
-import events.troops.TroopKilledEvent;
 import globals.GlobalData;
 import javafx.geometry.Point2D;
 import models.BotModeModel;
@@ -86,72 +78,6 @@ public class CrazyBotModeController extends BotController  {
     }
 
     @Override
-    public void troopAddedEventHandler(TroopAddedEvent event) {
-        Troop addedTroop = event.getTroop();
-        Point2D position = event.getPosition();
-        addedTroop.setPosition(position);
-
-        User target = event.getTargetPlayers().get(0);
-
-        try {
-            if (target.equals(GlobalData.bot)) {
-//                the card has been placed by bot
-                this.model.addCardToInMapBotCards(addedTroop);
-
-                this.model.removeCardFromBotBattleCards(addedTroop);
-                this.model.addCardToBotComingCards(this.createNewCardWithSameType(addedTroop, GlobalData.bot));
-
-                Card nextCard = this.model.getBotComingCards().get(0);
-                this.model.addCardToBotBattleCards(nextCard);
-                this.model.removeCardFromBotComingCards(nextCard);
-            } else {
-//                the card has been placed by player
-//                add the card to map
-                this.model.addCardToInMapPlayerCards(addedTroop);
-
-//                get the index of the added card and remove it from battle cards
-                int index = this.model.getPlayerBattleCards().indexOf(addedTroop);
-                this.model.removeCardFromPlayerBattleCards(addedTroop);
-
-//                add the card to coming cards list
-                this.model.addCardToPlayerComingCards(this.createNewCardWithSameType(addedTroop, GlobalData.user));
-
-//                get the first element of the coming cards and put it in added card place.
-                Card nextCard = this.model.getPlayerInMapTroops().get(0);
-                this.model.getPlayerBattleCards().add(index, nextCard);
-
-//                remove the next card from coming cards list.
-                this.model.removeCardFromPlayerComingCards(nextCard);
-            }
-        } catch (DuplicateCardException | InvalidCardException exception) {
-            exception.printStackTrace();
-        }
-
-
-        event.consume();
-    }
-
-    @Override
-    public void troopKilledEventHandler(TroopKilledEvent event) {
-        Troop killedTroop = event.getTroop();
-        User owner = event.getTargetPlayers().get(0);
-
-        try {
-            if (owner.equals(GlobalData.bot)) {
-//                one of bot troops is killed
-                this.model.removeCardFromInMapBotCards(killedTroop);
-            } else {
-//                one of player troops is killed
-                this.model.removeCardFromInMapPlayerCards(killedTroop);
-            }
-        } catch (InvalidCardException e) {
-            e.printStackTrace();
-        }
-
-        event.consume();
-    }
-
-    @Override
     public void towerDestroyedEventHandler(TowerDestroyedEvent event) {
         Tower destroyedTower = event.getTower();
         User owner = event.getTargetPlayers().get(0);
@@ -179,50 +105,64 @@ public class CrazyBotModeController extends BotController  {
     }
 
     @Override
-    public void spellAddedEventHandler(SpellAddedEvent event) {
-        Spell addedSpell = event.getSpell();
+    public void cardAddedEventHandler(CardAddedEvent event) {
+        Card addedCard = event.getCard();
         Point2D position = event.getPosition();
-        addedSpell.setPosition(position);
+        addedCard.setPosition(position);
 
         User owner = event.getTargetPlayers().get(0);
 
-
         try {
             if (owner.equals(GlobalData.bot)) {
-//                the bot has placed a spell
-//                remove the card from list of the battle cards and add it to map
-                this.model.addCardToInMapBotCards(addedSpell);
+//                a bot has added a card
+                this.model.setBotElixirCount(this.model.getBotElixirCount() - addedCard.getCost());
+                this.model.addCardToBotBattleCards(addedCard);
 
-                this.model.removeCardFromBotBattleCards(addedSpell);
+                int index = this.model.getBotBattleCards().indexOf(addedCard);
+                this.model.removeCardFromBotBattleCards(addedCard);
 
-//                add a new spell to list of coming cards
-                this.model.addCardToBotComingCards(this.createNewCardWithSameType(addedSpell, GlobalData.bot));
+                this.model.addCardToBotComingCards(this.createNewCardWithSameType(addedCard, owner));
 
-//               add the next card to the battle cards
                 Card nextCard = this.model.getBotComingCards().get(0);
+                this.model.getBotBattleCards().add(index, nextCard);
+
                 this.model.removeCardFromBotComingCards(nextCard);
-                this.model.addCardToBotBattleCards(nextCard);
             } else {
-//               the player has placed a spell
-//                remove the card from list of the battle cards and add it to map
-                this.model.addCardToInMapPlayerCards(addedSpell);
+//                a player has added a card
+                this.model.setPlayerElixirCount(this.model.getBotElixirCount() - addedCard.getCost());
+                this.model.addCardToPlayerBattleCards(addedCard);
 
-                int index = this.model.getPlayerBattleCards().indexOf(addedSpell);
-                this.model.removeCardFromPlayerBattleCards(addedSpell);
+                int index = this.model.getPlayerBattleCards().indexOf(addedCard);
+                this.model.removeCardFromPlayerBattleCards(addedCard);
 
-//                add a new spell to list of coming cards
-                this.model.addCardToPlayerComingCards(this.createNewCardWithSameType(addedSpell, GlobalData.user));
+                this.model.addCardToPlayerComingCards(this.createNewCardWithSameType(addedCard, owner));
 
-//               add the next card to the battle cards
-                Card nextCard = this.model.getBotComingCards().get(0);
-                this.model.removeCardFromBotComingCards(nextCard);
+                Card nextCard = this.model.getPlayerComingCards().get(0);
                 this.model.getPlayerBattleCards().add(index, nextCard);
+
+                this.model.removeCardFromPlayerComingCards(nextCard);
             }
         } catch (DuplicateCardException | InvalidCardException exception) {
             exception.printStackTrace();
         }
+    }
 
-        event.consume();
+    @Override
+    public void cardDeletedEventHandler(CardDeletedEvent event) {
+        Card deletedCard = event.getCard();
+        User owner = event.getTargetPlayers().get(0);
+
+        try {
+            if (owner.equals(GlobalData.bot)) {
+//                one of bot cards is deleted
+                this.model.removeCardFromInMapBotCards(deletedCard);
+            } else {
+//                one of player cards is deleted
+                this.model.removeCardFromInMapPlayerCards(deletedCard);
+            }
+        } catch (InvalidCardException e) {
+            e.printStackTrace();
+        }
     }
 
     private Card createNewCardWithSameType(Card card, User owner) {
@@ -274,24 +214,6 @@ public class CrazyBotModeController extends BotController  {
     }
 
     @Override
-    public void spellDurationFinishedEventHandler(SpellDurationFinishedEvent event) {
-        Spell expiredSpell = event.getSpell();
-        User owner = event.getTargetPlayers().get(0);
-
-        try {
-            if (owner.equals(GlobalData.bot)) {
-//                One of bot spells has been expired
-                this.model.removeCardFromInMapBotCards(expiredSpell);
-            } else {
-//                One of player spells has been expired
-                this.model.removeCardFromInMapPlayerCards(expiredSpell);
-            }
-        } catch (InvalidCardException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
     public void crownCountChangeHandler(CrownCountChangeEvent event) {
         int crownCount = event.getNewCrownCount();
         User target = event.getTargetPlayers().get(0);
@@ -302,64 +224,6 @@ public class CrazyBotModeController extends BotController  {
         } else {
 //            crown count of player changed
             this.model.setPlayerCrownCount(crownCount);
-        }
-    }
-
-    @Override
-    public void buildingAddedEventHandler(BuildingAddedEvent event) {
-        Building addedBuilding = event.getBuilding();
-        Point2D position = event.getPosition();
-        addedBuilding.setPosition(position);
-
-        User owner = event.getTargetPlayers().get(0);
-
-        try {
-            if (owner.equals(GlobalData.bot)) {
-//                the bot has dropped a spell
-                this.model.addCardToInMapBotCards(addedBuilding);
-
-                this.model.removeCardFromBotBattleCards(addedBuilding);
-                this.model.addCardToBotComingCards(this.createNewCardWithSameType(addedBuilding, GlobalData.bot));
-
-                Card nextCard = this.model.getBotComingCards().get(0);
-                this.model.addCardToBotBattleCards(nextCard);
-                this.model.removeCardFromBotComingCards(nextCard);
-            } else {
-//                the player has dropped a spell.
-                this.model.addCardToInMapPlayerCards(addedBuilding);
-
-//                get the index of the added card and remove it from battle cards
-                int index = this.model.getPlayerBattleCards().indexOf(addedBuilding);
-                this.model.removeCardFromPlayerBattleCards(addedBuilding);
-
-//                add the card to coming cards list
-                this.model.addCardToPlayerComingCards(this.createNewCardWithSameType(addedBuilding, GlobalData.user));
-
-//                get the first element of the coming cards and put it in added card place.
-                Card nextCard = this.model.getPlayerInMapTroops().get(0);
-                this.model.getPlayerBattleCards().add(index, nextCard);
-
-//                remove the next card from coming cards list.
-                this.model.removeCardFromPlayerComingCards(nextCard);
-            }
-        } catch (DuplicateCardException | InvalidCardException exception) {
-            exception.printStackTrace();
-        }
-    }
-
-    @Override
-    public void buildingDurationFinishedHandler(BuildingDurationFinishedEvent event) {
-        Building expiredBuilding = event.getBuilding();
-        User owner = event.getTargetPlayers().get(0);
-
-        try {
-            if (owner.equals(GlobalData.bot)) {
-                this.model.removeCardFromInMapBotCards(expiredBuilding);
-            } else {
-                this.model.removeCardFromInMapPlayerCards(expiredBuilding);
-            }
-        } catch (InvalidCardException e) {
-            e.printStackTrace();
         }
     }
 
