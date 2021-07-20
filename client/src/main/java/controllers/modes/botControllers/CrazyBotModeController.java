@@ -115,7 +115,7 @@ public class CrazyBotModeController extends BotController  {
         try {
             if (owner.equals(GlobalData.bot)) {
 //                a bot has added a card
-                this.model.setBotElixirCount(this.model.getBotElixirCount() - addedCard.getCost());
+                this.model.reduceBotElixirsCountBy(addedCard.getCost());
                 this.model.addCardToBotBattleCards(addedCard);
 
                 int index = this.model.getBotBattleCards().indexOf(addedCard);
@@ -129,7 +129,7 @@ public class CrazyBotModeController extends BotController  {
                 this.model.removeCardFromBotComingCards(nextCard);
             } else {
 //                a player has added a card
-                this.model.setPlayerElixirCount(this.model.getBotElixirCount() - addedCard.getCost());
+                this.model.reducePlayerElixirsCountBy(addedCard.getCost());
                 this.model.addCardToPlayerBattleCards(addedCard);
 
                 int index = this.model.getPlayerBattleCards().indexOf(addedCard);

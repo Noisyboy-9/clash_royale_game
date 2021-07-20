@@ -82,10 +82,10 @@ public class BotModeModel extends GameModel {
     /**
      * Sets bot elixir count.
      *
-     * @param botElixirCount the bot elixir count
+     * @param amount the amount
      */
-    public void setBotElixirCount(int botElixirCount) {
-        this.botElixirCount = botElixirCount;
+    public void reduceBotElixirsCountBy(int amount) {
+        this.botElixirCount -= amount;
     }
 
     /**
