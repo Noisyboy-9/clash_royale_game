@@ -239,7 +239,7 @@ public abstract class BotController extends BaseController {
         }
 
         if (card.isRage()) {
-            return Rage.create(owner);
+            return Rage.create(owner, );
         }
 
         if (card.isFireBall()) {

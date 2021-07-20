@@ -51,7 +51,7 @@ public abstract class BaseController implements CustomEventHandler {
     private ImageView selectedImgView;
 
     private ImageView[] playerTeamCrowns;
-    private ArrayList<ImageView> previousMapElements;
+    private final ArrayList<ImageView> previousMapElements;
     @FXML
     private GridPane mapCells;
     @FXML
@@ -143,9 +143,9 @@ public abstract class BaseController implements CustomEventHandler {
     public BaseController(BotModeModel model) {
         this.model = model;
 
-        this.FRAME_PER_SECOND = 30;
+        this.FRAME_PER_SECOND = GlobalData.FRAME_PER_SECOND;
         this.eachFrameDuration = Math.round((double) 1000 / FRAME_PER_SECOND);
-        this.frameRemainingCount = 3 * 60 * FRAME_PER_SECOND;
+        this.frameRemainingCount = 3L * 60 * FRAME_PER_SECOND;
         this.previousMapElements = new ArrayList<>();
 
     }

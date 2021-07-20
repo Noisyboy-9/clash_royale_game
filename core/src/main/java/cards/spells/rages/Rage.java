@@ -2,39 +2,31 @@ package cards.spells.rages;
 
 import cards.Card;
 import cards.spells.Spell;
-import cards.troops.Troop;
-import exceptions.TargetAlreadyExistException;
 import javafx.geometry.Point2D;
-import towers.Tower;
 import user.User;
 
-import java.util.ArrayList;
 import java.util.UUID;
 
 /**
  * The type Rage.
  */
 public class Rage extends Spell {
-    private final ArrayList<Tower> targetTowers;
-    private final ArrayList<Troop> targetTroops;
-    private final double duration;
+    private double remainingFrameCount;
 
     /**
      * Instantiates a new Rage.
      *
-     * @param id       the id
-     * @param owner    the owner
-     * @param position the position
-     * @param duration the duration
+     * @param id                  the id
+     * @param owner               the owner
+     * @param position            the position
+     * @param remainingFrameCount the remainingFrameCount
      */
     protected Rage(UUID id,
                    User owner,
                    Point2D position,
-                   double duration) {
+                   double remainingFrameCount) {
         super(id, 3, owner, position, 5);
-        this.duration = duration;
-        this.targetTowers = new ArrayList<>();
-        this.targetTroops = new ArrayList<>();
+        this.remainingFrameCount = remainingFrameCount;
     }
 
     /**
@@ -42,37 +34,17 @@ public class Rage extends Spell {
      *
      * @return the duration
      */
-    public double getDuration() {
-        return duration;
+    public double getRemainingFrameCount() {
+        return remainingFrameCount;
     }
 
     /**
-     * Add tower target.
+     * Decrease remaining frame count by.
      *
-     * @param tower the tower
-     * @throws TargetAlreadyExistException the target already exist exception
+     * @param amount the amount
      */
-    public void addTowerTarget(Tower tower) throws TargetAlreadyExistException {
-        if (this.targetTowers.contains(tower)) {
-            throw new TargetAlreadyExistException("tower with id: " + tower.getId().toString() + "exist");
-        }
-
-        this.targetTowers.add(tower);
-    }
-
-
-    /**
-     * Add troop target.
-     *
-     * @param troop the troop
-     * @throws TargetAlreadyExistException the target already exist exception
-     */
-    public void addTroopTarget(Troop troop) throws TargetAlreadyExistException {
-        if (this.targetTroops.contains(troop)) {
-            throw new TargetAlreadyExistException("tower with id: " + troop.getId().toString() + "exist");
-        }
-
-        this.targetTroops.add(troop);
+    public void decreaseRemainingFrameCountBy(int amount) {
+        this.remainingFrameCount -= amount;
     }
 
     @Override
@@ -110,16 +82,17 @@ public class Rage extends Spell {
     /**
      * Create card.
      *
-     * @param user the user
+     * @param user             the user
+     * @param FRAME_PER_SECOND the frame per second
      * @return the card
      */
-    public static Card create(User user) {
+    public static Card create(User user, int FRAME_PER_SECOND) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Rage(UUID.randomUUID(), user, null, 6);
-            case LEVEL_2 -> new Rage(UUID.randomUUID(), user, null, 6.5);
-            case LEVEL_3 -> new Rage(UUID.randomUUID(), user, null, 7);
-            case LEVEL_4 -> new Rage(UUID.randomUUID(), user, null, 7.5);
-            case LEVEL_5 -> new Rage(UUID.randomUUID(), user, null, 8);
+            case LEVEL_1 -> new Rage(UUID.randomUUID(), user, null, 6 * FRAME_PER_SECOND);
+            case LEVEL_2 -> new Rage(UUID.randomUUID(), user, null, 6.5 * FRAME_PER_SECOND);
+            case LEVEL_3 -> new Rage(UUID.randomUUID(), user, null, 7 * FRAME_PER_SECOND);
+            case LEVEL_4 -> new Rage(UUID.randomUUID(), user, null, 7.5 * FRAME_PER_SECOND);
+            case LEVEL_5 -> new Rage(UUID.randomUUID(), user, null, 8 * FRAME_PER_SECOND);
         };
     }
 }

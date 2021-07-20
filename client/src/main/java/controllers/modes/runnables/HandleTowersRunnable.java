@@ -11,14 +11,7 @@ import towers.Tower;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class HandleTowersRunnable implements Runnable {
-    private final GameModel model;
-    private final BaseController controller;
-
-    public HandleTowersRunnable(GameModel model, BaseController controller) {
-        this.model = model;
-        this.controller = controller;
-    }
+public record HandleTowersRunnable(GameModel model, BaseController controller) implements Runnable {
 
     @Override
     public void run() {
@@ -45,12 +38,12 @@ public class HandleTowersRunnable implements Runnable {
     private void calculateEachTowerTarget() {
         if (model instanceof BotModeModel) {
             this.handleTowerTargetCalculation(this.model.getPlayerTowers(), ((BotModeModel) model).getBotInMapAttackAblesCards());
-            this.handleTowerTargetCalculation(((BotModeModel) model).getBotTowers(), this.model.getPlayerAttackAblesCards());
+            this.handleTowerTargetCalculation(((BotModeModel) model).getBotTowers(), this.model.getPlayerInMapAttackAblesCards());
         }
 
         if (model instanceof OnlineModeModel) {
             this.handleTowerTargetCalculation(this.model.getPlayerTowers(), ((OnlineModeModel) model).getOpponentInMapAttackAblesCards());
-            this.handleTowerTargetCalculation(((OnlineModeModel) model).getOpponentTowers(), this.model.getPlayerAttackAblesCards());
+            this.handleTowerTargetCalculation(((OnlineModeModel) model).getOpponentTowers(), this.model.getPlayerInMapAttackAblesCards());
         }
     }
 
