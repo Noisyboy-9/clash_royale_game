@@ -4,6 +4,7 @@ import cards.Card;
 import cards.buildings.Building;
 import cards.spells.Spell;
 import cards.troops.Troop;
+import cards.utils.AttackAble;
 import errors.DuplicateCardException;
 import errors.InvalidCardException;
 import errors.InvalidTowerException;
@@ -297,6 +298,18 @@ public abstract class GameModel {
         }
 
         return troops;
+    }
+
+    /**
+     * Gets player attack ables.
+     *
+     * @return the player attack ables
+     */
+    public ArrayList<AttackAble> getPlayerAttackAbles() {
+        ArrayList<AttackAble> attackAbles = new ArrayList<>();
+        attackAbles.addAll(this.getPlayerInMapTroops());
+        attackAbles.addAll(this.getPlayerInMapBuildings());
+        return attackAbles;
     }
 
     /**

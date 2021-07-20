@@ -21,7 +21,6 @@ public interface AttackAble {
      */
     TypeEnum getSelfType();
 
-
     /**
      * Gets position.
      *

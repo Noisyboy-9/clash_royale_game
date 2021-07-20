@@ -4,6 +4,7 @@ import cards.Card;
 import cards.buildings.Building;
 import cards.spells.Spell;
 import cards.troops.Troop;
+import cards.utils.AttackAble;
 import errors.DuplicateCardException;
 import errors.InvalidCardException;
 import errors.InvalidTowerException;
@@ -288,4 +289,10 @@ public class BotModeModel extends GameModel {
         return troops;
     }
 
+    public ArrayList<AttackAble> getBotInMapAttackAbles() {
+        ArrayList<AttackAble> attackAbles = new ArrayList<>();
+        attackAbles.addAll(this.getBotInMapTroops());
+        attackAbles.addAll(this.getBotInMapBuildings());
+        return attackAbles;
+    }
 }
