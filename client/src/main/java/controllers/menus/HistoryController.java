@@ -78,28 +78,28 @@ public class HistoryController extends MenuController {
     {
         if (topBoxIndex == minValue)
         {
-            convertToBlackAndWhite(upButton);
+            Controller.SCENE_CONTROLLER.convertToBlackAndWhite(upButton);
         }
         else if (topBoxIndex > minValue)
         {
-            convertToColorful(upButton);
+            Controller.SCENE_CONTROLLER.convertToColorful(upButton);
         }
         else
         {
-            convertToBlackAndWhite(upButton);
+            Controller.SCENE_CONTROLLER.convertToBlackAndWhite(upButton);
         }
 
         if (bottomBoxIndex == maxValue)
         {
-            convertToBlackAndWhite(downButton);
+            Controller.SCENE_CONTROLLER.convertToBlackAndWhite(downButton);
         }
         else if (bottomBoxIndex < maxValue)
         {
-            convertToColorful(downButton);
+            Controller.SCENE_CONTROLLER.convertToColorful(downButton);
         }
         else
         {
-            convertToBlackAndWhite(downButton);
+            Controller.SCENE_CONTROLLER.convertToBlackAndWhite(downButton);
         }
 
     }
@@ -146,24 +146,6 @@ public class HistoryController extends MenuController {
 
     }
 
-    private void convertToBlackAndWhite(ImageView imageView)
-    {
-        ColorAdjust colorAdjust = new ColorAdjust();
-        colorAdjust.setSaturation(-1);
-        colorAdjust.setBrightness(-0.2);
-
-        imageView.setEffect(colorAdjust);
-        imageView.setCursor(Cursor.DEFAULT);
-
-    }
-
-    private void convertToColorful(ImageView imageView)
-    {
-        imageView.setEffect(null);
-        imageView.setCursor(Cursor.HAND);
-
-    }
-
     @FXML
     void initialize() {
         if (GlobalData.user != null) {
@@ -183,8 +165,8 @@ public class HistoryController extends MenuController {
                 handleUpdates();
 
             } else {
-                convertToBlackAndWhite(upButton);
-                convertToBlackAndWhite(downButton);
+                Controller.SCENE_CONTROLLER.convertToBlackAndWhite(upButton);
+                Controller.SCENE_CONTROLLER.convertToBlackAndWhite(downButton);
             }
         }
     }

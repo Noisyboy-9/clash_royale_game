@@ -22,12 +22,15 @@ import java.util.HashMap;
 public class GlobalData {
     public static User user = null;
     public static User bot = new User("crazyBot", "password");
+    public static ArrayList<User> playerTeam = new ArrayList<>();
+    public static ArrayList<User> opponentTeam = new ArrayList<>();
+    public static int playerTeamCrownCount;
+    public static int opponentTeamCrownCount;
 
 
     public static ArrayList<Card> createCards(User cardOwner) {
         ArrayList<Card> cards = new ArrayList<>();
-        User user = new User("nejadipour", "password");
-        HashMap<Integer, String> urlsData = Controller.CARD_QUERY_BUILDER.loadCards(user);
+        HashMap<Integer, String> urlsData = Controller.CARD_QUERY_BUILDER.loadCards(cardOwner);
 
         for (int index : urlsData.keySet()) {
             String className = getClassName(urlsData.get(index));
