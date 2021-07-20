@@ -2,7 +2,7 @@ package events.cards;
 
 import cards.Card;
 import commands.Command;
-import commands.gameStateCommands.cardCommands.CardDeletedCommand;
+import commands.gameStateCommands.cardCommands.*;
 import controllers.modes.CustomEventHandler;
 import javafx.event.Event;
 import javafx.event.EventTarget;

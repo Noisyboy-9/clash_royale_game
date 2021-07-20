@@ -2,6 +2,7 @@ package controllers.modes;
 
 import cards.Card;
 import controllers.Controller;
+import events.cards.CardAddedEvent;
 import globals.GlobalData;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -23,26 +24,27 @@ import models.OnlineModeModel;
 import user.User;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public abstract class BaseController implements CustomEventHandler {
     protected final long eachFrameDuration;
     protected long frameRemainingCount;
+    protected int FRAME_PER_SECOND;
 
     private final GameModel model;
     private Image selectedImage;
     private ImageView selectedImgView;
-    private final int[] comingCardSize = {34, 41};
-    private final int[] battleCardSize = {59, 73};
-    private final int[] nextCardSize = {50, 62};
 
-    ImageView[] playerTeamCrowns;
+    private ImageView[] playerTeamCrowns;
+    private ArrayList<ImageView> previousMapElements;
 
     public BaseController(BotModeModel model) {
         this.model = model;
 
-        int FRAME_PER_SECOND = 30;
+        this.FRAME_PER_SECOND = 30;
         this.eachFrameDuration = Math.round((double) 1000 / FRAME_PER_SECOND);
         this.frameRemainingCount = 3 * 60 * FRAME_PER_SECOND;
+        this.previousMapElements = new ArrayList<>();
 
     }
 
@@ -202,21 +204,23 @@ public abstract class BaseController implements CustomEventHandler {
 
     @FXML
     void putCard(MouseEvent event) {
-        // the position is definitely correct... because only valid cells are addressed to this method in fxml file
         if (selectedImage != null) {
             Rectangle cell = (Rectangle) event.getSource();
-            int column = GridPane.getColumnIndex(cell);
-            int row = GridPane.getRowIndex(cell);
+            if (cell.getCursor().equals(Cursor.HAND)) {
+                int column = GridPane.getColumnIndex(cell);
+                int row = GridPane.getRowIndex(cell);
 
-            Point2D position = new Point2D(column, row);
-            Card selectedCard = getSelectedCard();
+                Point2D position = new Point2D(column, row);
+                Card selectedCard = getSelectedCard();
 
-            // fire event
+                CardAddedEvent cardAddedEvent = new CardAddedEvent(event.getEventType(), GlobalData.playerTeam, selectedCard, position);
+                cell.fireEvent(cardAddedEvent);
 
+                this.selectedImage = null;
+                this.selectedImgView.setEffect(null);
+                Controller.SCENE_CONTROLLER.convertToBlackAndWhite(selectedImgView);
 
-            this.selectedImage = null;
-            this.selectedImgView.setEffect(null);
-            Controller.SCENE_CONTROLLER.convertToBlackAndWhite(selectedImgView);
+            }
 
         }
 
@@ -248,11 +252,16 @@ public abstract class BaseController implements CustomEventHandler {
     @FXML
     void selectCard(MouseEvent event)
     {
-        removeShadows();
-        DropShadow ds = new DropShadow(20, Color.AQUA);
         ImageView imageView = (ImageView) event.getSource();
-        imageView.setEffect(ds);
-//        finishGame();
+        if (imageView.getCursor().equals(Cursor.HAND)) {
+            removeShadows();
+            handleInvalidCards();
+            DropShadow ds = new DropShadow(20, Color.AQUA);
+            imageView.setEffect(ds);
+            this.selectedImage = imageView.getImage();
+            this.selectedImgView = imageView;
+
+        }
 
     }
 
@@ -334,7 +343,6 @@ public abstract class BaseController implements CustomEventHandler {
     void handleInvalidCards()
     {
         ObservableList<Node> children = battleCards.getChildren();
-        int currentElixir = Integer.parseInt(elixirCount.getText());
 
         for (int index = 0 ; index < 4 ; index++)
         {
@@ -343,14 +351,16 @@ public abstract class BaseController implements CustomEventHandler {
 
             int cardElixir = Integer.parseInt(((Text) children.get(index)).getText());
 
-            if (cardElixir > currentElixir) {
+            if (cardElixir > model.getPlayerElixirCount()) {
                 Controller.SCENE_CONTROLLER.convertToBlackAndWhite(cardImgView);
                 Controller.SCENE_CONTROLLER.convertToBlackAndWhite(elixirBackground);
+                cardImgView.setCursor(Cursor.DEFAULT);
 
             }
             else {
                 Controller.SCENE_CONTROLLER.convertToColorful(cardImgView);
                 Controller.SCENE_CONTROLLER.convertToColorful(elixirBackground);
+                cardImgView.setCursor(Cursor.HAND);
             }
 
         }
@@ -360,7 +370,8 @@ public abstract class BaseController implements CustomEventHandler {
 
     @FXML
     void updateElixirBox() {
-        int currentElixir = Integer.parseInt(elixirCount.getText());
+        int currentElixir = this.model.getPlayerElixirCount();
+        elixirCount.setText(Integer.toString(currentElixir));
 
         ObservableList<Node> elixirElements = elixirBox.getChildren();
 
@@ -379,6 +390,14 @@ public abstract class BaseController implements CustomEventHandler {
 
 
     @FXML
+    void refreshMap() {
+        for (ImageView imgView : this.previousMapElements) {
+            imgView.setImage(null);
+        }
+    }
+
+
+    @FXML
     void handleInMapCards() {
         ObservableList<Node> mapChildren = mapCells.getChildren();
 
@@ -386,7 +405,9 @@ public abstract class BaseController implements CustomEventHandler {
             String key = getGifKey(card, "player");
             Image gif = Controller.SCENE_CONTROLLER.getGif(key);
             int index = getIndexInMap(card.getPosition());
-            mapChildren.set(index, new ImageView(gif));
+            ImageView imgView = new ImageView(gif);
+            mapChildren.set(index, imgView);
+            this.previousMapElements.add(imgView);
 
         }
 
@@ -403,7 +424,9 @@ public abstract class BaseController implements CustomEventHandler {
             String key = getGifKey(card, "opponent");
             Image gif = Controller.SCENE_CONTROLLER.getGif(key);
             int index = getIndexInMap(transferPosition(card.getPosition()));
-            mapChildren.set(index, new ImageView(gif));
+            ImageView imgView = new ImageView(gif);
+            mapChildren.set(index, imgView);
+            this.previousMapElements.add(imgView);
 
         }
 
@@ -435,16 +458,94 @@ public abstract class BaseController implements CustomEventHandler {
 
 
     @FXML
+    void handleBattleCards() {
+        ObservableList<Node> battleCardsChildren = this.battleCards.getChildren();
+        for (int index = 0 ; index < 4 ; index++) {
+            Card card = this.model.getPlayerBattleCards().get(index);
+            Image cardImage = Controller.SCENE_CONTROLLER.getBattleBoxImg(card.getClass().getSimpleName());
+            int elixir = card.getCost();
+
+            ImageView cardImgView = (ImageView) battleCardsChildren.get(index);
+            Text elixirField = (Text) battleCardsChildren.get(index + 8);
+
+            cardImgView.setImage(cardImage);
+            elixirField.setText(Integer.toString(elixir));
+
+        }
+
+    }
+
+
+    @FXML
+    void handleComingCards() {
+        ObservableList<Node> battleCardsChildren = this.comingCards.getChildren();
+        for (int index = 0 ; index < 4 ; index++) {
+            Card card = this.model.getPlayerComingCards().get(index);
+            Image cardImage = Controller.SCENE_CONTROLLER.getComingBoxImg(card.getClass().getSimpleName());
+            int elixir = card.getCost();
+
+            ImageView cardImgView = (ImageView) battleCardsChildren.get(index);
+            Text elixirField = (Text) battleCardsChildren.get(index + 8);
+
+            cardImgView.setImage(cardImage);
+            elixirField.setText(Integer.toString(elixir));
+
+        }
+
+    }
+
+
+    @FXML
+    void handleNextCard() {
+        Card nextCard = this.model.getPlayerComingCards().get(0);
+        Image image = Controller.SCENE_CONTROLLER.getNextCardImg(nextCard.getClass().getSimpleName());
+        String elixir = Integer.toString(nextCard.getCost());
+
+        this.nextCardImage.setImage(image);
+        this.nextCardText.setText(elixir);
+
+    }
+
+
+    @FXML
+    void handleCrowns() {
+        this.playerCrownsCount.setText(Integer.toString(this.model.getPlayerCrownCount()));
+
+        int opponentCrownCount;
+
+        // will be completed
+
+    }
+
+    @FXML
+    void handleTime() {
+        if (this.frameRemainingCount % this.FRAME_PER_SECOND == 0) {
+            long seconds = this.frameRemainingCount / this.FRAME_PER_SECOND;
+            long minutes = TimeUnit.SECONDS.toMinutes(seconds);
+            seconds = TimeUnit.SECONDS.toSeconds(seconds) - (TimeUnit.SECONDS.toMinutes(seconds) *60);
+            String splitter = ":";
+
+            if (seconds >= 0 && seconds <= 9)
+                splitter += "0";
+
+            timeField.setText(minutes + splitter + seconds);
+
+        }
+
+    }
+
+
+    @FXML
     void render() {
-        timeField.setText("");
-        elixirCount.setText("");
         updateElixirBox();
         handleInvalidCards();
-        // erase previous cards in map
+        refreshMap();
         handleInMapCards();
-        // update battle box
-        // update coming cards
-        // update next card
+        handleBattleCards();
+        handleComingCards();
+        handleNextCard();
+        // update crowns count
+        handleTime();
 
     }
 

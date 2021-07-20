@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class OnlineModeModel extends GameModel {
     private final ArrayList<Tower> opponentTowers;
     private final ArrayList<Card> opponentInMapCards;
+    private int opponentCrownCount;
 
     /**
      * Instantiates a new Online mode model.
@@ -24,12 +25,12 @@ public class OnlineModeModel extends GameModel {
      * @param playerAllCards     the player all cards
      * @param playerBattleCards  the player battle cards
      * @param opponentTowers     the opponent towers
-     * @param opponentInMapCards the opponent in map cards
      */
-    public OnlineModeModel(ArrayList<Card> playerAllCards, ArrayList<Card> playerBattleCards, ArrayList<Tower> opponentTowers, ArrayList<Card> opponentInMapCards) {
+    public OnlineModeModel(ArrayList<Card> playerAllCards, ArrayList<Card> playerBattleCards, ArrayList<Tower> opponentTowers) {
         super(playerAllCards, playerBattleCards);
         this.opponentTowers = opponentTowers;
-        this.opponentInMapCards = opponentInMapCards;
+        this.opponentInMapCards = new ArrayList<>();
+
     }
 
     /**
@@ -142,5 +143,13 @@ public class OnlineModeModel extends GameModel {
         }
 
         return buildings;
+    }
+
+    public int getOpponentCrownCount() {
+        return opponentCrownCount;
+    }
+
+    public void setOpponentCrownCount(int opponentCrownCount) {
+        this.opponentCrownCount = opponentCrownCount;
     }
 }

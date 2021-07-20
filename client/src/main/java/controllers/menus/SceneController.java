@@ -26,6 +26,9 @@ public class SceneController {
     private final HashMap<String, Scene> menus;
     private final ArrayList<String> cardsUrls;
     private final HashMap<String, Image> gifs;
+    private final HashMap<String, Image> battleCardsBoxImages;
+    private final HashMap<String, Image> comingCardsBoxImages;
+    private final HashMap<String, Image> nextCardImages;
     private Scene scene;
     private Parent root;
 
@@ -36,6 +39,9 @@ public class SceneController {
         this.menus = new HashMap<>();
         this.cardsUrls = new ArrayList<>();
         this.gifs = new HashMap<>();
+        this.battleCardsBoxImages = new HashMap<>();
+        this.comingCardsBoxImages = new HashMap<>();
+        this.nextCardImages = new HashMap<>();
 
     }
 
@@ -110,6 +116,36 @@ public class SceneController {
             System.err.println("there was a problem related to IO");
         }
 
+    }
+
+
+    public void loadCardBoxImages() {
+        for (String url : this.cardsUrls) {
+            String className = getClassName(url);
+            Image battleBoxImage = new Image(url, 59, 73, true, true);
+            Image comingBoxImage = new Image(url, 34, 41, true, true);
+            Image nextCardImage = new Image(url, 50, 62, true, true);
+
+            this.battleCardsBoxImages.put(className, battleBoxImage);
+            this.comingCardsBoxImages.put(className, comingBoxImage);
+            this.nextCardImages.put(className, nextCardImage);
+
+        }
+
+    }
+
+    private String getClassName(String url) {
+        String[] parts = url.split("/");
+        int lastIndex = parts.length - 1;
+        String className = parts[lastIndex].replace("Card.png", "");
+        className = switch (className) {
+            case "Archers" -> "Archer";
+            case "Barbarians" -> "Barbarian";
+            case "MiniPEKKA" -> "MiniPekka";
+            default -> className;
+        };
+
+        return className;
     }
 
 
@@ -217,6 +253,21 @@ public class SceneController {
         }
         return gifs.get(key);
 
+    }
+
+
+    public Image getBattleBoxImg(String className) {
+        return this.battleCardsBoxImages.get(className);
+    }
+
+
+    public Image getComingBoxImg(String className) {
+        return this.comingCardsBoxImages.get(className);
+    }
+
+
+    public Image getNextCardImg(String className) {
+        return this.nextCardImages.get(className);
     }
 
 }
