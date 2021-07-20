@@ -32,9 +32,6 @@ public abstract class BaseController implements CustomEventHandler {
     private final GameModel model;
     private Image selectedImage;
     private ImageView selectedImgView;
-    private final int[] comingCardSize = {34, 41};
-    private final int[] battleCardSize = {59, 73};
-    private final int[] nextCardSize = {50, 62};
 
     ImageView[] playerTeamCrowns;
 
