@@ -305,10 +305,23 @@ public abstract class GameModel {
      *
      * @return the player attack ables
      */
+    public ArrayList<AttackAble> getPlayerAttackAblesCards() {
+        ArrayList<AttackAble> attackAbles = new ArrayList<>();
+        attackAbles.addAll(this.getPlayerInMapTroops());
+        attackAbles.addAll(this.getPlayerInMapBuildings());
+        return attackAbles;
+    }
+
+    /**
+     * Gets player attack ables.
+     *
+     * @return the player attack ables
+     */
     public ArrayList<AttackAble> getPlayerAttackAbles() {
         ArrayList<AttackAble> attackAbles = new ArrayList<>();
         attackAbles.addAll(this.getPlayerInMapTroops());
         attackAbles.addAll(this.getPlayerInMapBuildings());
+        attackAbles.addAll(this.getPlayerTowers());
         return attackAbles;
     }
 

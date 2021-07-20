@@ -44,13 +44,13 @@ public class HandleTowersRunnable implements Runnable {
 
     private void calculateEachTowerTarget() {
         if (model instanceof BotModeModel) {
-            this.handleTowerTargetCalculation(this.model.getPlayerTowers(), ((BotModeModel) model).getBotInMapAttackAbles());
-            this.handleTowerTargetCalculation(((BotModeModel) model).getBotTowers(), this.model.getPlayerAttackAbles());
+            this.handleTowerTargetCalculation(this.model.getPlayerTowers(), ((BotModeModel) model).getBotInMapAttackAblesCards());
+            this.handleTowerTargetCalculation(((BotModeModel) model).getBotTowers(), this.model.getPlayerAttackAblesCards());
         }
 
         if (model instanceof OnlineModeModel) {
-            this.handleTowerTargetCalculation(this.model.getPlayerTowers(), ((OnlineModeModel) model).getOpponentInMapAttackAbles());
-            this.handleTowerTargetCalculation(((OnlineModeModel) model).getOpponentTowers(), this.model.getPlayerAttackAbles());
+            this.handleTowerTargetCalculation(this.model.getPlayerTowers(), ((OnlineModeModel) model).getOpponentInMapAttackAblesCards());
+            this.handleTowerTargetCalculation(((OnlineModeModel) model).getOpponentTowers(), this.model.getPlayerAttackAblesCards());
         }
     }
 

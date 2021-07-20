@@ -289,10 +289,28 @@ public class BotModeModel extends GameModel {
         return troops;
     }
 
+    /**
+     * Gets bot in map attack ables cards.
+     *
+     * @return the bot in map attack ables cards
+     */
+    public ArrayList<AttackAble> getBotInMapAttackAblesCards() {
+        ArrayList<AttackAble> attackAbles = new ArrayList<>();
+        attackAbles.addAll(this.getBotInMapTroops());
+        attackAbles.addAll(this.getBotInMapBuildings());
+        return attackAbles;
+    }
+
+    /**
+     * Gets bot in map attack ables.
+     *
+     * @return the bot in map attack ables
+     */
     public ArrayList<AttackAble> getBotInMapAttackAbles() {
         ArrayList<AttackAble> attackAbles = new ArrayList<>();
         attackAbles.addAll(this.getBotInMapTroops());
         attackAbles.addAll(this.getBotInMapBuildings());
+        attackAbles.addAll(this.getBotTowers());
         return attackAbles;
     }
 }

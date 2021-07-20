@@ -169,10 +169,23 @@ public class OnlineModeModel extends GameModel {
      *
      * @return the bot in map attack ables
      */
+    public ArrayList<AttackAble> getOpponentInMapAttackAblesCards() {
+        ArrayList<AttackAble> attackAbles = new ArrayList<>();
+        attackAbles.addAll(this.getOpponentBuildings());
+        attackAbles.addAll(this.getOpponentInMapTroops());
+        return attackAbles;
+    }
+
+    /**
+     * Gets bot in map attack ables.
+     *
+     * @return the bot in map attack ables
+     */
     public ArrayList<AttackAble> getOpponentInMapAttackAbles() {
         ArrayList<AttackAble> attackAbles = new ArrayList<>();
         attackAbles.addAll(this.getOpponentBuildings());
         attackAbles.addAll(this.getOpponentInMapTroops());
+        attackAbles.addAll(this.getOpponentTowers());
         return attackAbles;
     }
 }
