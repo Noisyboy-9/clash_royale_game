@@ -1,6 +1,5 @@
 package towers;
 
-import javafx.geometry.Point2D;
 import user.User;
 
 import java.util.UUID;
@@ -21,11 +20,10 @@ public class KingTower extends Tower {
     private KingTower(UUID id,
                       User owner,
                       int HP,
-                      int damage,
-                      Point2D position) {
+                      int damage) {
 
 
-        super(id, owner, 3, false, 7, HP, damage, position);
+        super(id, owner, 3, false, 7, HP, damage, null);
     }
 
     /**
@@ -34,13 +32,13 @@ public class KingTower extends Tower {
      * @param owner the owner
      * @return the tower
      */
-    public static Tower create(User owner, Point2D position) {
+    public static Tower create(User owner) {
         return switch (owner.getLevel()) {
-            case LEVEL_1 -> new KingTower(UUID.randomUUID(), owner, 2400, 50, position);
-            case LEVEL_2 -> new KingTower(UUID.randomUUID(), owner, 2568, 53, position);
-            case LEVEL_3 -> new KingTower(UUID.randomUUID(), owner, 2736, 57, position);
-            case LEVEL_4 -> new KingTower(UUID.randomUUID(), owner, 2904, 60, position);
-            case LEVEL_5 -> new KingTower(UUID.randomUUID(), owner, 3096, 64, position);
+            case LEVEL_1 -> new KingTower(UUID.randomUUID(), owner, 2400, 50);
+            case LEVEL_2 -> new KingTower(UUID.randomUUID(), owner, 2568, 53);
+            case LEVEL_3 -> new KingTower(UUID.randomUUID(), owner, 2736, 57);
+            case LEVEL_4 -> new KingTower(UUID.randomUUID(), owner, 2904, 60);
+            case LEVEL_5 -> new KingTower(UUID.randomUUID(), owner, 3096, 64);
         };
     }
 }

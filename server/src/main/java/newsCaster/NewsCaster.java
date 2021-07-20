@@ -91,13 +91,13 @@ public class NewsCaster {
      * Start two player mode.
      */
     private void startTwoPlayerMode() {
-        (new NewsRedirector(this.twoPlayerModeGameRequesters)).start();
+        (new NewsRedirector(this.twoPlayerModeGameRequesters.get(0), this.twoPlayerModeGameRequesters.get(1))).start();
     }
 
     /**
      * Start four player mode.
      */
     private void startFourPlayerMode() {
-        (new NewsRedirector(this.fourPlayerModeGameRequesters)).start();
+        (new NewsRedirector(this.fourPlayerModeGameRequesters.subList(0, 1), this.fourPlayerModeGameRequesters.subList(2, 3))).start();
     }
 }
