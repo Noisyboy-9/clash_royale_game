@@ -89,6 +89,15 @@ public class BotModeModel extends GameModel {
     }
 
     /**
+     * Increase bot elixir count by.
+     *
+     * @param amount the amount
+     */
+    public void increaseBotElixirCountBy(int amount) {
+        this.botElixirCount += amount;
+    }
+
+    /**
      * Gets bot towers.
      *
      * @return the bot towers

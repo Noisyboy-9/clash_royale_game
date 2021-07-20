@@ -100,6 +100,15 @@ public abstract class GameModel {
     }
 
     /**
+     * Increase player elixirs count by.
+     *
+     * @param amount the amount
+     */
+    public void increasePlayerElixirsCountBy(int amount) {
+        this.playerElixirCount += amount;
+    }
+
+    /**
      * Gets player towers.
      *
      * @return the player towers
