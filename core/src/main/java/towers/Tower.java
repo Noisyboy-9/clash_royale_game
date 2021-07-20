@@ -3,6 +3,7 @@ package towers;
 
 import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
+import javafx.geometry.Point2D;
 import user.User;
 
 import java.util.Objects;
@@ -23,6 +24,7 @@ public abstract class Tower implements AttackAble {
     private AttackAble target;
     private double HP;
     private double hitSpeed;
+    private Point2D position;
 
     /**
      * Instantiates a new Tower.
@@ -34,8 +36,9 @@ public abstract class Tower implements AttackAble {
      * @param range                the range
      * @param HP                   the hp
      * @param damage               the damage
+     * @param position
      */
-    protected Tower(UUID id, User owner, int demolitionBonusCount, boolean active, int range, int HP, int damage) {
+    protected Tower(UUID id, User owner, int demolitionBonusCount, boolean active, int range, int HP, int damage, Point2D position) {
         this.id = id;
         this.HP = HP;
         this.damage = damage;
@@ -43,6 +46,7 @@ public abstract class Tower implements AttackAble {
         this.demolitionBonusCount = demolitionBonusCount;
         this.active = active;
         this.range = range;
+        this.position = position;
 
         this.target = null;
         this.selfType = TypeEnum.GROUND;
@@ -202,6 +206,16 @@ public abstract class Tower implements AttackAble {
     @Override
     public TypeEnum getSelfType() {
         return this.selfType;
+    }
+
+    @Override
+    public Point2D getPosition() {
+        return this.position;
+    }
+
+    @Override
+    public void setPosition(Point2D position) {
+        this.position = position;
     }
 
     /**

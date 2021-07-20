@@ -22,7 +22,8 @@ public class KingTower extends Tower {
                       int HP,
                       int damage) {
 
-        super(id, owner, 3, false, 7, HP, damage);
+
+        super(id, owner, 3, false, 7, HP, damage, null);
     }
 
     /**
