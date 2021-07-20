@@ -24,10 +24,12 @@ import models.OnlineModeModel;
 import user.User;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public abstract class BaseController implements CustomEventHandler {
     protected final long eachFrameDuration;
     protected long frameRemainingCount;
+    protected int FRAME_PER_SECOND;
 
     private final GameModel model;
     private Image selectedImage;
@@ -38,7 +40,7 @@ public abstract class BaseController implements CustomEventHandler {
     public BaseController(BotModeModel model) {
         this.model = model;
 
-        int FRAME_PER_SECOND = 30;
+        this.FRAME_PER_SECOND = 30;
         this.eachFrameDuration = Math.round((double) 1000 / FRAME_PER_SECOND);
         this.frameRemainingCount = 3 * 60 * FRAME_PER_SECOND;
 
@@ -366,7 +368,8 @@ public abstract class BaseController implements CustomEventHandler {
 
     @FXML
     void updateElixirBox() {
-        int currentElixir = Integer.parseInt(elixirCount.getText());
+        int currentElixir = this.model.getPlayerElixirCount();
+        elixirCount.setText(Integer.toString(currentElixir));
 
         ObservableList<Node> elixirElements = elixirBox.getChildren();
 
@@ -441,9 +444,26 @@ public abstract class BaseController implements CustomEventHandler {
 
 
     @FXML
+    void handleTime() {
+        if (this.frameRemainingCount % this.FRAME_PER_SECOND == 0) {
+            long seconds = this.frameRemainingCount / this.FRAME_PER_SECOND;
+            long minutes = TimeUnit.SECONDS.toMinutes(seconds);
+            seconds = TimeUnit.SECONDS.toSeconds(seconds) - (TimeUnit.SECONDS.toMinutes(seconds) *60);
+            String splitter = ":";
+
+            if (seconds >= 0 && seconds <= 9)
+                splitter += "0";
+
+            timeField.setText(minutes + splitter + seconds);
+
+        }
+
+    }
+
+
+    @FXML
     void render() {
         timeField.setText("");
-        elixirCount.setText("");
         updateElixirBox();
         handleInvalidCards();
         // erase previous cards in map
@@ -451,6 +471,8 @@ public abstract class BaseController implements CustomEventHandler {
         // update battle box
         // update coming cards
         // update next card
+        // update crowns count
+        handleTime();
 
     }
 
