@@ -2,9 +2,10 @@ package events.cards;
 
 import cards.Card;
 import commands.Command;
-import commands.gameStateCommands.cardCommands.CardAddedCommand;
+import commands.gameStateCommands.cardCommands.*;
 import controllers.modes.CustomEventHandler;
 import javafx.event.Event;
+import javafx.event.EventTarget;
 import javafx.event.EventType;
 import javafx.geometry.Point2D;
 import user.User;
@@ -28,6 +29,22 @@ public class CardAddedEvent extends CardEvent {
      */
     public CardAddedEvent(EventType<? extends Event> eventType, ArrayList<User> targetPlayers, Card card, Point2D position) {
         super(eventType, targetPlayers);
+        this.card = card;
+        this.position = position;
+    }
+
+    /**
+     * Instantiates a new Card added event.
+     *
+     * @param source        the source
+     * @param target        the target
+     * @param eventType     the event type
+     * @param targetPlayers the target players
+     * @param card          the card
+     * @param position      the position
+     */
+    public CardAddedEvent(Object source, EventTarget target, EventType<? extends Event> eventType, ArrayList<User> targetPlayers, Card card, Point2D position) {
+        super(source, target, eventType, targetPlayers);
         this.card = card;
         this.position = position;
     }
