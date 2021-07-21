@@ -20,6 +20,7 @@ public abstract class Building extends Card implements AttackAble {
     private int HP;
     private double damage;
     private double hitSpeed;
+    private boolean shooting;
 
     /**
      * Instantiates a new Card.
@@ -55,6 +56,7 @@ public abstract class Building extends Card implements AttackAble {
         this.remainingFrameCount = remainingFrameCount;
         this.selfType = selfType;
         this.attackType = attackType;
+        shooting = false;
     }
 
     @Override
@@ -128,6 +130,7 @@ public abstract class Building extends Card implements AttackAble {
      */
     public void setTarget(AttackAble target) {
         this.target = target;
+        this.shooting = true;
     }
 
     /**
@@ -191,6 +194,15 @@ public abstract class Building extends Card implements AttackAble {
     @Override
     public boolean isDead() {
         return this.HP == 0;
+    }
+
+    /**
+     * Is shooting boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isShooting() {
+        return shooting;
     }
 
     /**
