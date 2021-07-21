@@ -27,10 +27,10 @@ public class TrainingCampController extends MenuController {
 
     private void setData() {
         ArrayList<Card> playerAllCards = GlobalData.createCards(GlobalData.user);
-        ArrayList<Card> playerBattleCards = (ArrayList<Card>) playerAllCards.subList(0, 4);
+        ArrayList<Card> playerBattleCards = new ArrayList<>(playerAllCards.subList(0, 4));
 
         ArrayList<Card> botAllCards = copyCards(playerAllCards);
-        ArrayList<Card> botBattleCards = (ArrayList<Card>) botAllCards.subList(0, 4);
+        ArrayList<Card> botBattleCards = new ArrayList<>(botAllCards.subList(0, 4));
 
         GlobalData.opponentTeam.add(GlobalData.bot);
         GlobalData.gameModel = new BotModeModel(botAllCards, botBattleCards, playerAllCards, playerBattleCards);
