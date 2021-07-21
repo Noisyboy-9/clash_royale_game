@@ -480,6 +480,14 @@ public abstract class BaseController implements CustomEventHandler {
 
     }
 
+
+    @FXML
+    private void handleCannon() {
+
+    }
+
+
+
     /**
      * Handle battle cards.
      */
@@ -539,18 +547,23 @@ public abstract class BaseController implements CustomEventHandler {
     }
 
 
-    /**
-     * Handle crowns.
-     */
     @FXML
-    void handleCrowns() {
-        this.playerCrownsCount.setText(Integer.toString(this.model.getPlayerCrownCount()));
+    void handleCrownsCount() {
+        int playerCrowns = this.model.getPlayerCrownCount();
+        int opponentCrowns = 0;
 
-        int opponentCrownCount;
+        if (this.model instanceof BotModeModel) {
+            opponentCrowns = ((BotModeModel) this.model).getBotCrownCount();
+        }
+        else if (this.model instanceof OnlineModeModel){
+            opponentCrowns = ((OnlineModeModel) this.model).getOpponentCrownCount();
+        }
 
-        // will be completed
+        this.playerCrownsCount.setText(Integer.toString(playerCrowns));
+        this.opponentCrownsCount.setText(Integer.toString(opponentCrowns));
 
     }
+
 
     /**
      * Handle time.
@@ -585,7 +598,7 @@ public abstract class BaseController implements CustomEventHandler {
         handleBattleCards();
         handleComingCards();
         handleNextCard();
-        // update crowns count
+        handleCrownsCount();
         handleTime();
 
     }
