@@ -2112,7 +2112,7 @@
                         <Image url="@../../../resources/photos/level_place.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="playerKingTower" fitHeight="110.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="LEFT" GridPane.rowIndex="34" GridPane.valignment="BOTTOM">
+                  <ImageView fx:id="playerKingTower1" fitHeight="110.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="LEFT" GridPane.rowIndex="34" GridPane.valignment="BOTTOM">
                      <image>
                         <Image url="@../../../resources/photos/tower_king_blue.png" />
                      </image>
@@ -2162,7 +2162,7 @@
                         <Insets left="3.0" top="8.0" />
                      </GridPane.margin>
                   </Text>
-                  <ImageView fx:id="opponentKingTower" fitHeight="132.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                  <ImageView fx:id="opponentKingTower1" fitHeight="132.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
                      <image>
                         <Image url="@../../../resources/photos/tower_king_red.png" />
                      </image>
