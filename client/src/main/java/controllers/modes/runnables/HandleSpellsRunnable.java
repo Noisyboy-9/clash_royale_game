@@ -4,6 +4,7 @@ import cards.spells.Spell;
 import cards.spells.rages.Rage;
 import cards.troops.Troop;
 import cards.utils.AttackAble;
+import controllers.modes.BaseController;
 import models.BotModeModel;
 import models.GameModel;
 import models.OnlineModeModel;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 /**
  * The type Handle spells runnable.
  */
-public record HandleSpellsRunnable(GameModel model) implements Runnable {
+public record HandleSpellsRunnable(GameModel model, BaseController controller) implements Runnable {
     @Override
     public void run() {
         if (this.model instanceof BotModeModel) {
@@ -59,7 +60,7 @@ public record HandleSpellsRunnable(GameModel model) implements Runnable {
     }
 
     private boolean isInRange(Spell spell, AttackAble target) {
-        return target.getPosition().distance(spell.getPosition()) <= spell.getRadius();
+        return this.controller.transferPosition(target.getPosition()).distance(spell.getPosition()) <= spell.getRadius();
     }
 
     private void setSpellInRangeTowerTargets(Spell spell, ArrayList<AttackAble> possibleTargets) {

@@ -35,6 +35,7 @@ public abstract class BaseController implements CustomEventHandler {
      */
     protected final long eachFrameDuration;
     private final GameModel model;
+    private final ArrayList<ImageView> previousMapElements;
     /**
      * The Frame remaining count.
      */
@@ -49,9 +50,7 @@ public abstract class BaseController implements CustomEventHandler {
     ImageView[] opponentTeamCrowns;
     private Image selectedImage;
     private ImageView selectedImgView;
-
     private ImageView[] playerTeamCrowns;
-    private final ArrayList<ImageView> previousMapElements;
     @FXML
     private GridPane mapCells;
     @FXML
@@ -226,6 +225,16 @@ public abstract class BaseController implements CustomEventHandler {
         return FRAME_PER_SECOND;
     }
 
+    public Point2D transferPosition(Point2D position) {
+        int column = (int) position.getX();
+        int row = (int) position.getY();
+
+        int transferColumn = 23 - column;
+        int transferRow = 38 - row;
+
+        return new Point2D(transferColumn, transferRow);
+    }
+
     private Card getSelectedCard() {
         String imgUrl = selectedImage.getUrl().toLowerCase();
 
@@ -255,16 +264,6 @@ public abstract class BaseController implements CustomEventHandler {
         String status = card.getStatus().toString().replace("_", "-").toLowerCase();
 
         return className + "_" + status + "_" + owner;
-    }
-
-    private Point2D transferPosition(Point2D position) {
-        int column = (int) position.getX();
-        int row = (int) position.getY();
-
-        int transferColumn = 23 - column;
-        int transferRow = 38 - row;
-
-        return new Point2D(transferColumn, transferRow);
     }
 
     private int getIndexInMap(Point2D position) {

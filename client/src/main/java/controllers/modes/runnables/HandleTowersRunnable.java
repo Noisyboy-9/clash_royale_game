@@ -63,7 +63,7 @@ public record HandleTowersRunnable(GameModel model, BaseController controller) i
         AttackAble nearestTarget = targets.get(0);
 
         for (AttackAble target : targets) {
-            if (target.getPosition().distance(towerPosition) < nearestTarget.getPosition().distance(towerPosition)) {
+            if (controller.transferPosition(target.getPosition()).distance(towerPosition) < controller.transferPosition(nearestTarget.getPosition()).distance(towerPosition)) {
                 nearestTarget = target;
             }
         }
