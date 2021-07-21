@@ -48,7 +48,9 @@ public abstract class Spell extends Card {
      * @param tower the tower
      */
     public void addTowerTarget(Tower tower) {
-        this.targetTowers.add(tower);
+        if (!this.targetTowers.contains(tower)) {
+            this.targetTowers.add(tower);
+        }
     }
 
     /**
@@ -57,7 +59,9 @@ public abstract class Spell extends Card {
      * @param troop the troop
      */
     public void addTroopTarget(Troop troop) {
-        this.targetTroops.add(troop);
+        if (!this.targetTroops.contains(troop)) {
+            this.targetTroops.add(troop);
+        }
     }
 
     /**

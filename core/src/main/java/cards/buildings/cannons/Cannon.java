@@ -4,19 +4,16 @@ import cards.Card;
 import cards.buildings.Building;
 import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
-import globals.GlobalData;
 import javafx.geometry.Point2D;
 import user.User;
 
-import java.util.ArrayList;
 import java.util.UUID;
 
 /**
  * The type Canon.
  */
 public class Cannon extends Building {
-    private final ArrayList<AttackAble> targets;
-
+    private AttackAble target;
     /**
      * Instantiates a new Card.
      *
@@ -35,27 +32,22 @@ public class Cannon extends Building {
                 5.5,
                 damage,
                 0.8,
-                30 * GlobalData.FRAME_PER_SECOND,
+                30 * 30,
                 TypeEnum.GROUND,
                 TypeEnum.GROUND
         );
 
-        this.targets = new ArrayList<>();
     }
 
-
-    @Override
-    public void addTarget(AttackAble target) {
-        if (!this.targets.contains(target)) {
-            this.targets.add(target);
-        }
+    public void setTarget(AttackAble target) {
+        this.target = target;
     }
-
 
     @Override
     public void attack() {
-        this.targets.forEach(target -> target.reduceHealthBy(this.getDamage()));
+        this.target.reduceHealthBy(this.getDamage());
     }
+
 
     /**
      * Create card.

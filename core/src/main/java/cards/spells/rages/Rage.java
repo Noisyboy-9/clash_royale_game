@@ -4,7 +4,6 @@ import cards.Card;
 import cards.CardStatusEnum;
 import cards.spells.Spell;
 import cards.troops.Troop;
-import globals.GlobalData;
 import javafx.geometry.Point2D;
 import towers.Tower;
 import user.User;
@@ -105,11 +104,11 @@ public class Rage extends Spell {
      */
     public static Card create(User user) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Rage(UUID.randomUUID(), user, null, 6 * GlobalData.FRAME_PER_SECOND);
-            case LEVEL_2 -> new Rage(UUID.randomUUID(), user, null, 6.5 * GlobalData.FRAME_PER_SECOND);
-            case LEVEL_3 -> new Rage(UUID.randomUUID(), user, null, 7 * GlobalData.FRAME_PER_SECOND);
-            case LEVEL_4 -> new Rage(UUID.randomUUID(), user, null, 7.5 * GlobalData.FRAME_PER_SECOND);
-            case LEVEL_5 -> new Rage(UUID.randomUUID(), user, null, 8 * GlobalData.FRAME_PER_SECOND);
+            case LEVEL_1 -> new Rage(UUID.randomUUID(), user, null, 6 * 30);
+            case LEVEL_2 -> new Rage(UUID.randomUUID(), user, null, 6.5 * 30);
+            case LEVEL_3 -> new Rage(UUID.randomUUID(), user, null, 7 * 30);
+            case LEVEL_4 -> new Rage(UUID.randomUUID(), user, null, 7.5 * 30);
+            case LEVEL_5 -> new Rage(UUID.randomUUID(), user, null, 8 * 30);
         };
     }
 }
