@@ -24,7 +24,8 @@ public class CrazyBotModeController extends BotController  {
         this.setTimer();
     }
 
-    private void setTimer() {
+    @Override
+    protected void setTimer() {
         Timer timer = new Timer();
         TimerTask timerTask = new TimerTask() {
             @Override
@@ -58,12 +59,11 @@ public class CrazyBotModeController extends BotController  {
                 service.shutdown();
                 try {
                     service.awaitTermination(CrazyBotModeController.super.eachFrameDuration, TimeUnit.MILLISECONDS);
-                    CrazyBotModeController.super.render();
+//                    CrazyBotModeController.super.render();
                 } catch (InterruptedException e) {
                     System.out.println("The time of logical threads has exceeded the frame each frame duration");
                     System.out.println("maybe it is better to use a lower frame per second");
                 }
-
             }
         };
 
