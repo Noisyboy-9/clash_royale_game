@@ -92,10 +92,20 @@ public abstract class Card implements CanKnowItsExactCardTypeTraitTraitTraitTrai
     }
 
 
+    /**
+     * Gets status.
+     *
+     * @return the status
+     */
     public CardStatusEnum getStatus() {
         return status;
     }
 
+    /**
+     * Sets status.
+     *
+     * @param status the status
+     */
     public void setStatus(CardStatusEnum status) {
         this.status = status;
     }
