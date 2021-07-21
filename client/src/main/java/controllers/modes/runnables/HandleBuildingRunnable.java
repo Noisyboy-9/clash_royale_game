@@ -17,7 +17,7 @@ public record HandleBuildingRunnable(GameModel model, BaseController controller)
         this.handleDeadBuildings();
         this.calculateEachBuildingTarget();
         this.doBuildingsAttack();
-        this.reduceEveryBuildingRemainingFrameCount();
+//        this.reduceEveryBuildingRemainingFrameCount();
     }
 
     private void doBuildingsAttack() {
