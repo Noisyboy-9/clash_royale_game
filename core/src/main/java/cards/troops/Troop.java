@@ -21,7 +21,7 @@ public abstract class Troop extends Card implements AttackAble {
     private final TypeEnum attackType;
     private double damage;
     private double hitSpeed;
-    private AttackAble attackTarget;
+    private AttackAble target;
     private double HP;
 
     /**
@@ -164,39 +164,31 @@ public abstract class Troop extends Card implements AttackAble {
      *
      * @return the attack target
      */
-    public AttackAble getAttackTarget() {
-        return attackTarget;
+    public AttackAble getTarget() {
+        return target;
     }
 
     /**
      * Sets attack target.
      *
-     * @param attackTarget the attack target
+     * @param target the attack target
      * @throws InvalidAttackTargetException the invalid attack target exception
      */
-    public void setAttackTarget(AttackAble attackTarget) throws InvalidAttackTargetException {
-        if (attackTarget.getSelfType() != this.getAttackType()) {
+    public void setTarget(AttackAble target) throws InvalidAttackTargetException {
+        if (target.getSelfType() != this.getAttackType()) {
             throw new InvalidAttackTargetException("Troop with attack type set to: " + this.getSelfType().toString() + "can't attack target with type: " + this.getAttackType().toString());
         }
 
-        this.attackTarget = attackTarget;
-    }
-
-    /**
-     * Is alive boolean.
-     *
-     * @return the boolean
-     */
-    public boolean isAlive() {
-        return this.getHP() < 0;
+        this.target = target;
     }
 
     /**
      * Attack the selected attack target.
      */
     public void attack() {
-        this.attackTarget.reduceHealthBy(this.damage);
+        this.target.reduceHealthBy(this.damage);
     }
+
 
     @Override
     public Point2D getPosition() {

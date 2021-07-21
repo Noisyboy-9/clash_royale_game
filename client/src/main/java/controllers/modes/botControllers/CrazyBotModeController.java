@@ -1,9 +1,13 @@
 package controllers.modes.botControllers;
 
+import controllers.modes.runnables.*;
 import models.BotModeModel;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * The type Crazy bot mode controller.
@@ -20,19 +24,46 @@ public class CrazyBotModeController extends BotController  {
         this.setTimer();
     }
 
-    private void setTimer() {
+    @Override
+    protected void setTimer() {
         Timer timer = new Timer();
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
-//                handle towers thread
-//                handle troops thread.
-//                handle spells thread.
-//                handle buildings thread.
-//                handle exir count
-//                handle bot move.
-//                handle time thread.
+                ExecutorService service = Executors.newCachedThreadPool();
+                service.execute(
+                        new HandleTowersRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
+                );
+
+                service.execute(
+                        new HandleTroopsRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
+                );
+
+                service.execute(
+                        new HandleSpellsRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
+                );
+
+                service.execute(
+                        new HandleBuildingRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
+                );
+
+                service.execute(
+                        new HandleElixirsCountRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
+                );
+
+                service.execute(
+                        new HandleCrazyBotMoveRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
+                );
+
 //                after all these threads are finished: render screen again.
+                service.shutdown();
+                try {
+                    service.awaitTermination(CrazyBotModeController.super.eachFrameDuration, TimeUnit.MILLISECONDS);
+//                    CrazyBotModeController.super.render();
+                } catch (InterruptedException e) {
+                    System.out.println("The time of logical threads has exceeded the frame each frame duration");
+                    System.out.println("maybe it is better to use a lower frame per second");
+                }
             }
         };
 
