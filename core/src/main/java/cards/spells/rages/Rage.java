@@ -4,6 +4,7 @@ import cards.Card;
 import cards.CardStatusEnum;
 import cards.spells.Spell;
 import cards.troops.Troop;
+import globals.GlobalData;
 import javafx.geometry.Point2D;
 import towers.Tower;
 import user.User;
@@ -99,17 +100,16 @@ public class Rage extends Spell {
     /**
      * Create card.
      *
-     * @param user             the user
-     * @param FRAME_PER_SECOND the frame per second
+     * @param user the user
      * @return the card
      */
-    public static Card create(User user, int FRAME_PER_SECOND) {
+    public static Card create(User user) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Rage(UUID.randomUUID(), user, null, 6 * FRAME_PER_SECOND);
-            case LEVEL_2 -> new Rage(UUID.randomUUID(), user, null, 6.5 * FRAME_PER_SECOND);
-            case LEVEL_3 -> new Rage(UUID.randomUUID(), user, null, 7 * FRAME_PER_SECOND);
-            case LEVEL_4 -> new Rage(UUID.randomUUID(), user, null, 7.5 * FRAME_PER_SECOND);
-            case LEVEL_5 -> new Rage(UUID.randomUUID(), user, null, 8 * FRAME_PER_SECOND);
+            case LEVEL_1 -> new Rage(UUID.randomUUID(), user, null, 6 * GlobalData.FRAME_PER_SECOND);
+            case LEVEL_2 -> new Rage(UUID.randomUUID(), user, null, 6.5 * GlobalData.FRAME_PER_SECOND);
+            case LEVEL_3 -> new Rage(UUID.randomUUID(), user, null, 7 * GlobalData.FRAME_PER_SECOND);
+            case LEVEL_4 -> new Rage(UUID.randomUUID(), user, null, 7.5 * GlobalData.FRAME_PER_SECOND);
+            case LEVEL_5 -> new Rage(UUID.randomUUID(), user, null, 8 * GlobalData.FRAME_PER_SECOND);
         };
     }
 }
