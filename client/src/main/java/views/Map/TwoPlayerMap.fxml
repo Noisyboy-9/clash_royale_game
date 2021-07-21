@@ -2167,22 +2167,22 @@
                         <Image url="@../../../resources/photos/tower_king_red.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="playerQueenTower2" fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="16" GridPane.halignment="LEFT" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
+                  <ImageView fx:id="playerQueenTower2" fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="17" GridPane.halignment="CENTER" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
                      <image>
                         <Image url="@../../../resources/photos/tower_archer_blue.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="playerQueenTower1" fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="604.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
+                  <ImageView fx:id="playerQueenTower1" fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="604.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
                      <image>
                         <Image url="@../../../resources/photos/tower_archer_blue.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="opponentQueenTower1" fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="16" GridPane.halignment="LEFT" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                  <ImageView fx:id="opponentQueenTower1" fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="17" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
                      <image>
                         <Image url="@../../../resources/photos/tower_archer_red.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="opponentQueenTower2" fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                  <ImageView fx:id="opponentQueenTower2" fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
                      <image>
                         <Image url="@../../../resources/photos/tower_archer_red.png" />
                      </image>
