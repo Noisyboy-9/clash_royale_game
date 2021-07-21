@@ -15,8 +15,6 @@ import java.util.UUID;
  * The type Arrows.
  */
 public class Arrows extends Spell {
-    private final ArrayList<Tower> targetTowers;
-    private final ArrayList<Troop> targetTroops;
     private final int damage;
 
     /**
@@ -32,40 +30,10 @@ public class Arrows extends Spell {
                    Point2D position,
                    int damage) {
         super(id, 3, owner, position, 4);
-        this.targetTowers = new ArrayList<>();
-        this.targetTroops = new ArrayList<>();
         this.damage = damage;
 
     }
 
-    /**
-     * Add tower target.
-     *
-     * @param tower the tower
-     * @throws TargetAlreadyExistException the target already exist exception
-     */
-    public void addTowerTarget(Tower tower) throws TargetAlreadyExistException {
-        if (this.targetTowers.contains(tower)) {
-            throw new TargetAlreadyExistException("tower with id: " + tower.getId().toString() + "exist");
-        }
-
-        this.targetTowers.add(tower);
-    }
-
-
-    /**
-     * Add troop target.
-     *
-     * @param troop the troop
-     * @throws TargetAlreadyExistException the target already exist exception
-     */
-    public void addTroopTarget(Troop troop) throws TargetAlreadyExistException {
-        if (this.targetTroops.contains(troop)) {
-            throw new TargetAlreadyExistException("tower with id: " + troop.getId().toString() + "exist");
-        }
-
-        this.targetTroops.add(troop);
-    }
 
     /**
      * Gets damage.

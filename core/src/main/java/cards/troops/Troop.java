@@ -82,6 +82,11 @@ public abstract class Troop extends Card implements AttackAble {
     }
 
     @Override
+    public boolean isDead() {
+        return this.HP == 0;
+    }
+
+    @Override
     public void reduceHealthBy(double damage) {
         this.HP -= damage;
     }
@@ -191,5 +196,15 @@ public abstract class Troop extends Card implements AttackAble {
      */
     public void attack() {
         this.attackTarget.reduceHealthBy(this.damage);
+    }
+
+    @Override
+    public Point2D getPosition() {
+        return super.getPosition();
+    }
+
+    @Override
+    public void setPosition(Point2D position) {
+        super.setPosition(position);
     }
 }

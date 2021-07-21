@@ -4,6 +4,7 @@ import cards.Card;
 import cards.buildings.Building;
 import cards.spells.Spell;
 import cards.troops.Troop;
+import cards.utils.AttackAble;
 import errors.DuplicateCardException;
 import errors.InvalidCardException;
 import errors.InvalidTowerException;
@@ -22,9 +23,9 @@ public class OnlineModeModel extends GameModel {
     /**
      * Instantiates a new Online mode model.
      *
-     * @param playerAllCards     the player all cards
-     * @param playerBattleCards  the player battle cards
-     * @param opponentTowers     the opponent towers
+     * @param playerAllCards    the player all cards
+     * @param playerBattleCards the player battle cards
+     * @param opponentTowers    the opponent towers
      */
     public OnlineModeModel(ArrayList<Card> playerAllCards, ArrayList<Card> playerBattleCards, ArrayList<Tower> opponentTowers) {
         super(playerAllCards, playerBattleCards);
@@ -145,11 +146,46 @@ public class OnlineModeModel extends GameModel {
         return buildings;
     }
 
+    /**
+     * Gets opponent crown count.
+     *
+     * @return the opponent crown count
+     */
     public int getOpponentCrownCount() {
         return opponentCrownCount;
     }
 
+    /**
+     * Sets opponent crown count.
+     *
+     * @param opponentCrownCount the opponent crown count
+     */
     public void setOpponentCrownCount(int opponentCrownCount) {
         this.opponentCrownCount = opponentCrownCount;
+    }
+
+    /**
+     * Gets bot in map attack ables.
+     *
+     * @return the bot in map attack ables
+     */
+    public ArrayList<AttackAble> getOpponentInMapAttackAblesCards() {
+        ArrayList<AttackAble> attackAbles = new ArrayList<>();
+        attackAbles.addAll(this.getOpponentBuildings());
+        attackAbles.addAll(this.getOpponentInMapTroops());
+        return attackAbles;
+    }
+
+    /**
+     * Gets bot in map attack ables.
+     *
+     * @return the bot in map attack ables
+     */
+    public ArrayList<AttackAble> getOpponentInMapAttackAbles() {
+        ArrayList<AttackAble> attackAbles = new ArrayList<>();
+        attackAbles.addAll(this.getOpponentBuildings());
+        attackAbles.addAll(this.getOpponentInMapTroops());
+        attackAbles.addAll(this.getOpponentTowers());
+        return attackAbles;
     }
 }

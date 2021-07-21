@@ -1,15 +1,20 @@
 package cards.spells;
 
 import cards.Card;
+import cards.troops.Troop;
 import javafx.geometry.Point2D;
+import towers.Tower;
 import user.User;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 /**
  * The type Spell.
  */
 public abstract class Spell extends Card {
+    protected final ArrayList<Tower> targetTowers;
+    protected final ArrayList<Troop> targetTroops;
     private final double radius;
 
     /**
@@ -24,6 +29,8 @@ public abstract class Spell extends Card {
     protected Spell(UUID id, int cost, User owner, Point2D position, double radius) {
         super(id, cost, owner, position);
         this.radius = radius;
+        this.targetTowers = new ArrayList<>();
+        this.targetTroops = new ArrayList<>();
     }
 
     /**
@@ -33,6 +40,24 @@ public abstract class Spell extends Card {
      */
     public double getRadius() {
         return radius;
+    }
+
+    /**
+     * Add tower target.
+     *
+     * @param tower the tower
+     */
+    public void addTowerTarget(Tower tower) {
+        this.targetTowers.add(tower);
+    }
+
+    /**
+     * Add troop target.
+     *
+     * @param troop the troop
+     */
+    public void addTroopTarget(Troop troop) {
+        this.targetTroops.add(troop);
     }
 
     /**

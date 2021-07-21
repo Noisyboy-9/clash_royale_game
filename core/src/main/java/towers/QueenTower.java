@@ -21,16 +21,16 @@ public class QueenTower extends Tower {
                        User owner,
                        int HP,
                        int damage) {
-        super(id, owner, 1, true, 8, HP, damage);
+        super(id, owner, 1, true, 8, HP, damage, null);
     }
 
-    public static Tower create(User owner) {
-        return switch (owner.getLevel()) {
-            case LEVEL_1 -> new QueenTower(UUID.randomUUID(), owner, 1400, 50);
-            case LEVEL_2 -> new QueenTower(UUID.randomUUID(), owner, 1512, 54);
-            case LEVEL_3 -> new QueenTower(UUID.randomUUID(), owner, 1624, 58);
-            case LEVEL_4 -> new QueenTower(UUID.randomUUID(), owner, 1750, 62);
-            case LEVEL_5 -> new QueenTower(UUID.randomUUID(), owner, 1890, 69);
+    public static Tower create(User owners) {
+        return switch (owners.getLevel()) {
+            case LEVEL_1 -> new QueenTower(UUID.randomUUID(), owners, 1400, 50);
+            case LEVEL_2 -> new QueenTower(UUID.randomUUID(), owners, 1512, 54);
+            case LEVEL_3 -> new QueenTower(UUID.randomUUID(), owners, 1624, 58);
+            case LEVEL_4 -> new QueenTower(UUID.randomUUID(), owners, 1750, 62);
+            case LEVEL_5 -> new QueenTower(UUID.randomUUID(), owners, 1890, 69);
         };
     }
 }

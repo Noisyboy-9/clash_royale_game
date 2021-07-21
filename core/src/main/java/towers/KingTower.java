@@ -1,5 +1,6 @@
 package towers;
 
+import cards.utils.AttackAble;
 import user.User;
 
 import java.util.UUID;
@@ -8,7 +9,7 @@ import java.util.UUID;
  * The type King tower.
  */
 public class KingTower extends Tower {
-
+    private boolean shooting;
     /**
      * Instantiates a new Tower.
      *
@@ -22,7 +23,24 @@ public class KingTower extends Tower {
                       int HP,
                       int damage) {
 
-        super(id, owner, 3, false, 7, HP, damage);
+
+        super(id, owner, 3, false, 7, HP, damage, null);
+        this.shooting = false;
+    }
+
+    /**
+     * Is shooting boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isShooting() {
+        return shooting;
+    }
+
+    @Override
+    public void setTarget(AttackAble target) {
+        super.setTarget(target);
+        this.shooting = true;
     }
 
     /**
