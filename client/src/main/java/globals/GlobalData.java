@@ -57,7 +57,7 @@ public class GlobalData {
     }
 
 
-    private static Card getCardBasedOnName(String className, User cardOwner) {
+    public static Card getCardBasedOnName(String className, User cardOwner) {
         return switch (className) {
             case "Archers" -> Archer.create(cardOwner);
             case "Arrows" -> Arrows.create(cardOwner);
