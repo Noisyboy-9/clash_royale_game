@@ -134,7 +134,7 @@ public class OnlineModeModel extends GameModel {
      *
      * @return the opponent buildings
      */
-    public ArrayList<Building> getOpponentBuildings() {
+    public ArrayList<Building> getOpponentInMapBuildings() {
         ArrayList<Building> buildings = new ArrayList<>();
 
         for (Card card : this.opponentInMapCards) {
@@ -171,7 +171,7 @@ public class OnlineModeModel extends GameModel {
      */
     public ArrayList<AttackAble> getOpponentInMapAttackAblesCards() {
         ArrayList<AttackAble> attackAbles = new ArrayList<>();
-        attackAbles.addAll(this.getOpponentBuildings());
+        attackAbles.addAll(this.getOpponentInMapBuildings());
         attackAbles.addAll(this.getOpponentInMapTroops());
         return attackAbles;
     }
@@ -183,7 +183,7 @@ public class OnlineModeModel extends GameModel {
      */
     public ArrayList<AttackAble> getOpponentInMapAttackAbles() {
         ArrayList<AttackAble> attackAbles = new ArrayList<>();
-        attackAbles.addAll(this.getOpponentBuildings());
+        attackAbles.addAll(this.getOpponentInMapBuildings());
         attackAbles.addAll(this.getOpponentInMapTroops());
         attackAbles.addAll(this.getOpponentTowers());
         return attackAbles;

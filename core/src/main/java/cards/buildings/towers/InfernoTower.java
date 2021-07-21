@@ -4,7 +4,6 @@ import cards.Card;
 import cards.buildings.Building;
 import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
-import globals.GlobalData;
 import javafx.geometry.Point2D;
 import user.User;
 
@@ -16,7 +15,6 @@ import java.util.UUID;
  */
 public class InfernoTower extends Building {
     private final ArrayList<AttackAble> targets;
-
     /**
      * Instantiates a new Inferno tower.
      *
@@ -39,7 +37,7 @@ public class InfernoTower extends Building {
                 6,
                 damage,
                 0.4,
-                40 * GlobalData.FRAME_PER_SECOND,
+                40 * 30,
                 TypeEnum.GROUND,
                 TypeEnum.AIR_GROUND);
         this.targets = new ArrayList<>();
@@ -50,13 +48,16 @@ public class InfernoTower extends Building {
         this.targets.forEach(target -> target.reduceHealthBy(this.getDamage()));
     }
 
-    @Override
+    /**
+     * Add target.
+     *
+     * @param target the target
+     */
     public void addTarget(AttackAble target) {
         if (!this.targets.contains(target)) {
             this.targets.add(target);
         }
     }
-
 
     /**
      * Create card.
