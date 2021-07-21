@@ -55,7 +55,8 @@ public class NormalBotModeController extends BotController {
                 service.shutdown();
                 try {
                     service.awaitTermination(NormalBotModeController.super.eachFrameDuration, TimeUnit.MILLISECONDS);
-//                    NormalBotModeController.super.render();
+                    NormalBotModeController.super.render();
+                    NormalBotModeController.this.reduceFrameRemainingCount();
                 } catch (InterruptedException e) {
                     System.out.println("The time of logical threads has exceeded the frame each frame duration");
                     System.out.println("maybe it is better to use a lower frame per second");
