@@ -4,6 +4,7 @@ import cards.Card;
 import cards.buildings.Building;
 import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
+import globals.GlobalData;
 import javafx.geometry.Point2D;
 import user.User;
 
@@ -38,7 +39,7 @@ public class InfernoTower extends Building {
                 6,
                 damage,
                 0.4,
-                40,
+                40 * GlobalData.FRAME_PER_SECOND,
                 TypeEnum.GROUND,
                 TypeEnum.AIR_GROUND);
         this.targets = new ArrayList<>();
@@ -55,6 +56,7 @@ public class InfernoTower extends Building {
             this.targets.add(target);
         }
     }
+
 
     /**
      * Create card.

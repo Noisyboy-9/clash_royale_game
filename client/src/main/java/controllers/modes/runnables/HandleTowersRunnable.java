@@ -15,9 +15,23 @@ public record HandleTowersRunnable(GameModel model, BaseController controller) i
 
     @Override
     public void run() {
+        this.handleDeadTowers();
         this.calculateEachTowerTarget();
         if (controller.getFrameRemainingCount() % controller.getFRAME_PER_SECOND() == 0) {
             this.handleTowerAttacks();
+        }
+    }
+
+    private void handleDeadTowers() {
+        model.getPlayerTowers().removeIf(Tower::isDead);
+
+
+        if (this.model instanceof BotModeModel) {
+            ((BotModeModel) model).getBotTowers().removeIf(Tower::isDead);
+        }
+
+        if (this.model instanceof OnlineModeModel) {
+            ((OnlineModeModel) model).getOpponentTowers().removeIf(Tower::isDead);
         }
     }
 
@@ -32,7 +46,13 @@ public record HandleTowersRunnable(GameModel model, BaseController controller) i
             towers.addAll(((BotModeModel) model).getBotTowers());
         }
 
-        for (Tower tower : towers) tower.shoot();
+        for (Tower tower : towers) {
+            tower.shoot();
+
+            if (tower.getTarget().isDead()) {
+                tower.setTarget(null);
+            }
+        }
     }
 
     private void calculateEachTowerTarget() {
