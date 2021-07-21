@@ -21,6 +21,8 @@ import javafx.scene.text.Text;
 import models.BotModeModel;
 import models.GameModel;
 import models.OnlineModeModel;
+import towers.KingTower;
+import towers.Tower;
 import user.User;
 
 import java.util.ArrayList;
@@ -30,27 +32,22 @@ import java.util.concurrent.TimeUnit;
  * The type Base controller.
  */
 public abstract class BaseController implements CustomEventHandler {
-    /**
-     * The Each frame duration.
-     */
+
     protected final long eachFrameDuration;
     private final GameModel model;
     private final ArrayList<ImageView> previousMapElements;
-    /**
-     * The Frame remaining count.
-     */
     protected long frameRemainingCount;
-    /**
-     * The Frame per second.
-     */
     protected int FRAME_PER_SECOND;
-    /**
-     * The Opponent team crowns.
-     */
     ImageView[] opponentTeamCrowns;
     private Image selectedImage;
     private ImageView selectedImgView;
     private ImageView[] playerTeamCrowns;
+    private final int numberOfPlayers;
+    private final Point2D playerQueenTower1Position;
+    private final Point2D playerQueenTower2Position;
+    private final Point2D opponentQueenTower1Position;
+    private final Point2D opponentQueenTower2Position;
+
     @FXML
     private GridPane mapCells;
     @FXML
@@ -146,6 +143,11 @@ public abstract class BaseController implements CustomEventHandler {
         this.eachFrameDuration = Math.round((double) 1000 / FRAME_PER_SECOND);
         this.frameRemainingCount = 3L * 60 * FRAME_PER_SECOND;
         this.previousMapElements = new ArrayList<>();
+        this.numberOfPlayers = GlobalData.playerTeam.size() + GlobalData.opponentTeam.size();
+        this.playerQueenTower1Position = new Point2D(6, 30);
+        this.playerQueenTower2Position = new Point2D(17, 30);
+        this.opponentQueenTower1Position = new Point2D(6, 10);
+        this.opponentQueenTower2Position = new Point2D(17, 10);
 
     }
 
@@ -433,6 +435,124 @@ public abstract class BaseController implements CustomEventHandler {
 
     }
 
+
+    @FXML
+    public void handleTowers() {
+        ArrayList<Tower> playerTowers = this.model.getPlayerTowers();
+        ArrayList<Tower> opponentTowers = new ArrayList<>();
+
+        if (this.model instanceof BotModeModel) {
+            opponentTowers = ((BotModeModel) this.model).getBotTowers();
+        }
+        else if (this.model instanceof OnlineModeModel) {
+            opponentTowers = ((OnlineModeModel) this.model).getOpponentTowers();
+        }
+
+        handleTowersExistence(playerTowers, this.playerQueenTower1, this.playerQueenTower2, this.playerKingTower1, this.playerQueenTower1Position, this.playerQueenTower2Position);
+        handleTowersExistence(opponentTowers, this.opponentQueenTower1, this.opponentQueenTower2, this.opponentKingTower1, this.opponentQueenTower1Position, this.opponentQueenTower2Position);
+        handleTowersAttacks(playerTowers, false);
+        handleTowersAttacks(opponentTowers, true);
+
+    }
+
+
+    @FXML
+    void handleTowersExistence(ArrayList<Tower> towers, ImageView queenTower1, ImageView queenTower2, ImageView kingTower1, Point2D queenTower1Position, Point2D queenTower2Position) {
+        // when king towers are destroyed
+        if (towers.size() == 0) {
+            queenTower1.setImage(null);
+            queenTower2.setImage(null);
+            kingTower1.setImage(null);
+
+            if (numberOfPlayers == 4) {
+                if (this.playerKingTower1.getImage() == null) {
+                    this.playerKingTower2.setImage(null);
+                }
+
+                if (this.opponentKingTower1.getImage() == null) {
+                    this.opponentKingTower2.setImage(null);
+                }
+
+            }
+
+        }
+        else {
+            if (queenTower1.getImage() != null || queenTower2.getImage() != null) {
+                boolean tower1Exists = false;
+                boolean tower2Exists = false;
+
+                for (Tower tower : towers) {
+                    if (tower.getPosition().equals(queenTower1Position))
+                        tower1Exists = true;
+
+                    if (tower.getPosition().equals(queenTower2Position))
+                        tower2Exists = true;
+                }
+
+                if (!tower1Exists) {
+                    queenTower1.setImage(null);
+                }
+
+                if (!tower2Exists) {
+                    queenTower2.setImage(null);
+                }
+
+            }
+
+        }
+
+    }
+
+
+    @FXML
+    void handleTowersAttacks(ArrayList<Tower> towers, boolean isOpponent) {
+        ObservableList<Node> mapChildren = this.mapCells.getChildren();
+
+        String kingKey;
+        String queenKey;
+
+        if (isOpponent) {
+            kingKey = "Shot_fight_opponent";
+            queenKey = "Tower_fight_opponent";
+        }
+        else {
+            kingKey = "Shot_fight_player";
+            queenKey = "Tower_fight_player";
+        }
+
+        for (Tower tower : towers) {
+            if (tower.getTarget() != null) {
+                if (tower instanceof KingTower) {
+                    if (((KingTower) tower).isShooting()) {
+                        attackTowerTarget(isOpponent, mapChildren, kingKey, tower);
+
+                    }
+                }
+                else {
+                    attackTowerTarget(isOpponent, mapChildren, queenKey, tower);
+                }
+            }
+        }
+    }
+
+    @FXML
+    private void attackTowerTarget(boolean isOpponent, ObservableList<Node> mapChildren, String gifKey, Tower tower) {
+        Image gif = Controller.SCENE_CONTROLLER.getGif(gifKey);
+        ImageView imageView = new ImageView(gif);
+        Point2D position;
+
+        if (isOpponent)
+            position = transferPosition(tower.getPosition());
+        else
+            position = tower.getPosition();
+
+        int index = getIndexInMap(position);
+
+        mapChildren.set(index, imageView);
+
+    }
+
+
     /**
      * Refresh map.
      */
@@ -594,6 +714,7 @@ public abstract class BaseController implements CustomEventHandler {
         updateElixirBox();
         handleInvalidCards();
         refreshMap();
+        handleTowers();
         handleInMapCards();
         handleBattleCards();
         handleComingCards();
