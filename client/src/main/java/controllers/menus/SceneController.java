@@ -29,8 +29,6 @@ public class SceneController {
     private final HashMap<String, Image> battleCardsBoxImages;
     private final HashMap<String, Image> comingCardsBoxImages;
     private final HashMap<String, Image> nextCardImages;
-    private Scene scene;
-    private Parent root;
 
     /**
      * Instantiates a new Scene controller.
@@ -61,11 +59,12 @@ public class SceneController {
      */
     public void showScene(String sceneName) {
         try {
+            Scene scene;
             if (menus.containsKey(sceneName)) {
                 scene = menus.get(sceneName);
             } else {
                 URL url = new URL("file:/" + Controller.VIEW_PATH + sceneName);
-                root = FXMLLoader.load(url);
+                Parent root = FXMLLoader.load(url);
                 scene = new Scene(root, 528, 946);
                 this.menus.put(sceneName, scene);
             }
@@ -211,7 +210,6 @@ public class SceneController {
     }
 
     private DirectoryStream<Path> getDirectoryStreamBasedOnOs(String exclusivePath) throws IOException {
-        DirectoryStream<Path> directoryStream = null;
         if (!System.getProperty("os.name").contains("Windows")) {
 //                create a directory stream on mac or linux
             return Files.newDirectoryStream(Paths.get("/" + exclusivePath + "/"));

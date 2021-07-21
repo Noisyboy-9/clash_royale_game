@@ -59,7 +59,6 @@ public class CardQueryBuilder {
             e.printStackTrace();
         }
 
-        Controller.SCENE_CONTROLLER.removeScene("Menu/BattleDeckMenu.fxml");
         Controller.SCENE_CONTROLLER.removeScene("Menu/ProfileMenu.fxml");
 
     }
