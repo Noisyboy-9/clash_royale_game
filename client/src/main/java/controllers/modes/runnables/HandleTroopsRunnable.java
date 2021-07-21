@@ -12,9 +12,7 @@ import models.OnlineModeModel;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public record HandleTroopsRunnable(GameModel model,
-                                   BaseController controller) implements Runnable {
-
+public record HandleTroopsRunnable(GameModel model, BaseController controller) implements Runnable {
     @Override
     public void run() {
         this.handleDeadTroops();
