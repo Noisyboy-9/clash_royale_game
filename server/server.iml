@@ -23,6 +23,5 @@
     <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:mac:16" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-media:16" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-media:mac:16" level="project" />
-    <orderEntry type="module" module-name="client" />
   </component>
 </module>
