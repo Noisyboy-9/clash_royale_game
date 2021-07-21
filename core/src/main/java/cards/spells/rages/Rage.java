@@ -1,40 +1,36 @@
 package cards.spells.rages;
 
 import cards.Card;
+import cards.CardStatusEnum;
 import cards.spells.Spell;
 import cards.troops.Troop;
-import exceptions.TargetAlreadyExistException;
+import globals.GlobalData;
 import javafx.geometry.Point2D;
 import towers.Tower;
 import user.User;
 
-import java.util.ArrayList;
 import java.util.UUID;
 
 /**
  * The type Rage.
  */
 public class Rage extends Spell {
-    private final ArrayList<Tower> targetTowers;
-    private final ArrayList<Troop> targetTroops;
-    private final double duration;
+    private double remainingFrameCount;
 
     /**
      * Instantiates a new Rage.
      *
-     * @param id       the id
-     * @param owner    the owner
-     * @param position the position
-     * @param duration the duration
+     * @param id                  the id
+     * @param owner               the owner
+     * @param position            the position
+     * @param remainingFrameCount the remainingFrameCount
      */
     protected Rage(UUID id,
                    User owner,
                    Point2D position,
-                   double duration) {
+                   double remainingFrameCount) {
         super(id, 3, owner, position, 5);
-        this.duration = duration;
-        this.targetTowers = new ArrayList<>();
-        this.targetTroops = new ArrayList<>();
+        this.remainingFrameCount = remainingFrameCount;
     }
 
     /**
@@ -42,52 +38,46 @@ public class Rage extends Spell {
      *
      * @return the duration
      */
-    public double getDuration() {
-        return duration;
+    public double getRemainingFrameCount() {
+        return remainingFrameCount;
     }
 
     /**
-     * Add tower target.
+     * Decrease remaining frame count by.
      *
-     * @param tower the tower
-     * @throws TargetAlreadyExistException the target already exist exception
+     * @param amount the amount
      */
-    public void addTowerTarget(Tower tower) throws TargetAlreadyExistException {
-        if (this.targetTowers.contains(tower)) {
-            throw new TargetAlreadyExistException("tower with id: " + tower.getId().toString() + "exist");
-        }
-
-        this.targetTowers.add(tower);
-    }
-
-
-    /**
-     * Add troop target.
-     *
-     * @param troop the troop
-     * @throws TargetAlreadyExistException the target already exist exception
-     */
-    public void addTroopTarget(Troop troop) throws TargetAlreadyExistException {
-        if (this.targetTroops.contains(troop)) {
-            throw new TargetAlreadyExistException("tower with id: " + troop.getId().toString() + "exist");
-        }
-
-        this.targetTroops.add(troop);
+    public void decreaseRemainingFrameCountBy(int amount) {
+        this.remainingFrameCount -= amount;
     }
 
     @Override
     public void chant() {
-        this.targetTowers.forEach(tower -> tower.setHitSpeed(
-                (1.4) * tower.getHitSpeed() // boost the attack speed of tower by 40%
-        ));
+        for (Tower tower : this.targetTowers) {
+            tower.setHitSpeed(
+                    (1.4) * tower.getHitSpeed() // boost the attack speed of tower by 40%
+            );
+        }
 
-        this.targetTroops.forEach(troop -> troop.setHitSpeed(
-                (1.4) * troop.getHitSpeed() // boost the hit speed of troop by 40%
-        ));
+        for (Troop targetTroop : this.targetTroops) {
+            targetTroop.setHitSpeed(
+                    (1.4) * targetTroop.getHitSpeed() // boost the hit speed of troop by 40%
+            );
+        }
 
-        this.targetTroops.forEach(troop -> troop.setDamage(
-                (1.4) * troop.getDamage() // boost damage by damage of troop by 40%
-        ));
+        for (Troop troop : this.targetTroops) {
+            troop.setDamage(
+                    (1.4) * troop.getDamage() // boost damage by damage of troop by 40%
+            );
+
+            if (troop.getStatus().equals(CardStatusEnum.WALK)) {
+                troop.setStatus(CardStatusEnum.WALK_RAGE);
+            }
+
+            if (troop.getStatus().equals(CardStatusEnum.FIGHT)) {
+                troop.setStatus(CardStatusEnum.FIGHT_RAGE);
+            }
+        }
     }
 
     /**
@@ -115,11 +105,11 @@ public class Rage extends Spell {
      */
     public static Card create(User user) {
         return switch (user.getLevel()) {
-            case LEVEL_1 -> new Rage(UUID.randomUUID(), user, null, 6);
-            case LEVEL_2 -> new Rage(UUID.randomUUID(), user, null, 6.5);
-            case LEVEL_3 -> new Rage(UUID.randomUUID(), user, null, 7);
-            case LEVEL_4 -> new Rage(UUID.randomUUID(), user, null, 7.5);
-            case LEVEL_5 -> new Rage(UUID.randomUUID(), user, null, 8);
+            case LEVEL_1 -> new Rage(UUID.randomUUID(), user, null, 6 * GlobalData.FRAME_PER_SECOND);
+            case LEVEL_2 -> new Rage(UUID.randomUUID(), user, null, 6.5 * GlobalData.FRAME_PER_SECOND);
+            case LEVEL_3 -> new Rage(UUID.randomUUID(), user, null, 7 * GlobalData.FRAME_PER_SECOND);
+            case LEVEL_4 -> new Rage(UUID.randomUUID(), user, null, 7.5 * GlobalData.FRAME_PER_SECOND);
+            case LEVEL_5 -> new Rage(UUID.randomUUID(), user, null, 8 * GlobalData.FRAME_PER_SECOND);
         };
     }
 }

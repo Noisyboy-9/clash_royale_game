@@ -26,7 +26,7 @@ public class GlobalData {
     public static ArrayList<User> opponentTeam = new ArrayList<>();
     public static int playerTeamCrownCount;
     public static int opponentTeamCrownCount;
-
+    public static int FRAME_PER_SECOND = 30;
 
     public static ArrayList<Card> createCards(User cardOwner) {
         ArrayList<Card> cards = new ArrayList<>();
@@ -68,7 +68,7 @@ public class GlobalData {
             case "InfernoTower" -> InfernoTower.create(cardOwner);
             case "Giant" -> Giant.create(cardOwner);
             case "MiniPEKKA" -> MiniPekka.create(cardOwner);
-            case "Rage" -> Rage.create(cardOwner);
+            case "Rage" -> Rage.create(cardOwner, FRAME_PER_SECOND);
             case "Valkyrie" -> Valkyrie.create(cardOwner);
             case "Wizard" -> Wizard.create(cardOwner);
             default -> throw new IllegalStateException("Unexpected value: " + className);

@@ -21,7 +21,6 @@ public interface AttackAble {
      */
     TypeEnum getSelfType();
 
-
     /**
      * Gets position.
      *
@@ -35,4 +34,11 @@ public interface AttackAble {
      * @param position the position
      */
     void setPosition(Point2D position);
+
+    /**
+     * Is dead boolean.
+     *
+     * @return the boolean
+     */
+    boolean isDead();
 }

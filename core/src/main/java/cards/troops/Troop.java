@@ -82,6 +82,11 @@ public abstract class Troop extends Card implements AttackAble {
     }
 
     @Override
+    public boolean isDead() {
+        return this.HP == 0;
+    }
+
+    @Override
     public void reduceHealthBy(double damage) {
         this.HP -= damage;
     }

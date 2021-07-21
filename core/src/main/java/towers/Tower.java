@@ -218,6 +218,11 @@ public abstract class Tower implements AttackAble {
         this.position = position;
     }
 
+    @Override
+    public boolean isDead() {
+        return this.HP == 0;
+    }
+
     /**
      * Gets attack type.
      *

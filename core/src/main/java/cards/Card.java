@@ -30,6 +30,7 @@ public abstract class Card implements CanKnowItsExactCardTypeTraitTraitTraitTrai
         this.cost = cost;
         this.owner = owner;
         this.position = position;
+        this.status = CardStatusEnum.WALK;
     }
 
     @Override

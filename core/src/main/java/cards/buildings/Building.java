@@ -15,26 +15,27 @@ public abstract class Building extends Card implements AttackAble {
     private final TypeEnum selfType;
     private final TypeEnum attackType;
     private final double radius;
-    private final double duration;
+    private double remainingFrameCount;
     private AttackAble target;
     private int HP;
     private double damage;
     private double hitSpeed;
+    private boolean shooting;
 
     /**
      * Instantiates a new Card.
      *
-     * @param id         the id
-     * @param cost       the cost
-     * @param owner      the owner
-     * @param position   the position
-     * @param HP         the hp
-     * @param radius     the radius
-     * @param damage     the damage
-     * @param hitSpeed   the hit speed
-     * @param duration   the duration
-     * @param selfType   the self type
-     * @param attackType the attack type
+     * @param id                  the id
+     * @param cost                the cost
+     * @param owner               the owner
+     * @param position            the position
+     * @param HP                  the hp
+     * @param radius              the radius
+     * @param damage              the damage
+     * @param hitSpeed            the hit speed
+     * @param remainingFrameCount the duration
+     * @param selfType            the self type
+     * @param attackType          the attack type
      */
     protected Building(UUID id,
                        int cost,
@@ -44,7 +45,7 @@ public abstract class Building extends Card implements AttackAble {
                        double radius,
                        double damage,
                        double hitSpeed,
-                       double duration,
+                       double remainingFrameCount,
                        TypeEnum selfType,
                        TypeEnum attackType) {
         super(id, cost, owner, position);
@@ -52,9 +53,10 @@ public abstract class Building extends Card implements AttackAble {
         this.radius = radius;
         this.damage = damage;
         this.hitSpeed = hitSpeed;
-        this.duration = duration;
+        this.remainingFrameCount = remainingFrameCount;
         this.selfType = selfType;
         this.attackType = attackType;
+        shooting = false;
     }
 
     @Override
@@ -108,8 +110,8 @@ public abstract class Building extends Card implements AttackAble {
      *
      * @return the duration
      */
-    public double getDuration() {
-        return duration;
+    public double getRemainingFrameCount() {
+        return remainingFrameCount;
     }
 
     /**
@@ -128,6 +130,7 @@ public abstract class Building extends Card implements AttackAble {
      */
     public void setTarget(AttackAble target) {
         this.target = target;
+        this.shooting = true;
     }
 
     /**
@@ -187,4 +190,28 @@ public abstract class Building extends Card implements AttackAble {
     public void setPosition(Point2D position) {
         super.setPosition(position);
     }
+
+    @Override
+    public boolean isDead() {
+        return this.HP == 0 || this.remainingFrameCount == 0;
+    }
+
+    /**
+     * Is shooting boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isShooting() {
+        return shooting;
+    }
+
+    /**
+     * Reduce remaining frames by.
+     *
+     * @param amount the amount
+     */
+    public void reduceRemainingFramesBy(int amount) {
+        this.remainingFrameCount -= amount;
+    }
 }
+
