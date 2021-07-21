@@ -41,8 +41,10 @@ public record HandleSpellsRunnable(GameModel model, BaseController controller) i
 
 //                if the spell is rage and it's remaining frame count is zero it must be deleted
                 if (((Rage) spell).getRemainingFrameCount() == 0) {
+                    ((Rage) spell).unChant();
                     spells.remove(spell);
                 }
+
                 continue;
             }
 

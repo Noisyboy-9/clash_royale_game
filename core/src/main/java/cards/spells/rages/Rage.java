@@ -1,8 +1,11 @@
 package cards.spells.rages;
 
 import cards.Card;
+import cards.CardStatusEnum;
 import cards.spells.Spell;
+import cards.troops.Troop;
 import javafx.geometry.Point2D;
+import towers.Tower;
 import user.User;
 
 import java.util.UUID;
@@ -49,17 +52,31 @@ public class Rage extends Spell {
 
     @Override
     public void chant() {
-        this.targetTowers.forEach(tower -> tower.setHitSpeed(
-                (1.4) * tower.getHitSpeed() // boost the attack speed of tower by 40%
-        ));
+        for (Tower tower : this.targetTowers) {
+            tower.setHitSpeed(
+                    (1.4) * tower.getHitSpeed() // boost the attack speed of tower by 40%
+            );
+        }
 
-        this.targetTroops.forEach(troop -> troop.setHitSpeed(
-                (1.4) * troop.getHitSpeed() // boost the hit speed of troop by 40%
-        ));
+        for (Troop targetTroop : this.targetTroops) {
+            targetTroop.setHitSpeed(
+                    (1.4) * targetTroop.getHitSpeed() // boost the hit speed of troop by 40%
+            );
+        }
 
-        this.targetTroops.forEach(troop -> troop.setDamage(
-                (1.4) * troop.getDamage() // boost damage by damage of troop by 40%
-        ));
+        for (Troop troop : this.targetTroops) {
+            troop.setDamage(
+                    (1.4) * troop.getDamage() // boost damage by damage of troop by 40%
+            );
+
+            if (troop.getStatus().equals(CardStatusEnum.WALK)) {
+                troop.setStatus(CardStatusEnum.WALK_RAGE);
+            }
+
+            if (troop.getStatus().equals(CardStatusEnum.FIGHT)) {
+                troop.setStatus(CardStatusEnum.FIGHT_RAGE);
+            }
+        }
     }
 
     /**
