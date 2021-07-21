@@ -492,14 +492,31 @@ public abstract class BaseController implements CustomEventHandler {
 
                 if (!tower1Exists) {
                     queenTower1.setImage(null);
+                    clearTowerArea(queenTower1Position);
                 }
 
                 if (!tower2Exists) {
                     queenTower2.setImage(null);
+                    clearTowerArea(queenTower2Position);
                 }
 
             }
 
+        }
+
+    }
+
+    @FXML
+    private void clearTowerArea(Point2D position) {
+        int column = (int) position.getX();
+        int row = (int) position.getY();
+        ObservableList<Node> mapChildren = this.mapCells.getChildren();
+
+        for (int i = -1 ; i <= 1 ; i++) {
+            for (int j = -1 ; j <= 1 ; j++) {
+                int indexToChange = getIndexInMap(new Point2D(column + i, row + j));
+                mapChildren.get(indexToChange).setCursor(Cursor.HAND);
+            }
         }
 
     }
