@@ -16,7 +16,6 @@ import java.util.UUID;
  */
 public class InfernoTower extends Building {
     private final ArrayList<AttackAble> targets;
-
     /**
      * Instantiates a new Inferno tower.
      *
@@ -50,13 +49,16 @@ public class InfernoTower extends Building {
         this.targets.forEach(target -> target.reduceHealthBy(this.getDamage()));
     }
 
-    @Override
+    /**
+     * Add target.
+     *
+     * @param target the target
+     */
     public void addTarget(AttackAble target) {
         if (!this.targets.contains(target)) {
             this.targets.add(target);
         }
     }
-
 
     /**
      * Create card.
