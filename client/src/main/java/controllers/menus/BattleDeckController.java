@@ -25,10 +25,16 @@ public class BattleDeckController extends MenuController {
     @FXML
     void initialize()
     {
-        HashMap<Integer, String> cardsUrls = Controller.CARD_QUERY_BUILDER.loadCards(GlobalData.user);
-        if (cardsUrls != null)
-        {
-            updateBattleCards(cardsUrls);
+        if (GlobalData.user != null) {
+            HashMap<Integer, String> cardsUrls = Controller.CARD_QUERY_BUILDER.loadCards(GlobalData.user);
+            if (cardsUrls != null)
+            {
+                updateBattleCards(cardsUrls);
+
+            }
+            else {
+                Controller.CARD_QUERY_BUILDER.updatePlayerCards(GlobalData.user, this.battleCards);
+            }
 
         }
 
