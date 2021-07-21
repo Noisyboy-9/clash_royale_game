@@ -10,6 +10,9 @@ import commands.gameStateCommands.gameTimeCommands.GameDurationFinished;
 import commands.gameStateCommands.gameTimeCommands.GameFinishedCommand;
 import commands.gameStateCommands.gameTimeCommands.GameStartCommand;
 import commands.gameStateCommands.gameTimeCommands.GameTimeCommand;
+import commands.gameStateCommands.towerCommands.TowerActiveCommand;
+import commands.gameStateCommands.towerCommands.TowerCommand;
+import commands.gameStateCommands.towerCommands.TowerDestroyedCommand;
 
 public interface CanKnowItsExactGameStateCommandTrait {
     default boolean isGameStateCommand() {
@@ -51,4 +54,17 @@ public interface CanKnowItsExactGameStateCommandTrait {
     default boolean isCrownCountChangeCommand() {
         return this instanceof CrownCountChangeCommand;
     }
+
+    default boolean isTowerActiveCommand() {
+        return this instanceof TowerActiveCommand;
+    }
+
+    default boolean isTowerCommand() {
+        return this instanceof TowerCommand;
+    }
+
+    default boolean isTowerDestroyedCommand() {
+        return this instanceof TowerDestroyedCommand;
+    }
+
 }

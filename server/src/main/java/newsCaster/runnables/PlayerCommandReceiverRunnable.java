@@ -25,7 +25,7 @@ public class PlayerCommandReceiverRunnable implements Runnable {
         try {
             while (true) {
                 Command command = (Command) request.readObject();
-                this.newsRedirector.broadcastCommand(command, this.worker);
+//                this.newsRedirector.broadcastCommand(command, this.worker);
 
                 if (this.isGameFinished(command)) {
                     break;

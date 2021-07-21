@@ -68,7 +68,7 @@ public class GlobalData {
             case "InfernoTower" -> InfernoTower.create(cardOwner);
             case "Giant" -> Giant.create(cardOwner);
             case "MiniPEKKA" -> MiniPekka.create(cardOwner);
-            case "Rage" -> Rage.create(cardOwner, FRAME_PER_SECOND);
+            case "Rage" -> Rage.create(cardOwner);
             case "Valkyrie" -> Valkyrie.create(cardOwner);
             case "Wizard" -> Wizard.create(cardOwner);
             default -> throw new IllegalStateException("Unexpected value: " + className);
