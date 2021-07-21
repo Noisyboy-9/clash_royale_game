@@ -753,7 +753,7 @@ public abstract class BaseController implements CustomEventHandler {
      * Render.
      */
     @FXML
-    void render() {
+    protected void render() {
         updateElixirBox();
         handleInvalidCards();
         refreshMap();
