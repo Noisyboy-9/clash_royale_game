@@ -33,7 +33,6 @@ import java.util.concurrent.TimeUnit;
  * The type Base controller.
  */
 public abstract class BaseController implements CustomEventHandler {
-
     protected final long eachFrameDuration;
     private final GameModel model;
     private final ArrayList<ImageView> previousMapElements;
@@ -137,7 +136,7 @@ public abstract class BaseController implements CustomEventHandler {
      *
      * @param model the model
      */
-    public BaseController(BotModeModel model) {
+    public BaseController(GameModel model) {
         this.model = model;
 
         this.FRAME_PER_SECOND = GlobalData.FRAME_PER_SECOND;

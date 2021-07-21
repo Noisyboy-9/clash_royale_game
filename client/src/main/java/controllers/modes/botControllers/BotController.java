@@ -60,15 +60,6 @@ public abstract class BotController extends BaseController {
         return frameRemainingCount;
     }
 
-    /**
-     * Reduce frame remaining count by the specified amount.
-     *
-     * @param amount the amount
-     */
-    public void reduceFrameRemainingCount(int amount) {
-        this.frameRemainingCount -= amount;
-    }
-
     @Override
     public void towerDestroyedEventHandler(TowerDestroyedEvent event) {
         Tower destroyedTower = event.getTower();
