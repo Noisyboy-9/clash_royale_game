@@ -4,7 +4,6 @@ import cards.Card;
 import cards.buildings.Building;
 import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
-import globals.GlobalData;
 import javafx.geometry.Point2D;
 import user.User;
 
@@ -33,7 +32,7 @@ public class Cannon extends Building {
                 5.5,
                 damage,
                 0.8,
-                30 * GlobalData.FRAME_PER_SECOND,
+                30 * 30,
                 TypeEnum.GROUND,
                 TypeEnum.GROUND
         );
