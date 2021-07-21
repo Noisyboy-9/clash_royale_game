@@ -1,6 +1,7 @@
 package controllers.modes;
 
 import cards.Card;
+import cards.buildings.cannons.Cannon;
 import controllers.Controller;
 import events.cards.CardAddedEvent;
 import globals.GlobalData;
@@ -549,6 +550,7 @@ public abstract class BaseController implements CustomEventHandler {
         int index = getIndexInMap(position);
 
         mapChildren.set(index, imageView);
+        this.previousMapElements.add(imageView);
 
     }
 
@@ -578,6 +580,9 @@ public abstract class BaseController implements CustomEventHandler {
             mapChildren.set(index, imgView);
             this.previousMapElements.add(imgView);
 
+            if (card instanceof Cannon)
+                handleCannon((Cannon) card, "player");
+
         }
 
         ArrayList<Card> opponentCardsInMap;
@@ -596,13 +601,34 @@ public abstract class BaseController implements CustomEventHandler {
             mapChildren.set(index, imgView);
             this.previousMapElements.add(imgView);
 
+            if (card instanceof Cannon)
+                handleCannon((Cannon) card, "opponent");
+
         }
 
     }
 
 
     @FXML
-    private void handleCannon() {
+    private void handleCannon(Cannon cannon, String owner) {
+        if (cannon.getTarget() != null) {
+            if (cannon.isShooting()) {
+                Image gif = Controller.SCENE_CONTROLLER.getGif("Shot_fight_" + owner);
+                ImageView imgView = new ImageView(gif);
+                Point2D position;
+
+                if (owner.equals("opponent"))
+                    position = transferPosition(cannon.getTarget().getPosition());
+                else
+                    position = cannon.getTarget().getPosition();
+
+                int index = getIndexInMap(position);
+
+                this.mapCells.getChildren().set(index, imgView);
+                this.previousMapElements.add(imgView);
+
+            }
+        }
 
     }
 
@@ -714,8 +740,8 @@ public abstract class BaseController implements CustomEventHandler {
         updateElixirBox();
         handleInvalidCards();
         refreshMap();
-        handleTowers();
         handleInMapCards();
+        handleTowers();
         handleBattleCards();
         handleComingCards();
         handleNextCard();
