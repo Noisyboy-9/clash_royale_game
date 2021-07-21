@@ -15,22 +15,54 @@ public record HandleBuildingRunnable(GameModel model, BaseController controller)
     @Override
     public void run() {
         this.handleDeadBuildings();
-        this.calculateEachBuildingTarget();
-        this.doBuildingsAttack();
-//        this.reduceEveryBuildingRemainingFrameCount();
+        this.handleEachBuildingTargetCalculation();
+        this.handleAttacks();
+        this.reduceEveryBuildingRemainingFrameCount();
     }
 
-    private void doBuildingsAttack() {
-        if (this.model instanceof BotModeModel) {
+    private void reduceEveryBuildingRemainingFrameCount() {
+        for (Building building : this.model.getPlayerInMapBuildings()) {
+            building.reduceRemainingFramesBy(1);
+        }
 
+        if (this.model instanceof BotModeModel) {
+            for (Building building : ((BotModeModel) this.model).getBotInMapBuildings()) {
+                building.reduceRemainingFramesBy(1);
+            }
         }
 
         if (this.model instanceof OnlineModeModel) {
-
+            for (Building building : ((OnlineModeModel) this.model).getPlayerInMapBuildings()) {
+                building.reduceRemainingFramesBy(1);
+            }
         }
     }
 
-    private void calculateEachBuildingTarget() {
+    private void handleAttacks() {
+        if (this.model instanceof BotModeModel) {
+            this.doBuildingAttack(this.model.getPlayerInMapBuildings());
+            this.doBuildingAttack(((BotModeModel) this.model).getBotInMapBuildings());
+        }
+
+        if (this.model instanceof OnlineModeModel) {
+            this.doBuildingAttack(this.model.getPlayerInMapBuildings());
+            this.doBuildingAttack(((OnlineModeModel) this.model).getOpponentInMapBuildings());
+        }
+    }
+
+    private void doBuildingAttack(ArrayList<Building> buildings) {
+        for (Building building : buildings) {
+            if (Objects.isNull(building.getTarget()) && this.isTimeForAttack(building)) {
+                building.attack();
+            }
+        }
+    }
+
+    private boolean isTimeForAttack(Building building) {
+        return (controller.getFrameRemainingCount() % (building.getHitSpeed() * controller.getFRAME_PER_SECOND())) == 0;
+    }
+
+    private void handleEachBuildingTargetCalculation() {
         if (this.model instanceof BotModeModel) {
             this.handleBuildingsTargetCalculation(
                     this.model.getPlayerInMapBuildings(),
