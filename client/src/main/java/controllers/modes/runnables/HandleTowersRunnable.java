@@ -49,7 +49,7 @@ public record HandleTowersRunnable(GameModel model, BaseController controller, T
 
     private void doFinishGameSteps() {
         timer.cancel();
-//        controller.finishGame();
+        controller.finishGame();
         this.model.getPlayerTowers().clear();
 
         if (this.model instanceof BotModeModel) {
