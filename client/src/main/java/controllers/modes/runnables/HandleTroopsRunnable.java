@@ -1,5 +1,6 @@
 package controllers.modes.runnables;
 
+import cards.Card;
 import cards.CardStatusEnum;
 import cards.troops.Troop;
 import cards.utils.AttackAble;
@@ -162,15 +163,35 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
     }
 
     private void handleDeadTroops() {
-        this.model.getPlayerInMapAttackAblesCards().removeIf(AttackAble::isDead);
+//        this.model.getPlayerInMapAttackAblesCards().removeIf(AttackAble::isDead);
+        for (AttackAble attackAble : this.model.getPlayerInMapAttackAblesCards()) {
+            if (attackAble.isDead()) {
+                this.model.getPlayerInMapCards().remove((Card) attackAble);
+            }
+        }
+
+        ArrayList<AttackAble> opponentAttackAbleCards = new ArrayList<>();
+        ArrayList<Card> opponentInMapCards = new ArrayList<>();
 
         if (this.model instanceof BotModeModel) {
+            opponentAttackAbleCards = ((BotModeModel) this.model).getBotInMapAttackAblesCards();
+            opponentInMapCards = ((BotModeModel) this.model).getBotInMapCards();
             ((BotModeModel) this.model).getBotInMapAttackAblesCards().removeIf(AttackAble::isDead);
         }
 
         if (this.model instanceof OnlineModeModel) {
+            opponentAttackAbleCards = ((OnlineModeModel) this.model).getOpponentInMapAttackAblesCards();
+            opponentInMapCards = ((OnlineModeModel) this.model).getOpponentInMapCards();
             ((OnlineModeModel) this.model).getOpponentInMapAttackAblesCards().removeIf(AttackAble::isDead);
         }
+
+        for (AttackAble attackAble : opponentAttackAbleCards) {
+            if (attackAble.isDead()) {
+                opponentInMapCards.remove((Card) attackAble);
+            }
+        }
+
+
     }
 
     private AttackAble findNearestTarget(Point2D troopPosition, ArrayList<AttackAble> targets) {
