@@ -2117,6 +2117,76 @@
                         <Image url="@../../../resources/photos/tower_king_blue.png" />
                      </image>
                   </ImageView>
+                  <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="252.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="11" GridPane.halignment="LEFT" GridPane.rowIndex="34" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@../../../resources/photos/level_place.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="opponentLevelField" fill="#fde731" stroke="#3c1a01" strokeType="OUTSIDE" text="1" textAlignment="CENTER" wrappingWidth="43.8017578125" GridPane.columnIndex="11" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="-7.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fx:id="playerLevelField" fill="#fde731" layoutX="252.0" layoutY="63.0" stroke="#3c1a01" strokeType="OUTSIDE" text="1" textAlignment="CENTER" wrappingWidth="43.8017578125" GridPane.columnIndex="11" GridPane.rowIndex="35" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="-7.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <ImageView fitHeight="80.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="23" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@../../../resources/photos/time_place.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets top="4.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <Text fx:id="timeField" fill="#fbfdfd" layoutX="493.0" layoutY="537.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="3:00" textAlignment="CENTER" wrappingWidth="87.69140625" GridPane.columnIndex="20" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="20.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="-10.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fill="#fdeba3" stroke="#322801" strokeType="OUTSIDE" text="Time left:" GridPane.columnIndex="20">
+                     <font>
+                        <Font name="Supercell-Magic Regular" size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="3.0" top="8.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <ImageView fx:id="opponentKingTower1" fitHeight="132.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@../../../resources/photos/tower_king_red.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="playerQueenTower2" fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="17" GridPane.halignment="CENTER" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
+                     <image>
+                        <Image url="@../../../resources/photos/tower_archer_blue.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="playerQueenTower1" fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="604.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
+                     <image>
+                        <Image url="@../../../resources/photos/tower_archer_blue.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="opponentQueenTower1" fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="17" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                     <image>
+                        <Image url="@../../../resources/photos/tower_archer_red.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="opponentQueenTower2" fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                     <image>
+                        <Image url="@../../../resources/photos/tower_archer_red.png" />
+                     </image>
+                  </ImageView>
                   <ImageView pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
                   <ImageView pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
                   <ImageView pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
@@ -3149,76 +3219,6 @@
                   <ImageView pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.columnIndex="21" GridPane.rowIndex="42"/>
                   <ImageView pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.columnIndex="22" GridPane.rowIndex="42"/>
                   <ImageView pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.columnIndex="23" GridPane.rowIndex="42"/>
-                  <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="252.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="11" GridPane.halignment="LEFT" GridPane.rowIndex="34" GridPane.valignment="TOP">
-                     <image>
-                        <Image url="@../../../resources/photos/level_place.png" />
-                     </image>
-                  </ImageView>
-                  <Text fx:id="opponentLevelField" fill="#fde731" stroke="#3c1a01" strokeType="OUTSIDE" text="1" textAlignment="CENTER" wrappingWidth="43.8017578125" GridPane.columnIndex="11" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                     <font>
-                        <Font name="Supercell-Magic Regular" size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets top="-7.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fx:id="playerLevelField" fill="#fde731" layoutX="252.0" layoutY="63.0" stroke="#3c1a01" strokeType="OUTSIDE" text="1" textAlignment="CENTER" wrappingWidth="43.8017578125" GridPane.columnIndex="11" GridPane.rowIndex="35" GridPane.valignment="TOP">
-                     <font>
-                        <Font name="Supercell-Magic Regular" size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets top="-7.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <ImageView fitHeight="80.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="23" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
-                     <image>
-                        <Image url="@../../../resources/photos/time_place.png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets top="4.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <Text fx:id="timeField" fill="#fbfdfd" layoutX="493.0" layoutY="537.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="3:00" textAlignment="CENTER" wrappingWidth="87.69140625" GridPane.columnIndex="20" GridPane.rowIndex="1">
-                     <font>
-                        <Font name="Supercell-Magic Regular" size="20.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets bottom="-10.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fill="#fdeba3" stroke="#322801" strokeType="OUTSIDE" text="Time left:" GridPane.columnIndex="20">
-                     <font>
-                        <Font name="Supercell-Magic Regular" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="3.0" top="8.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <ImageView fx:id="opponentKingTower1" fitHeight="132.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
-                     <image>
-                        <Image url="@../../../resources/photos/tower_king_red.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="playerQueenTower2" fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="17" GridPane.halignment="CENTER" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
-                     <image>
-                        <Image url="@../../../resources/photos/tower_archer_blue.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="playerQueenTower1" fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="604.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="30" GridPane.valignment="BOTTOM">
-                     <image>
-                        <Image url="@../../../resources/photos/tower_archer_blue.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="opponentQueenTower1" fitHeight="88.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="17" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
-                     <image>
-                        <Image url="@../../../resources/photos/tower_archer_red.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="opponentQueenTower2" fitHeight="88.0" fitWidth="66.0" layoutX="362.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
-                     <image>
-                        <Image url="@../../../resources/photos/tower_archer_red.png" />
-                     </image>
-                  </ImageView>
                </children>
             </GridPane>
             <Group fx:id="cardsGroup" layoutX="35.0" layoutY="791.0" visible="false">
@@ -3299,6 +3299,7 @@
                               <Font name="Supercell-Magic Regular" size="9.0" />
                            </font>
                         </Text>
+
                      </children>
                   </GridPane>
                   <GridPane fx:id="battleCards" layoutX="109.6865234375" layoutY="55.0" prefHeight="73.0" prefWidth="242.0">

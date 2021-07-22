@@ -13,6 +13,9 @@ import java.util.Objects;
 public record HandleNormalBotMoveRunnable(BotModeModel model, NormalBotModeController controller) implements Runnable {
     @Override
     public void run() {
+        if (this.model.getPlayerInMapCards().size() == 0) {
+            return;
+        }
         Card lastPlayerAddedCard = this.model
                 .getPlayerInMapCards()
                 .get(this.model.getPlayerInMapCards().size() - 1);
