@@ -24,6 +24,7 @@ module core {
 
 
     exports commands;
+    exports commands.gameStateCommands;
     exports commands.authenicationCommands.login;
     exports commands.authenicationCommands.register;
     exports commands.gameStateCommands.gameBonusCommands;

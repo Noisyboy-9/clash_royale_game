@@ -38,7 +38,12 @@ public record HandleCrazyBotMoveRunnable(BotModeModel model, CrazyBotModeControl
 
     private Point2D selectRandomLocation() {
         Random random = new Random();
-        int placementX = random.nextInt(17) + 3; // generate a number between 3,17
+        int placementX = 6;
+
+        if (random.nextBoolean()) {
+            placementX = 17; // generate a number between 3,17
+        }
+
         int placementY = random.nextInt(8) + 20; // generate a number between 20, 28
 
         while (!this.isValidLocation(placementX, placementY)) {

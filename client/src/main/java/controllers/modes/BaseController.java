@@ -292,14 +292,11 @@ public abstract class BaseController implements CustomEventHandler {
                 Card selectedCard = getSelectedCard();
 
                 CardAddedEvent cardAddedEvent = new CardAddedEvent(Event.ANY, GlobalData.playerTeam, selectedCard, position);
-//                cell.fireEvent(cardAddedEvent);
                 cardAddedEvent.invokeHandler(GlobalData.gameController);
                 this.selectedImage = null;
                 this.selectedImgView.setEffect(null);
                 Controller.SCENE_CONTROLLER.convertToBlackAndWhite(selectedImgView);
-
             }
-
         }
 
     }
@@ -500,9 +497,7 @@ public abstract class BaseController implements CustomEventHandler {
                     queenTower2.setImage(null);
                     clearTowerArea(queenTower2Position);
                 }
-
             }
-
         }
 
     }

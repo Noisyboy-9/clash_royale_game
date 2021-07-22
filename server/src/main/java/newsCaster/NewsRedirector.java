@@ -80,6 +80,7 @@ public class NewsRedirector {
             towers.add(QueenTower.create(owners.get(0).getUserData()));
             towers.add(QueenTower.create(owners.get(0).getUserData()));
             towers.add(KingTower.create(owners.get(0).getUserData()));
+            return towers;
         }
 
 //        the game is four player mode

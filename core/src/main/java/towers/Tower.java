@@ -7,13 +7,14 @@ import javafx.geometry.Point2D;
 import towers.traits.CanKnowItsExactTowerTypeTrait;
 import user.User;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
 
 /**
  * The type Tower.
  */
-public abstract class Tower implements AttackAble, CanKnowItsExactTowerTypeTrait {
+public abstract class Tower implements AttackAble, CanKnowItsExactTowerTypeTrait, Serializable {
     private final UUID id;
     private final User owner;
     private final int demolitionBonusCount;

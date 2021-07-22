@@ -16,14 +16,12 @@ public class TrainingCampController extends MenuController {
     void crazyMode(MouseEvent event) {
         setData();
         Controller.SCENE_CONTROLLER.showScene("Map/CrazyBotMap.fxml");
-
     }
 
     @FXML
     void normalMode(MouseEvent event) {
         setData();
         Controller.SCENE_CONTROLLER.showScene("Map/NormalBotMap.fxml");
-
     }
 
 
@@ -61,5 +59,4 @@ public class TrainingCampController extends MenuController {
         towers.get(1).setPosition(new Point2D(17, 29));
         towers.get(2).setPosition(new Point2D(9, 34));
     }
-
 }
