@@ -3,15 +3,18 @@ package controllers.modes;
 import cards.Card;
 import cards.buildings.cannons.Cannon;
 import controllers.Controller;
+import controllers.modes.botControllers.CrazyBotModeController;
 import events.cards.CardAddedEvent;
 import globals.GlobalData;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.geometry.Point2D;
 import javafx.scene.Cursor;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.Effect;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -134,11 +137,9 @@ public abstract class BaseController implements CustomEventHandler {
     /**
      * Instantiates a new Base controller.
      *
-     * @param model the model
      */
-    public BaseController(GameModel model) {
-        this.model = model;
-
+    public BaseController() {
+        this.model = GlobalData.gameModel;
         this.FRAME_PER_SECOND = GlobalData.FRAME_PER_SECOND;
         this.eachFrameDuration = Math.round((double) 1000 / FRAME_PER_SECOND);
         this.frameRemainingCount = 3L * 60 * FRAME_PER_SECOND;
@@ -166,7 +167,6 @@ public abstract class BaseController implements CustomEventHandler {
     @FXML
     public void initialize() {
         // these variables will be updated by server
-        int numberOfPlayers = GlobalData.playerTeam.size() + GlobalData.opponentTeam.size();
         String nameOfPlayer1 = GlobalData.playerTeam.get(0).getUsername();
         String nameOfOpponent1 = GlobalData.opponentTeam.get(0).getUsername();
 
@@ -291,7 +291,7 @@ public abstract class BaseController implements CustomEventHandler {
                 Point2D position = new Point2D(column, row);
                 Card selectedCard = getSelectedCard();
 
-                CardAddedEvent cardAddedEvent = new CardAddedEvent(event.getEventType(), GlobalData.playerTeam, selectedCard, position);
+                CardAddedEvent cardAddedEvent = new CardAddedEvent(Event.ANY, GlobalData.playerTeam, selectedCard, position);
                 cell.fireEvent(cardAddedEvent);
 
                 this.selectedImage = null;
@@ -313,6 +313,7 @@ public abstract class BaseController implements CustomEventHandler {
     void startGame(MouseEvent event) {
         beforeGameState.setVisible(false);
         cardsGroup.setVisible(true);
+        GlobalData.gameStarted = true;
 
     }
 
@@ -393,9 +394,10 @@ public abstract class BaseController implements CustomEventHandler {
 
         for (int index = 0; index < 4; index++) {
             ImageView cardImgView = (ImageView) children.get(index);
+            Effect previousEffect = cardImgView.getEffect();
             ImageView elixirBackground = (ImageView) children.get(index + 4);
 
-            int cardElixir = Integer.parseInt(((Text) children.get(index)).getText());
+            int cardElixir = Integer.parseInt(((Text) children.get(index + 8)).getText());
 
             if (cardElixir > model.getPlayerElixirCount()) {
                 Controller.SCENE_CONTROLLER.convertToBlackAndWhite(cardImgView);
@@ -408,6 +410,8 @@ public abstract class BaseController implements CustomEventHandler {
                 cardImgView.setCursor(Cursor.HAND);
             }
 
+            cardImgView.setEffect(previousEffect);
+
         }
 
     }
@@ -416,7 +420,7 @@ public abstract class BaseController implements CustomEventHandler {
      * Update elixir box.
      */
     @FXML
-    void updateElixirBox() {
+    protected void updateElixirBox() {
         int currentElixir = this.model.getPlayerElixirCount();
         elixirCount.setText(Integer.toString(currentElixir));
 
@@ -662,9 +666,11 @@ public abstract class BaseController implements CustomEventHandler {
             int elixir = card.getCost();
 
             ImageView cardImgView = (ImageView) battleCardsChildren.get(index);
+            Effect previousEffect = cardImgView.getEffect();
             Text elixirField = (Text) battleCardsChildren.get(index + 8);
 
             cardImgView.setImage(cardImage);
+            cardImgView.setEffect(previousEffect);
             elixirField.setText(Integer.toString(elixir));
 
         }
@@ -752,12 +758,12 @@ public abstract class BaseController implements CustomEventHandler {
      * Render.
      */
     @FXML
-    protected void render() {
+    public void render() {
         updateElixirBox();
         handleInvalidCards();
         refreshMap();
         handleInMapCards();
-        handleTowers();
+//        handleTowers();
         handleBattleCards();
         handleComingCards();
         handleNextCard();

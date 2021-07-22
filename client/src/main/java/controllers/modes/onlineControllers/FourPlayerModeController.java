@@ -13,10 +13,9 @@ public class FourPlayerModeController extends OnlineController {
     /**
      * Instantiates a new Bot controller.
      *
-     * @param model the model
      */
-    public FourPlayerModeController(OnlineModeModel model) {
-        super(model);
+    public FourPlayerModeController() {
+        super();
     }
 
     @Override

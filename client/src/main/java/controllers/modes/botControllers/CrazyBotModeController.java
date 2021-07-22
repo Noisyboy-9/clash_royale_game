@@ -1,6 +1,8 @@
 package controllers.modes.botControllers;
 
+import controllers.modes.BaseController;
 import controllers.modes.runnables.*;
+import globals.GlobalData;
 import models.BotModeModel;
 
 import java.util.Timer;
@@ -17,10 +19,8 @@ public class CrazyBotModeController extends BotController  {
     /**
      * Instantiates a new Crazy bot mode controller.
      *
-     * @param model the model
      */
-    public CrazyBotModeController(BotModeModel model) {
-        super(model);
+    public CrazyBotModeController() {
         this.setTimer();
     }
 
@@ -30,40 +30,43 @@ public class CrazyBotModeController extends BotController  {
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
-                ExecutorService service = Executors.newCachedThreadPool();
-                service.execute(
-                        new HandleTowersRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
-                );
+                if (GlobalData.gameStarted) {
+                    ExecutorService service = Executors.newCachedThreadPool();
+                    service.execute(
+                            new HandleTowersRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
+                    );
 
-                service.execute(
-                        new HandleTroopsRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
-                );
+                    service.execute(
+                            new HandleTroopsRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
+                    );
 
-                service.execute(
-                        new HandleSpellsRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
-                );
+                    service.execute(
+                            new HandleSpellsRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
+                    );
 
-                service.execute(
-                        new HandleBuildingRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
-                );
+                    service.execute(
+                            new HandleBuildingRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
+                    );
 
-                service.execute(
-                        new HandleElixirsCountRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
-                );
+                    service.execute(
+                            new HandleElixirsCountRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
+                    );
 
-                service.execute(
-                        new HandleCrazyBotMoveRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
-                );
+                    service.execute(
+                            new HandleCrazyBotMoveRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
+                    );
 
 //                after all these threads are finished: render screen again.
-                service.shutdown();
-                try {
-                    service.awaitTermination(CrazyBotModeController.super.eachFrameDuration, TimeUnit.MILLISECONDS);
-                    CrazyBotModeController.super.render();
-                    CrazyBotModeController.this.reduceFrameRemainingCount();
-                } catch (InterruptedException e) {
-                    System.out.println("The time of logical threads has exceeded the frame each frame duration");
-                    System.out.println("maybe it is better to use a lower frame per second");
+                    service.shutdown();
+                    try {
+                        service.awaitTermination(CrazyBotModeController.super.eachFrameDuration, TimeUnit.MILLISECONDS);
+                        CrazyBotModeController.super.render();
+                        CrazyBotModeController.this.reduceFrameRemainingCount();
+                    } catch (InterruptedException e) {
+                        System.out.println("The time of logical threads has exceeded the frame each frame duration");
+                        System.out.println("maybe it is better to use a lower frame per second");
+                    }
+
                 }
             }
         };

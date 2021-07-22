@@ -33,6 +33,7 @@ public class TrainingCampController extends MenuController {
         ArrayList<Card> botBattleCards = new ArrayList<>(botAllCards.subList(0, 4));
 
         GlobalData.opponentTeam.add(GlobalData.bot);
+        GlobalData.playerTeam.add(GlobalData.user);
         GlobalData.gameModel = new BotModeModel(botAllCards, botBattleCards, playerAllCards, playerBattleCards);
 
     }

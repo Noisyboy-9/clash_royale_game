@@ -44,11 +44,10 @@ public abstract class BotController extends BaseController {
     /**
      * Instantiates a new Bot controller.
      *
-     * @param model the model
      */
-    public BotController(BotModeModel model) {
-        super(model);
-        this.model = model;
+    public BotController() {
+        super();
+        this.model = (BotModeModel) GlobalData.gameModel;
     }
 
     /**

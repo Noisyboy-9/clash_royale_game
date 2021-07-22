@@ -13,10 +13,9 @@ public class TwoPlayerModeController extends OnlineController {
     /**
      * Instantiates a new Bot controller.
      *
-     * @param model the model
      */
-    public TwoPlayerModeController(OnlineModeModel model) {
-        super(model);
+    public TwoPlayerModeController() {
+        super();
     }
 
     @Override

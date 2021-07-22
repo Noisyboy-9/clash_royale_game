@@ -42,11 +42,10 @@ public abstract class OnlineController extends BaseController {
     /**
      * Instantiates a new Bot controller.
      *
-     * @param model the model
      */
-    public OnlineController(OnlineModeModel model) {
-        super(model);
-        this.model = model;
+    public OnlineController() {
+        super();
+        this.model = (OnlineModeModel) GlobalData.gameModel;
     }
 
     /**

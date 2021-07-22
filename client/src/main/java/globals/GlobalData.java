@@ -22,8 +22,9 @@ import java.util.HashMap;
 
 public class GlobalData {
     public static User user = null;
-    public static User bot = new User("crazyBot", "password");
+    public static User bot = new User("Bot", "password");
     public static GameModel gameModel;
+    public static boolean gameStarted = false;
     public static ArrayList<User> playerTeam = new ArrayList<>();
     public static ArrayList<User> opponentTeam = new ArrayList<>();
     public static int playerTeamCrownCount;
@@ -66,7 +67,7 @@ public class GlobalData {
             case "BabyDragon" -> BabyDragon.create(cardOwner);
             case "Barbarians", "Barbarian" -> Barbarian.create(cardOwner);
             case "Cannon" -> Cannon.create(cardOwner);
-            case "Fireball" -> FireBall.create(cardOwner);
+            case "Fireball", "FireBall" -> FireBall.create(cardOwner);
             case "InfernoTower" -> InfernoTower.create(cardOwner);
             case "Giant" -> Giant.create(cardOwner);
             case "MiniPEKKA", "MiniPekka" -> MiniPekka.create(cardOwner);
