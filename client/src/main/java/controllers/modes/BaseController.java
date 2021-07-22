@@ -3,15 +3,19 @@ package controllers.modes;
 import cards.Card;
 import cards.buildings.cannons.Cannon;
 import controllers.Controller;
+import controllers.modes.botControllers.CrazyBotModeController;
 import events.cards.CardAddedEvent;
 import globals.GlobalData;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.geometry.Point2D;
 import javafx.scene.Cursor;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.Effect;
+import javafx.scene.effect.Shadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -134,20 +138,18 @@ public abstract class BaseController implements CustomEventHandler {
     /**
      * Instantiates a new Base controller.
      *
-     * @param model the model
      */
-    public BaseController(GameModel model) {
-        this.model = model;
-
+    public BaseController() {
+        this.model = GlobalData.gameModel;
         this.FRAME_PER_SECOND = GlobalData.FRAME_PER_SECOND;
         this.eachFrameDuration = Math.round((double) 1000 / FRAME_PER_SECOND);
         this.frameRemainingCount = 3L * 60 * FRAME_PER_SECOND;
         this.previousMapElements = new ArrayList<>();
         this.numberOfPlayers = GlobalData.playerTeam.size() + GlobalData.opponentTeam.size();
-        this.playerQueenTower1Position = new Point2D(6, 30);
-        this.playerQueenTower2Position = new Point2D(17, 30);
-        this.opponentQueenTower1Position = new Point2D(6, 10);
-        this.opponentQueenTower2Position = new Point2D(17, 10);
+        this.playerQueenTower1Position = new Point2D(6, 29);
+        this.playerQueenTower2Position = new Point2D(17, 29);
+        this.opponentQueenTower1Position = new Point2D(6, 9);
+        this.opponentQueenTower2Position = new Point2D(17, 9);
 
     }
 
@@ -166,28 +168,35 @@ public abstract class BaseController implements CustomEventHandler {
     @FXML
     public void initialize() {
         // these variables will be updated by server
-        int numberOfPlayers = GlobalData.playerTeam.size() + GlobalData.opponentTeam.size();
-        String nameOfPlayer1 = GlobalData.playerTeam.get(0).getUsername();
+        String nameOfPlayer1 = GlobalData.user.getUsername();
         String nameOfOpponent1 = GlobalData.opponentTeam.get(0).getUsername();
 
-        playerName1.setText(nameOfPlayer1);
-        opponentName1.setText(nameOfOpponent1);
+        this.playerName1.setText(nameOfPlayer1);
+        this.opponentName1.setText(nameOfOpponent1);
+        this.opponentUsername.setText(nameOfOpponent1);
+
+        // update levels
+        this.playerLevelField.setText(GlobalData.user.getLevel().toString());
+        this.opponentLevelField.setText(GlobalData.opponentTeam.get(0).getLevel().toString());
 
         if (numberOfPlayers == 4) {
             String nameOfPlayer2 = GlobalData.playerTeam.get(1).getUsername();
             String nameOfOpponent2 = GlobalData.opponentTeam.get(1).getUsername();
-            playerName2.setText(nameOfPlayer2);
-            opponentName2.setText(nameOfOpponent2);
+            this.playerName2.setText(nameOfPlayer2);
+            this.opponentName2.setText(nameOfOpponent2);
+            this.opponentUsername.setText(nameOfOpponent1 + ", " + nameOfOpponent2);
 
-            playerBackground2.setVisible(true);
-            opponentBackground2.setVisible(true);
-            playerName2.setVisible(true);
-            opponentName2.setVisible(true);
+            this.playerBackground2.setVisible(true);
+            this.opponentBackground2.setVisible(true);
+            this.playerName2.setVisible(true);
+            this.opponentName2.setVisible(true);
 
         }
 
         this.playerTeamCrowns = new ImageView[]{playerCrown1, playerCrown2, playerCrown3};
         this.opponentTeamCrowns = new ImageView[]{opponentCrown1, opponentCrown2, opponentCrown3};
+
+        render();
 
     }
 
@@ -271,8 +280,7 @@ public abstract class BaseController implements CustomEventHandler {
     private int getIndexInMap(Point2D position) {
         int column = (int) position.getX();
         int row = (int) position.getY();
-
-        return row * 8 + column;
+        return ((24 * 43) - 1 + 40 + column - 1 + (24 * row));
     }
 
     /**
@@ -291,9 +299,9 @@ public abstract class BaseController implements CustomEventHandler {
                 Point2D position = new Point2D(column, row);
                 Card selectedCard = getSelectedCard();
 
-                CardAddedEvent cardAddedEvent = new CardAddedEvent(event.getEventType(), GlobalData.playerTeam, selectedCard, position);
-                cell.fireEvent(cardAddedEvent);
-
+                CardAddedEvent cardAddedEvent = new CardAddedEvent(Event.ANY, GlobalData.playerTeam, selectedCard, position);
+//                cell.fireEvent(cardAddedEvent);
+                cardAddedEvent.invokeHandler(GlobalData.gameController);
                 this.selectedImage = null;
                 this.selectedImgView.setEffect(null);
                 Controller.SCENE_CONTROLLER.convertToBlackAndWhite(selectedImgView);
@@ -313,6 +321,7 @@ public abstract class BaseController implements CustomEventHandler {
     void startGame(MouseEvent event) {
         beforeGameState.setVisible(false);
         cardsGroup.setVisible(true);
+        GlobalData.gameStarted = true;
 
     }
 
@@ -393,9 +402,10 @@ public abstract class BaseController implements CustomEventHandler {
 
         for (int index = 0; index < 4; index++) {
             ImageView cardImgView = (ImageView) children.get(index);
+            Effect previousEffect = cardImgView.getEffect();
             ImageView elixirBackground = (ImageView) children.get(index + 4);
 
-            int cardElixir = Integer.parseInt(((Text) children.get(index)).getText());
+            int cardElixir = Integer.parseInt(((Text) children.get(index + 8)).getText());
 
             if (cardElixir > model.getPlayerElixirCount()) {
                 Controller.SCENE_CONTROLLER.convertToBlackAndWhite(cardImgView);
@@ -408,6 +418,9 @@ public abstract class BaseController implements CustomEventHandler {
                 cardImgView.setCursor(Cursor.HAND);
             }
 
+            if (previousEffect instanceof Shadow)
+                cardImgView.setEffect(previousEffect);
+
         }
 
     }
@@ -416,7 +429,7 @@ public abstract class BaseController implements CustomEventHandler {
      * Update elixir box.
      */
     @FXML
-    void updateElixirBox() {
+    protected void updateElixirBox() {
         int currentElixir = this.model.getPlayerElixirCount();
         elixirCount.setText(Integer.toString(currentElixir));
 
@@ -449,7 +462,7 @@ public abstract class BaseController implements CustomEventHandler {
         }
 
         handleTowersExistence(playerTowers, this.playerQueenTower1, this.playerQueenTower2, this.playerKingTower1, this.playerQueenTower1Position, this.playerQueenTower2Position);
-        handleTowersExistence(opponentTowers, this.opponentQueenTower1, this.opponentQueenTower2, this.opponentKingTower1, this.opponentQueenTower1Position, this.opponentQueenTower2Position);
+        handleTowersExistence(opponentTowers, this.opponentQueenTower1, this.opponentQueenTower2, this.opponentKingTower1, transferPosition(this.opponentQueenTower1Position), transferPosition(this.opponentQueenTower2Position));
         handleTowersAttacks(playerTowers, false);
         handleTowersAttacks(opponentTowers, true);
 
@@ -592,8 +605,8 @@ public abstract class BaseController implements CustomEventHandler {
             String key = getGifKey(card, "player");
             Image gif = Controller.SCENE_CONTROLLER.getGif(key);
             int index = getIndexInMap(card.getPosition());
-            ImageView imgView = new ImageView(gif);
-            mapChildren.set(index, imgView);
+            ImageView imgView = (ImageView) mapChildren.get(index);
+            imgView.setImage(gif);
             this.previousMapElements.add(imgView);
 
             if (card instanceof Cannon)
@@ -613,8 +626,8 @@ public abstract class BaseController implements CustomEventHandler {
             String key = getGifKey(card, "opponent");
             Image gif = Controller.SCENE_CONTROLLER.getGif(key);
             int index = getIndexInMap(transferPosition(card.getPosition()));
-            ImageView imgView = new ImageView(gif);
-            mapChildren.set(index, imgView);
+            ImageView imgView = (ImageView) mapChildren.get(index);
+            imgView.setImage(gif);
             this.previousMapElements.add(imgView);
 
             if (card instanceof Cannon)
@@ -662,9 +675,11 @@ public abstract class BaseController implements CustomEventHandler {
             int elixir = card.getCost();
 
             ImageView cardImgView = (ImageView) battleCardsChildren.get(index);
+            Effect previousEffect = cardImgView.getEffect();
             Text elixirField = (Text) battleCardsChildren.get(index + 8);
 
             cardImgView.setImage(cardImage);
+            cardImgView.setEffect(previousEffect);
             elixirField.setText(Integer.toString(elixir));
 
         }
@@ -752,13 +767,13 @@ public abstract class BaseController implements CustomEventHandler {
      * Render.
      */
     @FXML
-    protected void render() {
+    public void render() {
         updateElixirBox();
-        handleInvalidCards();
         refreshMap();
         handleInMapCards();
         handleTowers();
         handleBattleCards();
+        handleInvalidCards();
         handleComingCards();
         handleNextCard();
         handleCrownsCount();

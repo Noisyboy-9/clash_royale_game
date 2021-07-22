@@ -106,7 +106,8 @@ public abstract class GameModel {
      * @param amount the amount
      */
     public void increasePlayerElixirsCountBy(int amount) {
-        this.playerElixirCount += amount;
+        if (this.playerElixirCount + amount <= 10)
+            this.playerElixirCount += amount;
     }
 
     /**
@@ -334,8 +335,8 @@ public abstract class GameModel {
     protected ArrayList<Tower> createTowers(User owner) {
         ArrayList<Tower> towers = new ArrayList<>();
         towers.add(QueenTower.create(owner));
-        towers.add(KingTower.create(owner));
         towers.add(QueenTower.create(owner));
+        towers.add(KingTower.create(owner));
         return towers;
     }
 }

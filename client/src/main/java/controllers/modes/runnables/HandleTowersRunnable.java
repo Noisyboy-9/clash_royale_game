@@ -73,11 +73,14 @@ public record HandleTowersRunnable(GameModel model, BaseController controller, T
         }
 
         for (Tower tower : towers) {
-            tower.shoot();
+            if (tower.getTarget() != null) {
+                tower.shoot();
 
-            if (tower.getTarget().isDead()) {
-                tower.setTarget(null);
+                if (tower.getTarget().isDead()) {
+                    tower.setTarget(null);
+                }
             }
+
         }
     }
 

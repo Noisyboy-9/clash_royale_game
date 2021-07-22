@@ -2146,12 +2146,12 @@
                         <Insets top="4.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <Text fx:id="timeField" fill="#fbfdfd" layoutX="493.0" layoutY="537.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="3:00" GridPane.columnIndex="21" GridPane.rowIndex="1">
+                  <Text fx:id="timeField" fill="#fbfdfd" layoutX="493.0" layoutY="537.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="3:00" textAlignment="CENTER" wrappingWidth="86.69140625" GridPane.columnIndex="20" GridPane.rowIndex="1">
                      <font>
                         <Font name="Supercell-Magic Regular" size="20.0" />
                      </font>
                      <GridPane.margin>
-                        <Insets bottom="-10.0" left="-10.0" />
+                        <Insets bottom="-10.0" />
                      </GridPane.margin>
                   </Text>
                   <Text fill="#fdeba3" stroke="#322801" strokeType="OUTSIDE" text="Time left:" GridPane.columnIndex="20">
@@ -2189,7 +2189,7 @@
                   </ImageView>
                </children>
             </GridPane>
-            <Group fx:id="cardsGroup" layoutX="35.0" layoutY="791.0" visible="true">
+            <Group fx:id="cardsGroup" layoutX="35.0" layoutY="791.0" visible="false">
                <children>
                   <ImageView fitHeight="110.0" fitWidth="264.0" layoutX="98.6865234375" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -2284,21 +2284,33 @@
                            <image>
                               <Image url="@../../../resources/photos/BarbariansCard.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                         <ImageView fitHeight="73.0" fitWidth="59.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#selectCard" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../resources/photos/BarbariansCard.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                         <ImageView fitHeight="73.0" fitWidth="59.0" layoutX="70.0" layoutY="10.0" onMouseClicked="#selectCard" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../resources/photos/BarbariansCard.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                         <ImageView fitHeight="73.0" fitWidth="59.0" layoutX="130.0" layoutY="10.0" onMouseClicked="#selectCard" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../resources/photos/BarbariansCard.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                         <ImageView fitHeight="24.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                            <image>
@@ -2354,7 +2366,7 @@
                         </Text>
                      </children>
                      <cursor>
-                        <Cursor fx:constant="HAND" />
+                        <Cursor fx:constant="DEFAULT" />
                      </cursor>
                   </GridPane>
                   <GridPane fx:id="elixirBox" layoutX="132.6865234375" layoutY="133.0" prefHeight="16.0" prefWidth="220.0">

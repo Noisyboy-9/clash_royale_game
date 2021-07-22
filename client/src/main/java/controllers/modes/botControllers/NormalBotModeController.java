@@ -13,10 +13,8 @@ public class NormalBotModeController extends BotController {
     /**
      * Instantiates a new Bot controller.
      *
-     * @param model the model
      */
-    public NormalBotModeController(BotModeModel model) {
-        super(model);
+    public NormalBotModeController() {
         this.setTimer();
     }
 
@@ -28,7 +26,7 @@ public class NormalBotModeController extends BotController {
             public void run() {
                 ExecutorService service = Executors.newCachedThreadPool();
                 service.execute(
-                        new HandleTowersRunnable(NormalBotModeController.super.model, NormalBotModeController.this)
+                        new HandleTowersRunnable(NormalBotModeController.super.model, NormalBotModeController.this, timer)
                 );
 
                 service.execute(

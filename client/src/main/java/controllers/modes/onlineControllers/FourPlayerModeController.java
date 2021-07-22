@@ -13,10 +13,9 @@ public class FourPlayerModeController extends OnlineController {
     /**
      * Instantiates a new Bot controller.
      *
-     * @param model the model
      */
-    public FourPlayerModeController(OnlineModeModel model) {
-        super(model);
+    public FourPlayerModeController() {
+        super();
     }
 
     @Override
@@ -27,7 +26,7 @@ public class FourPlayerModeController extends OnlineController {
             public void run() {
                 ExecutorService service = Executors.newCachedThreadPool();
                 service.execute(
-                        new HandleTowersRunnable(FourPlayerModeController.super.model, FourPlayerModeController.this)
+                        new HandleTowersRunnable(FourPlayerModeController.super.model, FourPlayerModeController.this, timer)
                 );
 
                 service.execute(

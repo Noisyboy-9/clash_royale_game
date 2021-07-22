@@ -44,11 +44,10 @@ public abstract class BotController extends BaseController {
     /**
      * Instantiates a new Bot controller.
      *
-     * @param model the model
      */
-    public BotController(BotModeModel model) {
-        super(model);
-        this.model = model;
+    public BotController() {
+        super();
+        this.model = (BotModeModel) GlobalData.gameModel;
     }
 
     /**
@@ -192,13 +191,14 @@ public abstract class BotController extends BaseController {
     private int deployCard(Card addedCard, User cardOwner) throws DuplicateCardException, InvalidCardException {
         if (cardOwner.equals(GlobalData.bot)) {
             this.model.addCardToInMapBotCards(addedCard);
-            this.model.removeCardFromBotBattleCards(addedCard);
-            return this.model.getBotBattleCards().indexOf(addedCard);
+            int indexOfAddedCard = this.model.getBotBattleCards().indexOf(addedCard);
+//            this.model.removeCardFromBotBattleCards(addedCard);
+            return indexOfAddedCard;
         }
 
 //        the player has deployed the card
         this.model.addCardToInMapPlayerCards(addedCard);
-        this.model.removeCardFromPlayerBattleCards(addedCard);
+//        this.model.removeCardFromPlayerBattleCards(addedCard);
         return this.model.getPlayerBattleCards().indexOf(addedCard);
     }
 
