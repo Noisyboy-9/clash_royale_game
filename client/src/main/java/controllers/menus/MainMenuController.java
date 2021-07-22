@@ -2,6 +2,8 @@ package controllers.menus;
 
 import cards.Card;
 import commands.gameStateCommands.gameTimeCommands.GameStartCommand;
+import commands.matchRequestCommands.FourPlayerMatchRequesterCommand;
+import commands.matchRequestCommands.TwoPlayerMatchRequestCommand;
 import controllers.Controller;
 import controllers.connector.Connector;
 import globals.GlobalData;
@@ -11,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import models.OnlineModeModel;
 import towers.Tower;
+import user.User;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,6 +36,40 @@ public class MainMenuController extends MenuController {
 
     @FXML
     void twoPlayerMode(MouseEvent event) {
+        try {
+            Connector.getInstance().getRequest().writeObject(new TwoPlayerMatchRequestCommand(GlobalData.user));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Controller.SCENE_CONTROLLER.showScene("Menu/WaitingPage.fxml");
+        setData();
+        Controller.SCENE_CONTROLLER.showScene("Map/TwoPlayerMap.fxml");
+
+    }
+
+    @FXML
+    void fourPlayerMode(MouseEvent event) {
+        try {
+            Connector.getInstance().getRequest().writeObject(new FourPlayerMatchRequesterCommand(GlobalData.user));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Controller.SCENE_CONTROLLER.showScene("Menu/WaitingPage.fxml");
+        setData();
+        Controller.SCENE_CONTROLLER.showScene("Map/FourPlayerMap.fxml");
+
+    }
+
+    @FXML
+    void logOutHandler(MouseEvent event) {
+        Controller.SCENE_CONTROLLER.showScene("Menu/LoginRegisterPage.fxml");
+
+    }
+
+
+    private void setData() {
         ArrayList<Tower> enemyTowers = new ArrayList<>();
         ArrayList<Tower> friendlyTowers = new ArrayList<>();
 
@@ -42,36 +79,18 @@ public class MainMenuController extends MenuController {
             friendlyTowers = command.getFriendlyTowers();
             setPositions(enemyTowers);
             setPositions(friendlyTowers);
+            GlobalData.playerTeam = command.getFriendlyTeam();
+            GlobalData.opponentTeam = command.getEnemyTeam();
 
 
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
         ArrayList<Card> playerAllCards = GlobalData.createCards(GlobalData.user);
         ArrayList<Card> playerBattleCards = new ArrayList<>(playerAllCards.subList(0, 4));
 
-        
-
-
-
-
-        Controller.SCENE_CONTROLLER.showScene("Menu/WaitingPage.fxml");
-    }
-
-    @FXML
-    void fourPlayerMode(MouseEvent event) {
-        // TODO: ۱۴/۰۷/۲۰۲۱ show wait scene and send command to server
-        Controller.SCENE_CONTROLLER.showScene("Menu/WaitingPage.fxml");
-
-    }
-
-    @FXML
-    void logOutHandler(MouseEvent event) {
-        Controller.SCENE_CONTROLLER.showScene("Menu/LoginRegisterPage.fxml");
+        GlobalData.gameModel = new OnlineModeModel(playerAllCards, playerBattleCards, enemyTowers);
 
     }
 

@@ -58,4 +58,9 @@ public class GameStartCommand extends GameTimeCommand {
     public ArrayList<User> getFriendlyTeam() {
         return friendlyTeam;
     }
+
+
+    public ArrayList<User> getEnemyTeam() {
+        return enemyTeam;
+    }
 }
