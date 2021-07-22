@@ -205,11 +205,6 @@ public abstract class BaseController implements CustomEventHandler {
         ArrayList<ArrayList<User>> result;
         ArrayList<User> winners = new ArrayList<>();
         ArrayList<User> losers = new ArrayList<>();
-
-
-        if (GlobalData.playerTeamCrownCount > GlobalData.opponentTeamCrownCount) {
-            winners = GlobalData.playerTeam;
-        }
     }
 
     /**
@@ -351,18 +346,15 @@ public abstract class BaseController implements CustomEventHandler {
         beforeGameState.setVisible(true);
         resultState.setVisible(true);
 
-        // these values will be updated by server or game logic or any other thing
-
-
-        showCrowns(GlobalData.playerTeamCrownCount, playerTeamCrowns);
-        showCrowns(GlobalData.opponentTeamCrownCount, opponentTeamCrowns);
-
-        // this part will completely change in future
-        if (GlobalData.opponentTeamCrownCount > GlobalData.playerTeamCrownCount) {
-            playerWinner.setVisible(false);
-
+        if (this.model instanceof BotModeModel) {
+            showCrowns(this.model.getPlayerCrownCount(), playerTeamCrowns);
+            showCrowns(((BotModeModel) this.model).getBotCrownCount(), opponentTeamCrowns);
         }
 
+        if (this.model instanceof OnlineModeModel) {
+            showCrowns(this.model.getPlayerCrownCount(), playerTeamCrowns);
+            showCrowns(((OnlineModeModel) this.model).getOpponentCrownCount(), opponentTeamCrowns);
+        }
     }
 
     /**

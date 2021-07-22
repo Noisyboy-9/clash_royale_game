@@ -73,12 +73,14 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
 
             if (this.isTimeForMove(troop)) {
                 if (this.isOnMainPaths(troop.getPosition())) {
-                    if (troop.getPosition().getY() == 32 && troop.getPosition().getX() == 6) {
+                    if (troop.getPosition().getY() == 6 && troop.getPosition().getX() >= 6 && troop.getPosition().getX() <= 11) {
                         this.moveTo(troop, (int) troop.getPosition().getX() + 1, (int) troop.getPosition().getY());
+                        return;
                     }
 
-                    if (troop.getPosition().getY() == 32 && troop.getPosition().getX() == 17) {
+                    if (troop.getPosition().getY() == 6 && troop.getPosition().getX() >= 12 && troop.getPosition().getX() <= 17) {
                         this.moveTo(troop, (int) troop.getPosition().getX() - 1, (int) troop.getPosition().getY());
+                        return;
                     }
 
                     this.moveTo(troop, (int) troop.getPosition().getX(), (int) troop.getPosition().getY() - 1);
@@ -111,7 +113,8 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
 
     private boolean isOnMainPaths(Point2D troopPosition) {
         return troopPosition.getX() == 6 ||
-                troopPosition.getX() == 17;
+                troopPosition.getX() == 17 ||
+                troopPosition.getY() == 6;
     }
 
     private boolean isTimeForMove(Troop troop) {
