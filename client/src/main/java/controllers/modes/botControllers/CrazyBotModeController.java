@@ -45,9 +45,9 @@ public class CrazyBotModeController extends BotController  {
                                     new HandleTroopsRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
                             );
 
-//                            service.execute(
-//                                    new HandleSpellsRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
-//                            );
+                            service.execute(
+                                    new HandleSpellsRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
+                            );
 
                             service.execute(
                                     new HandleBuildingRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
@@ -75,9 +75,6 @@ public class CrazyBotModeController extends BotController  {
 
                     }
                 };
-
-
-
                 });
             }
         };

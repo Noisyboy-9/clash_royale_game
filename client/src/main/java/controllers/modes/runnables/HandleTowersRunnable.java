@@ -39,7 +39,7 @@ public record HandleTowersRunnable(GameModel model, BaseController controller, T
         for (Tower tower : towers) {
             if (tower.isDead() && tower.isKingTower()) {
                 tower.deActive();
-                this.updateCrownCount(tower, tower.getDemolitionBonusCount());
+                this.updateCrownCount(tower, 3);
                 this.doFinishGameSteps();
             }
 
@@ -55,23 +55,35 @@ public record HandleTowersRunnable(GameModel model, BaseController controller, T
     private void updateCrownCount(Tower destroyedTower, int demolitionBonusCount) {
         if (GlobalData.playerTeam.contains(destroyedTower.getOwner())) {
             if (this.model instanceof BotModeModel) {
-                ((BotModeModel) this.model).setBotCrownCount(
-                        ((BotModeModel) this.model).getBotCrownCount() + demolitionBonusCount
-                );
+                if (demolitionBonusCount != 3) {
+                    ((BotModeModel) this.model).setBotCrownCount(
+                            ((BotModeModel) this.model).getBotCrownCount() + demolitionBonusCount
+                    );
+                } else {
+                    ((BotModeModel) this.model).setBotCrownCount(3);
+                }
             }
 
             if (this.model instanceof OnlineModeModel) {
-                ((OnlineModeModel) this.model).setOpponentCrownCount(
-                        ((OnlineModeModel) this.model).getOpponentCrownCount() + demolitionBonusCount
-                );
+                if (demolitionBonusCount != 3) {
+                    ((OnlineModeModel) this.model).setOpponentCrownCount(
+                            ((OnlineModeModel) this.model).getOpponentCrownCount() + demolitionBonusCount
+                    );
+                } else {
+                    ((OnlineModeModel) this.model).setOpponentCrownCount(3);
+                }
             }
         }
 
 
         if (GlobalData.opponentTeam.contains(destroyedTower.getOwner())) {
-            this.model.setPlayerCrownCount(
-                    this.model.getPlayerCrownCount() + demolitionBonusCount
-            );
+            if (demolitionBonusCount != 3) {
+                this.model.setPlayerCrownCount(
+                        this.model.getPlayerCrownCount() + demolitionBonusCount
+                );
+            } else {
+                this.model.setPlayerCrownCount(3);
+            }
         }
     }
 

@@ -10,7 +10,8 @@ import java.util.ArrayList;
  * The type Game start command.
  */
 public class GameStartCommand extends GameTimeCommand {
-    private final ArrayList<User> receivers;
+    private final ArrayList<User> friendlyTeam;
+    private final ArrayList<User> enemyTeam;
     private final ArrayList<Tower> friendlyTowers;
     private final ArrayList<Tower> enemyTowers;
 
@@ -18,13 +19,15 @@ public class GameStartCommand extends GameTimeCommand {
      * Instantiates a new Game time command.
      *
      * @param gameType       the game type
-     * @param receivers      the users
+     * @param friendlyTeam   the users
+     * @param enemyTeam      the enemy team
      * @param friendlyTowers the friendly towers
      * @param enemyTowers    the enemy towers
      */
-    public GameStartCommand(GameTypeEnum gameType, ArrayList<User> receivers, ArrayList<Tower> friendlyTowers, ArrayList<Tower> enemyTowers) {
+    public GameStartCommand(GameTypeEnum gameType, ArrayList<User> friendlyTeam, ArrayList<User> enemyTeam, ArrayList<Tower> friendlyTowers, ArrayList<Tower> enemyTowers) {
         super(gameType);
-        this.receivers = receivers;
+        this.friendlyTeam = friendlyTeam;
+        this.enemyTeam = enemyTeam;
         this.friendlyTowers = friendlyTowers;
         this.enemyTowers = enemyTowers;
     }
@@ -52,7 +55,7 @@ public class GameStartCommand extends GameTimeCommand {
      *
      * @return the users
      */
-    public ArrayList<User> getReceivers() {
-        return receivers;
+    public ArrayList<User> getFriendlyTeam() {
+        return friendlyTeam;
     }
 }
