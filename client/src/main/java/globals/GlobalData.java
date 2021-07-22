@@ -29,8 +29,6 @@ public class GlobalData {
     public static boolean gameStarted = false;
     public static ArrayList<User> playerTeam = new ArrayList<>();
     public static ArrayList<User> opponentTeam = new ArrayList<>();
-    public static int playerTeamCrownCount;
-    public static int opponentTeamCrownCount;
     public static int FRAME_PER_SECOND = 30;
 
     public static ArrayList<Card> createCards(User cardOwner) {
@@ -42,7 +40,6 @@ public class GlobalData {
             Card card = getCardBasedOnName(className, cardOwner);
 
             cards.add(card);
-
         }
 
         return cards;
@@ -58,7 +55,6 @@ public class GlobalData {
         int lastIndex = name.length - 1;
 
         return name[lastIndex].replace("Card.png", "");
-
     }
 
 

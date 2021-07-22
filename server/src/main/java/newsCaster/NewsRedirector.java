@@ -51,22 +51,22 @@ public class NewsRedirector {
 
         if (this.team1.size() == 2) {
             this.broadcastCommand(
-                    new GameStartCommand(GameTypeEnum.TWO_PLAYER_MODE, team1Users, team1Towers, team2Towers),
+                    new GameStartCommand(GameTypeEnum.TWO_PLAYER_MODE, team1Users, team2Users, team1Towers, team2Towers),
                     team1
             );
 
             this.broadcastCommand(
-                    new GameStartCommand(GameTypeEnum.TWO_PLAYER_MODE, team2Users, team2Towers, team1Towers),
+                    new GameStartCommand(GameTypeEnum.TWO_PLAYER_MODE, team2Users, team1Users, team2Towers, team1Towers),
                     team2
             );
         } else {
             this.broadcastCommand(
-                    new GameStartCommand(GameTypeEnum.FOUR_PLAYER_MODE, team1Users, team1Towers, team2Towers),
+                    new GameStartCommand(GameTypeEnum.FOUR_PLAYER_MODE, team1Users, team2Users, team1Towers, team2Towers),
                     team1
             );
 
             this.broadcastCommand(
-                    new GameStartCommand(GameTypeEnum.FOUR_PLAYER_MODE, team2Users, team2Towers, team1Towers),
+                    new GameStartCommand(GameTypeEnum.FOUR_PLAYER_MODE, team2Users, team1Users, team2Towers, team1Towers),
                     team2
             );
         }

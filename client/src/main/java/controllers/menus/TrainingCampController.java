@@ -59,7 +59,7 @@ public class TrainingCampController extends MenuController {
     private void setPositions(ArrayList<Tower> towers) {
         towers.get(0).setPosition(new Point2D(6, 29));
         towers.get(1).setPosition(new Point2D(17, 29));
-        towers.get(2).setPosition(new Point2D(34, 9));
+        towers.get(2).setPosition(new Point2D(9, 34));
     }
 
 }

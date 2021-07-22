@@ -1,10 +1,12 @@
 package controllers.modes.runnables;
 
+import cards.Card;
 import cards.spells.Spell;
 import cards.spells.rages.Rage;
 import cards.troops.Troop;
 import cards.utils.AttackAble;
 import controllers.modes.BaseController;
+import globals.GlobalData;
 import models.BotModeModel;
 import models.GameModel;
 import models.OnlineModeModel;
@@ -40,16 +42,38 @@ public record HandleSpellsRunnable(GameModel model, BaseController controller) i
                 ((Rage) spell).decreaseRemainingFrameCountBy(1);
 
 //                if the spell is rage and it's remaining frame count is zero it must be deleted
-                if (((Rage) spell).getRemainingFrameCount() == 0) {
+                if (((Rage) spell).getRemainingFrameCount() <= 0) {
                     ((Rage) spell).unChant();
-                    spells.remove(spell);
+
+
+                    if (spell.getOwner().equals(GlobalData.user)) {
+                        this.model.getPlayerInMapCards().remove(spell);
+                    } else {
+                        if (this.model instanceof BotModeModel) {
+                            ((BotModeModel) this.model).getBotInMapCards().remove(spell);
+                        }
+
+                        if (this.model instanceof OnlineModeModel) {
+                            ((OnlineModeModel) this.model).getOpponentInMapCards().remove(spell);
+                        }
+                    }
                 }
 
                 continue;
             }
 
-//            after a fireball or arrows have done it's work it must be removed
-            spells.remove(spell);
+            this.model.getPlayerInMapCards().removeIf(card -> card.isSpell() && !card.isRage());
+
+            ArrayList<AttackAble> opponentAttackAbleCards = new ArrayList<>();
+            ArrayList<Card> opponentInMapCards = new ArrayList<>();
+
+            if (this.model instanceof BotModeModel) {
+                ((BotModeModel) this.model).getBotInMapCards().removeIf(card -> card.isSpell() && !card.isRage());
+            }
+
+            if (this.model instanceof OnlineModeModel) {
+                ((OnlineModeModel) this.model).getOpponentInMapCards().removeIf(card -> card.isSpell() && !card.isRage());
+            }
         }
     }
 
@@ -61,9 +85,10 @@ public record HandleSpellsRunnable(GameModel model, BaseController controller) i
         }
     }
 
-    private boolean isInRange(Spell spell, AttackAble target) {
-        return this.controller.transferPosition(target.getPosition()).distance(spell.getPosition()) <= spell.getRadius();
+    private boolean isInRange(Spell spell, AttackAble nearestTarget) {
+        return spell.getPosition().distance(controller.transferPosition(nearestTarget.getPosition())) <= spell.getRadius();
     }
+
 
     private void setSpellInRangeTowerTargets(Spell spell, ArrayList<AttackAble> possibleTargets) {
         for (AttackAble target : possibleTargets) {
