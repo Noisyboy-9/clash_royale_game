@@ -167,27 +167,35 @@ public abstract class BaseController implements CustomEventHandler {
     @FXML
     public void initialize() {
         // these variables will be updated by server
-        String nameOfPlayer1 = GlobalData.playerTeam.get(0).getUsername();
+        String nameOfPlayer1 = GlobalData.user.getUsername();
         String nameOfOpponent1 = GlobalData.opponentTeam.get(0).getUsername();
 
-        playerName1.setText(nameOfPlayer1);
-        opponentName1.setText(nameOfOpponent1);
+        this.playerName1.setText(nameOfPlayer1);
+        this.opponentName1.setText(nameOfOpponent1);
+        this.opponentUsername.setText(nameOfOpponent1);
+
+        // update levels
+        this.playerLevelField.setText(GlobalData.user.getLevel().toString());
+        this.opponentLevelField.setText(GlobalData.opponentTeam.get(0).getLevel().toString());
 
         if (numberOfPlayers == 4) {
             String nameOfPlayer2 = GlobalData.playerTeam.get(1).getUsername();
             String nameOfOpponent2 = GlobalData.opponentTeam.get(1).getUsername();
-            playerName2.setText(nameOfPlayer2);
-            opponentName2.setText(nameOfOpponent2);
+            this.playerName2.setText(nameOfPlayer2);
+            this.opponentName2.setText(nameOfOpponent2);
+            this.opponentUsername.setText(nameOfOpponent1 + ", " + nameOfOpponent2);
 
-            playerBackground2.setVisible(true);
-            opponentBackground2.setVisible(true);
-            playerName2.setVisible(true);
-            opponentName2.setVisible(true);
+            this.playerBackground2.setVisible(true);
+            this.opponentBackground2.setVisible(true);
+            this.playerName2.setVisible(true);
+            this.opponentName2.setVisible(true);
 
         }
 
         this.playerTeamCrowns = new ImageView[]{playerCrown1, playerCrown2, playerCrown3};
         this.opponentTeamCrowns = new ImageView[]{opponentCrown1, opponentCrown2, opponentCrown3};
+
+        render();
 
     }
 
