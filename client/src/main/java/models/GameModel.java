@@ -335,8 +335,8 @@ public abstract class GameModel {
     protected ArrayList<Tower> createTowers(User owner) {
         ArrayList<Tower> towers = new ArrayList<>();
         towers.add(QueenTower.create(owner));
-        towers.add(KingTower.create(owner));
         towers.add(QueenTower.create(owner));
+        towers.add(KingTower.create(owner));
         return towers;
     }
 }
