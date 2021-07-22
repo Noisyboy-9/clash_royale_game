@@ -173,7 +173,7 @@ public abstract class BotController extends BaseController {
             this.model.addCardToBotComingCards(this.createNewCardWithSameType(addedCard, cardOwner));
 
             Card nextCard = this.model.getBotComingCards().get(0);
-            this.model.getBotBattleCards().add(newCardPlacementIndex, nextCard);
+            this.model.getBotBattleCards().set(newCardPlacementIndex, nextCard);
 
             this.model.removeCardFromBotComingCards(nextCard);
         }
@@ -182,7 +182,7 @@ public abstract class BotController extends BaseController {
             this.model.addCardToPlayerComingCards(this.createNewCardWithSameType(addedCard, cardOwner));
 
             Card nextCard = this.model.getPlayerComingCards().get(0);
-            this.model.getPlayerBattleCards().add(newCardPlacementIndex, nextCard);
+            this.model.getPlayerBattleCards().set(newCardPlacementIndex, nextCard);
 
             this.model.removeCardFromPlayerComingCards(nextCard);
         }

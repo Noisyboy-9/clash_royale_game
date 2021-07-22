@@ -196,7 +196,7 @@ public abstract class OnlineController extends BaseController {
             this.model.addCardToPlayerComingCards(this.createNewCardWithSameType(addedCard, cardOwner));
 
             Card nextCard = this.model.getPlayerComingCards().get(0);
-            this.model.getPlayerBattleCards().add(newCardPlacementIndex, nextCard);
+            this.model.getPlayerBattleCards().set(newCardPlacementIndex, nextCard);
 
             this.model.removeCardFromPlayerComingCards(nextCard);
         }
