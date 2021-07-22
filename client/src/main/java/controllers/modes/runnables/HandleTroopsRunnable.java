@@ -18,7 +18,7 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
     @Override
     public void run() {
         this.handleDeadTroops();
-        this.handleEachTroopTargets();
+        this.handleEachTroopTargetSelection();
         this.handleTroopAttacks();
         this.handleTroopsMove();
     }
@@ -121,36 +121,19 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
         };
     }
 
-    private void handleEachTroopTargets() {
+    private void handleEachTroopTargetSelection() {
         if (this.model instanceof BotModeModel) {
-            this.handleFriendlyTargetSelection(this.model.getPlayerInMapTroops(), ((BotModeModel) this.model).getBotInMapAttackAbles());
-            this.handleEnemyTargetSelection(((BotModeModel) this.model).getBotInMapTroops(), this.model.getPlayerInMapAttackAbles());
+            this.handleTargetSelection(this.model.getPlayerInMapTroops(), ((BotModeModel) this.model).getBotInMapAttackAbles());
+            this.handleTargetSelection(((BotModeModel) this.model).getBotInMapTroops(), this.model.getPlayerInMapAttackAbles());
         }
 
         if (this.model instanceof OnlineModeModel) {
-            this.handleFriendlyTargetSelection(this.model.getPlayerInMapTroops(), ((OnlineModeModel) this.model).getOpponentInMapAttackAbles());
-            this.handleEnemyTargetSelection(((OnlineModeModel) this.model).getOpponentInMapTroops(), this.model.getPlayerInMapAttackAbles());
+            this.handleTargetSelection(this.model.getPlayerInMapTroops(), ((OnlineModeModel) this.model).getOpponentInMapAttackAbles());
+            this.handleTargetSelection(((OnlineModeModel) this.model).getOpponentInMapTroops(), this.model.getPlayerInMapAttackAbles());
         }
     }
 
-    private void handleEnemyTargetSelection(ArrayList<Troop> enemyTroops, ArrayList<AttackAble> possibleTargets) {
-        for (Troop troop : enemyTroops) {
-            if (Objects.isNull(troop.getTarget()) || troop.getTarget().isDead()) {
-                AttackAble nearestTarget = this.findNearestTarget(controller.transferPosition(troop.getPosition()), possibleTargets);
-
-                if (this.isInRange(troop, nearestTarget) && this.haveCompatibleTypes(troop, nearestTarget)) {
-                    try {
-                        troop.setTarget(nearestTarget);
-                    } catch (InvalidAttackTargetException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }
-
-    }
-
-    private void handleFriendlyTargetSelection(ArrayList<Troop> troops, ArrayList<AttackAble> possibleTargets) {
+    private void handleTargetSelection(ArrayList<Troop> troops, ArrayList<AttackAble> possibleTargets) {
         for (Troop troop : troops) {
             if (Objects.isNull(troop.getTarget()) || troop.getTarget().isDead()) {
                 AttackAble nearestTarget = this.findNearestTarget(troop.getPosition(), possibleTargets);
@@ -175,7 +158,7 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
     }
 
     private boolean isInRange(Troop troop, AttackAble nearestTarget) {
-        return nearestTarget.getPosition().distance(troop.getPosition()) < troop.getRange();
+        return troop.getPosition().distance(controller.transferPosition(nearestTarget.getPosition())) <= troop.getRange();
     }
 
     private void handleDeadTroops() {
@@ -194,7 +177,9 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
         AttackAble nearestTarget = targets.get(0);
 
         for (AttackAble target : targets) {
-            if (controller.transferPosition(target.getPosition()).distance(troopPosition) < controller.transferPosition(nearestTarget.getPosition()).distance(troopPosition)) {
+            if (troopPosition.distance(controller.transferPosition(target.getPosition())) <
+                    troopPosition.distance(controller.transferPosition(nearestTarget.getPosition()))
+            ) {
                 nearestTarget = target;
             }
         }
