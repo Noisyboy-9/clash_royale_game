@@ -145,10 +145,10 @@ public abstract class BaseController implements CustomEventHandler {
         this.frameRemainingCount = 3L * 60 * FRAME_PER_SECOND;
         this.previousMapElements = new ArrayList<>();
         this.numberOfPlayers = GlobalData.playerTeam.size() + GlobalData.opponentTeam.size();
-        this.playerQueenTower1Position = new Point2D(6, 30);
-        this.playerQueenTower2Position = new Point2D(17, 30);
-        this.opponentQueenTower1Position = new Point2D(6, 10);
-        this.opponentQueenTower2Position = new Point2D(17, 10);
+        this.playerQueenTower1Position = new Point2D(6, 29);
+        this.playerQueenTower2Position = new Point2D(17, 29);
+        this.opponentQueenTower1Position = new Point2D(6, 9);
+        this.opponentQueenTower2Position = new Point2D(17, 9);
 
     }
 
@@ -279,8 +279,7 @@ public abstract class BaseController implements CustomEventHandler {
     private int getIndexInMap(Point2D position) {
         int column = (int) position.getX();
         int row = (int) position.getY();
-
-        return row * 8 + column;
+        return ((24 * 43) - 1 + 40 + column - 1 + (24 * row));
     }
 
     /**
@@ -461,7 +460,7 @@ public abstract class BaseController implements CustomEventHandler {
         }
 
         handleTowersExistence(playerTowers, this.playerQueenTower1, this.playerQueenTower2, this.playerKingTower1, this.playerQueenTower1Position, this.playerQueenTower2Position);
-        handleTowersExistence(opponentTowers, this.opponentQueenTower1, this.opponentQueenTower2, this.opponentKingTower1, this.opponentQueenTower1Position, this.opponentQueenTower2Position);
+        handleTowersExistence(opponentTowers, this.opponentQueenTower1, this.opponentQueenTower2, this.opponentKingTower1, transferPosition(this.opponentQueenTower1Position), transferPosition(this.opponentQueenTower2Position));
         handleTowersAttacks(playerTowers, false);
         handleTowersAttacks(opponentTowers, true);
 
@@ -604,8 +603,8 @@ public abstract class BaseController implements CustomEventHandler {
             String key = getGifKey(card, "player");
             Image gif = Controller.SCENE_CONTROLLER.getGif(key);
             int index = getIndexInMap(card.getPosition());
-            ImageView imgView = new ImageView(gif);
-            mapChildren.set(index, imgView);
+            ImageView imgView = (ImageView) mapChildren.get(index);
+            imgView.setImage(gif);
             this.previousMapElements.add(imgView);
 
             if (card instanceof Cannon)
@@ -625,8 +624,8 @@ public abstract class BaseController implements CustomEventHandler {
             String key = getGifKey(card, "opponent");
             Image gif = Controller.SCENE_CONTROLLER.getGif(key);
             int index = getIndexInMap(transferPosition(card.getPosition()));
-            ImageView imgView = new ImageView(gif);
-            mapChildren.set(index, imgView);
+            ImageView imgView = (ImageView) mapChildren.get(index);
+            imgView.setImage(gif);
             this.previousMapElements.add(imgView);
 
             if (card instanceof Cannon)
@@ -771,7 +770,7 @@ public abstract class BaseController implements CustomEventHandler {
         handleInvalidCards();
         refreshMap();
         handleInMapCards();
-//        handleTowers();
+        handleTowers();
         handleBattleCards();
         handleComingCards();
         handleNextCard();
