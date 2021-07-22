@@ -1,7 +1,9 @@
 package controllers.modes.runnables;
 
+import cards.CardStatusEnum;
 import cards.troops.Troop;
 import cards.utils.AttackAble;
+import cards.utils.TypeEnum;
 import controllers.modes.BaseController;
 import exceptions.InvalidAttackTargetException;
 import javafx.geometry.Point2D;
@@ -36,6 +38,7 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
     private void doTroopsAttack(ArrayList<Troop> troops) {
         for (Troop troop : troops) {
             if (!Objects.isNull(troop.getTarget())) {
+                troop.setStatus(CardStatusEnum.FIGHT);
                 troop.attack();
             }
         }
@@ -103,6 +106,7 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
     }
 
     private void moveTo(Troop troop, int x, int y) {
+        troop.setStatus(CardStatusEnum.WALK);
         troop.setPosition(new Point2D(x, y));
     }
 
@@ -137,10 +141,10 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
 
     private void handleTargetSelection(ArrayList<Troop> troops, ArrayList<AttackAble> possibleTargets) {
         for (Troop troop : troops) {
-            if (Objects.isNull(troop.getTarget())) {
+            if (Objects.isNull(troop.getTarget()) || troop.getTarget().isDead()) {
                 AttackAble nearestTarget = this.findNearestTarget(troop.getPosition(), possibleTargets);
 
-                if (this.isInRange(troop, nearestTarget) && this.haveSameTypes(troop, nearestTarget)) {
+                if (this.isInRange(troop, nearestTarget) && this.haveCompatibleTypes(troop, nearestTarget)) {
                     try {
                         troop.setTarget(nearestTarget);
                     } catch (InvalidAttackTargetException e) {
@@ -151,8 +155,12 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
         }
     }
 
-    private boolean haveSameTypes(Troop troop, AttackAble nearestTarget) {
-        return troop.getAttackType().equals(nearestTarget.getSelfType());
+    private boolean haveCompatibleTypes(Troop troop, AttackAble nearestTarget) {
+        return switch (troop.getAttackType()) {
+            case AIR -> nearestTarget.getSelfType().equals(TypeEnum.AIR);
+            case GROUND -> nearestTarget.getSelfType().equals(TypeEnum.GROUND);
+            case AIR_GROUND -> true;
+        };
     }
 
     private boolean isInRange(Troop troop, AttackAble nearestTarget) {

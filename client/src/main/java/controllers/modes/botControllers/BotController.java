@@ -62,6 +62,7 @@ public abstract class BotController extends BaseController {
     @Override
     public void towerDestroyedEventHandler(TowerDestroyedEvent event) {
         Tower destroyedTower = event.getTower();
+        destroyedTower.deActive();
         User owner = event.getTargetPlayers().get(0);
         try {
             this.removeItem(destroyedTower, owner);
@@ -75,6 +76,7 @@ public abstract class BotController extends BaseController {
     @Override
     public void towerActiveEventHandler(TowerActiveEvent event) {
         Tower activatedTower = event.getTower();
+        activatedTower.activate();
         AttackAble towerTarget = event.getAttackTarget();
         activatedTower.setTarget(towerTarget);
         event.consume();

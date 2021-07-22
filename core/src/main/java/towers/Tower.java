@@ -221,7 +221,7 @@ public abstract class Tower implements AttackAble, CanKnowItsExactTowerTypeTrait
 
     @Override
     public boolean isDead() {
-        return this.HP == 0;
+        return this.HP <= 0;
     }
 
     /**

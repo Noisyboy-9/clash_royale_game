@@ -13,7 +13,6 @@ import java.util.Objects;
 import java.util.Timer;
 
 public record HandleTowersRunnable(GameModel model, BaseController controller, Timer timer) implements Runnable {
-
     @Override
     public void run() {
         this.handleDeadTowers();
@@ -38,10 +37,12 @@ public record HandleTowersRunnable(GameModel model, BaseController controller, T
     private void removeDeadTowers(ArrayList<Tower> towers) {
         for (Tower tower : towers) {
             if (tower.isDead() && tower.isKingTower()) {
+                tower.deActive();
                 this.doFinishGameSteps();
             }
 
             if (tower.isDead() && tower.isQueenTower()) {
+                tower.deActive();
                 towers.remove(tower);
             }
         }
@@ -103,6 +104,7 @@ public record HandleTowersRunnable(GameModel model, BaseController controller, T
                 Point2D towerPosition = tower.getPosition();
 
                 AttackAble nearestTarget = this.findNearestTarget(towerPosition, targets);
+                tower.activate();
                 tower.setTarget(nearestTarget);
             }
         }

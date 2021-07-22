@@ -186,7 +186,7 @@ public abstract class Building extends Card implements AttackAble {
 
     @Override
     public boolean isDead() {
-        return this.HP == 0 || this.remainingFrameCount == 0;
+        return this.HP <= 0 || this.remainingFrameCount == 0;
     }
 
     /**
