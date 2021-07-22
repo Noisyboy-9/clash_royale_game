@@ -15,6 +15,7 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.Effect;
+import javafx.scene.effect.Shadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -417,7 +418,8 @@ public abstract class BaseController implements CustomEventHandler {
                 cardImgView.setCursor(Cursor.HAND);
             }
 
-            cardImgView.setEffect(previousEffect);
+            if (previousEffect instanceof Shadow)
+                cardImgView.setEffect(previousEffect);
 
         }
 
@@ -767,11 +769,11 @@ public abstract class BaseController implements CustomEventHandler {
     @FXML
     public void render() {
         updateElixirBox();
-        handleInvalidCards();
         refreshMap();
         handleInMapCards();
         handleTowers();
         handleBattleCards();
+        handleInvalidCards();
         handleComingCards();
         handleNextCard();
         handleCrownsCount();
