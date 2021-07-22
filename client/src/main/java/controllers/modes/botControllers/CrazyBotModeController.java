@@ -20,6 +20,8 @@ public class CrazyBotModeController extends BotController  {
      *
      */
     public CrazyBotModeController() {
+        super();
+        GlobalData.gameController = this;
         this.setTimer();
     }
 
@@ -36,7 +38,7 @@ public class CrazyBotModeController extends BotController  {
                         if (GlobalData.gameStarted) {
                             ExecutorService service = Executors.newCachedThreadPool();
                             service.execute(
-                                    new HandleTowersRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this)
+                                    new HandleTowersRunnable(CrazyBotModeController.super.model, CrazyBotModeController.this, timer)
                             );
 
                             service.execute(

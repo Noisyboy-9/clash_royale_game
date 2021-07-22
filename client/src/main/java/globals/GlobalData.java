@@ -14,6 +14,7 @@ import cards.troops.pekkas.MiniPekka;
 import cards.troops.valkyries.Valkyrie;
 import cards.troops.wizards.Wizard;
 import controllers.Controller;
+import controllers.modes.BaseController;
 import models.GameModel;
 import user.User;
 
@@ -24,6 +25,7 @@ public class GlobalData {
     public static User user = null;
     public static User bot = new User("Bot", "password");
     public static GameModel gameModel;
+    public static BaseController gameController;
     public static boolean gameStarted = false;
     public static ArrayList<User> playerTeam = new ArrayList<>();
     public static ArrayList<User> opponentTeam = new ArrayList<>();

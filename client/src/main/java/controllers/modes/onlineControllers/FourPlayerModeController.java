@@ -26,7 +26,7 @@ public class FourPlayerModeController extends OnlineController {
             public void run() {
                 ExecutorService service = Executors.newCachedThreadPool();
                 service.execute(
-                        new HandleTowersRunnable(FourPlayerModeController.super.model, FourPlayerModeController.this)
+                        new HandleTowersRunnable(FourPlayerModeController.super.model, FourPlayerModeController.this, timer)
                 );
 
                 service.execute(

@@ -26,7 +26,7 @@ public class NormalBotModeController extends BotController {
             public void run() {
                 ExecutorService service = Executors.newCachedThreadPool();
                 service.execute(
-                        new HandleTowersRunnable(NormalBotModeController.super.model, NormalBotModeController.this)
+                        new HandleTowersRunnable(NormalBotModeController.super.model, NormalBotModeController.this, timer)
                 );
 
                 service.execute(

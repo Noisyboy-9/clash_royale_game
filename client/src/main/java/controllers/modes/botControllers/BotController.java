@@ -192,13 +192,13 @@ public abstract class BotController extends BaseController {
         if (cardOwner.equals(GlobalData.bot)) {
             this.model.addCardToInMapBotCards(addedCard);
             int indexOfAddedCard = this.model.getBotBattleCards().indexOf(addedCard);
-            this.model.removeCardFromBotBattleCards(addedCard);
+//            this.model.removeCardFromBotBattleCards(addedCard);
             return indexOfAddedCard;
         }
 
 //        the player has deployed the card
         this.model.addCardToInMapPlayerCards(addedCard);
-        this.model.removeCardFromPlayerBattleCards(addedCard);
+//        this.model.removeCardFromPlayerBattleCards(addedCard);
         return this.model.getPlayerBattleCards().indexOf(addedCard);
     }
 

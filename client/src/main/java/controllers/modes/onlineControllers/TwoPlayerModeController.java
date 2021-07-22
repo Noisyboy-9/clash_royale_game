@@ -26,7 +26,7 @@ public class TwoPlayerModeController extends OnlineController {
             public void run() {
                 ExecutorService service = Executors.newCachedThreadPool();
                 service.execute(
-                        new HandleTowersRunnable(TwoPlayerModeController.super.model, TwoPlayerModeController.this)
+                        new HandleTowersRunnable(TwoPlayerModeController.super.model, TwoPlayerModeController.this, timer)
                 );
 
                 service.execute(
