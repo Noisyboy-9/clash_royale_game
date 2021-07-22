@@ -347,4 +347,12 @@ public abstract class GameModel {
         towers.add(KingTower.create(owner));
         return towers;
     }
+
+
+    protected void removeCardFromMap(Card card) {
+
+    }
+
+
+
 }
