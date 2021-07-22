@@ -166,7 +166,6 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
     }
 
     private void handleDeadTroops() {
-//        this.model.getPlayerInMapAttackAblesCards().removeIf(AttackAble::isDead);
         for (AttackAble attackAble : this.model.getPlayerInMapAttackAblesCards()) {
             if (attackAble.isDead()) {
                 this.model.getPlayerInMapCards().remove((Card) attackAble);

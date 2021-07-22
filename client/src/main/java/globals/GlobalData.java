@@ -40,7 +40,6 @@ public class GlobalData {
             Card card = getCardBasedOnName(className, cardOwner);
 
             cards.add(card);
-
         }
 
         return cards;

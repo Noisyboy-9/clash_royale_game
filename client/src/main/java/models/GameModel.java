@@ -283,14 +283,15 @@ public abstract class GameModel {
      * @return the player in map spells
      */
     public ArrayList<Spell> getPlayerInMapSpells() {
-        ArrayList<Spell> troops = new ArrayList<>();
+        ArrayList<Spell> spells = new ArrayList<>();
+
         for (Card card : this.playerInMapCards) {
             if (card.isSpell()) {
-                troops.add((Spell) card);
+                spells.add((Spell) card);
             }
         }
 
-        return troops;
+        return spells;
     }
 
     /**
