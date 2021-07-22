@@ -272,7 +272,7 @@ public abstract class BaseController implements CustomEventHandler {
     private int getIndexInMap(Point2D position) {
         int column = (int) position.getX();
         int row = (int) position.getY();
-        return ((24 * 43) - 1 + 44 + column - 1 + (24 * row));
+        return ((24 * 43) - 1 + 55 + column - 1 + (24 * row));
     }
 
     /**
