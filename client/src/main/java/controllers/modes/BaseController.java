@@ -211,7 +211,6 @@ public abstract class BaseController implements CustomEventHandler {
         if (GlobalData.playerTeamCrownCount > GlobalData.opponentTeamCrownCount) {
             winners = GlobalData.playerTeam;
         }
-
     }
 
     /**

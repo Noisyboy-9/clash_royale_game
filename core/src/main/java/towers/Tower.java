@@ -37,7 +37,7 @@ public abstract class Tower implements AttackAble, CanKnowItsExactTowerTypeTrait
      * @param range                the range
      * @param HP                   the hp
      * @param damage               the damage
-     * @param position
+     * @param position             the position
      */
     protected Tower(UUID id, User owner, int demolitionBonusCount, boolean active, int range, int HP, int damage, Point2D position) {
         this.id = id;

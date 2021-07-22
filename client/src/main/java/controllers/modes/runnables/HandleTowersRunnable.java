@@ -2,6 +2,7 @@ package controllers.modes.runnables;
 
 import cards.utils.AttackAble;
 import controllers.modes.BaseController;
+import globals.GlobalData;
 import javafx.geometry.Point2D;
 import models.BotModeModel;
 import models.GameModel;
@@ -38,13 +39,39 @@ public record HandleTowersRunnable(GameModel model, BaseController controller, T
         for (Tower tower : towers) {
             if (tower.isDead() && tower.isKingTower()) {
                 tower.deActive();
+                this.updateCrownCount(tower, tower.getDemolitionBonusCount());
                 this.doFinishGameSteps();
             }
 
             if (tower.isDead() && tower.isQueenTower()) {
                 tower.deActive();
                 towers.remove(tower);
+                this.updateCrownCount(tower, tower.getDemolitionBonusCount());
             }
+
+        }
+    }
+
+    private void updateCrownCount(Tower destroyedTower, int demolitionBonusCount) {
+        if (GlobalData.playerTeam.contains(destroyedTower.getOwner())) {
+            if (this.model instanceof BotModeModel) {
+                ((BotModeModel) this.model).setBotCrownCount(
+                        ((BotModeModel) this.model).getBotCrownCount() + demolitionBonusCount
+                );
+            }
+
+            if (this.model instanceof OnlineModeModel) {
+                ((OnlineModeModel) this.model).setOpponentCrownCount(
+                        ((OnlineModeModel) this.model).getOpponentCrownCount() + demolitionBonusCount
+                );
+            }
+        }
+
+
+        if (GlobalData.opponentTeam.contains(destroyedTower.getOwner())) {
+            this.model.setPlayerCrownCount(
+                    this.model.getPlayerCrownCount() + demolitionBonusCount
+            );
         }
     }
 
@@ -104,10 +131,16 @@ public record HandleTowersRunnable(GameModel model, BaseController controller, T
                 Point2D towerPosition = tower.getPosition();
 
                 AttackAble nearestTarget = this.findNearestTarget(towerPosition, targets);
-                tower.activate();
-                tower.setTarget(nearestTarget);
+                if (this.isInRage(nearestTarget, tower)) {
+                    tower.activate();
+                    tower.setTarget(nearestTarget);
+                }
             }
         }
+    }
+
+    private boolean isInRage(AttackAble nearestTarget, Tower tower) {
+        return nearestTarget.getPosition().distance(tower.getPosition()) < tower.getRange();
     }
 
     private AttackAble findNearestTarget(Point2D towerPosition, ArrayList<AttackAble> targets) {
