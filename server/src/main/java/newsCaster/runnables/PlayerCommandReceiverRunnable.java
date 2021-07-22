@@ -9,14 +9,7 @@ import workers.PlayerWorker;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
-public class PlayerCommandReceiverRunnable implements Runnable {
-    private final PlayerWorker worker;
-    private final NewsRedirector newsRedirector;
-
-    public PlayerCommandReceiverRunnable(PlayerWorker worker, NewsRedirector newsRedirector) {
-        this.worker = worker;
-        this.newsRedirector = newsRedirector;
-    }
+public record PlayerCommandReceiverRunnable(PlayerWorker worker, NewsRedirector newsRedirector) implements Runnable {
 
     @Override
     public void run() {
@@ -25,7 +18,7 @@ public class PlayerCommandReceiverRunnable implements Runnable {
         try {
             while (true) {
                 Command command = (Command) request.readObject();
-//                this.newsRedirector.broadcastCommand(command, this.worker);
+                this.newsRedirector.broadcastCommand(command, this.worker);
 
                 if (this.isGameFinished(command)) {
                     break;

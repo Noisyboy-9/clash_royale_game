@@ -83,8 +83,8 @@ public class AuthenticationRunnable implements Runnable {
 
             this.response.writeObject(new RegisterResponseCommand(
                     user,
-                    "Register successful")
-            );
+                    "Register successful"
+            ));
 
             PlayerWorker worker = new PlayerWorker(this.response,
                     this.request,
