@@ -39,11 +39,11 @@ public class NewsCaster {
      * @throws DuplicateGameRequestException the duplicate game request exception
      */
     public void addTwoPlayerModeRequester(PlayerWorker worker) throws DuplicateGameRequestException {
-        if (!this.twoPlayerModeGameRequesters.contains(worker)) {
+        if (this.twoPlayerModeGameRequesters.contains(worker)) {
             throw new DuplicateGameRequestException("player has already requested for an two player match, can't request again");
         }
 
-        if (!this.fourPlayerModeGameRequesters.contains(worker)) {
+        if (this.fourPlayerModeGameRequesters.contains(worker)) {
             throw new DuplicateGameRequestException("Player has already requested for an four player match, can't request for another match");
         }
 

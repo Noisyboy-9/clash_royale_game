@@ -6,6 +6,8 @@ import commands.matchRequestCommands.FourPlayerMatchRequesterCommand;
 import commands.matchRequestCommands.TwoPlayerMatchRequestCommand;
 import controllers.Controller;
 import controllers.connector.Connector;
+import controllers.menus.runnables.GameCommandReceiverRunnable;
+import controllers.modes.onlineControllers.OnlineController;
 import globals.GlobalData;
 import javafx.fxml.FXML;
 import javafx.geometry.Point2D;
@@ -13,7 +15,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import models.OnlineModeModel;
 import towers.Tower;
-import user.User;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -36,30 +37,28 @@ public class MainMenuController extends MenuController {
 
     @FXML
     void twoPlayerMode(MouseEvent event) {
+        Controller.SCENE_CONTROLLER.showScene("Menu/WaitingPage.fxml");
         try {
             Connector.getInstance().getRequest().writeObject(new TwoPlayerMatchRequestCommand(GlobalData.user));
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        Controller.SCENE_CONTROLLER.showScene("Menu/WaitingPage.fxml");
         setData();
         Controller.SCENE_CONTROLLER.showScene("Map/TwoPlayerMap.fxml");
-
+        new Thread(new GameCommandReceiverRunnable((OnlineController) GlobalData.gameController));
     }
 
     @FXML
     void fourPlayerMode(MouseEvent event) {
+        Controller.SCENE_CONTROLLER.showScene("Menu/WaitingPage.fxml");
         try {
             Connector.getInstance().getRequest().writeObject(new FourPlayerMatchRequesterCommand(GlobalData.user));
+            setData();
+            Controller.SCENE_CONTROLLER.showScene("Map/FourPlayerMap.fxml");
+            new Thread(new GameCommandReceiverRunnable((OnlineController) GlobalData.gameController));
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        Controller.SCENE_CONTROLLER.showScene("Menu/WaitingPage.fxml");
-        setData();
-        Controller.SCENE_CONTROLLER.showScene("Map/FourPlayerMap.fxml");
-
     }
 
     @FXML
@@ -91,7 +90,6 @@ public class MainMenuController extends MenuController {
         ArrayList<Card> playerBattleCards = new ArrayList<>(playerAllCards.subList(0, 4));
 
         GlobalData.gameModel = new OnlineModeModel(playerAllCards, playerBattleCards, enemyTowers);
-
     }
 
 
@@ -109,6 +107,4 @@ public class MainMenuController extends MenuController {
         }
 
     }
-
-
 }

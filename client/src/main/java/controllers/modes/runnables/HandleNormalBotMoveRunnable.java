@@ -16,23 +16,25 @@ public record HandleNormalBotMoveRunnable(BotModeModel model, NormalBotModeContr
         if (this.model.getPlayerInMapCards().size() == 0) {
             return;
         }
-        Card lastPlayerAddedCard = this.model
-                .getPlayerInMapCards()
-                .get(this.model.getPlayerInMapCards().size() - 1);
+        if (this.model.getBotInMapCards().size() != this.model.getPlayerInMapCards().size()) {
+            Card lastPlayerAddedCard = this.model
+                    .getPlayerInMapCards()
+                    .get(this.model.getPlayerInMapCards().size() - 1);
 
-        Card cardToAdd = null;
-        for (Card card : this.model.getBotBattleCards()) {
-            if (card.getClass().getSimpleName().equals(lastPlayerAddedCard.getClass().getSimpleName())) {
-                cardToAdd = GlobalData.getCardBasedOnName(card.getClass().getSimpleName(), GlobalData.bot);
+            Card cardToAdd = null;
+            for (Card card : this.model.getBotBattleCards()) {
+                if (card.getClass().getSimpleName().equals(lastPlayerAddedCard.getClass().getSimpleName())) {
+                    cardToAdd = GlobalData.getCardBasedOnName(card.getClass().getSimpleName(), GlobalData.bot);
+                }
             }
+
+            if (Objects.isNull(cardToAdd)) return;
+
+            Point2D position = lastPlayerAddedCard.getPosition();
+
+            CardAddedEvent cardAddedEvent = new CardAddedEvent(Event.ANY, GlobalData.opponentTeam, cardToAdd, position);
+
+            controller.cardAddedEventHandler(cardAddedEvent);
         }
-
-        if (Objects.isNull(cardToAdd)) return;
-
-        Point2D position = controller.transferPosition(lastPlayerAddedCard.getPosition());
-
-        CardAddedEvent cardAddedEvent = new CardAddedEvent(Event.ANY, GlobalData.opponentTeam, cardToAdd, position);
-
-        controller.cardAddedEventHandler(cardAddedEvent);
     }
 }

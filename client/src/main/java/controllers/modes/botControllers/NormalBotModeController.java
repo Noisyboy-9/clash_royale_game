@@ -3,7 +3,6 @@ package controllers.modes.botControllers;
 import controllers.modes.runnables.*;
 import globals.GlobalData;
 import javafx.application.Platform;
-import models.BotModeModel;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -17,6 +16,8 @@ public class NormalBotModeController extends BotController {
      *
      */
     public NormalBotModeController() {
+        super();
+        GlobalData.gameController = this;
         this.setTimer();
     }
 

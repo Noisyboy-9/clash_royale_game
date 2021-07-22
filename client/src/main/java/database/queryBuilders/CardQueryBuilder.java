@@ -63,13 +63,10 @@ public class CardQueryBuilder {
 
     }
 
-
-    private HashMap<Integer, String> getUrls(GridPane battleDeck)
-    {
+    private HashMap<Integer, String> getUrls(GridPane battleDeck) {
         HashMap<Integer, String> urls = new HashMap<>();
 
-        for (Node node : battleDeck.getChildren())
-        {
+        for (Node node : battleDeck.getChildren()) {
             if (node instanceof ImageView) {
                 String url = ((ImageView) node).getImage().getUrl();
                 if (!url.contains("card_exir")) {
