@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.geometry.Point2D;
 import javafx.scene.input.MouseEvent;
 import models.BotModeModel;
-import models.GameModel;
 import towers.Tower;
 
 import java.util.ArrayList;
@@ -41,7 +40,6 @@ public class TrainingCampController extends MenuController {
         setPositions(GlobalData.gameModel.getPlayerTowers());
         setPositions(((BotModeModel)GlobalData.gameModel).getBotTowers());
         GlobalData.bot.setLevel(GlobalData.user.getLevel());
-
     }
 
 
@@ -55,7 +53,6 @@ public class TrainingCampController extends MenuController {
         }
 
         return botCards;
-
     }
 
 

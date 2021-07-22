@@ -62,6 +62,7 @@ public abstract class BotController extends BaseController {
     @Override
     public void towerDestroyedEventHandler(TowerDestroyedEvent event) {
         Tower destroyedTower = event.getTower();
+        destroyedTower.deActive();
         User owner = event.getTargetPlayers().get(0);
         try {
             this.removeItem(destroyedTower, owner);
@@ -75,6 +76,7 @@ public abstract class BotController extends BaseController {
     @Override
     public void towerActiveEventHandler(TowerActiveEvent event) {
         Tower activatedTower = event.getTower();
+        activatedTower.activate();
         AttackAble towerTarget = event.getAttackTarget();
         activatedTower.setTarget(towerTarget);
         event.consume();
@@ -173,7 +175,7 @@ public abstract class BotController extends BaseController {
             this.model.addCardToBotComingCards(this.createNewCardWithSameType(addedCard, cardOwner));
 
             Card nextCard = this.model.getBotComingCards().get(0);
-            this.model.getBotBattleCards().add(newCardPlacementIndex, nextCard);
+            this.model.getBotBattleCards().set(newCardPlacementIndex, nextCard);
 
             this.model.removeCardFromBotComingCards(nextCard);
         }
@@ -182,7 +184,7 @@ public abstract class BotController extends BaseController {
             this.model.addCardToPlayerComingCards(this.createNewCardWithSameType(addedCard, cardOwner));
 
             Card nextCard = this.model.getPlayerComingCards().get(0);
-            this.model.getPlayerBattleCards().add(newCardPlacementIndex, nextCard);
+            this.model.getPlayerBattleCards().set(newCardPlacementIndex, nextCard);
 
             this.model.removeCardFromPlayerComingCards(nextCard);
         }

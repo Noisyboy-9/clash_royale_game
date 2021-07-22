@@ -83,7 +83,7 @@ public abstract class Troop extends Card implements AttackAble {
 
     @Override
     public boolean isDead() {
-        return this.HP == 0;
+        return this.HP <= 0;
     }
 
     @Override
@@ -168,6 +168,10 @@ public abstract class Troop extends Card implements AttackAble {
         return target;
     }
 
+    public void clearTarget() {
+       this.target = null;
+    }
+
     /**
      * Sets attack target.
      *
@@ -175,7 +179,11 @@ public abstract class Troop extends Card implements AttackAble {
      * @throws InvalidAttackTargetException the invalid attack target exception
      */
     public void setTarget(AttackAble target) throws InvalidAttackTargetException {
-        if (target.getSelfType() != this.getAttackType()) {
+        if (target.getSelfType().equals(TypeEnum.GROUND) && this.getAttackType().equals(TypeEnum.AIR)) {
+            throw new InvalidAttackTargetException("Troop with attack type set to: " + this.getSelfType().toString() + "can't attack target with type: " + this.getAttackType().toString());
+        }
+
+        if (target.getSelfType().equals(TypeEnum.AIR) && this.getAttackType().equals(TypeEnum.GROUND)) {
             throw new InvalidAttackTargetException("Troop with attack type set to: " + this.getSelfType().toString() + "can't attack target with type: " + this.getAttackType().toString());
         }
 

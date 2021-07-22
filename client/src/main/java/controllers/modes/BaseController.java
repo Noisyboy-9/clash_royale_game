@@ -3,7 +3,6 @@ package controllers.modes;
 import cards.Card;
 import cards.buildings.cannons.Cannon;
 import controllers.Controller;
-import controllers.modes.botControllers.CrazyBotModeController;
 import events.cards.CardAddedEvent;
 import globals.GlobalData;
 import javafx.collections.ObservableList;
@@ -148,9 +147,8 @@ public abstract class BaseController implements CustomEventHandler {
         this.numberOfPlayers = GlobalData.playerTeam.size() + GlobalData.opponentTeam.size();
         this.playerQueenTower1Position = new Point2D(6, 29);
         this.playerQueenTower2Position = new Point2D(17, 29);
-        this.opponentQueenTower1Position = new Point2D(6, 9);
-        this.opponentQueenTower2Position = new Point2D(17, 9);
-
+        this.opponentQueenTower1Position = new Point2D(17, 9);
+        this.opponentQueenTower2Position = new Point2D(6, 9);
     }
 
     /**
@@ -212,7 +210,6 @@ public abstract class BaseController implements CustomEventHandler {
         if (GlobalData.playerTeamCrownCount > GlobalData.opponentTeamCrownCount) {
             winners = GlobalData.playerTeam;
         }
-
     }
 
     /**
@@ -280,7 +277,7 @@ public abstract class BaseController implements CustomEventHandler {
     private int getIndexInMap(Point2D position) {
         int column = (int) position.getX();
         int row = (int) position.getY();
-        return ((24 * 43) - 1 + 40 + column - 1 + (24 * row));
+        return ((24 * 43) - 1 + 44 + column - 1 + (24 * row));
     }
 
     /**
@@ -349,7 +346,7 @@ public abstract class BaseController implements CustomEventHandler {
      * Finish game.
      */
     @FXML
-    void finishGame() {
+    public void finishGame() {
         beforeGameState.setCursor(Cursor.DEFAULT);
         beforeGameState.setVisible(true);
         resultState.setVisible(true);
@@ -470,7 +467,7 @@ public abstract class BaseController implements CustomEventHandler {
 
 
     @FXML
-    void handleTowersExistence(ArrayList<Tower> towers, ImageView queenTower1, ImageView queenTower2, ImageView kingTower1, Point2D queenTower1Position, Point2D queenTower2Position) {
+    private void handleTowersExistence(ArrayList<Tower> towers, ImageView queenTower1, ImageView queenTower2, ImageView kingTower1, Point2D queenTower1Position, Point2D queenTower2Position) {
         // when king towers are destroyed
         if (towers.size() == 0) {
             queenTower1.setImage(null);
@@ -535,7 +532,7 @@ public abstract class BaseController implements CustomEventHandler {
 
 
     @FXML
-    void handleTowersAttacks(ArrayList<Tower> towers, boolean isOpponent) {
+    private void handleTowersAttacks(ArrayList<Tower> towers, boolean isOpponent) {
         ObservableList<Node> mapChildren = this.mapCells.getChildren();
 
         String kingKey;
@@ -544,8 +541,7 @@ public abstract class BaseController implements CustomEventHandler {
         if (isOpponent) {
             kingKey = "Shot_fight_opponent";
             queenKey = "Tower_fight_opponent";
-        }
-        else {
+        } else {
             kingKey = "Shot_fight_player";
             queenKey = "Tower_fight_player";
         }
@@ -588,7 +584,7 @@ public abstract class BaseController implements CustomEventHandler {
      * Refresh map.
      */
     @FXML
-    void refreshMap() {
+    private void refreshMap() {
         for (ImageView imgView : this.previousMapElements) {
             imgView.setImage(null);
         }
@@ -598,7 +594,7 @@ public abstract class BaseController implements CustomEventHandler {
      * Handle in map cards.
      */
     @FXML
-    void handleInMapCards() {
+    private void handleInMapCards() {
         ObservableList<Node> mapChildren = mapCells.getChildren();
 
         for (Card card : model.getPlayerInMapCards()) {
@@ -662,12 +658,11 @@ public abstract class BaseController implements CustomEventHandler {
     }
 
 
-
     /**
      * Handle battle cards.
      */
     @FXML
-    void handleBattleCards() {
+    private void handleBattleCards() {
         ObservableList<Node> battleCardsChildren = this.battleCards.getChildren();
         for (int index = 0; index < 4; index++) {
             Card card = this.model.getPlayerBattleCards().get(index);
@@ -691,7 +686,7 @@ public abstract class BaseController implements CustomEventHandler {
      * Handle coming cards.
      */
     @FXML
-    void handleComingCards() {
+    private void handleComingCards() {
         ObservableList<Node> battleCardsChildren = this.comingCards.getChildren();
         for (int index = 0; index < 4; index++) {
             Card card = this.model.getPlayerComingCards().get(index);
@@ -713,7 +708,7 @@ public abstract class BaseController implements CustomEventHandler {
      * Handle next card.
      */
     @FXML
-    void handleNextCard() {
+    private void handleNextCard() {
         Card nextCard = this.model.getPlayerComingCards().get(0);
         Image image = Controller.SCENE_CONTROLLER.getNextCardImg(nextCard.getClass().getSimpleName());
         String elixir = Integer.toString(nextCard.getCost());
@@ -725,14 +720,13 @@ public abstract class BaseController implements CustomEventHandler {
 
 
     @FXML
-    void handleCrownsCount() {
+    private void handleCrownsCount() {
         int playerCrowns = this.model.getPlayerCrownCount();
         int opponentCrowns = 0;
 
         if (this.model instanceof BotModeModel) {
             opponentCrowns = ((BotModeModel) this.model).getBotCrownCount();
-        }
-        else if (this.model instanceof OnlineModeModel){
+        } else if (this.model instanceof OnlineModeModel) {
             opponentCrowns = ((OnlineModeModel) this.model).getOpponentCrownCount();
         }
 
@@ -746,7 +740,7 @@ public abstract class BaseController implements CustomEventHandler {
      * Handle time.
      */
     @FXML
-    void handleTime() {
+    private void handleTime() {
         if (this.frameRemainingCount % this.FRAME_PER_SECOND == 0) {
             long seconds = this.frameRemainingCount / this.FRAME_PER_SECOND;
             long minutes = TimeUnit.SECONDS.toMinutes(seconds);
@@ -780,5 +774,4 @@ public abstract class BaseController implements CustomEventHandler {
         handleTime();
 
     }
-
 }

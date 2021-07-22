@@ -106,8 +106,16 @@ public abstract class GameModel {
      * @param amount the amount
      */
     public void increasePlayerElixirsCountBy(int amount) {
-        if (this.playerElixirCount + amount <= 10)
-            this.playerElixirCount += amount;
+        if (this.playerElixirCount == 10) {
+            return;
+        }
+
+        if (this.playerElixirCount + amount >= 10) {
+            this.playerElixirCount = 10;
+            return;
+        }
+
+        this.playerElixirCount += amount;
     }
 
     /**

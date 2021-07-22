@@ -1,7 +1,9 @@
 package controllers.modes.runnables;
 
+import cards.CardStatusEnum;
 import cards.troops.Troop;
 import cards.utils.AttackAble;
+import cards.utils.TypeEnum;
 import controllers.modes.BaseController;
 import exceptions.InvalidAttackTargetException;
 import javafx.geometry.Point2D;
@@ -16,7 +18,7 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
     @Override
     public void run() {
         this.handleDeadTroops();
-        this.handleEachTroopTargets();
+        this.handleEachTroopTargetSelection();
         this.handleTroopAttacks();
         this.handleTroopsMove();
     }
@@ -35,74 +37,70 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
 
     private void doTroopsAttack(ArrayList<Troop> troops) {
         for (Troop troop : troops) {
-            if (!Objects.isNull(troop.getTarget())) {
+            if (!Objects.isNull(troop.getTarget()) && this.isTimeForAttack(troop)) {
+
+                troop.setStatus(CardStatusEnum.FIGHT);
                 troop.attack();
+
+                if (troop.getTarget().isDead()) {
+                    troop.setStatus(CardStatusEnum.WALK);
+                    troop.clearTarget();
+                }
             }
         }
+    }
+
+    private boolean isTimeForAttack(Troop troop) {
+        return controller.getFrameRemainingCount() % (troop.getHitSpeed() * controller.getFRAME_PER_SECOND()) == 0;
     }
 
     private void handleTroopsMove() {
-        this.moveFriendlyTroops(this.model.getPlayerInMapTroops());
+        this.moveTroops(this.model.getPlayerInMapTroops());
 
         if (this.model instanceof BotModeModel) {
-            this.moveEnemyTroops(((BotModeModel) this.model).getBotInMapTroops());
+            this.moveTroops(((BotModeModel) this.model).getBotInMapTroops());
         }
 
         if (this.model instanceof OnlineModeModel) {
-            this.moveEnemyTroops(((OnlineModeModel) this.model).getOpponentInMapTroops());
+            this.moveTroops(((OnlineModeModel) this.model).getOpponentInMapTroops());
         }
     }
 
-    private void moveEnemyTroops(ArrayList<Troop> enemyTroops) {
+    private void moveTroops(ArrayList<Troop> enemyTroops) {
         for (Troop troop : enemyTroops) {
             if (!Objects.isNull(troop.getTarget())) continue;
 
-            if (this.isTimeForMove(troop) && this.isOnMainPaths(controller.transferPosition(troop.getPosition()))) {
-                this.moveTo(troop, (int) troop.getPosition().getX(), (int) troop.getPosition().getY() - 1);
-            }
+            if (this.isTimeForMove(troop)) {
+                if (this.isOnMainPaths(troop.getPosition())) {
+                    if (troop.getPosition().getY() == 32 && troop.getPosition().getX() == 6) {
+                        this.moveTo(troop, (int) troop.getPosition().getX() + 1, (int) troop.getPosition().getY());
+                    }
 
-            if (this.isTimeForMove(troop) && !this.isOnMainPaths(troop.getPosition())) {
-                double leftPathDistance = this.getDistanceFromVerticalLine(controller.transferPosition(troop.getPosition()), 6);
-                double rightPathDistance = this.getDistanceFromVerticalLine(controller.transferPosition(troop.getPosition()), 17);
+                    if (troop.getPosition().getY() == 32 && troop.getPosition().getX() == 17) {
+                        this.moveTo(troop, (int) troop.getPosition().getX() - 1, (int) troop.getPosition().getY());
+                    }
 
-                if (leftPathDistance < rightPathDistance) {
-                    this.moveTo(troop,
-                            (int) controller.transferPosition(troop.getPosition()).getX() + 1,
-                            (int) controller.transferPosition(troop.getPosition()).getY());
-                }
-
-                if (leftPathDistance < rightPathDistance) {
-                    this.moveTo(troop,
-                            (int) controller.transferPosition(troop.getPosition()).getX() - 1,
-                            (int) controller.transferPosition(troop.getPosition()).getY());
-                }
-            }
-        }
-    }
-
-    private void moveFriendlyTroops(ArrayList<Troop> friendlyTroops) {
-        for (Troop troop : friendlyTroops) {
-            if (!Objects.isNull(troop.getTarget())) continue;
-
-            if (this.isTimeForMove(troop) && this.isOnMainPaths(troop.getPosition())) {
-                this.moveTo(troop, (int) troop.getPosition().getX(), (int) troop.getPosition().getY() - 1);
-
-            }
-
-            if (this.isTimeForMove(troop) && !this.isOnMainPaths(troop.getPosition())) {
-                double leftPathDistance = this.getDistanceFromVerticalLine(troop.getPosition(), 6);
-                double rightPathDistance = this.getDistanceFromVerticalLine(troop.getPosition(), 17);
-
-                if (leftPathDistance < rightPathDistance) {
-                    this.moveTo(troop, (int) troop.getPosition().getX() + 1, (int) troop.getPosition().getY());
+                    this.moveTo(troop, (int) troop.getPosition().getX(), (int) troop.getPosition().getY() - 1);
                 } else {
-                    this.moveTo(troop, (int) troop.getPosition().getX() - 1, (int) troop.getPosition().getY());
+                    double leftPathDistance = this.getDistanceFromVerticalLine(troop.getPosition(), 6);
+                    double rightPathDistance = this.getDistanceFromVerticalLine(troop.getPosition(), 17);
+
+                    if (leftPathDistance < rightPathDistance) {
+                        this.moveTo(troop,
+                                (int) troop.getPosition().getX() - 1,
+                                (int) troop.getPosition().getY());
+                    } else {
+                        this.moveTo(troop,
+                                (int) troop.getPosition().getX() + 1,
+                                (int) troop.getPosition().getY());
+                    }
                 }
             }
         }
     }
 
     private void moveTo(Troop troop, int x, int y) {
+        troop.setStatus(CardStatusEnum.WALK);
         troop.setPosition(new Point2D(x, y));
     }
 
@@ -123,7 +121,7 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
         };
     }
 
-    private void handleEachTroopTargets() {
+    private void handleEachTroopTargetSelection() {
         if (this.model instanceof BotModeModel) {
             this.handleTargetSelection(this.model.getPlayerInMapTroops(), ((BotModeModel) this.model).getBotInMapAttackAbles());
             this.handleTargetSelection(((BotModeModel) this.model).getBotInMapTroops(), this.model.getPlayerInMapAttackAbles());
@@ -137,10 +135,10 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
 
     private void handleTargetSelection(ArrayList<Troop> troops, ArrayList<AttackAble> possibleTargets) {
         for (Troop troop : troops) {
-            if (Objects.isNull(troop.getTarget())) {
+            if (Objects.isNull(troop.getTarget()) || troop.getTarget().isDead()) {
                 AttackAble nearestTarget = this.findNearestTarget(troop.getPosition(), possibleTargets);
 
-                if (this.isInRange(troop, nearestTarget) && this.haveSameTypes(troop, nearestTarget)) {
+                if (this.isInRange(troop, nearestTarget) && this.haveCompatibleTypes(troop, nearestTarget)) {
                     try {
                         troop.setTarget(nearestTarget);
                     } catch (InvalidAttackTargetException e) {
@@ -151,23 +149,27 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
         }
     }
 
-    private boolean haveSameTypes(Troop troop, AttackAble nearestTarget) {
-        return troop.getAttackType().equals(nearestTarget.getSelfType());
+    private boolean haveCompatibleTypes(Troop troop, AttackAble nearestTarget) {
+        return switch (troop.getAttackType()) {
+            case AIR -> nearestTarget.getSelfType().equals(TypeEnum.AIR);
+            case GROUND -> nearestTarget.getSelfType().equals(TypeEnum.GROUND);
+            case AIR_GROUND -> true;
+        };
     }
 
     private boolean isInRange(Troop troop, AttackAble nearestTarget) {
-        return controller.transferPosition(nearestTarget.getPosition()).distance(troop.getPosition()) < troop.getRange();
+        return troop.getPosition().distance(controller.transferPosition(nearestTarget.getPosition())) <= troop.getRange();
     }
 
     private void handleDeadTroops() {
-        this.model.getPlayerInMapTroops().removeIf(Troop::isDead);
+        this.model.getPlayerInMapAttackAblesCards().removeIf(AttackAble::isDead);
 
         if (this.model instanceof BotModeModel) {
-            ((BotModeModel) this.model).getBotInMapTroops().removeIf(Troop::isDead);
+            ((BotModeModel) this.model).getBotInMapAttackAblesCards().removeIf(AttackAble::isDead);
         }
 
         if (this.model instanceof OnlineModeModel) {
-            this.model.getPlayerInMapTroops().removeIf(Troop::isDead);
+            ((OnlineModeModel) this.model).getOpponentInMapAttackAblesCards().removeIf(AttackAble::isDead);
         }
     }
 
@@ -175,7 +177,9 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
         AttackAble nearestTarget = targets.get(0);
 
         for (AttackAble target : targets) {
-            if (controller.transferPosition(target.getPosition()).distance(troopPosition) < controller.transferPosition(nearestTarget.getPosition()).distance(troopPosition)) {
+            if (troopPosition.distance(controller.transferPosition(target.getPosition())) <
+                    troopPosition.distance(controller.transferPosition(nearestTarget.getPosition()))
+            ) {
                 nearestTarget = target;
             }
         }
