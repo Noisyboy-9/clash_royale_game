@@ -10,8 +10,9 @@ import towers.Tower;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Timer;
 
-public record HandleTowersRunnable(GameModel model, BaseController controller) implements Runnable {
+public record HandleTowersRunnable(GameModel model, BaseController controller, Timer timer) implements Runnable {
 
     @Override
     public void run() {
@@ -23,15 +24,40 @@ public record HandleTowersRunnable(GameModel model, BaseController controller) i
     }
 
     private void handleDeadTowers() {
-        model.getPlayerTowers().removeIf(Tower::isDead);
-
+        this.removeDeadTowers(this.model.getPlayerTowers());
 
         if (this.model instanceof BotModeModel) {
-            ((BotModeModel) model).getBotTowers().removeIf(Tower::isDead);
+            this.removeDeadTowers(((BotModeModel) this.model).getBotTowers());
         }
 
         if (this.model instanceof OnlineModeModel) {
-            ((OnlineModeModel) model).getOpponentTowers().removeIf(Tower::isDead);
+            this.removeDeadTowers(((OnlineModeModel) this.model).getOpponentTowers());
+        }
+    }
+
+    private void removeDeadTowers(ArrayList<Tower> towers) {
+        for (Tower tower : towers) {
+            if (tower.isDead() && tower.isKingTower()) {
+                this.doFinishGameSteps();
+            }
+
+            if (tower.isDead() && tower.isQueenTower()) {
+                towers.remove(tower);
+            }
+        }
+    }
+
+    private void doFinishGameSteps() {
+        timer.cancel();
+//        controller.finishGame();
+        this.model.getPlayerTowers().clear();
+
+        if (this.model instanceof BotModeModel) {
+            ((BotModeModel) this.model).getBotTowers().clear();
+        }
+
+        if (this.model instanceof OnlineModeModel) {
+            ((OnlineModeModel) this.model).getOpponentTowers().clear();
         }
     }
 
