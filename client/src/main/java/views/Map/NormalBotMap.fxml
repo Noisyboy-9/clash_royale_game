@@ -2146,12 +2146,12 @@
                         <Insets top="4.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <Text fx:id="timeField" fill="#fbfdfd" layoutX="493.0" layoutY="537.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="3:00" GridPane.columnIndex="21" GridPane.rowIndex="1">
+                  <Text fx:id="timeField" fill="#fbfdfd" layoutX="493.0" layoutY="537.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="3:00" textAlignment="CENTER" wrappingWidth="86.69140625" GridPane.columnIndex="20" GridPane.rowIndex="1">
                      <font>
                         <Font name="Supercell-Magic Regular" size="20.0" />
                      </font>
                      <GridPane.margin>
-                        <Insets bottom="-10.0" left="-10.0" />
+                        <Insets bottom="-10.0" />
                      </GridPane.margin>
                   </Text>
                   <Text fill="#fdeba3" stroke="#322801" strokeType="OUTSIDE" text="Time left:" GridPane.columnIndex="20">
