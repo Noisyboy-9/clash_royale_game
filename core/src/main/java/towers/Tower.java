@@ -4,6 +4,7 @@ package towers;
 import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
 import javafx.geometry.Point2D;
+import towers.traits.CanKnowItsExactTowerTypeTrait;
 import user.User;
 
 import java.util.Objects;
@@ -12,7 +13,7 @@ import java.util.UUID;
 /**
  * The type Tower.
  */
-public abstract class Tower implements AttackAble {
+public abstract class Tower implements AttackAble, CanKnowItsExactTowerTypeTrait {
     private final UUID id;
     private final User owner;
     private final int demolitionBonusCount;

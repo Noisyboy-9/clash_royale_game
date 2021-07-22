@@ -28,9 +28,8 @@ public class NewsCaster {
     public void addOnlinePlayer(PlayerWorker player) {
         if (!this.onlinePlayers.contains(player)) {
             this.onlinePlayers.add(player);
+            new Thread(new WatchForGameStartRequestRunnable(player)).start();
         }
-
-        new Thread(new WatchForGameStartRequestRunnable(player)).start();
     }
 
     /**
