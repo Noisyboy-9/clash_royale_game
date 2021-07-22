@@ -37,100 +37,63 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
 
     private void doTroopsAttack(ArrayList<Troop> troops) {
         for (Troop troop : troops) {
-            if (!Objects.isNull(troop.getTarget())) {
+            if (!Objects.isNull(troop.getTarget()) && this.isTimeForAttack(troop)) {
+
                 troop.setStatus(CardStatusEnum.FIGHT);
                 troop.attack();
 
                 if (troop.getTarget().isDead()) {
+                    troop.setStatus(CardStatusEnum.WALK);
                     troop.clearTarget();
                 }
             }
         }
     }
 
+    private boolean isTimeForAttack(Troop troop) {
+        return controller.getFrameRemainingCount() % (troop.getHitSpeed() * controller.getFRAME_PER_SECOND()) == 0;
+    }
+
     private void handleTroopsMove() {
-        this.moveFriendlyTroops(this.model.getPlayerInMapTroops());
+        this.moveTroops(this.model.getPlayerInMapTroops());
 
         if (this.model instanceof BotModeModel) {
-            this.moveEnemyTroops(((BotModeModel) this.model).getBotInMapTroops());
+            this.moveTroops(((BotModeModel) this.model).getBotInMapTroops());
         }
 
         if (this.model instanceof OnlineModeModel) {
-            this.moveEnemyTroops(((OnlineModeModel) this.model).getOpponentInMapTroops());
+            this.moveTroops(((OnlineModeModel) this.model).getOpponentInMapTroops());
         }
     }
 
-    private void moveEnemyTroops(ArrayList<Troop> enemyTroops) {
+    private void moveTroops(ArrayList<Troop> enemyTroops) {
         for (Troop troop : enemyTroops) {
             if (!Objects.isNull(troop.getTarget())) continue;
 
-            if (this.isTimeForMove(troop) && this.isOnMainPaths(controller.transferPosition(troop.getPosition()))) {
-                if (this.isTimeForMove(troop) && this.isOnMainPaths(troop.getPosition())) {
+            if (this.isTimeForMove(troop)) {
+                if (this.isOnMainPaths(troop.getPosition())) {
                     if (troop.getPosition().getY() == 32 && troop.getPosition().getX() == 6) {
-//                    the tower of the player has been killed so we have to move to the king tower
-//                    the troop is on left path
                         this.moveTo(troop, (int) troop.getPosition().getX() + 1, (int) troop.getPosition().getY());
                     }
 
                     if (troop.getPosition().getY() == 32 && troop.getPosition().getX() == 17) {
-//                    the tower of the player has been killed so we have to move to the king tower
-//                    the troop is on right path
                         this.moveTo(troop, (int) troop.getPosition().getX() - 1, (int) troop.getPosition().getY());
                     }
 
                     this.moveTo(troop, (int) troop.getPosition().getX(), (int) troop.getPosition().getY() - 1);
-                }
-
-                this.moveTo(troop, (int) troop.getPosition().getX(), (int) troop.getPosition().getY() + 1);
-            }
-
-            if (this.isTimeForMove(troop) && (!this.isOnMainPaths(troop.getPosition()))) {
-                double leftPathDistance = this.getDistanceFromVerticalLine(troop.getPosition(), 6);
-                double rightPathDistance = this.getDistanceFromVerticalLine(troop.getPosition(), 17);
-
-                if (leftPathDistance < rightPathDistance) {
-                    this.moveTo(troop,
-                            (int) troop.getPosition().getX() + 1,
-                            (int) troop.getPosition().getY());
-                }
-
-                if (leftPathDistance < rightPathDistance) {
-                    this.moveTo(troop,
-                            (int) troop.getPosition().getX() - 1,
-                            (int) troop.getPosition().getY());
-                }
-            }
-        }
-    }
-
-    private void moveFriendlyTroops(ArrayList<Troop> friendlyTroops) {
-        for (Troop troop : friendlyTroops) {
-            if (!Objects.isNull(troop.getTarget())) continue;
-
-            if (this.isTimeForMove(troop) && this.isOnMainPaths(troop.getPosition())) {
-                if (troop.getPosition().getY() == 6 && troop.getPosition().getX() == 6) {
-//                    the tower of the player has been killed so we have to move to the king tower
-//                    the troop is on left path
-                    this.moveTo(troop, (int) troop.getPosition().getX() + 1, (int) troop.getPosition().getY());
-                }
-
-                if (troop.getPosition().getY() == 6 && troop.getPosition().getX() == 17) {
-//                    the tower of the player has been killed so we have to move to the king tower
-//                    the troop is on right path
-                    this.moveTo(troop, (int) troop.getPosition().getX() - 1, (int) troop.getPosition().getY());
-                }
-
-                this.moveTo(troop, (int) troop.getPosition().getX(), (int) troop.getPosition().getY() - 1);
-            }
-
-            if (this.isTimeForMove(troop) && !this.isOnMainPaths(troop.getPosition())) {
-                double leftPathDistance = this.getDistanceFromVerticalLine(troop.getPosition(), 6);
-                double rightPathDistance = this.getDistanceFromVerticalLine(troop.getPosition(), 17);
-
-                if (leftPathDistance < rightPathDistance) {
-                    this.moveTo(troop, (int) troop.getPosition().getX() + 1, (int) troop.getPosition().getY());
                 } else {
-                    this.moveTo(troop, (int) troop.getPosition().getX() - 1, (int) troop.getPosition().getY());
+                    double leftPathDistance = this.getDistanceFromVerticalLine(troop.getPosition(), 6);
+                    double rightPathDistance = this.getDistanceFromVerticalLine(troop.getPosition(), 17);
+
+                    if (leftPathDistance < rightPathDistance) {
+                        this.moveTo(troop,
+                                (int) troop.getPosition().getX() - 1,
+                                (int) troop.getPosition().getY());
+                    } else {
+                        this.moveTo(troop,
+                                (int) troop.getPosition().getX() + 1,
+                                (int) troop.getPosition().getY());
+                    }
                 }
             }
         }
@@ -212,18 +175,18 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
     }
 
     private boolean isInRange(Troop troop, AttackAble nearestTarget) {
-        return controller.transferPosition(nearestTarget.getPosition()).distance(troop.getPosition()) < troop.getRange();
+        return nearestTarget.getPosition().distance(troop.getPosition()) < troop.getRange();
     }
 
     private void handleDeadTroops() {
-        this.model.getPlayerInMapTroops().removeIf(Troop::isDead);
+        this.model.getPlayerInMapAttackAblesCards().removeIf(AttackAble::isDead);
 
         if (this.model instanceof BotModeModel) {
-            ((BotModeModel) this.model).getBotInMapTroops().removeIf(Troop::isDead);
+            ((BotModeModel) this.model).getBotInMapAttackAblesCards().removeIf(AttackAble::isDead);
         }
 
         if (this.model instanceof OnlineModeModel) {
-            this.model.getPlayerInMapTroops().removeIf(Troop::isDead);
+            ((OnlineModeModel) this.model).getOpponentInMapAttackAblesCards().removeIf(AttackAble::isDead);
         }
     }
 

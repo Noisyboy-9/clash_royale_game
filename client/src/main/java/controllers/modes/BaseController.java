@@ -147,9 +147,8 @@ public abstract class BaseController implements CustomEventHandler {
         this.numberOfPlayers = GlobalData.playerTeam.size() + GlobalData.opponentTeam.size();
         this.playerQueenTower1Position = new Point2D(6, 29);
         this.playerQueenTower2Position = new Point2D(17, 29);
-        this.opponentQueenTower1Position = new Point2D(6, 9);
-        this.opponentQueenTower2Position = new Point2D(17, 9);
-
+        this.opponentQueenTower1Position = new Point2D(17, 9);
+        this.opponentQueenTower2Position = new Point2D(6, 9);
     }
 
     /**
@@ -278,7 +277,7 @@ public abstract class BaseController implements CustomEventHandler {
     private int getIndexInMap(Point2D position) {
         int column = (int) position.getX();
         int row = (int) position.getY();
-        return ((24 * 43) - 1 + 40 + column - 1 + (24 * row));
+        return ((24 * 43) - 1 + 44 + column - 1 + (24 * row));
     }
 
     /**
