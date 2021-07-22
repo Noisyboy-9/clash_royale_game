@@ -141,6 +141,7 @@ public class SceneController {
             case "Archers" -> "Archer";
             case "Barbarians" -> "Barbarian";
             case "MiniPEKKA" -> "MiniPekka";
+            case "Fireball" -> "FireBall";
             default -> className;
         };
 
