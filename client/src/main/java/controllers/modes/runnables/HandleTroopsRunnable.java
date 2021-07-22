@@ -58,7 +58,7 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
             if (!Objects.isNull(troop.getTarget())) continue;
 
             if (this.isTimeForMove(troop) && this.isOnMainPaths(controller.transferPosition(troop.getPosition()))) {
-                this.moveTo(troop, (int) troop.getPosition().getX(), (int) troop.getPosition().getY() + 1);
+                this.moveTo(troop, (int) troop.getPosition().getX(), (int) troop.getPosition().getY() - 1);
             }
 
             if (this.isTimeForMove(troop) && !this.isOnMainPaths(troop.getPosition())) {
