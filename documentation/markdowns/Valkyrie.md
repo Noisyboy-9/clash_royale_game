@@ -6,4 +6,4 @@ It will cost 4 elixirs.<br>
 Valkyries have area splash and can attack all ground targets around them. <br>
 
 stats: <br>
-![Barbarians Stats](../stats/Giant.png)
+![Barbarians Stats](../stats/Valkyrie.png)
