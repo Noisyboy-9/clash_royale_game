@@ -8,7 +8,7 @@ java-core. <br>
 
 ## Developers 
 
-This project was developed by [Sina Shariati](https://github.com/Noisyboy-9/clash_royale_game) and
+This project was developed by [Sina Shariati](https://github.com/Noisyboy-9) and
 [Alireza Nejadipour](https://github.com/nejadipour). <br>
 
 # Game Elements
