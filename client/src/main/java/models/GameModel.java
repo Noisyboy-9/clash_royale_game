@@ -335,6 +335,15 @@ public abstract class GameModel {
         return attackAbles;
     }
 
+    public KingTower getPlayerKingTower() {
+        for (Tower tower : this.playerTowers) {
+            if (tower.isKingTower()) {
+                return (KingTower) tower;
+            }
+        }
+        return null;
+    }
+
     /**
      * Create towers array list.
      *

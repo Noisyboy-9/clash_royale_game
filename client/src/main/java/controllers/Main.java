@@ -17,7 +17,6 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException {
         Controller.SCENE_CONTROLLER.showScene("Menu/SplashScreen.fxml");
 //        this.seedDatabase();
-//        System.exit(0);
     }
 
     private void seedDatabase() throws IOException {

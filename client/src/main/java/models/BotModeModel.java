@@ -9,6 +9,7 @@ import errors.DuplicateCardException;
 import errors.InvalidCardException;
 import errors.InvalidTowerException;
 import globals.GlobalData;
+import towers.KingTower;
 import towers.Tower;
 
 import java.util.ArrayList;
@@ -312,5 +313,14 @@ public class BotModeModel extends GameModel {
         attackAbles.addAll(this.getBotInMapBuildings());
         attackAbles.addAll(this.getBotTowers());
         return attackAbles;
+    }
+
+    public KingTower getBotKingTower() {
+        for (Tower tower : this.botTowers) {
+            if (tower.isKingTower()) {
+                return (KingTower) tower;
+            }
+        }
+        return null;
     }
 }
