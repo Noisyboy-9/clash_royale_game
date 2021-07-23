@@ -2,13 +2,13 @@
 
 ![Game screen shot](documentation/screenshots/splash_screen.jpeg) <br>
 
-In spring 2020, in [Amirkabir University of Technology](aut.ac.ir), for advanced programming class, the students were
+In spring 2020, in [Amirkabir University of Technology](https://aut.ac.ir), for advanced programming class, the students were
 tasked to create a simpler version of [Clash Royal Game](https://supercell.com/en/games/clashroyale/) using javafx, and
 java-core. <br>
 
 ## Developers 
 
-This project was developed by [Sina Shariati](https://github.com/Noisyboy-9/clash_royale_game) and
+This project was developed by [Sina Shariati](https://github.com/Noisyboy-9) and
 [Alireza Nejadipour](https://github.com/nejadipour). <br>
 
 # Game Elements
