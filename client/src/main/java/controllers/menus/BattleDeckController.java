@@ -16,12 +16,18 @@ import javafx.scene.text.Text;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * The type Battle deck controller.
+ */
 public class BattleDeckController extends MenuController {
     private ImageView firstImgView;
     private Image firstImage;
     private Text firstElixir;
 
 
+    /**
+     * Initialize.
+     */
     @FXML
     void initialize()
     {
@@ -134,6 +140,14 @@ public class BattleDeckController extends MenuController {
     @FXML
     private GridPane cardCollection;
 
+    /**
+     * Load elixir text.
+     *
+     * @param imgView     the img view
+     * @param columnCount the column count
+     * @param rowCount    the row count
+     * @return the text
+     */
     public Text loadElixir(ImageView imgView, Integer columnCount, Integer rowCount) {
         if (columnCount == null)
             columnCount = 0;
@@ -151,6 +165,11 @@ public class BattleDeckController extends MenuController {
 
     }
 
+    /**
+     * Change card.
+     *
+     * @param event the event
+     */
     @FXML
     void changeCard(MouseEvent event) {
         DropShadow ds = new DropShadow(20, Color.CYAN);

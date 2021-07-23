@@ -13,6 +13,9 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Timer;
 
+/**
+ * The type Handle towers runnable.
+ */
 public record HandleTowersRunnable(GameModel model, BaseController controller, Timer timer) implements Runnable {
     @Override
     public void run() {

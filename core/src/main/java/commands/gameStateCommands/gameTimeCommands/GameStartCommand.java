@@ -60,6 +60,11 @@ public class GameStartCommand extends GameTimeCommand {
     }
 
 
+    /**
+     * Gets enemy team.
+     *
+     * @return the enemy team
+     */
     public ArrayList<User> getEnemyTeam() {
         return enemyTeam;
     }

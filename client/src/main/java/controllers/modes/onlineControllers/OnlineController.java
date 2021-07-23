@@ -33,6 +33,9 @@ import user.User;
 
 import java.io.IOException;
 
+/**
+ * The type Online controller.
+ */
 public abstract class OnlineController extends BaseController {
     /**
      * The Model.
@@ -41,7 +44,6 @@ public abstract class OnlineController extends BaseController {
 
     /**
      * Instantiates a new Bot controller.
-     *
      */
     public OnlineController() {
         super();
@@ -147,6 +149,11 @@ public abstract class OnlineController extends BaseController {
         event.invokeHandler(this);
     }
 
+    /**
+     * Broadcast event.
+     *
+     * @param event the event
+     */
     public void broadcastEvent(CustomEvent event) {
         try {
             Connector.getInstance().getRequest().writeObject(event.toCommand());
@@ -155,8 +162,17 @@ public abstract class OnlineController extends BaseController {
         }
     }
 
+    /**
+     * Sets timer.
+     */
     protected abstract void setTimer();
 
+    /**
+     * Is friendly team boolean.
+     *
+     * @param player the player
+     * @return the boolean
+     */
     protected boolean isFriendlyTeam(User player) {
         return GlobalData.playerTeam.contains(player);
     }

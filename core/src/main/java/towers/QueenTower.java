@@ -24,6 +24,12 @@ public class QueenTower extends Tower {
         super(id, owner, 1, true, 8, HP, damage, null);
     }
 
+    /**
+     * Create tower.
+     *
+     * @param owners the owners
+     * @return the tower
+     */
     public static Tower create(User owners) {
         return switch (owners.getLevel()) {
             case LEVEL_1 -> new QueenTower(UUID.randomUUID(), owners, 1400, 50);

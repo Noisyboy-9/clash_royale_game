@@ -36,6 +36,12 @@ public class FireBall extends Spell {
         this.targetTroops.forEach(troop -> troop.reduceHealthBy(this.damage));
     }
 
+    /**
+     * Create card.
+     *
+     * @param user the user
+     * @return the card
+     */
     public static Card create(User user) {
         return switch (user.getLevel()) {
             case LEVEL_1 -> new FireBall(UUID.randomUUID(), user, null, 325);

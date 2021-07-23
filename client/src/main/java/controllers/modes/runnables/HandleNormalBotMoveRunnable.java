@@ -10,6 +10,9 @@ import models.BotModeModel;
 
 import java.util.Objects;
 
+/**
+ * The type Handle normal bot move runnable.
+ */
 public record HandleNormalBotMoveRunnable(BotModeModel model, NormalBotModeController controller) implements Runnable {
     @Override
     public void run() {

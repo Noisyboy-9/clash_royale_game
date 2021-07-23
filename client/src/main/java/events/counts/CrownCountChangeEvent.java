@@ -21,7 +21,7 @@ public class CrownCountChangeEvent extends CustomEvent {
      * Instantiates a new Crown count change event.
      *
      * @param eventType     the event type
-     * @param targetPlayers  the target team
+     * @param targetPlayers the target team
      * @param newCrownCount the new crown count
      */
     public CrownCountChangeEvent(EventType<? extends Event> eventType,

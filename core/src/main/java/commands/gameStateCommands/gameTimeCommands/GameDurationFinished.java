@@ -16,6 +16,8 @@ public class GameDurationFinished extends GameTimeCommand {
      * Instantiates a new Game time command.
      *
      * @param gameType the game type
+     * @param winners  the winners
+     * @param losers   the losers
      */
     public GameDurationFinished(GameTypeEnum gameType, ArrayList<User> winners, ArrayList<User> losers) {
         super(gameType);

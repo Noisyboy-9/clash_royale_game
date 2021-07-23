@@ -17,6 +17,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * The type History controller.
+ */
 public class HistoryController extends MenuController {
     private ArrayList<GameResult> results;
     private int topBoxIndex;
@@ -146,6 +149,9 @@ public class HistoryController extends MenuController {
 
     }
 
+    /**
+     * Initialize.
+     */
     @FXML
     void initialize() {
         if (GlobalData.user != null) {
@@ -171,6 +177,11 @@ public class HistoryController extends MenuController {
         }
     }
 
+    /**
+     * Move down.
+     *
+     * @param event the event
+     */
     @FXML
     void moveDown(MouseEvent event) {
         bottomBoxIndex++;
@@ -184,6 +195,11 @@ public class HistoryController extends MenuController {
 
     }
 
+    /**
+     * Move up.
+     *
+     * @param event the event
+     */
     @FXML
     void moveUp(MouseEvent event)
     {

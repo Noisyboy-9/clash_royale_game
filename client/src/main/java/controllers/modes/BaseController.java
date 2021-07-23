@@ -36,11 +36,23 @@ import java.util.concurrent.TimeUnit;
  * The type Base controller.
  */
 public abstract class BaseController implements CustomEventHandler {
+    /**
+     * The Each frame duration.
+     */
     protected final long eachFrameDuration;
     private final GameModel model;
     private final ArrayList<ImageView> previousMapElements;
+    /**
+     * The Frame remaining count.
+     */
     protected long frameRemainingCount;
+    /**
+     * The Frame per second.
+     */
     protected int FRAME_PER_SECOND;
+    /**
+     * The Opponent team crowns.
+     */
     ImageView[] opponentTeamCrowns;
     private Image selectedImage;
     private ImageView selectedImgView;
@@ -136,7 +148,6 @@ public abstract class BaseController implements CustomEventHandler {
 
     /**
      * Instantiates a new Base controller.
-     *
      */
     public BaseController() {
         this.model = GlobalData.gameModel;
@@ -228,6 +239,12 @@ public abstract class BaseController implements CustomEventHandler {
         return FRAME_PER_SECOND;
     }
 
+    /**
+     * Transfer position point 2 d.
+     *
+     * @param position the position
+     * @return the point 2 d
+     */
     public Point2D transferPosition(Point2D position) {
         int column = (int) position.getX();
         int row = (int) position.getY();
@@ -435,6 +452,9 @@ public abstract class BaseController implements CustomEventHandler {
     }
 
 
+    /**
+     * Handle towers.
+     */
     @FXML
     public void handleTowers() {
         ArrayList<Tower> playerTowers = this.model.getPlayerTowers();
@@ -551,7 +571,6 @@ public abstract class BaseController implements CustomEventHandler {
     @FXML
     private void attackTowerTarget(boolean isOpponent, ObservableList<Node> mapChildren, String gifKey, Tower tower) {
         Image gif = Controller.SCENE_CONTROLLER.getGif(gifKey);
-        ImageView imageView = new ImageView(gif);
         Point2D position;
 
         if (isOpponent)
@@ -561,6 +580,8 @@ public abstract class BaseController implements CustomEventHandler {
 
         int index = getIndexInMap(position);
 
+        ImageView imageView = (ImageView) mapChildren.get(index);
+        imageView.setImage(gif);
         mapChildren.set(index, imageView);
         this.previousMapElements.add(imageView);
 

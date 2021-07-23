@@ -17,6 +17,9 @@ import towers.KingTower;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * The type Handle troops runnable.
+ */
 public record HandleTroopsRunnable(GameModel model, BaseController controller) implements Runnable {
     @Override
     public void run() {

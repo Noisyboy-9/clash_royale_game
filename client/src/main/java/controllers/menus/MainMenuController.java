@@ -20,6 +20,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * The type Main menu controller.
+ */
 public class MainMenuController extends MenuController {
     @FXML
     private Text levelField;
@@ -27,6 +30,9 @@ public class MainMenuController extends MenuController {
     @FXML
     private Text usernameField;
 
+    /**
+     * Initialize.
+     */
     @FXML
     public void initialize() {
         if (!Objects.isNull(GlobalData.user)) {
@@ -35,6 +41,11 @@ public class MainMenuController extends MenuController {
         }
     }
 
+    /**
+     * Two player mode.
+     *
+     * @param event the event
+     */
     @FXML
     void twoPlayerMode(MouseEvent event) {
         Controller.SCENE_CONTROLLER.showScene("Menu/WaitingPage.fxml");
@@ -48,6 +59,11 @@ public class MainMenuController extends MenuController {
         new Thread(new GameCommandReceiverRunnable((OnlineController) GlobalData.gameController));
     }
 
+    /**
+     * Four player mode.
+     *
+     * @param event the event
+     */
     @FXML
     void fourPlayerMode(MouseEvent event) {
         Controller.SCENE_CONTROLLER.showScene("Menu/WaitingPage.fxml");
@@ -61,6 +77,11 @@ public class MainMenuController extends MenuController {
         }
     }
 
+    /**
+     * Log out handler.
+     *
+     * @param event the event
+     */
     @FXML
     void logOutHandler(MouseEvent event) {
         Controller.SCENE_CONTROLLER.showScene("Menu/LoginRegisterPage.fxml");

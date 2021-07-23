@@ -71,6 +71,7 @@ public class QueryBuilder {
      *
      * @param user     the user
      * @param newLevel the new level
+     * @throws IOException the io exception
      */
     public void levelUpUser(User user, UserLevelEnum newLevel) throws IOException {
         ObjectInputStream reader = new ObjectInputStream(new FileInputStream(this.db));

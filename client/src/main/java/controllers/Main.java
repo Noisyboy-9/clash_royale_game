@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
 
+/**
+ * The type Main.
+ */
 public class Main extends Application {
 
     @Override
@@ -72,6 +75,11 @@ public class Main extends Application {
     }
 
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         try {
             connectToServer();

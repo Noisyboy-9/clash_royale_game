@@ -315,6 +315,11 @@ public class BotModeModel extends GameModel {
         return attackAbles;
     }
 
+    /**
+     * Gets bot king tower.
+     *
+     * @return the bot king tower
+     */
     public KingTower getBotKingTower() {
         for (Tower tower : this.botTowers) {
             if (tower.isKingTower()) {

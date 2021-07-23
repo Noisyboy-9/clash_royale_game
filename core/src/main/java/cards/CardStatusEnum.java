@@ -1,5 +1,23 @@
 package cards;
 
+/**
+ * The enum Card status enum.
+ */
 public enum CardStatusEnum {
-    WALK, WALK_RAGE, FIGHT, FIGHT_RAGE
+    /**
+     * Walk card status enum.
+     */
+    WALK,
+    /**
+     * Walk rage card status enum.
+     */
+    WALK_RAGE,
+    /**
+     * Fight card status enum.
+     */
+    FIGHT,
+    /**
+     * Fight rage card status enum.
+     */
+    FIGHT_RAGE
 }

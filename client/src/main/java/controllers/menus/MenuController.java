@@ -6,7 +6,15 @@ import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
+/**
+ * The type Menu controller.
+ */
 public class MenuController {
+    /**
+     * Change menu handler.
+     *
+     * @param event the event
+     */
     @FXML
     void changeMenuHandler(MouseEvent event) {
         Node source = (Node) event.getSource();

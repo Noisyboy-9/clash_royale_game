@@ -13,7 +13,13 @@ import java.util.UUID;
  * The type Spell.
  */
 public abstract class Spell extends Card {
+    /**
+     * The Target towers.
+     */
     protected final ArrayList<Tower> targetTowers;
+    /**
+     * The Target troops.
+     */
     protected final ArrayList<Troop> targetTroops;
     private final double radius;
 

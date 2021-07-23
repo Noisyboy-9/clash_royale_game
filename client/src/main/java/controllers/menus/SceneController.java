@@ -96,6 +96,9 @@ public class SceneController {
     }
 
 
+    /**
+     * Load all cards urls.
+     */
     public void loadAllCardsUrls()
     {
         try {
@@ -118,6 +121,9 @@ public class SceneController {
     }
 
 
+    /**
+     * Load card box images.
+     */
     public void loadCardBoxImages() {
         for (String url : this.cardsUrls) {
             String className = getClassName(url);
@@ -149,6 +155,9 @@ public class SceneController {
     }
 
 
+    /**
+     * Load gifs.
+     */
     public void loadGifs()
     {
         try {
@@ -221,6 +230,11 @@ public class SceneController {
     }
 
 
+    /**
+     * Convert to black and white.
+     *
+     * @param imageView the image view
+     */
     public void convertToBlackAndWhite(ImageView imageView)
     {
         ColorAdjust colorAdjust = new ColorAdjust();
@@ -232,6 +246,11 @@ public class SceneController {
 
     }
 
+    /**
+     * Convert to colorful.
+     *
+     * @param imageView the image view
+     */
     public void convertToColorful(ImageView imageView)
     {
         imageView.setEffect(null);
@@ -240,12 +259,23 @@ public class SceneController {
     }
 
 
+    /**
+     * Gets cards urls.
+     *
+     * @return the cards urls
+     */
     public ArrayList<String> getCardsUrls()
     {
         return cardsUrls;
     }
 
 
+    /**
+     * Gets gif.
+     *
+     * @param key the key
+     * @return the gif
+     */
     public Image getGif(String key) {
         if (!gifs.containsKey(key)) {
             key = key.replace("walk", "fight");
@@ -255,16 +285,34 @@ public class SceneController {
     }
 
 
+    /**
+     * Gets battle box img.
+     *
+     * @param className the class name
+     * @return the battle box img
+     */
     public Image getBattleBoxImg(String className) {
         return this.battleCardsBoxImages.get(className);
     }
 
 
+    /**
+     * Gets coming box img.
+     *
+     * @param className the class name
+     * @return the coming box img
+     */
     public Image getComingBoxImg(String className) {
         return this.comingCardsBoxImages.get(className);
     }
 
 
+    /**
+     * Gets next card img.
+     *
+     * @param className the class name
+     * @return the next card img
+     */
     public Image getNextCardImg(String className) {
         return this.nextCardImages.get(className);
     }

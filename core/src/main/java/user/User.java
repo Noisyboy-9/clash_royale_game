@@ -60,6 +60,11 @@ public class User implements Serializable {
         return level;
     }
 
+    /**
+     * Sets level.
+     *
+     * @param level the level
+     */
     public void setLevel(UserLevelEnum level) {
         this.level = level;
     }
