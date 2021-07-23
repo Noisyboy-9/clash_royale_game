@@ -1,4 +1,4 @@
-# Clash Royale : The Game
+# Clash Royale 
 
 ![Game screen shot](documentation/screenshots/splash_screen.jpeg) <br>
 
@@ -6,7 +6,7 @@ In spring 2020, in [Amirkabir University of Technology](aut.ac.ir), for advanced
 tasked to create a simpler version of [Clash Royal Game](https://supercell.com/en/games/clashroyale/) using javafx, and
 java-core. <br>
 
-## developers
+## Developers 
 
 This project was developed by [Sina Shariati](https://github.com/Noisyboy-9/clash_royale_game) and
 [Alireza Nejadipour](https://github.com/nejadipour). <br>
