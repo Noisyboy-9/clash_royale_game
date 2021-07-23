@@ -2,6 +2,9 @@ package commands.matchRequestCommands;
 
 import user.User;
 
+/**
+ * The type Four player match requester command.
+ */
 public class FourPlayerMatchRequesterCommand extends MatchRequestCommand {
     private final User requester;
 

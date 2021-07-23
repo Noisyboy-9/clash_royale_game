@@ -18,11 +18,20 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
+/**
+ * The type Authentication runnable.
+ */
 public class AuthenticationRunnable implements Runnable {
     private final Socket socket;
     private final ObjectOutputStream response;
     private final ObjectInputStream request;
 
+    /**
+     * Instantiates a new Authentication runnable.
+     *
+     * @param socket the socket
+     * @throws IOException the io exception
+     */
     public AuthenticationRunnable(Socket socket) throws IOException {
         this.socket = socket;
         this.response = new ObjectOutputStream(this.socket.getOutputStream());

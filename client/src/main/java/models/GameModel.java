@@ -336,6 +336,20 @@ public abstract class GameModel {
     }
 
     /**
+     * Gets player king tower.
+     *
+     * @return the player king tower
+     */
+    public KingTower getPlayerKingTower() {
+        for (Tower tower : this.playerTowers) {
+            if (tower.isKingTower()) {
+                return (KingTower) tower;
+            }
+        }
+        return null;
+    }
+
+    /**
      * Create towers array list.
      *
      * @param owner the owner
@@ -350,6 +364,11 @@ public abstract class GameModel {
     }
 
 
+    /**
+     * Remove card from map.
+     *
+     * @param card the card
+     */
     protected void removeCardFromMap(Card card) {
 
     }

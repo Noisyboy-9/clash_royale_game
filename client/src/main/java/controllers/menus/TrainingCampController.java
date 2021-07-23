@@ -11,13 +11,26 @@ import towers.Tower;
 
 import java.util.ArrayList;
 
+/**
+ * The type Training camp controller.
+ */
 public class TrainingCampController extends MenuController {
+    /**
+     * Crazy mode.
+     *
+     * @param event the event
+     */
     @FXML
     void crazyMode(MouseEvent event) {
         setData();
         Controller.SCENE_CONTROLLER.showScene("Map/CrazyBotMap.fxml");
     }
 
+    /**
+     * Normal mode.
+     *
+     * @param event the event
+     */
     @FXML
     void normalMode(MouseEvent event) {
         setData();

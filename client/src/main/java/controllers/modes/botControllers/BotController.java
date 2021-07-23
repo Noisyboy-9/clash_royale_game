@@ -39,11 +39,13 @@ public abstract class BotController extends BaseController {
      */
     protected final BotModeModel model;
 
+    /**
+     * Sets timer.
+     */
     protected abstract void setTimer();
 
     /**
      * Instantiates a new Bot controller.
-     *
      */
     public BotController() {
         super();

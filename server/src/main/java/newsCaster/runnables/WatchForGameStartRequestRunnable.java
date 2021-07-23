@@ -7,9 +7,17 @@ import workers.PlayerWorker;
 
 import java.io.IOException;
 
+/**
+ * The type Watch for game start request runnable.
+ */
 public class WatchForGameStartRequestRunnable implements Runnable {
     private final PlayerWorker player;
 
+    /**
+     * Instantiates a new Watch for game start request runnable.
+     *
+     * @param player the player
+     */
     public WatchForGameStartRequestRunnable(PlayerWorker player) {
         this.player = player;
     }

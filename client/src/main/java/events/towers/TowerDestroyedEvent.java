@@ -20,8 +20,9 @@ public class TowerDestroyedEvent extends TowerEvent {
     /**
      * Instantiates a new Tower destroyed event.
      *
-     * @param eventType the event type
-     * @param tower     the tower
+     * @param eventType     the event type
+     * @param tower         the tower
+     * @param targetPlayers the target players
      */
     public TowerDestroyedEvent(EventType<? extends Event> eventType, Tower tower, ArrayList<User> targetPlayers) {
         super(eventType, targetPlayers);
@@ -31,10 +32,11 @@ public class TowerDestroyedEvent extends TowerEvent {
     /**
      * Instantiates a new Tower destroyed event.
      *
-     * @param source    the source
-     * @param target    the target
-     * @param eventType the event type
-     * @param tower     the tower
+     * @param source        the source
+     * @param target        the target
+     * @param eventType     the event type
+     * @param tower         the tower
+     * @param targetPlayers the target players
      */
     public TowerDestroyedEvent(Object source, EventTarget target, EventType<? extends Event> eventType, Tower tower, ArrayList<User> targetPlayers) {
         super(source, target, eventType, targetPlayers);

@@ -18,6 +18,9 @@ import javafx.event.Event;
 
 import java.io.IOException;
 
+/**
+ * The type Game command receiver runnable.
+ */
 public record GameCommandReceiverRunnable(OnlineController controller) implements Runnable {
     @Override
     public void run() {

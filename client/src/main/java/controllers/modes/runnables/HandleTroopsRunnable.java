@@ -7,14 +7,19 @@ import cards.utils.AttackAble;
 import cards.utils.TypeEnum;
 import controllers.modes.BaseController;
 import exceptions.InvalidAttackTargetException;
+import globals.GlobalData;
 import javafx.geometry.Point2D;
 import models.BotModeModel;
 import models.GameModel;
 import models.OnlineModeModel;
+import towers.KingTower;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * The type Handle troops runnable.
+ */
 public record HandleTroopsRunnable(GameModel model, BaseController controller) implements Runnable {
     @Override
     public void run() {
@@ -142,6 +147,26 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
             if (Objects.isNull(troop.getTarget()) || troop.getTarget().isDead()) {
                 AttackAble nearestTarget = this.findNearestTarget(troop.getPosition(), possibleTargets);
 
+                if (troop.getPosition().getY() == 6 && troop.getPosition().getX() == 9) {
+                    if (this.isFriendly(troop)) {
+                        KingTower tower = ((BotModeModel) this.model).getBotKingTower();
+                        try {
+                            troop.setTarget(tower);
+                        } catch (InvalidAttackTargetException e) {
+                            e.printStackTrace();
+                        }
+                        continue;
+                    }
+
+                    KingTower tower = this.model.getPlayerKingTower();
+                    try {
+                        troop.setTarget(tower);
+                    } catch (InvalidAttackTargetException e) {
+                        e.printStackTrace();
+                    }
+                    continue;
+                }
+
                 if (this.isInRange(troop, nearestTarget) && this.haveCompatibleTypes(troop, nearestTarget)) {
                     try {
                         troop.setTarget(nearestTarget);
@@ -151,6 +176,10 @@ public record HandleTroopsRunnable(GameModel model, BaseController controller) i
                 }
             }
         }
+    }
+
+    private boolean isFriendly(Troop troop) {
+        return troop.getOwner().equals(GlobalData.user);
     }
 
     private boolean haveCompatibleTypes(Troop troop, AttackAble nearestTarget) {

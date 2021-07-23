@@ -17,7 +17,6 @@ public class CrazyBotModeController extends BotController  {
 
     /**
      * Instantiates a new Crazy bot mode controller.
-     *
      */
     public CrazyBotModeController() {
         super();

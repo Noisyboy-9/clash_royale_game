@@ -4,6 +4,9 @@ import controllers.modes.BaseController;
 import models.BotModeModel;
 import models.GameModel;
 
+/**
+ * The type Handle elixirs count runnable.
+ */
 public record HandleElixirsCountRunnable(GameModel model, BaseController controller) implements Runnable {
     @Override
     public void run() {

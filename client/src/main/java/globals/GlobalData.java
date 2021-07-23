@@ -21,16 +21,49 @@ import user.User;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * The type Global data.
+ */
 public class GlobalData {
+    /**
+     * The constant user.
+     */
     public static User user = null;
+    /**
+     * The constant bot.
+     */
     public static User bot = new User("Bot", "password");
+    /**
+     * The constant gameModel.
+     */
     public static GameModel gameModel;
+    /**
+     * The constant gameController.
+     */
     public static BaseController gameController;
+    /**
+     * The constant gameStarted.
+     */
     public static boolean gameStarted = false;
+    /**
+     * The constant playerTeam.
+     */
     public static ArrayList<User> playerTeam = new ArrayList<>();
+    /**
+     * The constant opponentTeam.
+     */
     public static ArrayList<User> opponentTeam = new ArrayList<>();
+    /**
+     * The constant FRAME_PER_SECOND.
+     */
     public static int FRAME_PER_SECOND = 30;
 
+    /**
+     * Create cards array list.
+     *
+     * @param cardOwner the card owner
+     * @return the array list
+     */
     public static ArrayList<Card> createCards(User cardOwner) {
         ArrayList<Card> cards = new ArrayList<>();
         HashMap<Integer, String> urlsData = Controller.CARD_QUERY_BUILDER.loadCards(cardOwner);
@@ -58,6 +91,13 @@ public class GlobalData {
     }
 
 
+    /**
+     * Gets card based on name.
+     *
+     * @param className the class name
+     * @param cardOwner the card owner
+     * @return the card based on name
+     */
     public static Card getCardBasedOnName(String className, User cardOwner) {
         return switch (className) {
             case "Archers", "Archer" -> Archer.create(cardOwner);

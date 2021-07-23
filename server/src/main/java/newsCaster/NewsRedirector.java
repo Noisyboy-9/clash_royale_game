@@ -22,11 +22,23 @@ public class NewsRedirector {
     private ArrayList<PlayerWorker> team1 = new ArrayList<>();
     private ArrayList<PlayerWorker> team2 = new ArrayList<>();
 
+    /**
+     * Instantiates a new News redirector.
+     *
+     * @param player1 the player 1
+     * @param player2 the player 2
+     */
     public NewsRedirector(PlayerWorker player1, PlayerWorker player2) {
         team1.add(player1);
         team2.add(player2);
     }
 
+    /**
+     * Instantiates a new News redirector.
+     *
+     * @param team1 the team 1
+     * @param team2 the team 2
+     */
     public NewsRedirector(List<PlayerWorker> team1, List<PlayerWorker> team2) {
         this.team1 = (ArrayList<PlayerWorker>) team1;
         this.team2 = (ArrayList<PlayerWorker>) team2;
@@ -95,6 +107,12 @@ public class NewsRedirector {
         return towers;
     }
 
+    /**
+     * Broadcast command.
+     *
+     * @param command   the command
+     * @param receivers the receivers
+     */
     public void broadcastCommand(Command command, ArrayList<PlayerWorker> receivers) {
         for (PlayerWorker receiver : receivers) {
             try {
@@ -106,6 +124,12 @@ public class NewsRedirector {
     }
 
 
+    /**
+     * Broadcast command.
+     *
+     * @param command the command
+     * @param sender  the sender
+     */
     public void broadcastCommand(Command command, PlayerWorker sender) {
 //        create a list of all players.
         ArrayList<PlayerWorker> allPlayers = new ArrayList<>();

@@ -168,6 +168,9 @@ public abstract class Troop extends Card implements AttackAble {
         return target;
     }
 
+    /**
+     * Clear target.
+     */
     public void clearTarget() {
        this.target = null;
     }

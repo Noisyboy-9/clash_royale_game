@@ -12,10 +12,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * The type Two player mode controller.
+ */
 public class TwoPlayerModeController extends OnlineController {
     /**
      * Instantiates a new Bot controller.
-     *
      */
     public TwoPlayerModeController() {
         super();

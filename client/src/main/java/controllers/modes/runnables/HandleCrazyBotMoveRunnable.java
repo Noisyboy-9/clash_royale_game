@@ -13,6 +13,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
+/**
+ * The type Handle crazy bot move runnable.
+ */
 public record HandleCrazyBotMoveRunnable(BotModeModel model, CrazyBotModeController controller) implements Runnable {
     @Override
     public void run() {

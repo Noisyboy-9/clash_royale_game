@@ -11,6 +11,9 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Objects;
 
+/**
+ * The type Card query builder.
+ */
 public class CardQueryBuilder {
     private static CardQueryBuilder singletonInstance = null;
     private final File cardsDb;
@@ -19,6 +22,12 @@ public class CardQueryBuilder {
         this.cardsDb = new File("client/src/main/java/Database/files/cards.database.binary");
     }
 
+    /**
+     * Update player cards.
+     *
+     * @param user       the user
+     * @param battleDeck the battle deck
+     */
     public void updatePlayerCards(User user, GridPane battleDeck) {
         try (
                 FileOutputStream fos = new FileOutputStream(this.cardsDb);
@@ -85,6 +94,12 @@ public class CardQueryBuilder {
     }
 
 
+    /**
+     * Load cards hash map.
+     *
+     * @param user the user
+     * @return the hash map
+     */
     public HashMap<Integer, String> loadCards(User user)
     {
         if (cardsDb.length() == 0)
@@ -127,6 +142,11 @@ public class CardQueryBuilder {
     }
 
 
+    /**
+     * Gets singleton instance.
+     *
+     * @return the singleton instance
+     */
     public static CardQueryBuilder getSingletonInstance() {
         if (Objects.isNull(singletonInstance)) {
             singletonInstance = new CardQueryBuilder();

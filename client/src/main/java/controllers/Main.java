@@ -11,13 +11,15 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
 
+/**
+ * The type Main.
+ */
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
         Controller.SCENE_CONTROLLER.showScene("Menu/SplashScreen.fxml");
 //        this.seedDatabase();
-//        System.exit(0);
     }
 
     private void seedDatabase() throws IOException {
@@ -73,6 +75,11 @@ public class Main extends Application {
     }
 
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         try {
             connectToServer();

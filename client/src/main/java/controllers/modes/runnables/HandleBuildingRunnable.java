@@ -11,6 +11,9 @@ import models.OnlineModeModel;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * The type Handle building runnable.
+ */
 public record HandleBuildingRunnable(GameModel model, BaseController controller) implements Runnable {
     @Override
     public void run() {

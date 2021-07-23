@@ -13,6 +13,9 @@ import javafx.scene.text.Text;
 import java.util.HashMap;
 import java.util.Objects;
 
+/**
+ * The type Profile controller.
+ */
 public class ProfileController extends MenuController {
     // TODO: ۱۴/۰۷/۲۰۲۱ some methods needed to update username, level and battle deck of player (be careful that level is placed under cards too)
 
@@ -25,6 +28,9 @@ public class ProfileController extends MenuController {
     @FXML
     private Text usernameField;
 
+    /**
+     * Initialize.
+     */
     @FXML
     public void initialize() {
         if (!Objects.isNull(GlobalData.user))

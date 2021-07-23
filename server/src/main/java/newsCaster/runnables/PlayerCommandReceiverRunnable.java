@@ -9,6 +9,9 @@ import workers.PlayerWorker;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
+/**
+ * The type Player command receiver runnable.
+ */
 public record PlayerCommandReceiverRunnable(PlayerWorker worker, NewsRedirector newsRedirector) implements Runnable {
 
     @Override

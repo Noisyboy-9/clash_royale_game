@@ -10,10 +10,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * The type Normal bot mode controller.
+ */
 public class NormalBotModeController extends BotController {
     /**
      * Instantiates a new Bot controller.
-     *
      */
     public NormalBotModeController() {
         super();
