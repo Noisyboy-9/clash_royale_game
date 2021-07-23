@@ -1,6 +1,6 @@
 # Clash Royale : The Game
 
-![Game screen shot](documentation/screenshots/splash_screen.png) <br>
+![Game screen shot](documentation/screenshots/splash_screen.jpeg) <br>
 
 In spring 2020, in [Amirkabir University of Technology](aut.ac.ir), for advanced programming class, the students were
 tasked to create a simpler version of [Clash Royal Game](https://supercell.com/en/games/clashroyale/) using javafx, and
@@ -61,11 +61,11 @@ The list of buildings:
 ## 3D client
 
 In this project we tried to use 3D elements to make the UI better, and also make the game much more similar to the main
-game. some screenshots of the main game area:
-
-- ![in game screen shot 1](documentation/screenshots/in_game_1.png)
-- ![in game screen shot 2](documentation/screenshots/in_game_2.png)
-- ![in game screen shot 3](documentation/screenshots/in_game_3.png)
+game. some screenshots of the main game area: <br>
+![in game screen shot 1](documentation/screenshots/in_game_1.png)
+![in game screen shot 2](documentation/screenshots/in_game_2.png)
+![in game screen shot 3](documentation/screenshots/in_game_3.png)
+![in game screen shot 4](documentation/screenshots/in_game_4.png)
 
 ## Online Game
 
