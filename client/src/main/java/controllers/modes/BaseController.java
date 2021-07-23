@@ -161,7 +161,6 @@ public abstract class BaseController implements CustomEventHandler {
         this.opponentQueenTower1Position = new Point2D(17, 9);
         this.opponentQueenTower2Position = new Point2D(6, 9);
     }
-
     /**
      * Gets frame remaining count.
      *
